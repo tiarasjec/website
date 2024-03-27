@@ -11,7 +11,7 @@ export default async function Home() {
     return {
       alt: `Image ${i}`,
       src: `${
-        `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` ?? "http://localhost:3000/"
+        `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/` ?? "http://localhost:3000/"
       }${imageName}`,
     };
   });
