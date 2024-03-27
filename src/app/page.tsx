@@ -4,17 +4,16 @@ import { Starfield } from "@/components/widgets/Starfield";
 import Lenis from "@/components/shared/Lenis";
 import { glob } from "glob";
 import { relative } from "path";
-import { baseURL } from "@/lib/utils";
 
 export default async function Home() {
-  const images = (await glob("public/hero/*.jpg")).map((image, i) => {
+  let images = (await glob("public/hero/*.jpg")).map((image, i) => {
     const imageName = relative("public", image); // Remove the "public/hero/" part from the image path
     return {
       alt: `Image ${i}`,
       src: `https://tiara2024.vercel.app/${imageName}`,
     };
   });
-  console.log(baseURL, images);
+  images = images.concat(...images);
   return (
     <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
       <Starfield
