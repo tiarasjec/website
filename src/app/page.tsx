@@ -4,15 +4,14 @@ import { Starfield } from "@/components/widgets/Starfield";
 import Lenis from "@/components/shared/Lenis";
 import { glob } from "glob";
 import { relative } from "path";
+import { baseURL } from "@/lib/utils";
 
 export default async function Home() {
   const images = (await glob("public/hero/*.jpg")).map((image, i) => {
     const imageName = relative("public", image); // Remove the "public/hero/" part from the image path
     return {
       alt: `Image ${i}`,
-      src: `${
-        `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/` ?? "http://localhost:3000/"
-      }${imageName}`,
+      src: `${baseURL}${imageName}`,
     };
   });
   return (
