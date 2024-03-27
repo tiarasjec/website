@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+}
+
+.animation {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.animation .mask-container {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Changed from align-content to align-items */
+}
+
+.animation .mask-container::before {
+  content: ""; /* Add content to make the pseudo-element visible */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent; /* Example background color with transparency */
+}
+@font-face {
+  font-family: "tiara";
+  src: url("/fonts/americankestralital1_2.ttf");
+}
+
+.animation .txt {
+  font-size: 84px;
+  color: #fff;
+  text-align: center;
+  height: 100%;
+  line-height: 100vh;
+  display: inline-block;
+  font-weight: 700;
+  font-family: "tiara";
+  background-color: white;
+  background-size: 100vw calc(100vw * 9 / 16);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  white-space: nowrap;
+  box-sizing: inherit;
+}
+
+.animation .txt::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.main {
+  margin-bottom: 100vh;
+}
+
+.container {
+  position: relative;
+
+  height: 300vh;
+
+  background-color: rgb(255, 255, 255);
+}
+
+.stickyMask {
+  mask-position: 52.35% center;
+  display: flex;
+
+  overflow: hidden;
+
+  position: sticky;
+
+  top: 0;
+
+  height: 100vh;
+
+  align-items: center;
+
+  justify-content: center;
+
+  mask-image: url("/medias/mask.svg");
+
+  mask-position: center center;
+
+  mask-repeat: no-repeat;
+
+  mask-size: 80%;
+}
+
+.stickyMask video {
+  height: 100%;
+
+  width: 100%;
+
+  object-fit: cover;
+}

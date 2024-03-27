@@ -1,12 +1,12 @@
 "use client";
-
-import React, { useEffect } from "react";
+import React, { useEffect, ReactNode } from "react";
 
 interface Props {
   speedFactor?: number;
   backgroundColor?: string;
   starColor?: [number, number, number];
   starCount?: number;
+  children?: ReactNode; // Define children prop
 }
 
 export function Starfield(props: Props) {
@@ -15,6 +15,7 @@ export function Starfield(props: Props) {
     backgroundColor = "black",
     starColor = [255, 255, 255],
     starCount = 5000,
+    children, // Destructure children prop
   } = props;
 
   useEffect(() => {
@@ -157,6 +158,8 @@ export function Starfield(props: Props) {
         pointerEvents: "none",
         mixBlendMode: "screen",
       }}
-    ></canvas>
+    >
+      {children}
+    </canvas>
   );
 }

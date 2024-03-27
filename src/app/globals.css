@@ -64,4 +64,8 @@ html.lenis body {
   body {
     @apply bg-background text-foreground;
   }
+  @font-face {
+    font-family: "Tiara";
+    src: url("/fonts/americankestralital1_2.ttf") format("truetype");
+  }
 }

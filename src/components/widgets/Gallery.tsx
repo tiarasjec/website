@@ -9,7 +9,7 @@ export const Gallery = ({
   images,
   className,
 }: {
-  images: { alt: string; src: string }[];
+  images: { src: string; alt: string }[];
   className?: string;
 }) => {
   const gridRef = useRef<any>(null);
@@ -18,13 +18,9 @@ export const Gallery = ({
     offset: ["start start", "end start"], // remove this if your container is not fixed height
   });
 
-  const translateYFirst = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const translateXFirst = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const rotateXFirst = useTransform(scrollYProgress, [0, 1], [0, -20]);
-
-  const translateYThird = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const translateXThird = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const rotateXThird = useTransform(scrollYProgress, [0, 1], [0, 20]);
+  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const translateThird = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   const third = Math.ceil(images.length / 3);
 
@@ -38,17 +34,13 @@ export const Gallery = ({
       ref={gridRef}
     >
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-5xl mx-auto gap-10 py-40 px-10"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start  max-w-5xl mx-auto gap-10 py-40 px-10"
         ref={gridRef}
       >
         <div className="grid gap-10">
           {firstPart.map((el, idx) => (
             <motion.div
-              style={{
-                y: translateYFirst,
-                x: translateXFirst,
-                rotateZ: rotateXFirst,
-              }} // Apply the translateY motion value here
+              style={{ y: translateFirst }} // Apply the translateY motion value here
               key={"grid-1" + idx}
             >
               <Image
@@ -56,40 +48,33 @@ export const Gallery = ({
                 className="h-80 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
                 height="400"
                 width="400"
-                alt={el.alt}
+                alt="thumbnail"
               />
             </motion.div>
           ))}
         </div>
         <div className="grid gap-10">
           {secondPart.map((el, idx) => (
-            <motion.div key={"grid-2" + idx}>
+            <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
               <Image
                 src={el.src}
                 className="h-80 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
                 height="400"
                 width="400"
-                alt={el.alt}
+                alt="thumbnail"
               />
             </motion.div>
           ))}
         </div>
         <div className="grid gap-10">
           {thirdPart.map((el, idx) => (
-            <motion.div
-              style={{
-                y: translateYThird,
-                x: translateXThird,
-                rotateZ: rotateXThird,
-              }}
-              key={"grid-3" + idx}
-            >
+            <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
               <Image
                 src={el.src}
                 className="h-80 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
                 height="400"
                 width="400"
-                alt={el.alt}
+                alt="thumbnail"
               />
             </motion.div>
           ))}

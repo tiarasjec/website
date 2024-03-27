@@ -22,7 +22,7 @@ export default function RootLayout({
         className={cn("bg-background font-sans antialiased", inter.variable)}
       >
         <div className="flex min-h-screen w-full flex-col">
-          <Header />
+          {/* <Header /> */}
           {children}
         </div>
       </body>
