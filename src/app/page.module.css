@@ -1,15 +1,12 @@
-.main {
-  margin-bottom: 100vh;
-}
-
 .container {
   position: relative;
   height: 300vh;
-  background-color: rgb(255, 255, 255);
+  width: 100%;
+  background-color: rgb(0, 0, 0);
 }
 
 .stickyMask {
-  mask-position: 52.35% center;
+  mask-position: 100%;
   display: flex;
   overflow: hidden;
   position: sticky;
@@ -17,10 +14,10 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
-  mask-image: url("/mask.svg");
+  mask-image: url("/image.svg");
   mask-position: center center;
   mask-repeat: no-repeat;
-  mask-size: 80%;
+  mask-size: 50%;
 }
 
 .stickyMask video {
