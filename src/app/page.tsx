@@ -5,6 +5,7 @@ import { Header } from "@/components/widgets/Header";
 import { HeroParallax } from "@/components/widgets/Hero";
 import Lenis from "@/components/shared/Lenis";
 import { Starfield } from "@/components/widgets/Starfield";
+import { About } from "@/components/ui/about";
 
 const initialMaskSize = 0.8;
 const targetMaskSize = 30;
@@ -67,6 +68,7 @@ export default function Home() {
         <Header />
         <HeroParallax images={images} />
       </Lenis>
+      <About />
     </main>
   );
 }

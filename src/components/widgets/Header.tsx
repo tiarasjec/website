@@ -21,7 +21,7 @@ const NavItems: NavItem[] = [
   },
   {
     label: "About",
-    href: "/about",
+    href: "#about",
   },
   {
     label: "Schedule",
