@@ -6,6 +6,10 @@ import { HeroParallax } from "@/components/widgets/Hero";
 import Lenis from "@/components/shared/Lenis";
 import { Starfield } from "@/components/widgets/Starfield";
 import { About } from "@/components/ui/about";
+import ShiftingCountdown from "@/components/widgets/Countdown";
+import { Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { LampContainer } from "@/components/ui/lamp";
 
 const initialMaskSize = 0.8;
 const targetMaskSize = 30;
@@ -58,13 +62,16 @@ export default function Home() {
   return (
     <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 py-0 md:gap-8 md:py-0">
       <Lenis>
-        <div ref={container} className={styles.container}>
+        <Starfield />
+
+        {/* <div ref={container} className={styles.container}>
           <div ref={stickyMask} className={styles.stickyMask}>
-            <video autoPlay muted loop>
-              <source src="/video.mp4" type="video/mp4" />
-            </video>
+          <video autoPlay muted loop>
+          <source src="/video.mp4" type="video/mp4" />
+          </video>
           </div>
-        </div>
+        </div> */}
+
         <Header />
         <HeroParallax images={images} />
       </Lenis>

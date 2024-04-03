@@ -8,6 +8,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import Image from "next/image";
+import ShiftingCountdown from "./Countdown";
 
 export const HeroParallax = ({
   images,
@@ -57,6 +58,7 @@ export const HeroParallax = ({
       ref={ref}
       className="-z-10 h-[300vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
+      <Header />
       <motion.div
         style={{
           rotateX,
@@ -92,15 +94,22 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
-      <h1 className="font-tiara text-lg md:text-7xl font-bold dark:text-white tracking-wider">
-        <span className="text-9xl">T</span>i
-        <span className="text-red-900 tracking-wide">ar</span>a {"'"}24
-      </h1>
-      <h2 className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 uppercase tracking-wide">
-        Explore the Unknown
-      </h2>
-    </div>
+    <>
+      <motion.h1
+        initial={{ opacity: 0.5, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="font-tiara mt-8 text-center text-5xl md:text-6xl font-medium lg:text-9xl"
+      >
+        <span className="text-red-500">T</span>iara{" "}
+        <span className="text-red-500">{"'"}</span>24{" "}
+      </motion.h1>
+      <ShiftingCountdown />
+    </>
   );
 };
 
