@@ -20,10 +20,6 @@ const NavItems: NavItem[] = [
     href: "/events",
   },
   {
-    label: "About",
-    href: "#about",
-  },
-  {
     label: "Schedule",
     href: "/schedule",
   },
@@ -34,6 +30,10 @@ const NavItems: NavItem[] = [
   {
     label: "Gallery",
     href: "/gallery",
+  },
+  {
+    label: "About",
+    href: "#about",
   },
 ];
 
