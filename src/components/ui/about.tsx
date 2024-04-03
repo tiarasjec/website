@@ -4,7 +4,7 @@ import * as React from "react";
 export const About = () => {
   return (
     <div className="py-2 mx-28 space-y-2">
-      <h1 id="about" className="text-4xl">
+      <h1 id="about" className="text-4xl font-tiara">
         About Us
       </h1>
       <p>
