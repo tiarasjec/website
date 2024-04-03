@@ -15,7 +15,7 @@ export const About = () => {
         above to come and showcase their talents and represent their respective
         institutions on the grand stage of Tiara. Our event mainly aims to
         spread and teach the youth to explore new areas of Technology and
-        Culture to foster the nation's development. SJEC welcomes you all to
+        Culture to foster the nation{"'"}s development. SJEC welcomes you all to
         Tiara-2024 To unleash your potential and unlock your skills. See you on
         9th, 10th and 11th May 2024.
       </p>
