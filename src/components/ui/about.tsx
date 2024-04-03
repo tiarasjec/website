@@ -9,7 +9,7 @@ export const About = () => {
       </h1>
       <p>
         St Joseph Engineering College has come together to host a national level
-        techno-cultural fest, Tiara 2024. “Tiara” is a National-level
+        techno-cultural fest, Tiara 2024. Tiara is a National-level
         Techno-Cultural fest, conducted for young minds aspiring to be
         extraordinary, that is open to all students of undergraduate level and
         above to come and showcase their talents and represent their respective
