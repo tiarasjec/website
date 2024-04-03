@@ -8,6 +8,7 @@ import SJECLogo from "@/assets/sjeclogo.png";
 interface NavItem {
   label: string;
   href: string;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 const NavItems: NavItem[] = [
@@ -34,6 +35,12 @@ const NavItems: NavItem[] = [
   {
     label: "About",
     href: "#about",
+    onClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      document.getElementById("about")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    },
   },
 ];
 
@@ -52,6 +59,7 @@ export function Header() {
           <Link
             key={item.label}
             href={item.href}
+            onClick={item.onClick}
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             {item.label}
