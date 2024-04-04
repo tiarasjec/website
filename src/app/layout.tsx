@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Tiara 2024",
-  description: "National level techno-cultural fest, Tiara 2024 at SJEC Mangaluru", 
+  description:
+    "National level techno-cultural fest, Tiara 2024 at SJEC Mangaluru",
 };
 
 export default function RootLayout({
@@ -22,7 +23,7 @@ export default function RootLayout({
         className={cn("bg-background font-sans antialiased", inter.variable)}
       >
         <div className="flex min-h-screen w-full flex-col">
-          {/* <Header /> */}
+          <Header />
           {children}
         </div>
       </body>

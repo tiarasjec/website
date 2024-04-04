@@ -64,15 +64,6 @@ export default function Home() {
       <Lenis>
         <Starfield />
 
-        {/* <div ref={container} className={styles.container}>
-          <div ref={stickyMask} className={styles.stickyMask}>
-          <video autoPlay muted loop>
-          <source src="/video.mp4" type="video/mp4" />
-          </video>
-          </div>
-        </div> */}
-
-        <Header />
         <HeroParallax images={images} />
       </Lenis>
       <About />
