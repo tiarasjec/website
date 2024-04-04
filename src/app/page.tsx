@@ -1,10 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
-import { HeroParallax } from "@/components/widgets/Hero";
 import Lenis from "@/components/shared/lenis";
-import { Starfield } from "@/components/ui/Starfield";
+import { HeroParallax } from "@/components/widgets/Hero";
 import { About } from "@/components/widgets/about";
 import { StarsCanvas } from "@/components/ui/Stars";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [images, setImages] = useState<{ src: string; alt: string }[]>([]);
@@ -19,7 +18,6 @@ export default function Home() {
   return (
     <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 py-0 md:gap-8 md:py-0">
       <Lenis>
-        {/* <Starfield /> */}
         <StarsCanvas />
         <HeroParallax images={images} />
       </Lenis>

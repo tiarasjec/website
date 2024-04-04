@@ -1,7 +1,7 @@
 "use client";
+import { cn } from "@/lib/utils";
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import { cn } from "@/lib/utils";
 
 export const LampContainer = () => {
   type WrapperStyle = React.CSSProperties & {

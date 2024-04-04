@@ -1,9 +1,9 @@
+import SJECLogo from "@/assets/sjeclogo.png";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
-import SJECLogo from "@/assets/sjeclogo.png";
+import Link from "next/link";
 
 interface NavItem {
   label: string;

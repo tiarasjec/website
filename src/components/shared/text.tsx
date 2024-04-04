@@ -1,6 +1,6 @@
-import React from 'react';
-import { cva } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
+import { cva } from 'class-variance-authority';
+import React from 'react';
 
 export type Intent = 'body' | 'h1' | 'h2' | 'h3' | 'leading' | 'title';
 

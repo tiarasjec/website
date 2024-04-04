@@ -1,15 +1,15 @@
 "use client";
-import React from "react";
 import {
+  MotionValue,
   motion,
   useScroll,
-  useTransform,
   useSpring,
-  MotionValue,
+  useTransform,
 } from "framer-motion";
 import Image from "next/image";
-import ShiftingCountdown from "./Countdown";
+import React from "react";
 import { LampContainer } from "../ui/lamp";
+import ShiftingCountdown from "./Countdown";
 
 export const HeroParallax = ({
   images,

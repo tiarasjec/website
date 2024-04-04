@@ -1,8 +1,8 @@
 "use client";
-import { ReactLenis } from "@studio-freight/react-lenis";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ReactLenis } from "@studio-freight/react-lenis";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 const Lenis = ({ children }: { children: React.ReactNode }) => {
   const lenisRef = useRef(null);
