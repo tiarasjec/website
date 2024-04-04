@@ -104,6 +104,7 @@ export function Header() {
           />
         ) : (
           <Button
+            disabled
             onClick={() =>
               signIn("google", {
                 callbackUrl: "/register",
