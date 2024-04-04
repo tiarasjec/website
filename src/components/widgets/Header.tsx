@@ -1,9 +1,12 @@
+"use client";
 import SJECLogo from "@/assets/sjeclogo.png";
 import { Button } from "@/components/ui/button";
+import { Button as FramerButton } from "@/components/ui/framer/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { signIn, useSession } from "next-auth/react";
 
 interface NavItem {
   label: string;
@@ -38,6 +41,7 @@ const NavItems: NavItem[] = [
 ];
 
 export function Header() {
+  const { data: session } = useSession();
   return (
     <header className="z-50 sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
       <Link
@@ -90,10 +94,25 @@ export function Header() {
         <Button asChild variant={"secondary"}>
           <Link href="/rulebook">Rulebook</Link>
         </Button>
-        {/* Disabled for now */}
-        <Button disabled>
-          <Link href="/login">Login</Link>
-        </Button>
+        {session?.user ? (
+          <Image
+            src={session.user.image!}
+            alt={session.user.name!}
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+        ) : (
+          <Button
+            onClick={() =>
+              signIn("google", {
+                callbackUrl: "/register",
+              })
+            }
+          >
+            Register!
+          </Button>
+        )}
       </div>
     </header>
   );

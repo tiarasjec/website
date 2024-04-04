@@ -1,8 +1,9 @@
 import "@/app/globals.css";
-import { Header } from "@/components/widgets/Header";
+import { Header } from "@/components/widgets/header";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import AuthSession from "@/context/NextAuth";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -22,9 +23,11 @@ export default function RootLayout({
       <body
         className={cn("bg-background font-sans antialiased", inter.variable)}
       >
-        <div className="flex min-h-screen w-full flex-col">
-          <Header />
-          {children}
+        <div className="mx-4">
+          <AuthSession>
+            <Header />
+            {children}
+          </AuthSession>
         </div>
       </body>
     </html>

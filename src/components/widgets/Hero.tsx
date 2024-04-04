@@ -8,8 +8,8 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import { LampContainer } from "../ui/lamp";
-import ShiftingCountdown from "./Countdown";
+import { LampContainer } from "@components/ui/lamp";
+import ShiftingCountdown from "@/components/ui/framer/countdown";
 
 export const HeroParallax = ({
   images,
