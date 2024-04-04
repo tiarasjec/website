@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/widgets/Header";
+import Container from "@/components/shared/container";
 
 export const metadata: Metadata = {
   title: "Tiara 2024",
@@ -13,8 +14,7 @@ export default function Layout({
 }>) {
   return (
     <>
-      <Header />
-      {children}
+      <Container>{children}</Container>
     </>
   );
 }

@@ -15,7 +15,7 @@ export default function Container({
   return (
     <div
       className={cn(
-        "mx-auto px-4 sm:px-6 lg:px-8",
+        "px-4 sm:px-6 lg:px-8",
         variant === "md" && "max-w-7xl",
         variant === "sm" && "max-w-5xl",
         variant === "xs" && "max-w-3xl",
