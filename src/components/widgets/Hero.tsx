@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import ShiftingCountdown from "./Countdown";
+import { LampContainer } from "../ui/lamp";
 
 export const HeroParallax = ({
   images,
@@ -56,7 +57,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="-z-10 h-[300vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="-z-10 h-[320vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -95,6 +96,7 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <>
+      <LampContainer />
       <motion.h1
         initial={{ opacity: 0.5, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -103,11 +105,23 @@ export const Header = () => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="font-tiara mt-8 text-center text-5xl md:text-6xl font-medium lg:text-9xl"
+        className="font-tiara mt-8 text-center text-5xl md:text-6xl lg:text-9xl"
       >
         <span className="text-red-500">T</span>iara{" "}
         <span className="text-red-500">{"'"}</span>24{" "}
       </motion.h1>
+      <motion.h2
+        initial={{ opacity: 0.5, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="font-tiara mt-2 text-center text-xl md:text-2xl"
+      >
+        explore the <span className="text-red-500">unknown</span>
+      </motion.h2>
       <ShiftingCountdown targetDate="05/09/2024" />
     </>
   );
