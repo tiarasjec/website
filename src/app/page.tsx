@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { HeroParallax } from "@/components/widgets/Hero";
-import Lenis from "@/components/shared/Lenis";
-import { Starfield } from "@/components/widgets/Starfield";
-import { About } from "@/components/ui/about";
+import Lenis from "@/components/shared/lenis";
+import { Starfield } from "@/components/ui/Starfield";
+import { About } from "@/components/widgets/about";
 
 export default function Home() {
   const [images, setImages] = useState<{ src: string; alt: string }[]>([]);

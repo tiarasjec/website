@@ -30,12 +30,12 @@ const styles = cva<{
 }>('', {
   variants: {
     intent: {
-      body: 'text-md text-slate-800 dark:text-slate-100',
+      body: 'text-md',
       leading: 'text-[1.125rem] font-medium',
       title: 'text-[8rem] font-bold',
-      h1: 'text-[2rem] font-bold [&>small]:text-[0.7em] [&>small]:dark:text-slate-400 [&>small]:text-slate-600',
-      h2: 'text-[1.5rem] font-semibold [&>small]:text-[0.7em] [&>small]:dark:text-slate-400 [&>small]:text-slate-600',
-      h3: 'font-bold italic text-[1.25rem] [&>small]:text-[0.7em] [&>small]:dark:text-slate-400 [&>small]:text-slate-600',
+      h1: 'text-[3rem] font-bold [&>small]:text-[0.7em] [&>small]:dark:text-foreground [&>small]:text-foreground',
+      h2: 'text-[2rem] font-semibold [&>small]:text-[0.7em] [&>small]:dark:text-foreground [&>small]:text-foreground',
+      h3: 'font-bold text-[1.5rem] [&>small]:text-[0.7em] [&>small]:dark:text-foreground [&>small]:text-foreground',
     },
     weight: {
       bold: 'font-bold',

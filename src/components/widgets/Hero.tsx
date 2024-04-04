@@ -108,7 +108,7 @@ export const Header = () => {
         <span className="text-red-500">T</span>iara{" "}
         <span className="text-red-500">{"'"}</span>24{" "}
       </motion.h1>
-      <ShiftingCountdown />
+      <ShiftingCountdown targetDate="05/09/2024" />
     </>
   );
 };

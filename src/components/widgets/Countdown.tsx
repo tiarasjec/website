@@ -2,15 +2,16 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-// NOTE: Change this date to whatever date you want to countdown to :)
-const COUNTDOWN_FROM = "05/09/2024";
-
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
 const HOUR = MINUTE * 60;
 const DAY = HOUR * 24;
 
-const ShiftingCountdown = () => {
+type ShiftingCountdownProps = {
+  targetDate: string;
+};
+
+const ShiftingCountdown = ({ targetDate }: ShiftingCountdownProps) => {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const [remaining, setRemaining] = useState({
@@ -27,7 +28,7 @@ const ShiftingCountdown = () => {
   }, []);
 
   const handleCountdown = () => {
-    const end = new Date(COUNTDOWN_FROM);
+    const end = new Date(targetDate);
 
     const now = new Date();
 
