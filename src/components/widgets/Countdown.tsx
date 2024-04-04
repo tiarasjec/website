@@ -25,7 +25,7 @@ const ShiftingCountdown = ({ targetDate }: ShiftingCountdownProps) => {
     intervalRef.current = setInterval(handleCountdown, 1000);
 
     return () => clearInterval(intervalRef.current || undefined);
-  }, []);
+  });
 
   const handleCountdown = () => {
     const end = new Date(targetDate);
@@ -53,7 +53,11 @@ const ShiftingCountdown = ({ targetDate }: ShiftingCountdownProps) => {
         <CountdownItem num={remaining.days} text="days" />
         <CountdownItem num={remaining.hours} text="hours" />
         <CountdownItem num={remaining.minutes} text="minutes" />
-        <CountdownItem num={remaining.seconds} text="seconds" className="text-red-500" />
+        <CountdownItem
+          num={remaining.seconds}
+          text="seconds"
+          className="text-red-500"
+        />
       </div>
     </div>
   );
