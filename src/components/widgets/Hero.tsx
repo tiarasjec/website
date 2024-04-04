@@ -83,7 +83,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 pb-[32rem]">
           {thirdRow.map((image, index) => (
             <ImageCard image={image} translate={translateX} key={index} />
           ))}
