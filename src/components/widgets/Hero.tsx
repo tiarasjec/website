@@ -107,7 +107,7 @@ export const Header = () => {
         }}
         className="font-tiara mt-8 text-center text-5xl md:text-6xl lg:text-9xl"
       >
-        <span className="text-red-500">T</span>iara{" "}
+        Ti<span className="text-red-500">ar</span>a{" "}
         <span className="text-red-500">{"'"}</span>24{" "}
       </motion.h1>
       <motion.h2
