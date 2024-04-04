@@ -61,6 +61,14 @@ export type CorrectProps<
 
 export type Combined<T, U> = T & U;
 
+export interface TextProps<T extends TagOptions = "text"> {
+  intent?: Intent;
+  weight?: "bold" | "default" | "medium" | "semi";
+  color?: "default" | "primary";
+  tag?: T;
+  className?: string; 
+}
+
 export function Text<T extends TagOptions>({
   intent = "body",
   weight,
