@@ -3,9 +3,9 @@
 import * as React from "react";
 export const About = () => {
   return (
-    <div className="py-2 mx-28 space-y-2">
+    <div className="py-4 mx-6  sm:mx-12 space-y-2">
       <h1 id="about" className="text-4xl font-tiara">
-        About Us
+        About
       </h1>
       <p>
         St Joseph Engineering College has come together to host a national level
