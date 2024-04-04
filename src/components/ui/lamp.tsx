@@ -13,7 +13,7 @@ export const LampContainer = () => {
   });
 
   return (
-    <div className="lampcontainer z-40 flex rotate-270 opacity-65 pt-20">
+    <div className="lampcontainer z-40 flex rotate-270 opacity-65 pt-60">
       <div
         className={cn(
           { "scale-[3] md:scale-[2] 2xl:scale-[1.55]": inView },
