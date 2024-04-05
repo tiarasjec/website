@@ -14,7 +14,7 @@ permissions:
   packages: write
 
 env:
-  IMAGE_NAME: tiara2024-fe
+  IMAGE_NAME: frontend
   GHCR_USERNAME: ${{ github.repository_owner }}
   GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
