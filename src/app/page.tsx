@@ -1,8 +1,8 @@
 "use client";
 import Lenis from "@/components/shared/lenis";
-import { HeroParallax } from "@/components/widgets/hero";
+import { HeroParallax } from "@/components/widgets/Hero";
 import { About } from "@/components/widgets/about";
-import { StarsCanvas } from "@/components/ui/stars";
+import { StarsCanvas } from "@/components/ui/Stars";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -20,8 +20,8 @@ export default function Home() {
       <Lenis>
         <StarsCanvas />
         <HeroParallax images={images} />
-        <About />
       </Lenis>
+      <About />
     </main>
   );
 }

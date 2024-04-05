@@ -49,31 +49,25 @@ html.lenis body {
     hsl(var(--background)),
     hsl(var(--background))
   );
-  -webkit-mask-image: radial-gradient(
-    100% 50% at center center,
-    black,
-    transparent
-  );
+  -webkit-mask-image: radial-gradient(100% 50% at center center, black, transparent);
   background-image: var(--first), var(--second);
   background-position-x: 1%, 99%;
   background-position-y: 0%, 0%;
-  background-size: 50% 100%, 50% 100%;
+  background-size:
+    50% 100%,
+    50% 100%;
   opacity: 1;
   transform-origin: center center;
   background-repeat: no-repeat;
 }
 
 .lamp::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0px 0px 50%;
   overflow: hidden;
   opacity: 0.1;
-  -webkit-mask-image: radial-gradient(
-    140px 50% at 50% 100%,
-    black,
-    transparent
-  );
+  -webkit-mask-image: radial-gradient(140px 50% at 50% 100%, black, transparent);
   mask-image: radial-gradient(140px 50% at 50% 100%, black, transparent);
 }
 
