@@ -14,8 +14,8 @@ permissions:
   packages: write
 
 env:
-  IMAGE_NAME: frontend
-  GHCR_USERNAME: tiarasjec
+  IMAGE_NAME: ${{ github.event.repository.name }}
+  GHCR_USERNAME: ${{ github.repository_owner }}
   GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
@@ -58,5 +58,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          push: ${{ github.base_ref == 'main' }}
-          tags: ghcr.io/${{ env.GHCR_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
