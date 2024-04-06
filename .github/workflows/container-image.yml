@@ -1,4 +1,4 @@
-name: Deploy Container Image to GHCR
+name: Build and Deploy Container Image
 
 on:
   push:
@@ -15,7 +15,7 @@ permissions:
 
 env:
   IMAGE_NAME: frontend
-  GHCR_USERNAME: ${{ github.repository_owner }}
+  GHCR_USERNAME: tiarasjec
   GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
@@ -32,7 +32,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}
+            ghcr.io/${{ env.GHCR_USERNAME }}/${{ env.IMAGE_NAME }}
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
