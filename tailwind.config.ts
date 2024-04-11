@@ -19,8 +19,10 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         tiara: ["Tiara", "sans-serif"],
+        staat:["Staat","sans-serif"]
       },
       colors: {
+        tiara_red: "#EB1C2C",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

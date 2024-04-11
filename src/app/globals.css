@@ -116,4 +116,8 @@ html.lenis body {
     font-family: "Tiara";
     src: url("/fonts/americankestralital1_2.ttf") format("truetype");
   }
+  @font-face {
+    font-family: "Staat";
+    src: url("/fonts/Staatliches.ttf") format("truetype");
+  }
 }
