@@ -1,0 +1,130 @@
+.GanttChartContainer {
+    margin: 0px 20px;
+    padding-bottom: 20px;
+    overflow-x: auto;
+}
+
+.GanttChart {
+    max-width: 1560px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow-x: scroll;
+
+    @media screen and (max-width: 780px) {
+        width: 1000px;
+    }
+}
+
+.GanttChartHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+    @media screen and (max-width: 780px) {
+        flex-direction: column;
+    }
+
+    .ViewMode {
+        .button {
+            border: none;
+            outline: none;
+            background-color: #f6f7fd;
+            padding: 8px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #8d8d8d;
+        }
+    }
+
+    .Actions {
+        display: flex;
+        flex-direction: row;
+
+        @media screen and (max-width: 780px) {
+            padding-top: 20px;
+        }
+
+        .Export {
+            border: none;
+            outline: none;
+            background-color: #f6f7fd;
+            padding: 8px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #8d8d8d;
+        }
+
+        .Report {
+            border: none;
+            outline: none;
+            background-color: #ff6632;
+            padding: 8px 25px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+        }
+    }
+}
+
+.title {
+    color: #8d8d8d;
+    font-weight: 600;
+    padding-right: 20px
+}
+
+.desc {
+    font-weight: 600;
+}
+
+.Reports {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    .top {
+        width: 100%;
+        height: 100%;
+
+        .card {
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #c2c2c2;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            .start {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .btn {
+        border: none;
+        outline: none;
+        background-color: #ff6632;
+        padding: 8px 25px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+    }
+}

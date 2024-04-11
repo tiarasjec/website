@@ -12,6 +12,7 @@
     "seed": "node --loader ts-node/esm prisma/seed.ts"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.3.6",
     "@auth/prisma-adapter": "^1.6.0",
     "@gsap/react": "^2.1.0",
     "@prisma/client": "^5.12.1",
@@ -26,10 +27,12 @@
     "@studio-freight/react-lenis": "^0.0.46",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@udecode/cn": "^31.0.0",
+    "antd": "^5.16.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "embla-carousel-react": "^8.0.2",
     "framer-motion": "^11.0.22",
+    "gantt-task-react": "^0.3.9",
     "glob": "^10.3.10",
     "gsap": "^3.12.5",
     "lucide-react": "^0.363.0",
@@ -47,7 +50,7 @@
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
     "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/react": "^18.2.76",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
