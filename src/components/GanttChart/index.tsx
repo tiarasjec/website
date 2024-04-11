@@ -6,6 +6,7 @@ import { initTasks, getStartEndDateForProject } from "../../lib/helpers";
 import { Drawer } from 'antd';
 import SingleTaskView from "./components/SingleTaskView";
 import { DownOutlined } from '@ant-design/icons';
+import { Button } from '../ui/button';
 
 const GanttChart: React.FC = () => {
 
@@ -73,27 +74,24 @@ const GanttChart: React.FC = () => {
 
     return (
         <div>
-            <div style={containerStyle}>
+            <div className="relative overflow-hidden">
 
                 <div>
-                    <button
+                    <Button
                         onClick={() => setView(ViewMode.Day)}
-                        style={view === ViewMode.Day ? { color: "#ff6632" } : {}}
                     >
                         Day
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                         onClick={() => setView(ViewMode.Week)}
-                        style={view === ViewMode.Week ? { color: "#ff6632" } : {}}
                     >
                         Week
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                         onClick={() => setView(ViewMode.Month)}
-                        style={view === ViewMode.Month ? { color: "#ff6632" } : {}}
                     >
                         Month
-                    </button>
+                    </Button>
                 </div>
 
                 <Gantt
