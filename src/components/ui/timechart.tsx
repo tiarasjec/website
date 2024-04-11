@@ -2,7 +2,7 @@ import React from "react";
 
 const timechart = () => {
   return (
-    <div className=" w-full h-fit items-center space-y-3">
+    <div className=" w-full h-fit items-center space-y-3 bg-blue-500">
       <div className="relative w-full h-fit flex items-center font-staat">
         <div className="absolute h-0.5 w-full bg-primary rounded-full" />
         <div className="relative h-12 w-1/6 ml-2 bg-secondary rounded-full flex items-center">
