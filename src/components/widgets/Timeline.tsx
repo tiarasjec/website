@@ -4,7 +4,7 @@ import Timechart from "@/components/ui/timechart";
 const Timeline = () => {
   return (
     <div className="w-full h-fit">
-      <div className="flex">
+      <div className="flex justify-center">
         <div className="font-tiara text-7xl">
           <span className="text-tiara_red">T</span>iara{" "}
           <span className="text-tiara_red">{"'"}</span>24{" "}
@@ -21,7 +21,7 @@ const Timeline = () => {
           </button>
         </div>
       </div>
-      <div className="mt-3 h-10 w-full flex pt-3">
+      <div className="mt-3 h-fit w-full flex pt-3">
         <Timechart/>
       </div>
     </div>
