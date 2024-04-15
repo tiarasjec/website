@@ -22,6 +22,12 @@ const nextConfig = {
         hostname: "aceternity.com",
         port: "",
         pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "http.cat",
+        port: "",
+        pathname: "/**",
       }
     ],
   },
