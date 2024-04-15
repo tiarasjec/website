@@ -62,6 +62,7 @@ model Event {
   id          String    @id @default(cuid())
   name        String
   description String
+  rules       String
   date        DateTime
   location    String
   image       String

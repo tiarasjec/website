@@ -11,51 +11,47 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 
 export const columns: ColumnDef<Event>[] = [
   {
-    header: () => <div className="text-right">Amount</div>,
+    header: "Name",
     accessorKey: "name",
   },
   {
-    header: () => <div className="text-right">Date</div>,
+    header: "Date",
     accessorKey: "date",
+    cell: ({ row }) => {
+      const { original } = row;
+      return (
+        <div>
+          {new Date(original.date).toLocaleString("en-US", {
+            month: "numeric",
+            day: "2-digit",
+            year: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            hour12: true,
+          })}
+        </div>
+      );
+    },
   },
   {
-    header: () => <div className="text-right">Location</div>,
+    header: "Location",
     accessorKey: "location",
   },
   {
-    header: () => <div className="text-right">Description</div>,
-    accessorKey: "description",
-  },
-  {
-    header: () => <div className="text-right">Actions</div>,
-    accessorKey: "actions",
-    id: "actions",
+    header: "Edit Event",
+    accessorKey: "",
+    id: "edit",
     cell: ({ row }) => {
-      const payment = row.original;
-
+      const { original } = row;
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <Button asChild>
+          <Link href={`/organizer/events/${original.id}`}>Edit Event</Link>
+        </Button>
       );
     },
   },
