@@ -16,6 +16,9 @@ COPY . .
 ARG AUTH_SECRET="txxx#12"
 ENV AUTH_SECRET=$AUTH_SECRET
 
+# Prisma setup
+RUN npx prisma generate
+
 # Build the Next.js app
 RUN npm run build
 
