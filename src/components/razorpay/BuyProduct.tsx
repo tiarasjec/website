@@ -9,26 +9,36 @@ declare global {
   }
 }
 
+export interface makePaymentProps {
+  productId: string | null;
+  productName: string;
+  description: string;
+  prefillData: {
+    name: string;
+    email: string;
+    contact: string;
+  };
+}
+
 const BuyProduct = () => {
   const router = useRouter();
 
-  const makePayment = async ({ productId = null }) => {
+  const makePayment = async ({ productId = null, productName, description, prefillData }: makePaymentProps) => {
     const key = process.env.RAZORPAY_API_KEY;
-    console.log(key);
     const data = await fetch("/api/razorpay");
     const { order } = await data.json();
     console.log(order.id);
     const options = {
       key: key,
-      name: "Joywin Bennis",
+      name: productName,
       currency: order.currency,
       amount: order.amount,
       order_id: order.id,
-      description: "Tiara Registration Fee",
+      description: description,
       prefill: {
-        name: "Lord Joywin",
-        email: "joywinbennis@gmail.com",
-        contact: "9354536067",
+        name: prefillData.name,
+        email: prefillData.email,
+        contact: prefillData.contact,
       },
     };
 
