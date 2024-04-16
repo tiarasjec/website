@@ -22,20 +22,12 @@ const NavItems: NavItem[] = [
     href: "/events",
   },
   {
-    label: "Schedule",
-    href: "/schedule",
-  },
-  {
     label: "Team",
     href: "/team",
   },
   {
-    label: "Gallery",
-    href: "/gallery",
-  },
-  {
     label: "About",
-    href: "#about",
+    href: "/about",
   },
 ];
 
@@ -96,7 +88,7 @@ export function Header() {
         {session ? (
           <Button onClick={() => signOut()}>Logout</Button>
         ) : (
-          <Button onClick={() => signIn("google")}>Login</Button>
+          <Button onClick={() => signIn("google")}>Register</Button>
         )}
       </div>
     </header>
