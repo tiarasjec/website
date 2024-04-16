@@ -3,8 +3,6 @@ import Lenis from "@/components/shared/lenis";
 import { HeroParallax } from "@/components/widgets/Hero";
 import { StarsCanvas } from "@/components/ui/Stars";
 import { useEffect, useState } from "react";
-import Buy from "@/components/razorpay/Buy";
-import BuyProduct from "@/components/razorpay/BuyProduct";
 
 export default function Home() {
   const [images, setImages] = useState<{ src: string; alt: string }[]>([]);
