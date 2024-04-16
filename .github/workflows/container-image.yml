@@ -64,3 +64,10 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          secret-envs: |
+            AUTH_SECRET: "test_auth"
+            AUTH_GOOGLE_ID: "test_gid"
+            AUTH_GOOGLE_SECRET: "test_gsecret"
+            DATABASE_URL: "test_db_url"
+            RAZORPAY_KEY: "test_key"
+            RAZORPAY_SECRET: "test_secret"

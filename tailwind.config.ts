@@ -12,6 +12,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "node_modules/preline/dist/*.js",
   ],
   prefix: "",
   theme: {
@@ -19,7 +20,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         tiara: ["Tiara", "sans-serif"],
-        staat:["Staat","sans-serif"]
+        staat: ["Staat", "sans-serif"],
       },
       colors: {
         tiara_red: "#EB1C2C",
@@ -89,7 +90,12 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), addVariablesForColors],
+  plugins: [
+    require("tailwindcss-animate"),
+    addVariablesForColors,
+    require("@tailwindcss/forms"),
+    require("preline/plugin"),
+  ],
 } satisfies Config;
 
 function addVariablesForColors({ addBase, theme }: any) {

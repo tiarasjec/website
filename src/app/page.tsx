@@ -1,7 +1,6 @@
 "use client";
 import Lenis from "@/components/shared/lenis";
 import { HeroParallax } from "@/components/widgets/Hero";
-import { About } from "@/components/widgets/about";
 import { StarsCanvas } from "@/components/ui/Stars";
 import { useEffect, useState } from "react";
 import Buy from "@/components/razorpay/Buy";
@@ -23,7 +22,6 @@ export default function Home() {
         <StarsCanvas />
         <HeroParallax images={images} />
       </Lenis>
-      <About />
     </main>
   );
 }

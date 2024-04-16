@@ -45,6 +45,7 @@
     "next": "^14.1.4",
     "next-auth": "^5.0.0-beta.16",
     "razorpay": "^2.9.2",
+    "preline": "^2.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
@@ -58,6 +59,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
+    "@tailwindcss/forms": "^0.5.7",
     "@types/node": "^20",
     "@types/react": "^18.2.76",
     "@types/react-dom": "^18",
