@@ -96,7 +96,7 @@ const Register: React.FC = () => {
         <CardHeader className="flex flex-row items-start bg-muted/50">
           <div className="grid gap-0.5">
             <CardTitle className="group flex items-center gap-2 text-lg">
-              <span className="font-tiara">Ti<span className="text-red-500">ar</span>a' 24</span> Event Registration
+              <span className="font-tiara">Ti<span className="text-red-500">ar</span>a{"'"} 24</span> Event Registration
             </CardTitle>
             <CardDescription>
               Your name and email are pre-filled from your Google account.
