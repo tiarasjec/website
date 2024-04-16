@@ -1,13 +1,17 @@
 "use client";
 import { makePayment } from "@/lib/utils";
 import React, { useState } from "react";
+import {Button} from "@/components/ui/button";
 
-const Buy: React.FC = () => {
+interface Props {
+  makePayment: (productId: object) => void;
+}
+
+const Buy: React.FC<Props> = ({ makePayment }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    // Below is the button that will trigger the payment process
-      <button
+      <Button
         onClick={() => {
           makePayment({
             productId: null,
@@ -21,12 +25,12 @@ const Buy: React.FC = () => {
           });
         }}
         disabled={isLoading}
-        className={`bg-blue-500 text-white font-semibold mt-20 py-2 px-4 rounded ${
+        className={` font-semibold mt-20 py-2 px-4 rounded ${
           isLoading ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
         {isLoading ? "Processing..." : "Buy Now"}
-      </button>
+      </Button>
   );
 };
 

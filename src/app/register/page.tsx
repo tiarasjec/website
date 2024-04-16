@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Checkout from "@/components/ui/checkout";
 
 interface Event {
   name: string;
@@ -36,23 +37,22 @@ const Checkbox: React.FC<CheckboxProps> = ({
 };
 
 const events: Event[] = [
-  { name: "SyncLine Sprint", key: "syncLineSprint", amount: 30 },
-  { name: "DirtDash RC", key: "dirtDashRC", amount: 330 },
-  { name: "BlitzBot Soccer", key: "blitzBotSoccer", amount: 220 },
-  { name: "RoboClash", key: "roboClash", amount: 220 },
-  { name: "ONE PIECE", key: "onePiece", amount: 330 },
-  { name: "ZenFlow", key: "zenFlow", amount: 220 },
-  { name: "TYPING TITANS", key: "typingTitans", amount: 110 },
-  { name: "HYDROBLAST", key: "hydroBlast", amount: 340 },
-  { name: "Drone Clash", key: "droneClash", amount: 110 },
-  { name: "BUSINESS BAY", key: "businessBay", amount: 1120 },
-  { name: "BLACK MIRROR", key: "blackMirror", amount: 220 },
-  { name: "CADventures", key: "cadventures", amount: 10 },
+  { name: "SyncLine Sprint", key: "syncLineSprint", amount: 5 },
+  { name: "DirtDash RC", key: "dirtDashRC", amount: 10 },
+  { name: "BlitzBot Soccer", key: "blitzBotSoccer", amount: 15 },
+  { name: "RoboClash", key: "roboClash", amount: 20 },
+  { name: "ONE PIECE", key: "onePiece", amount: 25 },
+  { name: "ZenFlow", key: "zenFlow", amount: 30 },
+  { name: "TYPING TITANS", key: "typingTitans", amount: 35 },
+  { name: "HYDROBLAST", key: "hydroBlast", amount: 40 },
+  { name: "Drone Clash", key: "droneClash", amount: 45 },
+  { name: "BUSINESS BAY", key: "businessBay", amount: 50 },
+  { name: "BLACK MIRROR", key: "blackMirror", amount: 55 },
+  { name: "CADventures", key: "cadventures", amount: 60 },
 ];
 
 const Register: React.FC = () => {
   const [checkedItems, setCheckedItems] = useState<CheckedItem[]>([]);
-  const [amount, setAmount] = useState<number>(0);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const key = event.target.value;
@@ -90,20 +90,9 @@ const Register: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="w-1/3 border rounded-sm border-gray-600">
-        {checkedItems.map((item) => (
-          <div
-            className="flex justify-between items-center p-4 mb-2"
-            key={item.key}
-          >
-            <p>{item.name}</p>
-            <p>{item.amount}</p>
-          </div>
-        ))}
-        <div className="absolute bottom-2">
-          Total amount: {sumOfCheckedItemsAmount}
-        </div>
-      </div>
+      <Checkout 
+        checkedItems={checkedItems}
+        sumOfCheckedItemsAmount={sumOfCheckedItemsAmount} />
     </div>
   );
 };
