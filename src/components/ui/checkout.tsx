@@ -53,7 +53,7 @@ export default function Checkout({
           <h1 className="text-lg font-semibold">Events summary</h1>
           {checkedItems.length > 0 ? <ul className="grid gap-3">
             {checkedItems.map((item) => (
-              <li className="flex items-center justify-between">
+              <li className="flex items-center justify-between" key={item.key}>
                 <span className="text-muted-foreground">{item.name}</span>
                 <span>
                   {"\u20B9"}
