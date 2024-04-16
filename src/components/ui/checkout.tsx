@@ -16,16 +16,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
-import BuyProduct from "../razorpay/BuyProduct";
+import { Input } from "@/components/ui/input";
 import Buy from "../razorpay/Buy";
+import { Suspense } from "react";
+import React from "react";
+import { useSession } from "next-auth/react";
+import { Label } from "./label";
 
 interface Event {
   name: string;
@@ -44,48 +41,49 @@ export default function Checkout({
   checkedItems: CheckedItem[];
   sumOfCheckedItemsAmount: number;
 }) {
+  const [phoneNumber, setPhoneNumber] = React.useState("+91");
+  const session = useSession({
+    required: true,
+  });
   return (
     <Card className="overflow-hidden">
       <CardHeader className="flex flex-row items-start bg-muted/50">
         <div className="grid gap-0.5">
           <CardTitle className="group flex items-center gap-2 text-lg">
-            Order Oe31b70H
-            <Button
-              size="icon"
-              variant="outline"
-              className="h-6 w-6 opacity-0 transition-opacity group-hover:opacity-100"
-            >
-              <Copy className="h-3 w-3" />
-              <span className="sr-only">Copy Order ID</span>
-            </Button>
+            Event Registration
           </CardTitle>
-          <CardDescription>Tiara registration</CardDescription>
-        </div>
-        <div className="ml-auto flex items-center gap-1">
-          <Button size="sm" variant="outline" className="h-8 gap-1">
-            <Truck className="h-3.5 w-3.5" />
-            <span className="lg:sr-only xl:not-sr-only xl:whitespace-nowrap">
-              Track Order
-            </span>
-          </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button size="icon" variant="outline" className="h-8 w-8">
-                <MoreVertical className="h-3.5 w-3.5" />
-                <span className="sr-only">More</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem>Edit</DropdownMenuItem>
-              <DropdownMenuItem>Export</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Trash</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <CardDescription>Registration for Tiara 2024 events</CardDescription>
         </div>
       </CardHeader>
       <CardContent className="p-6 text-sm">
         <div className="grid gap-3">
+          <Label htmlFor="name">Name</Label>
+          <Input
+            type="text"
+            id="name"
+            aria-label="Name"
+            placeholder="Name"
+            value={session.data?.user?.name!}
+            disabled
+          />
+          <Label htmlFor="email">Email</Label>
+          <Input
+            type="email"
+            id="email"
+            aria-label="Email"
+            placeholder="Email"
+            value={session.data?.user?.email!}
+            disabled
+          />
+          <Label htmlFor="phone">Phone Number</Label>
+          <Input
+            type="tel"
+            id="phone"
+            aria-label="Phone number"
+            placeholder="Phone number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
           <div className="font-semibold">Order Details</div>
           <ul className="grid gap-3">
             {checkedItems.map((item) => (
@@ -108,12 +106,9 @@ export default function Checkout({
               </span>
             </li>
           </ul>
-          <BuyProduct
-            name={"Joywin"}
-            email={"a@b.com"}
-            contact={"1234567890"}
-            amount={sumOfCheckedItemsAmount}
-          />
+          <Suspense fallback={null}>
+            <Buy name={session.data?.user?.name!} email={session.data?.user?.email!} contact={phoneNumber} amount={sumOfCheckedItemsAmount} />
+          </Suspense>
         </div>
       </CardContent>
     </Card>
