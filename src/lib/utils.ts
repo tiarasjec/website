@@ -21,6 +21,7 @@ export interface makePaymentProps {
   productId: string | null;
   productName: string;
   description: string;
+  amount: number;
   prefillData: {
     name: string;
     email: string;
@@ -33,16 +34,23 @@ export const makePayment = async ({
   productName,
   description,
   prefillData,
+  amount,
 }: makePaymentProps) => {
   const key = process.env.RAZORPAY_API_KEY;
-  const data = await fetch("/api/razorpay");
-  const { order } = await data.json();
+  const response = await fetch("/api/razorpay", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json", // Assuming the API expects JSON
+    },
+    body: JSON.stringify({ amount }), // Pass amount as a parameter in the request body
+  });
+  const { order } = await response.json();
   console.log(order.id);
   const options = {
     key: key,
     name: productName,
     currency: order.currency,
-    amount: order.amount,
+    amount: amount,
     order_id: order.id,
     description: description,
     prefill: {

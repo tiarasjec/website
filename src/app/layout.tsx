@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
 import Script from "next/script";
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -43,6 +44,7 @@ export default function RootLayout({
             <Header />
             {children}
           </div>
+          <Toaster />
         </body>
       </html>
       <Script src="https://checkout.razorpay.com/v1/checkout.js" />
