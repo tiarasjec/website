@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import Razorpay from "razorpay";
 import shortid from "shortid";
 
-const instance = new Razorpay({
+const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY as string,
   key_secret: process.env.RAZORPAY_SECRET as string,
 });
@@ -23,6 +23,7 @@ export async function POST(req: Request) {
       productId: "P100",
     },
   };
-  const order = await instance.orders.create(options);
-  return NextResponse.json({ msg: "success", order });
+  const order = await razorpay.orders.create(options);
+  console.log(order);
+  return NextResponse.json({ orderId: order.id }, { status: 200 });
 }

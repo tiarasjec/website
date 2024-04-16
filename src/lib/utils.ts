@@ -1,4 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
+import { redirect } from "next/dist/server/api-utils";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -44,26 +45,45 @@ export const makePayment = async ({
     },
     body: JSON.stringify({ amount }), // Pass amount as a parameter in the request body
   });
-  const { order } = await response.json();
-  console.log(order.id);
+  const { orderId } = await response.json();
   const options = {
     key: key,
     name: productName,
-    currency: order.currency,
+    currency: "INR",
     amount: amount,
-    order_id: order.id,
+    order_id: orderId,
     description: description,
     prefill: {
       name: prefillData.name,
       email: prefillData.email,
       contact: prefillData.contact,
     },
+    handler: async function (response: any) {
+      const data = {
+        orderCreationId: orderId,
+        razorpayPaymentId: response.razorpay_payment_id,
+        razorpayOrderId: response.razorpay_order_id,
+        razorpaySignature: response.razorpay_signature,
+       };
+  
+       const result = await fetch('/api/razorpay/verify', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' },
+       });
+       const res = await result.json();
+       if (res.isOk) alert("payment succeed");
+       else {
+        alert(res.message);
+       }
+    },
   };
-
+  
   const paymentObject = new window.Razorpay(options);
+  
+  paymentObject.on("payment.failed", function (response: any) {
+    alert("Payment failed. Please try again. Contact support for help"+response.error.description);
+  });
   paymentObject.open();
 
-  paymentObject.on("payment.failed", function (response: any) {
-    alert("Payment failed. Please try again. Contact support for help");
-  });
 };
