@@ -15,7 +15,7 @@ const BuyProduct = () => {
   const makePayment = async ({ productId = null }) => {
     const key = process.env.RAZORPAY_API_KEY;
     console.log(key);
-    const data = await fetch("http://localhost:3000/api/razorpay");
+    const data = await fetch("/api/razorpay");
     const { order } = await data.json();
     console.log(order.id);
     const options = {
