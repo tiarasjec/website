@@ -19,5 +19,6 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
       POSTGRES_DB: test_db
+      # DATABASE_URL: postgres://user:password@db:5432/test_db
     ports:
       - "5432:5432"
