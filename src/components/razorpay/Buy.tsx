@@ -2,6 +2,7 @@
 import { makePayment } from "@/lib/utils";
 import React, { useState } from "react";
 import {Button} from "@/components/ui/button";
+import { set } from "react-hook-form";
 
 interface Props {
   makePayment: (productId: object) => void;
@@ -25,7 +26,7 @@ const Buy = (userData: {
   return (
       <Button
         onClick={() => {
-          console.log(userData);
+          setIsLoading(true);
           makePayment({
             productId: null,
             productName: "Tiara Registration",
@@ -43,7 +44,7 @@ const Buy = (userData: {
           isLoading ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
-        {isLoading ? "Processing..." : "Buy Now"}
+        {isLoading ? "Processing..." : "Pay Now"}
       </Button>
   );
 };

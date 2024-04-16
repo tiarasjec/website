@@ -2,6 +2,15 @@
 import React, { useState } from "react";
 import Checkout from "@/components/ui/checkout";
 import { signIn, useSession } from "next-auth/react";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 
 interface Event {
   name: string;
@@ -56,11 +65,12 @@ const Register: React.FC = () => {
   const session = useSession({
     required: true,
     onUnauthenticated: async () => {
-      await signIn('google');
+      await signIn("google");
     },
   });
 
   const [checkedItems, setCheckedItems] = useState<CheckedItem[]>([]);
+  const [phoneNumber, setPhoneNumber] = React.useState("+91");
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const key = event.target.value;
@@ -81,26 +91,70 @@ const Register: React.FC = () => {
   );
 
   return (
-    <div className="flex">
-      <div className="w-1/3 border rounded-sm border-gray-600">
+    <div className="flex flex-col sm:flex-row w-full items-start justify-center gap-4 p-2">
+      <Card className="w-full max-w-xl">
+        <CardHeader className="flex flex-row items-start bg-muted/50">
+          <div className="grid gap-0.5">
+            <CardTitle className="group flex items-center gap-2 text-lg">
+              Tiara 2024 Event Registration
+            </CardTitle>
+            <CardDescription>
+              Your name and email are pre-filled from your Google account.
+              <br /> Select the events you want to participate in and complete
+              the payment.
+            </CardDescription>
+          </div>
+        </CardHeader>
+        <div className="p-4">
+          <Label htmlFor="name">Name</Label>
+          <Input
+            type="text"
+            id="name"
+            aria-label="Name"
+            placeholder="Name"
+            value={session.data?.user?.name!}
+            disabled
+          />
+          <Label htmlFor="email">Email</Label>
+          <Input
+            type="email"
+            id="email"
+            aria-label="Email"
+            placeholder="Email"
+            value={session.data?.user?.email!}
+            disabled
+          />
+          <Label htmlFor="phone">Phone Number</Label>
+          <Input
+            type="tel"
+            id="phone"
+            aria-label="Phone number"
+            placeholder="Phone number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+        </div>
+        <Separator className="my-2" />
         {events.map((event) => (
           <div
             key={event.key}
             className="flex justify-between items-center p-4 mb-2"
           >
-            <span className="mr-4">{event.name}</span>
+            <Label className="mr-2">{event.name}</Label>
             <Checkbox
-              className="w-4 h-4"
+              className="w-6 h-6 rounded-full"
               value={event.key}
               checked={checkedItems.some((item) => item.key === event.key)}
               onChange={handleCheckboxChange}
             />
           </div>
         ))}
-      </div>
-      <Checkout 
+      </Card>
+      <Checkout
         checkedItems={checkedItems}
-        sumOfCheckedItemsAmount={sumOfCheckedItemsAmount} />
+        sumOfCheckedItemsAmount={sumOfCheckedItemsAmount}
+        phoneNumber={phoneNumber}
+      />
     </div>
   );
 };

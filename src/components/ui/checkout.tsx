@@ -37,55 +37,21 @@ interface CheckedItem extends Event {
 export default function Checkout({
   checkedItems,
   sumOfCheckedItemsAmount,
+  phoneNumber,
 }: {
   checkedItems: CheckedItem[];
   sumOfCheckedItemsAmount: number;
+  phoneNumber: string;
 }) {
-  const [phoneNumber, setPhoneNumber] = React.useState("+91");
   const session = useSession({
     required: true,
   });
   return (
-    <Card className="overflow-hidden">
-      <CardHeader className="flex flex-row items-start bg-muted/50">
-        <div className="grid gap-0.5">
-          <CardTitle className="group flex items-center gap-2 text-lg">
-            Event Registration
-          </CardTitle>
-          <CardDescription>Registration for Tiara 2024 events</CardDescription>
-        </div>
-      </CardHeader>
+    <Card className="overflow-hidden w-full max-w-lg">
       <CardContent className="p-6 text-sm">
         <div className="grid gap-3">
-          <Label htmlFor="name">Name</Label>
-          <Input
-            type="text"
-            id="name"
-            aria-label="Name"
-            placeholder="Name"
-            value={session.data?.user?.name!}
-            disabled
-          />
-          <Label htmlFor="email">Email</Label>
-          <Input
-            type="email"
-            id="email"
-            aria-label="Email"
-            placeholder="Email"
-            value={session.data?.user?.email!}
-            disabled
-          />
-          <Label htmlFor="phone">Phone Number</Label>
-          <Input
-            type="tel"
-            id="phone"
-            aria-label="Phone number"
-            placeholder="Phone number"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          />
-          <div className="font-semibold">Order Details</div>
-          <ul className="grid gap-3">
+          <h1 className="text-lg font-semibold">Events summary</h1>
+          {checkedItems.length > 0 ? <ul className="grid gap-3">
             {checkedItems.map((item) => (
               <li className="flex items-center justify-between">
                 <span className="text-muted-foreground">{item.name}</span>
@@ -95,7 +61,7 @@ export default function Checkout({
                 </span>
               </li>
             ))}
-          </ul>
+          </ul> : <p className="text-muted-foreground">No events selected</p>}
           <Separator className="my-2" />
           <ul className="grid gap-3">
             <li className="flex items-center justify-between font-semibold">
@@ -107,7 +73,12 @@ export default function Checkout({
             </li>
           </ul>
           <Suspense fallback={null}>
-            <Buy name={session.data?.user?.name!} email={session.data?.user?.email!} contact={phoneNumber} amount={sumOfCheckedItemsAmount} />
+            <Buy
+              name={session.data?.user?.name!}
+              email={session.data?.user?.email!}
+              contact={phoneNumber}
+              amount={sumOfCheckedItemsAmount}
+            />
           </Suspense>
         </div>
       </CardContent>
