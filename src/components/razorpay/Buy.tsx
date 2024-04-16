@@ -10,6 +10,7 @@ const Buy: React.FC<Props> = ({ makePayment }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
+    // Below is the button that will trigger the payment process
       <button
         onClick={() => {
           makePayment({
