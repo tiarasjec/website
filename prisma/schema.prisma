@@ -14,15 +14,14 @@ enum PaymentStatus {
 }
 
 model Payment {
-  id         String        @id @default(cuid())
-  payment_id String
-  order_id   String
-  signature  String
-  status     PaymentStatus @default(PENDING)
-  created_at DateTime      @default(now())
-  updated_at DateTime      @updatedAt
-  user       User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId     String        @map("user_id")
+  razorpayPaymentId String        @id
+  orderCreationId   String
+  signature         String?
+  status            PaymentStatus @default(PENDING)
+  created_at        DateTime      @default(now())
+  updated_at        DateTime      @updatedAt
+  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId            String        @map("user_id")
 
   @@index([userId])
   @@map("payments")

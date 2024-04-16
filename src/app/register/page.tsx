@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Checkout from "@/components/ui/checkout";
+import { signIn, useSession } from "next-auth/react";
 
 interface Event {
   name: string;
@@ -52,6 +53,13 @@ const events: Event[] = [
 ];
 
 const Register: React.FC = () => {
+  const session = useSession({
+    required: true,
+    onUnauthenticated: async () => {
+      await signIn('google');
+    },
+  });
+
   const [checkedItems, setCheckedItems] = useState<CheckedItem[]>([]);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {

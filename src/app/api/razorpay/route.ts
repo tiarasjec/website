@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import { NextResponse } from "next/server";
 import Razorpay from "razorpay";
 import shortid from "shortid";
@@ -8,6 +9,14 @@ const razorpay = new Razorpay({
 });
 
 export async function POST(req: Request) {
+  const session = await auth();
+
+  if (!session) {
+    return NextResponse.json(
+      { message: "Unauthorized", isOk: false },
+      { status: 401 }
+    );
+  }
   const body = await req.json();
   const payment_capture = 1;
   const amount = body.amount * 100; // amount in paisa. In our case it's INR 1
