@@ -1,12 +1,8 @@
 "use client";
+import { makePayment } from "@/lib/utils";
 import React, { useState } from "react";
-import { makePaymentProps } from "./BuyProduct";
 
-interface Props {
-  makePayment: (props: makePaymentProps) => void;
-}
-
-const Buy: React.FC<Props> = ({ makePayment }) => {
+const Buy: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
