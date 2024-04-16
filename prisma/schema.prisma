@@ -30,9 +30,8 @@ model Payment {
 
 model Faculty {
   id         String   @id @default(cuid())
-  name       String
-  email      String   @unique
-  phone      String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String   @map("user_id")
   events     Event[]
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
@@ -42,9 +41,8 @@ model Faculty {
 
 model Student {
   id         String   @id @default(cuid())
-  name       String
-  email      String   @unique
-  phone      String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String   @map("user_id")
   events     Event[]
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
@@ -112,6 +110,8 @@ model User {
   accounts      Account[]
   sessions      Session[]
   payment       Payment[]
+  faculties     Faculty[]
+  students      Student[]
 
   @@map("users")
 }
