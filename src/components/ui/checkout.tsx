@@ -91,7 +91,10 @@ export default function Checkout({
             {checkedItems.map((item) => (
               <li className="flex items-center justify-between">
                 <span className="text-muted-foreground">{item.name}</span>
-                <span>{'\u20B9'}{item.amount}</span>
+                <span>
+                  {"\u20B9"}
+                  {item.amount}
+                </span>
               </li>
             ))}
           </ul>
@@ -99,10 +102,18 @@ export default function Checkout({
           <ul className="grid gap-3">
             <li className="flex items-center justify-between font-semibold">
               <span className="text-muted-foreground">Total</span>
-              <span>{'\u20B9'}{sumOfCheckedItemsAmount} /-</span>
+              <span>
+                {"\u20B9"}
+                {sumOfCheckedItemsAmount} /-
+              </span>
             </li>
           </ul>
-          <BuyProduct />
+          <BuyProduct
+            name={"Joywin"}
+            email={"a@b.com"}
+            contact={"1234567890"}
+            amount={sumOfCheckedItemsAmount}
+          />
         </div>
       </CardContent>
     </Card>

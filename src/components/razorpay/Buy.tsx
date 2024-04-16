@@ -7,20 +7,34 @@ interface Props {
   makePayment: (productId: object) => void;
 }
 
-const Buy: React.FC<Props> = ({ makePayment }) => {
+interface UserData {
+  name: string;
+  email: string;
+  contact: string;
+  amount: number;
+}
+
+const Buy = (userData: {
+  amount: number;
+  contact: string;
+  email: string;
+  name: string;
+}) => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
       <Button
         onClick={() => {
+          console.log(userData);
           makePayment({
             productId: null,
-            productName: "Product Name",
+            productName: "Tiara Registration",
             description: "Product Description",
+            amount: userData.amount,
             prefillData: {
-              name: "John Doe",
-              email: "johndoe@email.com",
-              contact: "9876543210",
+              name: userData.name,
+              email: userData.email,
+              contact: userData.contact,
             },
           });
         }}
