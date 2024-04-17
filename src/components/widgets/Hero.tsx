@@ -107,8 +107,8 @@ export const Header = () => {
         }}
         className="font-tiara mt-8 text-center text-5xl md:text-6xl lg:text-9xl"
       >
-        <span className="text-red-500">T</span>iara{" "}
-        <span className="text-red-500">{"'"}</span>24{" "}
+        Ti<span className="text-tiara_red">ar</span>a{" "}
+        <span className="text-tiara_red">{"'"}</span>24{" "}
       </motion.h1>
       <motion.h2
         initial={{ opacity: 0.5, y: 100 }}
@@ -120,7 +120,7 @@ export const Header = () => {
         }}
         className="font-tiara mt-2 text-center text-xl md:text-2xl"
       >
-        explore the <span className="text-red-500">unknown</span>
+        explore the <span className="text-tiara_red">unknown</span>
       </motion.h2>
       <ShiftingCountdown targetDate="05/09/2024" />
     </>

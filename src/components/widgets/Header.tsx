@@ -1,11 +1,12 @@
 "use client";
 import SJECLogo from "@/assets/sjeclogo.png";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
+import { EncryptButton } from "@/components/ui/hover/button";
+import { Item } from "@radix-ui/react-navigation-menu";
 
 interface NavItem {
   label: string;
@@ -14,83 +15,94 @@ interface NavItem {
 
 const NavItems: NavItem[] = [
   {
-    label: "Home",
+    label: "home",
     href: "/",
   },
   {
-    label: "Events",
+    label: "events",
     href: "/events",
   },
   {
-    label: "Team",
+    label: "team",
     href: "/team",
   },
   {
-    label: "About",
+    label: "about",
     href: "/about",
+  },
+  {
+    label: "rulebook",
+    href: "/rulebook",
   },
 ];
 
 export function Header() {
   const { data: session } = useSession();
   return (
-    <header className="z-50 sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-      <Link
-        href="/"
-        className="flex items-center gap-2 text-lg font-semibold md:text-base"
-      >
-        <Image src={SJECLogo} alt="SJEC Logo" width={100} height={100} />
-        <span className="sr-only">Tiara 2024</span>
-      </Link>
-      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-        {NavItems.map((item) => (
-          <Link
-            key={item.label}
-            href={item.href}
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            {item.label}
-          </Link>
-        ))}
-      </nav>
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="shrink-0 md:hidden">
-            <Menu className="h-5 w-5" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="left">
-          <nav className="grid gap-6 text-lg font-medium">
-            <Link
-              href="#"
-              className="flex items-center gap-2 text-lg font-semibold"
-            >
-              <Image src={SJECLogo} alt="SJEC Logo" width={50} height={50} />
-              <span className="sr-only">Tiara 2024</span>
+    <>
+      <header className="flex sticky top-0 flex-wrap md:justify-center md:flex-nowrap z-50 w-full justify-center text-sm">
+        <nav
+          className="mt-6 relative max-w-[70rem] w-full shadow backdrop-blur-2xl bg-white bg-opacity-10 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-center md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-neutral-800 dark:border-neutral-700"
+          aria-label="Global"
+        >
+          <div className="flex items-center justify-between">
+            <Link href="/">
+              <Image src={SJECLogo} alt="SJEC Logo" width={70} />
             </Link>
-            {NavItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-muted-foreground transition-colors hover:text-foreground"
+            <div className="md:hidden">
+              <Button
+                type="button"
+                size={"icon"}
+                variant={"secondary"}
+                className="hs-collapse-toggle rounded-2xl shadow"
+                data-hs-collapse="#navbar-collapse-with-animation"
+                aria-controls="navbar-collapse-with-animation"
+                aria-label="Toggle navigation"
               >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </SheetContent>
-      </Sheet>
-      <div className="flex w-full justify-end items-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
-        <Button asChild variant={"secondary"}>
-          <Link href="/rulebook">Rulebook</Link>
-        </Button>
-        {session ? (
-          <Button onClick={() => signOut()}>Logout</Button>
-        ) : (
-          <Button onClick={() => signIn("google")}>Register</Button>
-        )}
-      </div>
-    </header>
+                <HamburgerMenuIcon className="hs-collapse-open:hidden flex-shrink-0 size-4" />
+                <Cross1Icon className="hs-collapse-open:block hidden flex-shrink-0 size-4" />
+              </Button>
+            </div>
+          </div>
+          <div
+            id="navbar-collapse-with-animation"
+            className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
+          >
+            <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
+              {NavItems.map((navItem, i) => (
+                //  Using a tag because <Link> wouldn't close the navbar after switch
+                <a
+                  key={i}
+                  href={navItem.href}
+                  className="font-tiara tracking-widest"
+                >
+                  {navItem.label}
+                </a>
+              ))}
+              {session && session.user ? (
+                <a
+                  className="flex items-center gap-x-2 md:border-s md:border-zinc-600 font-medium md:my-6 md:ps-6"
+                  onClick={() => signOut()}
+                >
+                  <EncryptButton targetText="logout" />
+                </a>
+              ) : (
+                <a
+                  className="flex items-center gap-x-2 md:border-s md:border-zinc-600 font-medium md:my-6 md:ps-6"
+                  onClick={() =>
+                    signIn("google", {
+                      callbackUrl: "/events",
+                      redirect: true,
+                    })
+                  }
+                >
+                  <EncryptButton targetText="register now!" />
+                </a>
+              )}
+            </div>
+          </div>
+        </nav>
+      </header>
+    </>
   );
 }
