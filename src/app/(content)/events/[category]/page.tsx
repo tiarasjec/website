@@ -1,30 +1,64 @@
 "use client";
-import CategoryDisplay from "@/components/widgets/CategoryDisplay";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation"; // Import usePathname from next/navigation
 import EventDisplay from "@/components/widgets/EventDisplay";
-import React from "react";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+
+interface Event {
+  name: string;
+  description: string;
+  rules: string;
+  prerequisites: string;
+  thumbnail: string;
+  startTime: string;
+  endTime: string;
+  facultyCoordinators: {
+    name: string;
+    phone: string;
+  }[];
+  studentCoordinators: {
+    name: string;
+    phone: string;
+  }[];
+}
 
 export default function EventsPage() {
+  const [events, setEvents] = useState<Event[]>([]);
+  const pathname = usePathname(); // Use usePathname instead of useRouter
+  const [category,setCategory] = useState("");
+
+  useEffect(() => {
+    setCategory(pathname.split("/").pop()|| ""); // Extract category from pathname
+    fetch(`/api/events/${category}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const eventsData = data[0].events; // Access the events array from the response
+        setEvents(eventsData); // Set the events array to the state
+      })
+      .catch((error) => console.error("Error fetching events:", error));
+  }, [pathname]);
+  
+  useEffect(() => {
+  }, [events]);
+  
+
   return (
-    <>
-      <div className="w-maxPage h-fit ">
-        <div className="flex justify-center items-center pt-5 z-50">
-          <div className="text-8xl font-tiara  w-fit">
-            Ti<span className="text-tiara_red">ar</span>a{" "}
-            <span className="text-tiara_red">{"'"}</span>24
-          </div>
+    <div className="w-maxPage h-fit">
+      <div className="flex justify-center items-center pt-5 z-50">
+        <div className="text-8xl font-tiara w-fit">
+          Ti<span className="text-tiara_red">ar</span>a{" "}
+          <span className="text-tiara_red">{'"'}</span>24
         </div>
-        <div className="w-full flex justify-center">
-          <p className="font-staat text-2xl">Explore the <span className="text-tiara_red">Unknown</span></p> {/* Moved below */}
-        </div>
-        <div className="w-maxPage flex justify-center items-center mt-10 z-50">
-          <EventDisplay/>
-
-        </div>
-        <BackgroundBeams />
       </div>
-
-     
-    </>
+      <div className="w-full flex justify-center">
+        <p className="font-staat text-2xl">
+          Explore the <span className="text-tiara_red">Unknown</span>
+        </p>
+      </div>
+      <div className="w-maxPage flex justify-center items-center mt-10 z-50">
+        <EventDisplay events={events} category={category} />
+      </div>
+      <BackgroundBeams />
+    </div>
   );
 }

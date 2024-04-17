@@ -11,7 +11,6 @@ export default function EventsPage() {
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error fetching categories:", error));
-      console.log(categories);
   }, []);
 
   return (

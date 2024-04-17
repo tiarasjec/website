@@ -1,42 +1,26 @@
 import React from "react";
 import { EventCard } from "../ui/EventCard";
 
-// interface Event {
-//   title: string;
-// }
+interface Event {
+  name: string;
+  description: string;
+}
 
-// interface EventDisplayProps {
-//   categories: Event[];
-// }
+interface EventDisplayProps {
+  events: Event[];
+  category: string;
+}
 
-const EventDisplay = () => {
-return (
-    <>
-        <div className="w-fit  flex flex-wrap justify-center items-center p-4  z-50 gap-y-8 gap-x-12">
-            {/* {categories.map((Event, index) => (
-    <EventCard key={index} Event={Event.title} />
-))} */}
-            <div className="mb-4">
-                <EventCard title="Blitz" description="Some" />
-            </div>
-            <div className="mb-4">
-                <EventCard title="Blitz" description="Some" />
-            </div>
-            <div className="mb-4">
-                <EventCard title="Blitz" description="Some" />
-            </div>
-            <div className="mb-4">
-                <EventCard title="Blitz" description="Some" />
-            </div>
-            <div className="mb-4">
-                <EventCard title="Blitz" description="Some" />
-            </div>
-            <div className="mb-4">
-                <EventCard title="Blitz" description="Some" />
-            </div>
+const EventDisplay: React.FC<EventDisplayProps> = ({ events,category }) => {
+  return (
+    <div className="w-fit flex flex-wrap justify-center items-center p-4 z-50 gap-y-8 gap-x-12">
+      {events.map((event, index) => (
+        <div key={index} className="mb-4">
+          <EventCard name={event.name} description={event.description} category={category} />
         </div>
-    </>
-);
+      ))}
+    </div>
+  );
 };
 
 export default EventDisplay;

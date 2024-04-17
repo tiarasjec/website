@@ -1,6 +1,7 @@
 export async function GET() {
   const event = [
     {
+      id: "1",
       name: "CodeJam",
       description: "A coding competition for enthusiasts",
       rules: ["Rule 1", "Rule 2"],
