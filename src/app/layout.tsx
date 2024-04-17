@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import { Header } from "@/components/widgets/Header";
+import Footer from "@components/widgets/Footer";
 import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
@@ -42,6 +43,7 @@ export default function RootLayout({
           <div className="flex min-h-screen w-full flex-col">
             <Header />
             {children}
+            <Footer/>
           </div>
         </SessionProvider>
         <PrelineScript />
