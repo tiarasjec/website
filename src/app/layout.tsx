@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
-import Script from "next/script";
+import PrelineScript from "@/components/shared/preline";
 import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -35,19 +35,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <SessionProvider>
-      <html lang="en">
-        <body
-          className={cn("bg-background font-sans antialiased", inter.variable)}
-        >
+    <html lang="en">
+      <body
+        className={cn("bg-background font-sans antialiased", inter.variable)}
+      >
+        <SessionProvider>
           <div className="flex min-h-screen w-full flex-col">
             <Header />
             {children}
           </div>
-          <Toaster />
-        </body>
-      </html>
-      <Script src="https://checkout.razorpay.com/v2/checkout.js" />
-    </SessionProvider>
+        </SessionProvider>
+        <PrelineScript />
+        <Toaster />
+      </body>
+    </html>
   );
 }
