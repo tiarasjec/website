@@ -66,14 +66,14 @@ export const makePayment = async ({
         razorpayOrderId: response.razorpay_order_id,
         razorpaySignature: response.razorpay_signature,
        };
-  
+       
        const result = await fetch('/api/razorpay/verify', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: { 'Content-Type': 'application/json' },
        });
        const res = await result.json();
-       if (res.isOk) {alert("payment succeed"); window.location.href = "/"}
+       if (res.isOk) {alert("payment succeed"); window.location.href = "/";}
        else {
         alert(res.message);
        }
