@@ -2,6 +2,7 @@ import { clsx, type ClassValue } from "clsx";
 import { redirect } from "next/dist/server/api-utils";
 import { twMerge } from "tailwind-merge";
 import { useRouter } from "next/navigation";
+import { toast } from "@/components/ui/use-toast";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -65,27 +66,38 @@ export const makePayment = async ({
         razorpayPaymentId: response.razorpay_payment_id,
         razorpayOrderId: response.razorpay_order_id,
         razorpaySignature: response.razorpay_signature,
-       };
-  
-       const result = await fetch('/api/razorpay/verify', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: { 'Content-Type': 'application/json' },
-       });
-       const res = await result.json();
-       if (res.isOk) {alert("payment succeed"); window.location.href = "/"}
-       else {
-        alert(res.message);
-       }
+      };
 
+      const result = await fetch("/api/razorpay/verify", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+      });
+      const res = await result.json();
+      if (res.isOk) {
+        toast({
+          title: "Payment successful",
+          description: "Your payment was successful",
+        })
+        window.location.href = "/";
+      } else {
+        toast({
+          title: "Payment failed",
+          description: "Please try again. Contact support for help. "+res.error,
+          variant: "destructive",
+        });
+      }
     },
   };
-  
+
   const paymentObject = new window.Razorpay(options);
-  
+
   paymentObject.on("payment.failed", function (response: any) {
-    alert("Payment failed. Please try again. Contact support for help"+response.error.description);
+    toast({
+      variant: "destructive",
+      title: "Payment failed",
+      description: "Please try again. Contact support for help. "+response.error.description,
+    });
   });
   paymentObject.open();
-
 };
