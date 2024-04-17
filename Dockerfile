@@ -14,6 +14,14 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
+# Dummy values for the environment variables
+ENV AUTH_SECRET="adf"
+ENV AUTH_GOOGLE_ID="adf"
+ENV AUTH_GOOGLE_SECRET="adf"
+ENV DATABASE_URL="postgres://user:password@db:5432/test_db"
+ENV RAZORPAY_KEY="adf"
+ENV RAZORPAY_SECRET="adf"
+
 RUN npx prisma generate
 
 RUN npm run build
@@ -23,14 +31,6 @@ WORKDIR /app
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
-
-# Dummy values for the environment variables
-ENV AUTH_SECRET="adf"
-ENV AUTH_GOOGLE_ID="adf"
-ENV AUTH_GOOGLE_SECRET="adf"
-ENV DATABASE_URL="postgres://user:password@db:5432/test_db"
-ENV RAZORPAY_KEY="adf"
-ENV RAZORPAY_SECRET="adf"
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
