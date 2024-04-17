@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { redirect } from "next/dist/server/api-utils";
 import { twMerge } from "tailwind-merge";
+import { useRouter } from "next/navigation";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -72,10 +73,11 @@ export const makePayment = async ({
         headers: { 'Content-Type': 'application/json' },
        });
        const res = await result.json();
-       if (res.isOk) alert("payment succeed");
+       if (res.isOk) {alert("payment succeed"); window.location.href = "/"}
        else {
         alert(res.message);
        }
+
     },
   };
   

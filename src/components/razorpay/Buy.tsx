@@ -3,6 +3,7 @@ import { makePayment } from "@/lib/utils";
 import React, { useState } from "react";
 import {Button} from "@/components/ui/button";
 import { set } from "react-hook-form";
+import { useRouter } from "next/navigation";
 
 interface Props {
   makePayment: (productId: object) => void;
@@ -22,6 +23,7 @@ const Buy = (userData: {
   name: string;
 }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   return (
       <Button
@@ -37,7 +39,8 @@ const Buy = (userData: {
               email: userData.email,
               contact: userData.contact,
             },
-          });
+          }
+        );
         }}
         disabled={(userData.amount === 0 || isLoading) ? true : false}
         className={` font-semibold py-2 px-4 rounded ${
