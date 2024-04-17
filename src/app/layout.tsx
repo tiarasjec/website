@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
+import PrelineScript from "@/components/shared/preline";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -33,17 +34,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <SessionProvider>
-      <html lang="en">
-        <body
-          className={cn("bg-background font-sans antialiased", inter.variable)}
-        >
+    <html lang="en">
+      <body
+        className={cn("bg-background font-sans antialiased", inter.variable)}
+      >
+        <SessionProvider>
           <div className="flex min-h-screen w-full flex-col">
             <Header />
             {children}
           </div>
-        </body>
-      </html>
-    </SessionProvider>
+        </SessionProvider>
+        <PrelineScript />
+      </body>
+    </html>
   );
 }
