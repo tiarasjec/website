@@ -25,10 +25,10 @@ interface Event {
 export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([]);
   const pathname = usePathname(); // Use usePathname instead of useRouter
-  const [category,setCategory] = useState("");
+  const [category, setCategory] = useState("");
 
   useEffect(() => {
-    setCategory(pathname.split("/").pop()|| ""); // Extract category from pathname
+    setCategory(pathname.split("/").pop() || ""); // Extract category from pathname
     fetch(`/api/events/${category}`)
       .then((response) => response.json())
       .then((data) => {
@@ -37,25 +37,23 @@ export default function EventsPage() {
       })
       .catch((error) => console.error("Error fetching events:", error));
   }, [pathname]);
-  
-  useEffect(() => {
-  }, [events]);
-  
+
+  useEffect(() => {}, [events]);
 
   return (
     <div className="w-maxPage h-fit">
-      <div className="flex justify-center items-center pt-5 z-50">
-        <div className="text-8xl font-tiara w-fit">
+      <div className="-ml-5 flex justify-center items-center pt-5 z-50">
+        <div className="text-6xl sm:text-8xl font-tiara  w-fit pr-8">
           Ti<span className="text-tiara_red">ar</span>a{" "}
-          <span className="text-tiara_red">{'"'}</span>24
+          <span className="text-tiara_red">{"'"}</span>24
         </div>
       </div>
       <div className="w-full flex justify-center">
-        <p className="font-staat text-2xl">
+        <p className="font-staat text-2xl mt-3">
           Explore the <span className="text-tiara_red">Unknown</span>
         </p>
       </div>
-      <div className="w-maxPage flex justify-center items-center mt-10 z-50">
+      <div className="w-maxPhone flex justify-center items-center mt-10 z-50">
         <EventDisplay events={events} category={category} />
       </div>
       <BackgroundBeams />

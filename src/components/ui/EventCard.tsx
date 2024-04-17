@@ -14,13 +14,13 @@ export const EventCard: React.FC<EventCardProps> = ({ name, description,category
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={`/events/${category}/1`}>
+    <Link href={`/events/${category}/event/1`}>
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         className="transition-opacity"
       >
-        <BackgroundGradient className=" z-10 rounded-[22px] w-[400px] h-[450px] p-4 sm:p-10 bg-zinc-900 cursor-pointer relative overflow-hidden transition-transform">
+        <BackgroundGradient className=" z-10 rounded-[22px] w-80 h-96 p-4 sm:p-10 bg-zinc-900 cursor-pointer relative overflow-hidden transition-transform">
           <div
             className={cn(
               "absolute inset-0 bg-center bg-cover opacity-50 w-full",

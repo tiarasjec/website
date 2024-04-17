@@ -25,7 +25,13 @@ const config = {
         staat: ["Staat", "sans-serif"],
       },
       width: {
-        'maxPage': '96.5vw'
+        'maxPage': '96.5vw',
+        'maxPhone':'93vw',
+        '90%': '90%',
+      },
+      height: {
+        'maxHeight':"90vh",
+        '90%': '90%',
       },
       colors: {
         tiara_red: "#EB1C2C",

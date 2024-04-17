@@ -5,7 +5,7 @@ export async function GET() {
         {
           name: "TechExpo1",
           description: "Showcasing latest tech innovations",
-          rules: "tttt",
+          rules: ["rule1","rule2"],
           prerequisites: "ppp",
           thumbnail: "/techexpo-thumbnail.jpg",
           startTime: "2024-05-10 09:00",

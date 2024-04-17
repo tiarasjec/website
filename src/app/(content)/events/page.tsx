@@ -16,18 +16,18 @@ export default function EventsPage() {
   return (
     <>
       <div className="w-maxPage h-fit ">
-        <div className="flex justify-center items-center pt-5 z-50">
-          <div className="text-8xl font-tiara  w-fit">
+        <div className="-ml-5 flex justify-center items-center pt-5 z-50">
+          <div className="text-6xl sm:text-8xl font-tiara  w-fit pr-8">
             Ti<span className="text-tiara_red">ar</span>a{" "}
             <span className="text-tiara_red">{"'"}</span>24
           </div>
         </div>
         <div className="w-full flex justify-center">
-          <p className="font-staat text-2xl">
+          <p className="font-staat text-2xl mt-3">
             Explore the <span className="text-tiara_red">Unknown</span>
           </p>
         </div>
-        <div className="w-full flex justify-center mt-10 z-50">
+        <div className="w-maxPhone h-fit  flex justify-center mt-10 z-0 overflow-y-scroll">
           <CategoryDisplay categories={categories.map(category => ({ title: category.category }))} />
         </div>
         <BackgroundBeams />
