@@ -3,6 +3,7 @@ import crypto from "crypto";
 import { prisma } from "@/lib/prisma";
 import { PaymentStatus } from "@prisma/client";
 import { auth } from "@/auth";
+import { sendEmail } from "@/helper/mailer";
 
 const generatedSignature = (
   razorpayOrderId: string,
@@ -85,6 +86,7 @@ export async function POST(request: NextRequest) {
         },
       },
     });
+    sendEmail(session.user?.email!, session.user?.name!);
     return NextResponse.json(
       { message: "payment verified successfully", isOk: true },
       { status: 200 }

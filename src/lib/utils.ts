@@ -1,7 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
-import { redirect } from "next/dist/server/api-utils";
 import { twMerge } from "tailwind-merge";
-import { useRouter } from "next/navigation";
 import { toast } from "@/components/ui/use-toast";
 
 export function cn(...inputs: ClassValue[]) {
@@ -78,12 +76,13 @@ export const makePayment = async ({
         toast({
           title: "Payment successful",
           description: "Your payment was successful",
-        })
+        });
         window.location.href = "/";
       } else {
         toast({
           title: "Payment failed",
-          description: "Please try again. Contact support for help. "+res.error,
+          description:
+            "Please try again. Contact support for help. " + res.error,
           variant: "destructive",
         });
       }
@@ -96,7 +95,9 @@ export const makePayment = async ({
     toast({
       variant: "destructive",
       title: "Payment failed",
-      description: "Please try again. Contact support for help. "+response.error.description,
+      description:
+        "Please try again. Contact support for help. " +
+        response.error.description,
     });
   });
   paymentObject.open();
