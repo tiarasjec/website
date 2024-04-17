@@ -29,7 +29,7 @@ export default function EventsPage() {
           </p>
         </div>
         <div className="w-full flex justify-center mt-10 z-50">
-          <CategoryDisplay categories={categories} />
+          <CategoryDisplay categories={categories.map(category => ({ title: category.category }))} />
         </div>
         <BackgroundBeams />
       </div>

@@ -14,7 +14,7 @@ const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ categories }) => {
     <>
       <div className="w-fit space-x-7 flex-row flex z-50">
         {categories.map((category, index) => (
-          <CategoryCard key={index} title={category.title} />
+          <CategoryCard key={index} category={category.title} />
         ))}
       </div>
     </>
