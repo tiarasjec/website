@@ -1,19 +1,9 @@
 "use client";
 import CategoryDisplay from "@/components/widgets/CategoryDisplay";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 export default function EventsPage() {
-  const [categories, setCategories] = useState<{ category: string }[]>([]);
-
-  useEffect(() => {
-    fetch("/api/events")
-      .then((response) => response.json())
-      .then((data) => setCategories(data))
-      .catch((error) => console.error("Error fetching categories:", error));
-      console.log(categories);
-  }, []);
-
   return (
     <>
       <div className="w-maxPage h-fit ">
@@ -24,15 +14,17 @@ export default function EventsPage() {
           </div>
         </div>
         <div className="w-full flex justify-center">
-          <p className="font-staat text-2xl">
-            Explore the <span className="text-tiara_red">Unknown</span>
-          </p>
+          <p className="font-staat text-2xl">Explore the <span className="text-tiara_red">Unknown</span></p> {/* Moved below */}
         </div>
         <div className="w-full flex justify-center mt-10 z-50">
-          <CategoryDisplay categories={categories} />
+          {" "}
+          {/* Added 'flex justify-center' */}
+
         </div>
         <BackgroundBeams />
       </div>
+
+     
     </>
   );
 }

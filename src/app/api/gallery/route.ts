@@ -5,7 +5,7 @@ export async function GET() {
   const imageDirectory = path.join(process.cwd(), "public", "gallery");
   const imageFiles = fs.readdirSync(imageDirectory);
   const images = imageFiles.map((file: string, i: number) => ({
-    alt: `Image ${i}`,
+    alt: `Imagae ${i}`,
     src: `/gallery/${file}`,
   }));
   return Response.json(images);
