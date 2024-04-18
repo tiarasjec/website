@@ -18,11 +18,13 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
-import Buy from "../razorpay/Buy";
 import { Suspense } from "react";
 import React from "react";
 import { useSession } from "next-auth/react";
 import { Label } from "./label";
+import Loading from "@/app/loading";
+
+const Buy = React.lazy(() => import("@/components/razorpay/Buy"));
 
 interface Event {
   name: string;
@@ -72,7 +74,7 @@ export default function Checkout({
               </span>
             </li>
           </ul>
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loading />}>
             <Buy
               name={session.data?.user?.name!}
               email={session.data?.user?.email!}
