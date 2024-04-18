@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.6.0",
+    "@bsmnt/scrollytelling": "^0.3.3",
     "@gsap/react": "^2.1.0",
     "@prisma/client": "^5.12.1",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -41,6 +42,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-intersection-observer": "^9.8.1",
+    "sass": "^1.75.0",
     "sharp": "^0.33.3",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
