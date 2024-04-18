@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import {
   Body,
   Button,
@@ -18,20 +19,18 @@ import { Tailwind } from "@react-email/tailwind";
 import * as React from "react";
 
 interface UserRegistrationEmailProps {
-  username?: string;
   registrationId?: string;
   teamName?: string;
   registrationLink?: string;
 }
 
-export const UserRegistrationEmail = ({
-  username,
+export const UserRegistrationEmail = async ({
   registrationId,
   teamName,
   registrationLink,
 }: UserRegistrationEmailProps) => {
   const previewText = `Testing 1 2 3`;
-
+  const session = await auth();
   return (
     <Html>
       <Head />
@@ -46,7 +45,7 @@ export const UserRegistrationEmail = ({
               <strong>You{"'"}re successfully Registered for Tiara 2024!</strong>
             </Heading>
             <Text className="text-black text-[14px] leading-[24px]">
-              Hello {username},
+              Hello {session?.user?.name ?? "User"},
             </Text>
             <Text className="text-black text-[14px] leading-[24px]">
               Congratulations! You have successfully completed registration for
