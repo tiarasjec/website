@@ -1,12 +1,16 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import SJECLogo from "@/assets/sjeclogo.png";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
-import { EncryptButton } from "@/components/ui/hover/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface NavItem {
   label: string;
@@ -37,28 +41,11 @@ const navItems: NavItem[] = [
 ];
 
 export function Header() {
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
   const { data: session } = useSession();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
-      setPrevScrollPos(currentScrollPos);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos, visible]);
-
   return (
     <>
       <header
-        className={`flex sticky top-0 flex-wrap md:justify-center md:flex-nowrap z-50 w-full justify-center text-sm transition-transform duration-300 ${
-          visible ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`flex fixed top-0 flex-wrap md:justify-center md:flex-nowrap z-50 w-full justify-center text-sm transition-transform duration-300 text-white`}
       >
         <nav
           className="mt-6 relative max-w-[70rem] w-full shadow backdrop-blur-2xl bg-white bg-opacity-10 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-center md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-neutral-800 dark:border-neutral-700"
@@ -98,15 +85,16 @@ export function Header() {
                 </a>
               ))}
               {session && session.user ? (
-                <a
+                <Button
                   className="flex items-center gap-x-2 md:border-s md:border-zinc-600 font-medium md:my-6 md:ps-6"
                   onClick={() => signOut()}
                 >
-                  <EncryptButton targetText="logout" />
-                </a>
+                  Logout
+                </Button>
               ) : (
-                <a
-                  className="flex items-center gap-x-2 md:border-s md:border-zinc-600 font-medium md:my-6 md:ps-6"
+                <Button
+                  disabled
+                  className="font-tiara tracking-widest flex items-center font-medium md:my-6 pointer-events-none"
                   onClick={() =>
                     signIn("google", {
                       callbackUrl: "/events",
@@ -114,8 +102,8 @@ export function Header() {
                     })
                   }
                 >
-                  <EncryptButton targetText="register now!" />
-                </a>
+                  login
+                </Button>
               )}
             </div>
           </div>

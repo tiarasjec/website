@@ -5,7 +5,7 @@ import Container from "@/components/shared/container";
 export default function About() {
   return (
     <Container className="mx-auto">
-      <div className="py-4 mx-6  sm:mx-12 space-y-4">
+      <div className="py-4 mx-6  sm:mx-12 space-y-4 pt-32">
         <h1 id="about" className="text-4xl font-tiara">
           About
         </h1>

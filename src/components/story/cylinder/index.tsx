@@ -14,6 +14,7 @@ import technical from "@/assets/technical.png";
 import nontechnical from "@/assets/nontechnical.png";
 import cultural from "@/assets/cultural.png";
 import mega from "@/assets/mega.png";
+
 import { useState, useEffect } from 'react';
 
 interface Event {
@@ -52,11 +53,6 @@ const itemsInViewAtOnce = 7;
 const itemsPadding = 4;
 
 export const CyllinderStory = () => {
-  const [hostname, setHostname] = useState("");
-
-  useEffect(() => {
-    setHostname(window.location.hostname);
-  }, []);
   const { height } = useViewportSize();
   const pinSpacerHeight = `calc(3 * ${itemHeight} * ${
     Math.max(itemsInViewAtOnce, events.length) + itemsPadding

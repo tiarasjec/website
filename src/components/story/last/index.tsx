@@ -1,7 +1,12 @@
 "use client";
 
 import * as Scrollytelling from "@bsmnt/scrollytelling";
+import Image from "next/image";
+import TV from "@/assets/tv.png";
+import TICKET from "@/assets/ticket.png";
+
 import s from "./last.module.scss";
+import { cn } from "@/lib/utils";
 
 export const Last = () => {
   return (
@@ -27,6 +32,20 @@ export const Last = () => {
               duration: 1.2,
             }}
           />
+          {/* <Image
+            alt="PC"
+            className={s["pc"]}
+            src={TV}
+            placeholder="blur"
+            id="pc-image"
+          />
+          <Image
+            alt="Smile"
+            className={s["smile"]}
+            src={TICKET}
+            placeholder="blur"
+            id="smile-image"
+          /> */}
           <Scrollytelling.Animation
             tween={{
               start: 0,
@@ -42,8 +61,10 @@ export const Last = () => {
               ],
             }}
           >
-            <h2 className={s["title"]}>
-              REGISTER NOW!
+            <h2 className={cn(s["title"], "font-tiara tracking-widest")
+            }>
+              Tiara registrations! <br />
+              out coming soon!
             </h2>
           </Scrollytelling.Animation>
         </div>

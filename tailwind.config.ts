@@ -1,4 +1,3 @@
-import { nextui } from "@nextui-org/react";
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
@@ -14,7 +13,6 @@ const config = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
     "node_modules/preline/dist/*.js",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   prefix: "",
   theme: {
@@ -23,15 +21,16 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         tiara: ["Tiara", "sans-serif"],
         staat: ["Staat", "sans-serif"],
+        basement: ["Basement", "sans-serif"],
       },
       width: {
-        'maxPage': '96.5vw',
-        'maxPhone':'93vw',
-        '90%': '90%',
+        maxPage: "96.5vw",
+        maxPhone: "93vw",
+        "90%": "90%",
       },
       height: {
-        'maxHeight':"90vh",
-        '90%': '90%',
+        maxHeight: "90vh",
+        "90%": "90%",
       },
       colors: {
         tiara_red: "#EB1C2C",
@@ -106,7 +105,6 @@ const config = {
     addVariablesForColors,
     require("@tailwindcss/forms"),
     require("preline/plugin"),
-    nextui(),
   ],
 } satisfies Config;
 

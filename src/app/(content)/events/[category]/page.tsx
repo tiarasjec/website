@@ -41,7 +41,7 @@ export default function EventsPage() {
 
   return (
     <div className="w-maxPage h-fit">
-      <div className="-ml-5 flex justify-center items-center pt-5 z-50">
+      <div className="-ml-5 flex justify-center items-center pt-32 z-50">
         <div className="text-6xl sm:text-8xl font-tiara  w-fit pr-8">
           Ti<span className="text-tiara_red">ar</span>a{" "}
           <span className="text-tiara_red">{"'"}</span>24
