@@ -12,6 +12,7 @@ steps:
       - '--build-arg=DATABASE_URL=$_DATABASE_URL'
       - '--build-arg=RAZORPAY_KEY=$_RAZORPAY_KEY'
       - '--build-arg=RAZORPAY_SECRET=$_RAZORPAY_SECRET'
+      - '--build-arg=AUTH_TRUST_HOST=$_AUTH_TRUST_HOST'
       - .
       - '-f'
       - Dockerfile
