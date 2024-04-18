@@ -5,16 +5,17 @@ import { BackgroundGradient } from "./background-gradient";
 import Link from "next/link";
 
 interface EventCardProps {
+  id: number;
   name: string;
   description: string;
   category: string;
 }
 
-export const EventCard: React.FC<EventCardProps> = ({ name, description,category }) => {
+export const EventCard: React.FC<EventCardProps> = ({ id, name, description,category }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={`/events/${category}/event/1`}>
+    <Link href={`/events/${category}/event/${id}`}>
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

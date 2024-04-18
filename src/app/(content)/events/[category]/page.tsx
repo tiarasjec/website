@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Import usePathname from next/navigation
 import EventDisplay from "@/components/widgets/EventDisplay";
+import { forEach } from "lodash";
 
 interface Event {
   name: string;
@@ -27,12 +28,17 @@ export default function EventsPage() {
   const [category, setCategory] = useState("");
 
   useEffect(() => {
-    setCategory(pathname.split("/").pop() || ""); // Extract category from pathname
+    const path = pathname.split("/")[2];
+    setCategory(path);
     fetch(`/api/events/${category}`)
       .then((response) => response.json())
       .then((data) => {
-        const eventsData = data[0].events; // Access the events array from the response
-        setEvents(eventsData); // Set the events array to the state
+        forEach(data, (items) => {
+          if (items.category === path) {
+            console.log(items.events);
+            setEvents(items.events);
+          }
+        }) 
       })
       .catch((error) => console.error("Error fetching events:", error));
   }, [pathname]);

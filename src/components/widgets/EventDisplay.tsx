@@ -20,6 +20,7 @@ const EventDisplay: React.FC<EventDisplayProps> = ({ events, category }) => {
             name={event.name}
             description={event.description}
             category={category}
+            id={index}
           />
         </div>
       ))}

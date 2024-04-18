@@ -30,7 +30,7 @@ const Page = () => {
   useEffect(() => {
     const parts = pathname.split("/");
     console.log(`/api/events/${parts[2]}/event/1`);
-    fetch(`/api/events/${parts[2]}/event/1`)
+    fetch(`/api/events/${parts[2]}/event/${parts[4]}`)
       .then((response) => response.json())
       .then((data) => {
         setEventInfo(data);
@@ -56,6 +56,7 @@ const Page = () => {
     <>
       <div className="w-maxPhone h-maxHeight sm:flex items-center overflow-auto pt-32">
         <div></div>
+        <div className="sm:w-2/5 h-90% relative">
         <div className="h-1/3 sm:w-2/5 relative">
           <Image
             // src={eventInfo?.thumbnail || ""}

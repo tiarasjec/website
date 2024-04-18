@@ -7,6 +7,7 @@ import { Inter } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
 import PrelineScript from "@/components/shared/preline";
 import { Toaster } from "@/components/ui/toaster";
+import Script from "next/script";
 import { TailwindIndicator } from "@/components/shared/tailwind";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -38,23 +39,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={cn("bg-background font-sans antialiased", inter.variable)}
-      >
-        <SessionProvider>
-          <TooltipProvider>
+    <>
+      <html lang="en">
+        <body
+          className={cn("bg-background font-sans antialiased", inter.variable)}
+        >
+          <SessionProvider>
             <div className="flex min-h-screen w-full flex-col">
               <Header />
               {children}
-              <Footer />
             </div>
-          </TooltipProvider>
-        </SessionProvider>
-        <PrelineScript />
-        <Toaster />
-        <TailwindIndicator />
-      </body>
-    </html>
+          </SessionProvider>
+          <PrelineScript />
+          <Toaster />
+        </body>
+      </html>
+      <Script src="https://checkout.razorpay.com/v2/checkout.js" />
+    </>
   );
 }
