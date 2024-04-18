@@ -7,7 +7,6 @@ import React from "react";
 export async function sendEmail(email: string, name: string) {
   const emailHtml = render(
     <UserRegistrationEmail
-      username="username"
       registrationId="registrationId"
       teamName="teamName"
       registrationLink="registrationLink"
@@ -23,9 +22,9 @@ export async function sendEmail(email: string, name: string) {
     });
 
     const mailOptions = {
-      from: "tiara@gmail.com",
+      from: process.env.GMAIL_USER,
       to: email,
-      subject: "Testing email for now", // Email subject
+      subject: "Tiara 2024 Registration",
       html: emailHtml,
     };
 
