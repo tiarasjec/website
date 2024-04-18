@@ -6,6 +6,14 @@ steps:
       - '-t'
       - >-
         $_AR_HOSTNAME/$PROJECT_ID/cloud-run-source-deploy/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+      - '--build-arg=AUTH_SECRET=$_AUTH_SECRET'
+      - '--build-arg=AUTH_GOOGLE_ID=$_AUTH_GOOGLE_ID'
+      - '--build-arg=AUTH_GOOGLE_SECRET=$_AUTH_GOOGLE_SECRET'
+      - '--build-arg=DATABASE_URL=$_DATABASE_URL'
+      - '--build-arg=RAZORPAY_KEY=$_RAZORPAY_KEY'
+      - '--build-arg=RAZORPAY_SECRET=$_RAZORPAY_SECRET'
+      - '--build-arg=AUTH_TRUST_HOST=$_AUTH_TRUST_HOST'
+      - '--build-arg=AUTH_URL=$_AUTH_URL'
       - .
       - '-f'
       - Dockerfile
