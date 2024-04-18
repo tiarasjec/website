@@ -38,6 +38,7 @@ export const UserRegistrationEmail = async ({
       <Tailwind>
         <Body className="bg-white my-auto mx-auto font-sans px-2">
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] max-w-[465px]">
+            <h2 className="font-tiara items-center">Ti<span className="text-tiara_red">ar</span>a {"'"}24</h2>
             <Section className="mt-[32px] items-center">
               <h1>Tiara 2024 Registraion</h1>
             </Section>
@@ -97,7 +98,6 @@ export const UserRegistrationEmail = async ({
 };
 
 UserRegistrationEmail.PreviewProps = {
-  username: "username",
   registrationId: "registrationId",
   teamName: "teamName",
   registrationLink: "registrationLink",

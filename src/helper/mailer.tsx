@@ -7,7 +7,6 @@ import React from "react";
 export async function sendEmail(email: string, name: string) {
   const emailHtml = render(
     <UserRegistrationEmail
-      username="username"
       registrationId="registrationId"
       teamName="teamName"
       registrationLink="registrationLink"
