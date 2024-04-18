@@ -13,6 +13,7 @@ steps:
       - '--build-arg=RAZORPAY_KEY=$_RAZORPAY_KEY'
       - '--build-arg=RAZORPAY_SECRET=$_RAZORPAY_SECRET'
       - '--build-arg=AUTH_TRUST_HOST=$_AUTH_TRUST_HOST'
+      - '--build-arg=AUTH_URL=$_AUTH_URL'
       - .
       - '-f'
       - Dockerfile
@@ -45,11 +46,11 @@ options:
   substitutionOption: ALLOW_LOOSE
   logging: CLOUD_LOGGING_ONLY
 substitutions:
+  _DEPLOY_REGION: asia-south1
   _AR_HOSTNAME: asia-south1-docker.pkg.dev
   _PLATFORM: managed
   _TRIGGER_ID: 6f098bc3-ca01-452c-99b1-29b3f2519243
   _SERVICE_NAME: tiara-test-web
-  _DEPLOY_REGION: asia-south1
 tags:
   - gcp-cloud-build-deploy-cloud-run
   - gcp-cloud-build-deploy-cloud-run-managed
