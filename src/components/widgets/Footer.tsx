@@ -6,15 +6,13 @@ import PhoneIcon from "../icons/PhoneIcon";
 
 const Footer = () => {
     return (
-        <footer className="text-gray-600 body-font w-full">
+        <footer className="body-font w-full">
             <div className="container w-full px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                 <a
                     href="/"
-                    className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900 prose"
+                    className="flex title-font font-tiara font-medium tracking-widest items-center md:justify-start justify-center prose text-white"
                 >
-                    <span className="font-tiara ml-3 text-xl text-white tracking-wider">Ti</span>
-                    <span className="font-tiara text-xl text-tiara_red tracking-wider">ar</span>
-                    <span className="font-tiara text-xl text-white tracking-wider">a 2024</span>
+                    Ti<span className="text-tiara_red">ar</span>a <span className="text-tiara_red">{"'"}</span>24
                 </a>
                 <p className="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 ">
                     © 2024 Developed by

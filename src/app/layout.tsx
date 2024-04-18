@@ -8,6 +8,8 @@ import { SessionProvider } from "next-auth/react";
 import PrelineScript from "@/components/shared/preline";
 import { Toaster } from "@/components/ui/toaster";
 import Script from "next/script";
+import { TailwindIndicator } from "@/components/shared/tailwind";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 

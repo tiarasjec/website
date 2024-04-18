@@ -1,34 +1,54 @@
 "use client";
-import CategoryDisplay from "@/components/widgets/CategoryDisplay";
-import React, { useEffect, useState } from "react";
+import Container from "@/components/shared/container";
+import { Link, LinkProps } from "@/components/ui/hover/link";
+
+const categories: LinkProps[] = [
+  {
+    heading: "Cultural",
+    subheading: "Dance, Music, Drama, and more",
+    image: "/categories/cultural.png",
+    href: "/events/cultural",
+  },
+  {
+    heading: "Technical",
+    subheading: "Coding, Robotics, and more",
+    image: "/categories/technical.png",
+    href: "/events/technical",
+  },
+  {
+    heading: "Non-Technical",
+    subheading: "Quizzes, Debates, and more",
+    image: "/categories/nontechnical.png",
+    href: "/events/nontechnical",
+  },
+  {
+    heading: "Mega",
+    subheading: "The grandest of them all",
+    image: "/categories/mega.png",
+    href: "/events/mega",
+  },
+];
 
 export default function EventsPage() {
-  const [categories, setCategories] = useState<{ category: string }[]>([]);
-
-  useEffect(() => {
-    fetch("/api/events")
-      .then((response) => response.json())
-      .then((data) => setCategories(data))
-      .catch((error) => console.error("Error fetching categories:", error));
-  }, []);
-
   return (
     <>
-      <div className="w-maxPage h-fit ">
-        <div className="-ml-5 flex justify-center items-center pt-5 z-50">
-          <div className="text-6xl sm:text-8xl font-tiara  w-fit pr-8">
-            Ti<span className="text-tiara_red">ar</span>a{" "}
-            <span className="text-tiara_red">{"'"}</span>24
-          </div>
+      <Container className="mx-auto pt-16">
+        <div className="py-4 mx-6 sm:mx-12 space-y-4 mt-10 pt-10">
+          <h1 id="about" className="text-center text-4xl font-tiara">
+            Events categories
+          </h1>
         </div>
-        <div className="w-full flex justify-center">
-          <p className="font-staat text-2xl mt-3">
-            Explore the <span className="text-tiara_red">Unknown</span>
-          </p>
-        </div>
-        <div className="w-maxPhone h-fit  flex justify-center mt-10 z-0 overflow-y-scroll sm:overflow-y-hidden">
-          <CategoryDisplay categories={categories.map(category => ({ title: category.category }))} />
-        </div>
+      </Container>
+      <div className="px-4 sm:px-8 md:px-16 lg:px-24">
+          {categories.map((category, index) => (
+            <Link
+              key={index}
+              heading={category.heading}
+              subheading={category.subheading}
+              image={category.image}
+              href={category.href}
+            />
+          ))}
       </div>
     </>
   );

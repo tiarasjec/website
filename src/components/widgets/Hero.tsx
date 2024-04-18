@@ -105,7 +105,7 @@ export const Header = () => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="font-tiara mt-8 text-center text-5xl md:text-6xl lg:text-9xl"
+        className="font-tiara pt-32 text-center text-5xl md:text-6xl lg:text-9xl"
       >
         Ti<span className="text-tiara_red">ar</span>a{" "}
         <span className="text-tiara_red">{"'"}</span>24{" "}
