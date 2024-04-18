@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import { Header } from "@/components/widgets/Header";
+import Footer from "@components/widgets/Footer";
 import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
