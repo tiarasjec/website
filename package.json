@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "prisma": {
-    "seed": "node --loader ts-node/esm prisma/seed.ts"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.6",

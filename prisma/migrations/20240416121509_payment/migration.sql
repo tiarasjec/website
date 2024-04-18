@@ -16,13 +16,13 @@
 
 */
 -- DropIndex
-DROP INDEX "faculty_email_key";
+-- DROP INDEX "faculty_email_key";
 
 -- DropIndex
-DROP INDEX "students_email_key";
+-- DROP INDEX "students_email_key";
 
 -- AlterTable
-ALTER TABLE "faculty" DROP COLUMN "email",
+ALTER TABLE "faculty"
 DROP COLUMN "name",
 DROP COLUMN "phone",
 ADD COLUMN     "user_id" TEXT NOT NULL;
@@ -34,7 +34,7 @@ ADD COLUMN     "orderCreationId" TEXT NOT NULL,
 ADD COLUMN     "razorpayPaymentId" TEXT NOT NULL;
 
 -- AlterTable
-ALTER TABLE "students" DROP COLUMN "email",
+ALTER TABLE "students"
 DROP COLUMN "name",
 DROP COLUMN "phone",
 ADD COLUMN     "user_id" TEXT NOT NULL;
