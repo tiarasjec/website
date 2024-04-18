@@ -1,27 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider = "prisma-client-js"
-}
-
-enum PaymentStatus {
-  PENDING
-  SUCCESS
-  FAILED
-}
-
 model Payment {
-  razorpayPaymentId String        @id
-  orderCreationId   String
   signature         String?
   status            PaymentStatus @default(PENDING)
   created_at        DateTime      @default(now())
   updated_at        DateTime      @updatedAt
-  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId            String        @map("user_id")
+  orderCreationId   String
+  razorpayPaymentId String        @id
+  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@map("payments")
@@ -29,41 +23,40 @@ model Payment {
 
 model Faculty {
   id         String   @id @default(cuid())
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId     String   @map("user_id")
-  events     Event[]
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
+  userId     String   @map("user_id")
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  events     Event[]  @relation("EventToFaculty")
 
   @@map("faculty")
 }
 
 model Student {
   id         String   @id @default(cuid())
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId     String   @map("user_id")
-  events     Event[]
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
+  userId     String   @map("user_id")
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  events     Event[]  @relation("EventToStudent")
 
   @@map("students")
 }
 
 model Event {
-  id          String    @id @default(cuid())
-  name        String
-  description String
-  date        DateTime
-  location    String
-  image       String
-  students    Student[]
-  faculties   Faculty[]
-  created_at  DateTime  @default(now())
-  updated_at  DateTime  @updatedAt
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId      String    @map("user_id")
-
-  registeredUsers RegisteredUser[]
+  id              String           @id @default(cuid())
+  name            String
+  description     String
+  date            DateTime
+  location        String
+  image           String
+  created_at      DateTime         @default(now())
+  updated_at      DateTime         @updatedAt
+  userId          String           @map("user_id")
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  faculties       Faculty[]        @relation("EventToFaculty")
+  registeredUsers RegisteredUser[] @relation("EventToRegisteredUser")
+  students        Student[]        @relation("EventToStudent")
 
   @@map("events")
 }
@@ -74,12 +67,12 @@ model Account {
   type              String
   provider          String
   providerAccountId String   @map("provider_account_id")
-  refresh_token     String?  @db.Text
-  access_token      String?  @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String?  @db.Text
+  id_token          String?
   session_state     String?
   created_at        DateTime @default(now())
   updated_at        DateTime @updatedAt
@@ -100,22 +93,20 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime? @map("email_verified")
-  image         String?
-  created_at    DateTime  @default(now())
-  updated_at    DateTime  @updatedAt
-  events        Event[]
-
+  id             String          @id @default(cuid())
+  name           String?
+  email          String?         @unique
+  emailVerified  DateTime?       @map("email_verified")
+  image          String?
+  created_at     DateTime        @default(now())
+  updated_at     DateTime        @updatedAt
+  accounts       Account[]
+  events         Event[]
+  faculties      Faculty[]
+  payment        Payment[]
   registeredUser RegisteredUser?
-
-  accounts  Account[]
-  sessions  Session[]
-  payment   Payment[]
-  faculties Faculty[]
-  students  Student[]
+  sessions       Session[]
+  students       Student[]
 
   @@map("users")
 }
@@ -131,13 +122,19 @@ model VerificationToken {
 
 model RegisteredUser {
   id         String   @id @default(cuid())
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId     String   @unique @map("user_id")
   college    String
   phone      String
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
-  events     Event[]
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  events     Event[]  @relation("EventToRegisteredUser")
 
   @@map("registeredusers")
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
 }
