@@ -3,6 +3,9 @@ import Lenis from "@/components/shared/lenis";
 import { HeroParallax } from "@/components/widgets/Hero";
 import { StarsCanvas } from "@/components/ui/Stars";
 import { useEffect, useState } from "react";
+import { LabIntro } from "@/components/story/intro";
+import { CyllinderStory } from "@/components/story/cylinder";
+import { Last } from "@/components/story/last";
 import Loading from "./loading";
 
 export default function Home() {
@@ -29,6 +32,9 @@ export default function Home() {
       <Lenis>
         <StarsCanvas />
         <HeroParallax images={images} />
+        <LabIntro />
+        <CyllinderStory />
+        <Last />
       </Lenis>
     </main>
   );
