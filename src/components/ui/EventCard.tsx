@@ -20,7 +20,7 @@ export const EventCard: React.FC<EventCardProps> = ({ name, description,category
         onMouseLeave={() => setHovered(false)}
         className="transition-opacity"
       >
-        <BackgroundGradient className=" z-10 rounded-[22px] w-80 h-96 p-4 sm:p-10 bg-zinc-900 cursor-pointer relative overflow-hidden transition-transform">
+        <BackgroundGradient className=" z-10 rounded-[22px] w-80 h-96 sm:w-72 p-4 sm:p-10 bg-zinc-900 cursor-pointer relative overflow-hidden transition-transform">
           <div
             className={cn(
               "absolute inset-0 bg-center bg-cover opacity-50 w-full",

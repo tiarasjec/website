@@ -54,9 +54,9 @@ const Page = () => {
 
   return (
     <>
-      <div className="w-maxPhone h-maxHeight sm:flex items-center">
+      <div className="w-maxPhone h-maxHeight sm:flex items-center overflow-auto">
         <div></div>
-        <div className="h-1/3 sm:w-1/3 h-90% relative">
+        <div className="h-1/3 sm:w-2/5 h-90% relative">
           <Image
             // src={eventInfo?.thumbnail || ""}
             src="/Categories/Mega.jpg"
@@ -66,10 +66,10 @@ const Page = () => {
             className="rounded-lg"
           />
         </div>
-        <div className="mt-4 w-maxPhone  relative sm:w-2/3 sm:ml-3 h-90%  sm:pl-10">
+        <div className="mt-4 w-maxPhone  relative sm:w-2/3 lg:ml-3 h-90% sm:ml-1 sm:pl-5  lg:pl-10">
           <h1 className="font-staat text-5xl text-tiara_red">
             {eventInfo?.name}{" "}
-            <Button className="pr-5 w-32 h-8">
+            <Button className="absolute pr-5 w-32 h-8 mt-1.5 ml-5">
               <p className="tracking-widest text-sm font-tiara">register now</p>
             </Button>
           </h1>
@@ -95,7 +95,7 @@ const Page = () => {
             ))}
           </ul>
           <div className="mt-8 w-full h-fit">
-            <div className="sm:flex sm:flex-row gap-x-6">
+            <div className="sm:flex sm:flex-col sm:gap-y-2 lg:flex-row gap-x-6">
               <div className="mr-10">
                 <h2 className="mt-3 text-tiara_red text-lg">
                   Faculty Co-ordinators:

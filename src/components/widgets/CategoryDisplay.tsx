@@ -12,7 +12,7 @@ interface CategoryDisplayProps {
 const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ categories }) => {
   return (
     <>
-      <div className="w-maxPhone h-fit overflow-y-scroll justify-center items-center flex-col sm:flex-row flex z-0 gap-y-7">
+      <div className="w-maxPhone h-fit justify-center items-center flex flex-wrap sm:gap-x-5 sm:w-maxPage sm:overflow-x-hidden z-10 gap-y-7 md:scroll-y-hidden">
         {categories.map((category, index) => (
           <CategoryCard key={index} category={category.title} />
         ))}

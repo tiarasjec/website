@@ -53,7 +53,7 @@ export default function EventsPage() {
           Explore the <span className="text-tiara_red">Unknown</span>
         </p>
       </div>
-      <div className="w-maxPhone flex justify-center items-center mt-10 z-50">
+      <div className="w-maxPhone sm:w-maxPage flex justify-center items-center mt-10 z-50">
         <EventDisplay events={events} category={category} />
       </div>
       <BackgroundBeams />

@@ -9,7 +9,7 @@ export interface CategoryCardProps {
 export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link href={`/events/${category}`}>
-      <div className="w-[350px] h-[450px] relative overflow-hidden cursor-pointer">
+      <div className="w-[350px] h-[450px] sm:w-72 lg:w-96 xl:w-[280px] xl:h-[400px] relative overflow-hidden cursor-pointer">
         <div className="w-full h-full flex justify-center items-center text-tiara_red text-2xl hover:text-transparent">
           <p className="uppercase font-bold absolute z-10 hover:hidden">{category}</p>
           <Image

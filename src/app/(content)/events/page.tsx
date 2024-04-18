@@ -27,7 +27,7 @@ export default function EventsPage() {
             Explore the <span className="text-tiara_red">Unknown</span>
           </p>
         </div>
-        <div className="w-maxPhone h-fit  flex justify-center mt-10 z-0 overflow-y-scroll">
+        <div className="w-maxPhone h-fit  flex justify-center mt-10 z-0 overflow-y-scroll sm:overflow-y-hidden">
           <CategoryDisplay categories={categories.map(category => ({ title: category.category }))} />
         </div>
         <BackgroundBeams />
