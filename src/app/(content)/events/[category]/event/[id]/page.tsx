@@ -54,10 +54,9 @@ const Page = () => {
 
   return (
     <>
-      <div className="w-maxPhone h-maxHeight sm:flex items-center overflow-auto pt-32">
+      <div className="w-maxPhone h-maxHeight sm:flex items-center overflow-auto">
         <div></div>
         <div className="sm:w-2/5 h-90% relative">
-        <div className="h-1/3 sm:w-2/5 relative">
           <Image
             // src={eventInfo?.thumbnail || ""}
             src="/Categories/Mega.jpg"

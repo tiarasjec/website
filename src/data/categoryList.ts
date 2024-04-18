@@ -1,6 +1,6 @@
 const categoriesList = [
     {
-      category: "Technical",
+      category: "technical",
       events: [
         {
           id: "0",
@@ -27,7 +27,7 @@ const categoriesList = [
           general_rules: [ 
             "Sportsmanship and adherence to event guidelines."
           ],
-          thumbnail: "image_of_line_follower_robot.jpg", 
+          thumbnail: "/", 
           startTime: "2024-05-09 10:00:00", 
           endTime: "2024-05-09 17:00:00",
           costs: "Registration fee: $XX", 

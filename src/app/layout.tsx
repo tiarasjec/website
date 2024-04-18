@@ -9,7 +9,6 @@ import PrelineScript from "@/components/shared/preline";
 import { Toaster } from "@/components/ui/toaster";
 import Script from "next/script";
 import { TailwindIndicator } from "@/components/shared/tailwind";
-import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -52,6 +51,8 @@ export default function RootLayout({
           </SessionProvider>
           <PrelineScript />
           <Toaster />
+          <TailwindIndicator />
+          <Footer />
         </body>
       </html>
       <Script src="https://checkout.razorpay.com/v2/checkout.js" />

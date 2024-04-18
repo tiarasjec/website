@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Import usePathname from next/navigation
 import EventDisplay from "@/components/widgets/EventDisplay";
 import { forEach } from "lodash";
+import { Scroll, CardType } from "@/components/ui/hover/scroll";
 
 interface Event {
   name: string;
@@ -24,7 +25,8 @@ interface Event {
 
 export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([]);
-  const pathname = usePathname(); // Use usePathname instead of useRouter
+  const [cards, setCards] = useState<CardType[]>([]);
+  const pathname = usePathname(); 
   const [category, setCategory] = useState("");
 
   useEffect(() => {
@@ -33,6 +35,7 @@ export default function EventsPage() {
     fetch(`/api/events/${category}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         forEach(data, (items) => {
           if (items.category === path) {
             console.log(items.events);
@@ -41,7 +44,7 @@ export default function EventsPage() {
         }) 
       })
       .catch((error) => console.error("Error fetching events:", error));
-  }, [pathname]);
+  }, [pathname, category]);
 
   useEffect(() => {}, [events]);
 
@@ -60,6 +63,7 @@ export default function EventsPage() {
       </div>
       <div className="w-maxPhone sm:w-maxPage flex justify-center items-center mt-10 z-50">
         <EventDisplay events={events} category={category} />
+        {/* <Scroll cards={}> */}
       </div>
     </div>
   );
