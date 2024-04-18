@@ -1,6 +1,5 @@
 "use client";
 import CategoryDisplay from "@/components/widgets/CategoryDisplay";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import React, { useEffect, useState } from "react";
 
 export default function EventsPage() {
@@ -30,7 +29,6 @@ export default function EventsPage() {
         <div className="w-maxPhone h-fit  flex justify-center mt-10 z-0 overflow-y-scroll sm:overflow-y-hidden">
           <CategoryDisplay categories={categories.map(category => ({ title: category.category }))} />
         </div>
-        <BackgroundBeams />
       </div>
     </>
   );

@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Import usePathname from next/navigation
 import EventDisplay from "@/components/widgets/EventDisplay";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 
 interface Event {
   name: string;
@@ -56,7 +55,6 @@ export default function EventsPage() {
       <div className="w-maxPhone sm:w-maxPage flex justify-center items-center mt-10 z-50">
         <EventDisplay events={events} category={category} />
       </div>
-      <BackgroundBeams />
     </div>
   );
 }
