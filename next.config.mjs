@@ -19,7 +19,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "aceternity.com",
+        hostname: "raw.githubusercontent.com",
         port: "",
         pathname: "/**",
       }

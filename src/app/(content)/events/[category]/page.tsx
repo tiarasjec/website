@@ -1,70 +1,58 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Import usePathname from next/navigation
-import EventDisplay from "@/components/widgets/EventDisplay";
-import { forEach } from "lodash";
-import { Scroll, CardType } from "@/components/ui/hover/scroll";
+import { CardType } from "@/components/ui/hover/scroll";
+import Image from "next/image";
+import Link from "next/link";
+import Lenis from "@/components/shared/lenis";
 
-interface Event {
-  name: string;
-  description: string;
-  rules: string;
-  prerequisites: string;
-  thumbnail: string;
-  startTime: string;
-  endTime: string;
-  facultyCoordinators: {
-    name: string;
-    phone: string;
-  }[];
-  studentCoordinators: {
-    name: string;
-    phone: string;
-  }[];
+function toTitleCase(str: string) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
 }
 
 export default function EventsPage() {
-  const [events, setEvents] = useState<Event[]>([]);
   const [cards, setCards] = useState<CardType[]>([]);
-  const pathname = usePathname(); 
-  const [category, setCategory] = useState("");
-
+  const pathname = usePathname();
   useEffect(() => {
     const path = pathname.split("/")[2];
-    setCategory(path);
-    fetch(`/api/events/${category}`)
+    fetch(`/api/events/${path}`)
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        forEach(data, (items) => {
-          if (items.category === path) {
-            console.log(items.events);
-            setEvents(items.events);
-          }
-        }) 
+      .then((dataList) => {
+        setCards(dataList);
       })
       .catch((error) => console.error("Error fetching events:", error));
-  }, [pathname, category]);
-
-  useEffect(() => {}, [events]);
-
+  }, [pathname]);
   return (
-    <div className="w-maxPage h-fit">
-      <div className="-ml-5 flex justify-center items-center pt-32 z-50">
-        <div className="text-6xl sm:text-8xl font-tiara  w-fit pr-8">
-          Ti<span className="text-tiara_red">ar</span>a{" "}
-          <span className="text-tiara_red">{"'"}</span>24
+    <Lenis>
+      <div className="h-fit">
+        <div className="-ml-5 flex justify-center items-center pt-32 z-50">
+          <div className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-tiara w-fit text-center duration-500">
+            {toTitleCase(pathname.split("/")[2])} Events
+          </div>
+        </div>
+        <div className="w-full flex justify-center ">
+          <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {cards
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((card) => {
+                return (
+                  <Link href={card.href} key={card.id}>
+                    <Image
+                      className="cursor-pointer rounded-lg border border-tiara_red hover:shadow-xl transition duration-300 ease-in-out"
+                      key={card.id}
+                      src={card.thumbnail}
+                      alt={card.name}
+                      width={450}
+                      height={300}
+                    />
+                  </Link>
+                );
+              })}
+          </div>
         </div>
       </div>
-      <div className="w-full flex justify-center">
-        <p className="font-staat text-2xl mt-3">
-          Explore the <span className="text-tiara_red">Unknown</span>
-        </p>
-      </div>
-      <div className="w-maxPhone sm:w-maxPage flex justify-center items-center mt-10 z-50">
-        <EventDisplay events={events} category={category} />
-        {/* <Scroll cards={}> */}
-      </div>
-    </div>
+    </Lenis>
   );
 }

@@ -20,7 +20,6 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         tiara: ["Tiara", "sans-serif"],
-        staat: ["Staat", "sans-serif"],
         basement: ["Basement", "sans-serif"],
       },
       width: {

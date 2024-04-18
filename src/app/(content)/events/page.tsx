@@ -1,35 +1,48 @@
 "use client";
 import Container from "@/components/shared/container";
 import { Link, LinkProps } from "@/components/ui/hover/link";
+import { useEffect, useState } from "react";
 
-const categories: LinkProps[] = [
-  {
-    heading: "Cultural",
-    subheading: "Dance, Music, Drama, and more",
-    image: "/categories/cultural.png",
-    href: "/events/cultural",
-  },
-  {
-    heading: "Technical",
-    subheading: "Coding, Robotics, and more",
-    image: "/categories/technical.png",
-    href: "/events/technical",
-  },
-  {
-    heading: "Non-Technical",
-    subheading: "Quizzes, Debates, and more",
-    image: "/categories/nontechnical.png",
-    href: "/events/nontechnical",
-  },
-  {
-    heading: "Mega",
-    subheading: "The grandest of them all",
-    image: "/categories/mega.png",
-    href: "/events/mega",
-  },
-];
+// const categories: LinkProps[] = [
+//   {
+//     heading: "Cultural",
+//     subheading: "Dance, Music, Drama, and more",
+//     image: "/categories/cultural.png",
+//     href: "/events/cultural",
+//   },
+//   {
+//     heading: "Technical",
+//     subheading: "Coding, Robotics, and more",
+//     image: "/categories/technical.png",
+//     href: "/events/technical",
+//   },
+//   {
+//     heading: "Non-Technical",
+//     subheading: "Quizzes, Debates, and more",
+//     image: "/categories/nontechnical.png",
+//     href: "/events/nontechnical",
+//   },
+//   {
+//     heading: "Mega",
+//     subheading: "The grandest of them all",
+//     image: "/categories/mega.png",
+//     href: "/events/mega",
+//   },
+// ];
 
 export default function EventsPage() {
+  const [categories, setCategories] = useState<LinkProps[]>([]);
+
+  useEffect(() => {
+    fetch("/api/events")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setCategories(data);
+      })
+      .catch((error) => console.error("Error fetching events:", error));
+  }, []);
+
   return (
     <>
       <Container className="mx-auto pt-16">
@@ -40,15 +53,15 @@ export default function EventsPage() {
         </div>
       </Container>
       <div className="px-4 sm:px-8 md:px-16 lg:px-24">
-          {categories.map((category, index) => (
-            <Link
-              key={index}
-              heading={category.heading}
-              subheading={category.subheading}
-              image={category.image}
-              href={category.href}
-            />
-          ))}
+        {categories.map((category, index) => (
+          <Link
+            key={index}
+            heading={category.heading}
+            subheading={category.subheading}
+            image={category.image}
+            href={category.href}
+          />
+        ))}
       </div>
     </>
   );

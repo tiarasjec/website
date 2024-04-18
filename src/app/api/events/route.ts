@@ -1,17 +1,23 @@
-import {categoriesList} from "@/data/categoryList";
-import {NextRequest} from "next/server";
+import { categoriesList } from "@/data/categoryList";
+import { NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
-  const path = req.nextUrl.pathname.split("/");
-  const category = path[3];
-  
+function titleCase(str: string) {
+  return str
+    .toLowerCase()
+    .split(/[\s_]+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join("  ");
+}
 
-  const mappedCategories = categoriesList.map(({category,events}) => {
-    return {
-     category,
-     events
-    };
-  });
-
-  return Response.json(mappedCategories);
+export async function GET() {
+  return NextResponse.json(
+    Object.entries(categoriesList).map(([key, value]) => {
+      return {
+        heading: titleCase(key),
+        subheading: key,
+        href: `/events/${key}`,
+        image: value["thumbnail"],
+      };
+    })
+  );
 }

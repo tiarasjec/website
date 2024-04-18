@@ -1,6 +1,6 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 // const Example = () => {
@@ -23,8 +23,8 @@ import Link from "next/link";
 
 export interface CardType {
   href: string;
-  src: StaticImageData;
-  title: string;
+  thumbnail: string;
+  name: string;
   id: number;
 }
 
@@ -64,8 +64,8 @@ const Card = ({ card }: { card: CardType }) => {
       /> */}
       <Link href={card.href}>
         <Image
-          src={card.src}
-          alt={card.title}
+          src={card.thumbnail}
+          alt={card.name}
           layout="fill"
           objectFit="cover"
           className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
