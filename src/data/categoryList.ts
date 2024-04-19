@@ -40,8 +40,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Student Leader",
-              phone: "555-234-5678",
+              name: "Sufaid",
+              phone: "7795287262",
+            },
+            {
+              name: "Shreyas Rai",
+              phone: "9731068224",
             },
           ],
         },
@@ -74,8 +78,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Student Leader",
-              phone: "555-234-5678",
+              name: "Mevil Dsa",
+              phone: "9482905974",
+            },
+            {
+              name: "Melrick",
+              phone: "9686381387",
             },
           ],
         },
@@ -115,8 +123,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Hensal Mathias",
+              phone: "8867265012",
+            },
+            {
+              name: "Ashton Dsouza",
+              phone: "6364323663",
             },
           ],
         },
@@ -156,8 +168,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Ian",
+              phone: "6363960016",
+            },
+            {
+              name: "Karthik",
+              phone: "7483287716",
             },
           ],
         },
@@ -254,8 +270,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Omkar",
+              phone: "6363302952",
+            },
+            {
+              name: "Sahana",
+              phone: "9845962616",
             },
           ],
         },
@@ -289,8 +309,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Awais",
+              phone: "9591319165",
+            },
+            {
+              name: "Jeevith",
+              phone: "9591710600",
             },
           ],
         },
@@ -329,8 +353,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Mukshith",
+              phone: "9113223178",
+            },
+            {
+              name: "Akshay",
+              phone: "9741473448",
             },
           ],
         },
@@ -368,8 +396,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Rahul Revankar",
+              phone: "8147841609",
+            },
+            {
+              name: "Mohammed Zaid",
+              phone: "7019180608",
             },
           ],
         },
@@ -407,8 +439,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Venita",
+              phone: "9606133612",
+            },
+            {
+              name: "Prajwal Dsouza",
+              phone: "8277547570",
             },
           ],
         },
@@ -446,8 +482,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Vyasa M",
+              phone: "8618497080",
+            },
+            {
+              name: "Leon Veiga",
+              phone: "7022449523",
             },
           ],
         },
@@ -478,8 +518,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Jane Smith",
-              phone: "+9876543210",
+              name: "Muhammad Mukthaar",
+              phone: "8157866491",
+            },
+            {
+              name: "Uthpal",
+              phone: "8147063820",
             },
           ],
         },
@@ -500,8 +544,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Kaneeksha Kiran",
+              phone: "9071201842",
+            },
+            {
+              name: "Vishak Kumble",
+              phone: "9746547253",
             },
           ],
         },
@@ -543,8 +591,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Canute Pinto",
+              phone: "8904155670",
+            },
+            {
+              name: "Apeksha Neha",
+              phone: "8431151695",
             },
           ],
         },
@@ -564,9 +616,10 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Sabin PS",
+              phone: "9980878406",
             },
+            
           ],
         },
         "5": {
@@ -607,8 +660,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Apeksha A",
+              phone: "9567026847",
+            },
+            {
+              name: "Sandesh bekal",
+              phone: "9663557289",
             },
           ],
         },
@@ -628,8 +685,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Sathwik A Bangera",
+              phone: "6361973634",
+            },
+            {
+              name: "Thejaswi bhandary",
+              phone: "961116785",
             },
           ],
         },
@@ -650,9 +711,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Vineeth Shenoy P",
+              "phone": "9449559975"
             },
+            {
+              "name": "Anusha K",
+              "phone": "9591053484"
+            },
+            {
+              "name": "Charisma Shivani",
+              "phone": "8660832070"
+            }
           ],
         },
         "9": {
@@ -672,9 +741,18 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Preetham",
+              "phone": "8618524411"
             },
+            {
+              "name": "Nishanth",
+              "phone": "7676729896"
+            },
+            {
+              "name": "Abhinav Sudesh",
+              "phone": "9108668456"
+            }
+            
           ],
         },
         "10": {
@@ -693,9 +771,18 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Kavish",
+              "phone": "9740540640"
             },
+            {
+              "name": "Gavrav Salian",
+              "phone": "8310515805"
+            },
+            {
+              "name": "G Ram Kishan Rao",
+              "phone": "8217633312"
+            }
+            
           ],
         },
         "11": {
@@ -715,9 +802,14 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Shrilakshmi Shetty",
+              "phone": "7483845980"
             },
+            {
+              "name": "Jessica Fernandes",
+              "phone": "7019978723"
+            }
+            
           ],
         },
         "12": {
@@ -737,9 +829,18 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "KarthikH",
+              "phone": "7907783754"
             },
+            {
+              "name": "Abhishek U Acharva",
+              "phone": "9739454720"
+            },
+            {
+              "name": "AbhiramS",
+              "phone": "7338475817"
+            }
+            
           ],
         },
         "13": {
@@ -758,9 +859,18 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Rahul sc",
+              "phone": "6363728668"
             },
+            {
+              "name": "Vedika kodi",
+              "phone": "9483302374"
+            },
+            {
+              "name": "Shane Noronha",
+              "phone": "9483913853"
+            }
+            
           ],
         },
         // "14": {
@@ -809,9 +919,14 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Jane Smith",
-              phone: "+9876543210",
+              "name": "ANANYA AITHAL",
+              "phone": "6364199432"
             },
+            {
+              "name": "SUMANTH",
+              "phone": "968650968"
+            }
+            
           ],
         },
         "1": {
@@ -830,9 +945,14 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "VIJNA SHETTY",
+              "phone": "7795830582"
             },
+            {
+              "name": "ASHEL DSOUZA",
+              "phone": "9110879491"
+            }
+            
           ],
         },
       },
@@ -860,9 +980,18 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Jane Smith",
-              phone: "+9876543210",
+              "name": "SASHA",
+              "phone": "9480161867"
             },
+            {
+              "name": "AJITH RODRIGUES",
+              "phone": "6362070751"
+            },
+            {
+              "name": "SEAN R MONIS",
+              "phone": "9448106775"
+            }
+            
           ],
         },
         "1": {
@@ -881,9 +1010,18 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "MELON",
+              "phone": "7760316201"
             },
+            {
+              "name": "HAVAN KOTIAN",
+              "phone": "8951726188"
+            },
+            {
+              "name": "RENVIL CASTELINO",
+              "phone": "8139979122"
+            }
+            
           ],
         },
         "2": {
@@ -902,9 +1040,18 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "DHANUSH",
+              "phone": "7019811724"
             },
+            {
+              "name": "RISHIKA",
+              "phone": "8624901265"
+            },
+            {
+              "name": "SOURABH",
+              "phone": "9113962008"
+            }
+            
           ],
         },
         "3": {
@@ -923,9 +1070,18 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "SAHANA",
+              "phone": "9110259198"
             },
+            {
+              "name": "ANUSHA",
+              "phone": "7259583371"
+            },
+            {
+              "name": "MELISHA DSOUZA",
+              "phone": "8217458056"
+            }
+            
           ],
         },
         "4": {
@@ -944,9 +1100,18 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Arvin Seth",
+              "phone": "9108366524"
             },
+            {
+              "name": "Delson Tellis",
+              "phone": "8310990921"
+            },
+            {
+              "name": "Shreyas",
+              "phone": "7090265515"
+            }
+            
           ],
         },
         "5": {
@@ -965,9 +1130,18 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Oshin",
+              "phone": "7349031558"
             },
+            {
+              "name": "Prajwal",
+              "phone": "7019111734"
+            },
+            {
+              "name": "Mayur",
+              "phone": "9353832081"
+            }
+            
           ],
         },
       },
