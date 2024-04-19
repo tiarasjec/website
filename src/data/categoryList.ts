@@ -5,6 +5,7 @@ const categoriesList = {
     events: [
       {
         "0": {
+          team: false,
           name: "SyncLine Sprint (Line Follower)",
           description:
             "Experience the adrenaline-fueled intensity in a high-speed race of synchronized robots.",
@@ -46,6 +47,7 @@ const categoriesList = {
           ],
         },
         "1": {
+          team: false,
           name: "DirtDash RC (RC Extreme)",
           description:
             "Unleash the thrill at off-road adventure as miniature marvels tear through rugged lanscapes.",
@@ -65,7 +67,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/dirtdash_rc.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Dr. RC Expert",
@@ -80,6 +82,7 @@ const categoriesList = {
           ],
         },
         "2": {
+          team: false,
           name: "BlitzBot Soccer (Bot Soccer)",
           description: "Electrifying fusion of robotics and soccer.",
           rules: [
@@ -106,7 +109,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/blitzbot_soccer.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -121,6 +124,7 @@ const categoriesList = {
           ],
         },
         "3": {
+          team: false,
           name: "RoboClash (Robo Sumo)",
           description: "Innovation with electrifying clash.",
           rules: [
@@ -147,7 +151,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/robo_clash.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -162,6 +166,7 @@ const categoriesList = {
           ],
         },
         "4": {
+          team: false,
           name: "ONE PIECE",
           description:
             "Embark on your quest with ingenuity in this nautical challenge.",
@@ -180,7 +185,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/one_piece.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -195,6 +200,7 @@ const categoriesList = {
           ],
         },
         "5": {
+          team: false,
           name: "ZenFlow (Ease of Flow)",
           description: "Navigate obstacles with fluid precision.",
           rules: [
@@ -213,7 +219,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/zen_flow.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -228,6 +234,7 @@ const categoriesList = {
           ],
         },
         "6": {
+          team: false,
           name: "TYPING TITANS!!!",
           description:
             "Race to master the keys in the ultimate typing showdown.",
@@ -245,7 +252,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/typing_titans.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -260,6 +267,7 @@ const categoriesList = {
           ],
         },
         "7": {
+          team: false,
           name: "HydroBlast",
           description:
             "Ascend to Ambitious Victory with Hydro-Powered Mastery.",
@@ -280,7 +288,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/hydroblast.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -295,6 +303,7 @@ const categoriesList = {
           ],
         },
         "8": {
+          team: false,
           name: "Drone Clash (Drone Challenge)",
           description:
             "Experience the ultimate rush of Drone Racing for an electrifying journey to victory.",
@@ -320,7 +329,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/drone_clash.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -335,6 +344,7 @@ const categoriesList = {
           ],
         },
         "9": {
+          team: false,
           name: "CADventures (3D CAD Challenge)",
           description: "Map your boundless creativity with CAD.",
           rules: [
@@ -359,7 +369,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/cad_ventures.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -374,6 +384,7 @@ const categoriesList = {
           ],
         },
         "10": {
+          team: false,
           name: "Business bay (SHARK TANK)",
           description: "A dynamic thrill of Ideas and Toss.",
           rules: [
@@ -398,7 +409,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/business_bay.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -413,6 +424,7 @@ const categoriesList = {
           ],
         },
         "11": {
+          team: false,
           name: "Black mirror (Technical Treasure Hunt)",
           description: "Fusion of storytelling and puzzles tangled in quest.",
           rules: [
@@ -437,7 +449,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/black_mirror.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "250",
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -461,6 +473,7 @@ const categoriesList = {
     events: [
       {
         "0": {
+          team: false,
           name: "Capture Clash (Photography)",
           description:
             ": World with pixels in a vibrant mosaic of visual eloquence",
@@ -484,6 +497,7 @@ const categoriesList = {
           ],
         },
         "1": {
+          team: false,
           name: " Reeload (Reel)",
           description:
             "Cinematic brilliance and creative flair in one thrilling reel.",
@@ -506,6 +520,7 @@ const categoriesList = {
           ],
         },
         "2": {
+          team: false,
           name: "Headline hustle (Mock Press)",
           description: "Plunge into the frenetic realm of journalism",
           rules: ["RR"],
@@ -527,6 +542,7 @@ const categoriesList = {
           ],
         },
         "3": {
+          team: false,
           name: "Synergy ( Best Management Team)",
           description:
             "Management excellence and success through leadership with each member a pillar of expertise navigating challenges with finesse",
@@ -549,6 +565,7 @@ const categoriesList = {
           ],
         },
         "4": {
+          team: false,
           name: "Lines & Shades (Sketching)",
           description: "Transforming canvas into mesmerizing masterpiece",
           rules: ["RR"],
@@ -570,6 +587,7 @@ const categoriesList = {
           ],
         },
         "5": {
+          team: false,
           name: "Mask It! (Face Painting)",
           description:
             ": Unleash artistic alchemy with patterns converge on human canvas",
@@ -592,6 +610,7 @@ const categoriesList = {
           ],
         },
         "6": {
+          team: false,
           name: "Persuasion pit (Debate)",
           description: "The art of rhetoric to shape the tides of debate",
           rules: ["RR"],
@@ -613,6 +632,7 @@ const categoriesList = {
           ],
         },
         "7": {
+          team: false,
           name: "Humor hustle(Stand-Up Comedy)",
           description: "Life's laughs, unleashed one punchline at a time.",
           rules: ["RR"],
@@ -634,6 +654,7 @@ const categoriesList = {
           ],
         },
         "8": {
+          team: false,
           name: "Treasure trek (Treasure hunt)",
           description:
             "Embark on an exhilarating adventure, unravelling mysteries and uncovering treasures, in thrill of the hunt",
@@ -656,6 +677,7 @@ const categoriesList = {
           ],
         },
         "9": {
+          team: false,
           name: "BGMI",
           description:
             "Dive into the heart-pounding battlegrounds of BGMI, where every move carves in the adrenaline-fueled arena of mobile gaming.",
@@ -678,6 +700,7 @@ const categoriesList = {
           ],
         },
         "10": {
+          team: false,
           name: " Valorant",
           description: "We fight to win",
           rules: ["RR"],
@@ -699,6 +722,7 @@ const categoriesList = {
           ],
         },
         "11": {
+          team: false,
           name: "Cosmeticraze (Make-up and hairstyle)",
           description:
             " Beauty knows no bounds, redefining norms in an artful fusion of makeup and tress.",
@@ -721,6 +745,7 @@ const categoriesList = {
           ],
         },
         "12": {
+          team: false,
           name: " Gully-googly (Gully cricket)",
           description:
             "Beneath the sky, amidst chaos, legends rise with every swing of the bat",
@@ -743,6 +768,7 @@ const categoriesList = {
           ],
         },
         "13": {
+          team: false,
           name: " Dunkin-dribble (3x3 Basketball)",
           description: "Just give it a shot",
           rules: ["RR"],
@@ -764,6 +790,7 @@ const categoriesList = {
           ],
         },
         "14": {
+          team: false,
           name: ". Seasoned-saute (ONLY FOR FACULTIES)",
           description: "",
           rules: ["RR"],
@@ -794,6 +821,7 @@ const categoriesList = {
     events: [
       {
         "0": {
+          team: false,
           name: " RHYTHMIC FUSION (Group Dance)",
           description: "Every step ignites the fire!",
           rules: ["RR"],
@@ -815,6 +843,7 @@ const categoriesList = {
           ],
         },
         "1": {
+          team: false,
           name: "HARMONY HAVEN (Group Singing",
           description: " Harmony in every note, unity in every voice",
           rules: ["RR"],

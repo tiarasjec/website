@@ -34,7 +34,6 @@ const Page = () => {
 
   useEffect(() => {
     const [, , category, path] = pathname.split("/");
-    console.log(category, path);
     fetch(`/api/events/${category}/${path}`)
       .then((response) => response.json())
       .then((dataList) => {
@@ -52,7 +51,6 @@ const Page = () => {
     : "";
   const eventName = eventInfo?.name;
   const parts = eventName?.split(/\(([^)]+)\)/);
-  console.log(parts);
   return (
     <>
       {/* Hero */}
@@ -60,7 +58,7 @@ const Page = () => {
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
           <div className="mt-4 w-maxPhone  relative sm:w-2/3 lg:ml-3 h-90% sm:ml-1 sm:pl-5  lg:pl-10">
-            <h1 className="font-staat text-5xl text-white font-bold lg:whitespace-nowrap" >
+            <h1 className="font-staat text-5xl text-white font-bold lg:whitespace-nowrap">
               {parts ? parts[0] : ""}
             </h1>
             <span className="text-2xl text-tiara_red">
@@ -69,10 +67,12 @@ const Page = () => {
             <br />
             <span className="text-base tracking-widest font-tiara py-10">
               <span className="bg-white px-2 py-1 rounded-lg text-black">
-                {formattedDate} May - {formattedTime}
+                {formattedDate.toString().toLowerCase()}th may -{" "}
+                {formattedTime.toString().toLowerCase()}
               </span>
             </span>
             <p className="mt-4 text-md">{eventInfo?.description}</p>
+            <span className="font-tiara"> cost ₹ {eventInfo?.costs} {eventInfo?.team ? "per team" : "per person"} </span>
             <h2 className="mt-5 text-tiara_red text-2xl">Prerequisites:</h2>
             <ul className="relative ml-5 w-4/5">
               {eventInfo?.prerequisites.map((pre, index) => (
@@ -95,25 +95,43 @@ const Page = () => {
                   <h2 className="mt-3 text-tiara_red text-lg">
                     Faculty Co-ordinators:
                   </h2>
-                  {eventInfo?.facultyCoordinators.map((coordinator, index) => (
-                    <div key={index} className="flex flex-row gap-x-6 mt-2 lg:whitespace-nowrap">
-                      <p className="text-white">{coordinator.name}</p>
-                      <p className="text-tiara_red">|</p>
-                      <p className="text-white">{coordinator.phone}</p>
-                    </div>
-                  ))}
+                  <div className="flex flex-row gap-x-6 mt-2 lg:whitespace-nowrap">
+                    {eventInfo?.facultyCoordinators.map(
+                      (coordinator, index) => (
+                        <>
+                          <p className="text-white">
+                            {coordinator.name} {" | "}
+                            <span className="text-white">
+                              <a href={`tel:${coordinator.phone}`}>
+                                {coordinator.phone}
+                              </a>
+                            </span>
+                          </p>
+                        </>
+                      )
+                    )}
+                  </div>
                 </div>
                 <div>
                   <h2 className="mt-3 text-tiara_red text-lg">
                     Student Co-ordinators:
                   </h2>
-                  {eventInfo?.studentCoordinators.map((coordinator, index) => (
-                    <div key={index} className="flex flex-row gap-x-6 mt-2 lg:whitespace-nowrap">
-                      <p className="text-white">{coordinator.name}</p>
-                      <p className="text-tiara_red">|</p>
-                      <p className="text-white">{coordinator.phone}</p>
-                    </div>
-                  ))}
+                  <div className="flex flex-col gap-x-6 mt-2 lg:whitespace-nowrap">
+                    {eventInfo?.studentCoordinators.map(
+                      (coordinator, index) => (
+                        <>
+                          <p className="text-white">
+                            {coordinator.name} {" | "}
+                            <span className="text-white">
+                              <a href={`tel:${coordinator.phone}`}>
+                                {coordinator.phone}
+                              </a>
+                            </span>
+                          </p>
+                        </>
+                      )
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
