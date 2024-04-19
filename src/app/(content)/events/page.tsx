@@ -2,33 +2,9 @@
 import Container from "@/components/shared/container";
 import { Link, LinkProps } from "@/components/ui/hover/link";
 import { useEffect, useState } from "react";
-
-// const categories: LinkProps[] = [
-//   {
-//     heading: "Cultural",
-//     subheading: "Dance, Music, Drama, and more",
-//     image: "/categories/cultural.png",
-//     href: "/events/cultural",
-//   },
-//   {
-//     heading: "Technical",
-//     subheading: "Coding, Robotics, and more",
-//     image: "/categories/technical.png",
-//     href: "/events/technical",
-//   },
-//   {
-//     heading: "Non-Technical",
-//     subheading: "Quizzes, Debates, and more",
-//     image: "/categories/nontechnical.png",
-//     href: "/events/nontechnical",
-//   },
-//   {
-//     heading: "Mega",
-//     subheading: "The grandest of them all",
-//     image: "/categories/mega.png",
-//     href: "/events/mega",
-//   },
-// ];
+import Image from "next/image";
+import React from "react";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 export default function EventsPage() {
   const [categories, setCategories] = useState<LinkProps[]>([]);
@@ -37,7 +13,6 @@ export default function EventsPage() {
     fetch("/api/events")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setCategories(data);
       })
       .catch((error) => console.error("Error fetching events:", error));

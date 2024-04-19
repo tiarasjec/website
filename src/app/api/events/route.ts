@@ -14,7 +14,7 @@ export async function GET() {
     Object.entries(categoriesList).map(([key, value]) => {
       return {
         heading: titleCase(key),
-        subheading: key,
+        subheading: value["description"],
         href: `/events/${key}`,
         image: value["thumbnail"],
       };
