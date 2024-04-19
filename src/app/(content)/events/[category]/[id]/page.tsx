@@ -60,7 +60,7 @@ const Page = () => {
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
           <div className="mt-4 w-maxPhone  relative sm:w-2/3 lg:ml-3 h-90% sm:ml-1 sm:pl-5  lg:pl-10">
-            <h1 className="font-staat text-5xl text-white font-bold">
+            <h1 className="font-staat text-5xl text-white font-bold lg:whitespace-nowrap" >
               {parts ? parts[0] : ""}
             </h1>
             <span className="text-2xl text-tiara_red">
@@ -96,7 +96,7 @@ const Page = () => {
                     Faculty Co-ordinators:
                   </h2>
                   {eventInfo?.facultyCoordinators.map((coordinator, index) => (
-                    <div key={index} className="flex flex-row gap-x-6 mt-2">
+                    <div key={index} className="flex flex-row gap-x-6 mt-2 lg:whitespace-nowrap">
                       <p className="text-white">{coordinator.name}</p>
                       <p className="text-tiara_red">|</p>
                       <p className="text-white">{coordinator.phone}</p>
@@ -104,11 +104,11 @@ const Page = () => {
                   ))}
                 </div>
                 <div>
-                  <h2 className="mt-3 text-tiara_red text-lg ">
+                  <h2 className="mt-3 text-tiara_red text-lg">
                     Student Co-ordinators:
                   </h2>
                   {eventInfo?.studentCoordinators.map((coordinator, index) => (
-                    <div key={index} className="flex flex-row gap-x-6 mt-2">
+                    <div key={index} className="flex flex-row gap-x-6 mt-2 lg:whitespace-nowrap">
                       <p className="text-white">{coordinator.name}</p>
                       <p className="text-tiara_red">|</p>
                       <p className="text-white">{coordinator.phone}</p>
