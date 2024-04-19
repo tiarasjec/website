@@ -45,8 +45,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Student Leader",
-              phone: "555-234-5678",
+              "name": "Sufaid",
+              "phone": "7795287262"
+            },
+            {
+              "name": "Shreyas Rai",
+              "phone": "9731068224"
             },
           ],
         },
@@ -80,8 +84,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Student Leader",
-              phone: "555-234-5678",
+              "name": "Mevil Dsa",
+              "phone": "9482905974"
+            },
+            {
+              "name": "Melrick",
+              "phone": "9686381387"
             },
           ],
         },
@@ -122,8 +130,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Hensal Mathias",
+              "phone": "8867265012"
+            },
+            {
+              "name": "Ashton Dsouza",
+              "phone": "6364323663"
             },
           ],
         },
@@ -164,8 +176,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Ian",
+              "phone": "6363960016"
+            },
+            {
+              "name": "Karthik",
+              "phone": "7483287716"
             },
           ],
         },
@@ -265,8 +281,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Omkar",
+              "phone": "6363302952"
+            },
+            {
+              "name": "Sahana",
+              "phone": "9845962616"
             },
           ],
         },
@@ -301,8 +321,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Awais",
+              "phone": "9591319165"
+            },
+            {
+              "name": "Jeevith",
+              "phone": "9591710600"
             },
           ],
         },
@@ -342,8 +366,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Mukshith",
+              "phone": "9113223178"
+            },
+            {
+              "name": "Akshay",
+              "phone": "9741473448"
             },
           ],
         },
@@ -382,9 +410,13 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Rahul Revankar",
+              "phone": "8147841609"
             },
+            {
+              "name": "Mohammed Zaid",
+              "phone": "7019180608"
+            }
           ],
         },
         "10": {
@@ -422,8 +454,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Venita",
+              "phone": "9606133612"
+            },
+            {
+              "name": "Prajwal Dsouza",
+              "phone": "8277547570"
             },
           ],
         },
@@ -462,8 +498,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Vyasa M",
+              "phone": "8618497080"
+            },
+            {
+              "name": "Leon Veigas",
+              "phone": "7022449523"
             },
           ],
         },
@@ -799,7 +839,6 @@ const categoriesList = {
           description: "",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/dunkin.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
