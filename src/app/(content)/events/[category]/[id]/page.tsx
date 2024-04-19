@@ -95,7 +95,7 @@ const Page = () => {
                   <h2 className="mt-3 text-tiara_red text-lg">
                     Faculty Co-ordinators:
                   </h2>
-                  <div className="flex flex-row gap-x-6 mt-2 lg:whitespace-nowrap">
+                  <div className="flex flex-col gap-x-6 mt-2 lg:whitespace-nowrap">
                     {eventInfo?.facultyCoordinators.map(
                       (coordinator, index) => (
                         <>

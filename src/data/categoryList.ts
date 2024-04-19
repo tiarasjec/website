@@ -38,6 +38,10 @@ const categoriesList = {
               name: "Dr. Robotics Expert",
               phone: "555-123-4567",
             },
+            {
+              name: "Dr. Robotics Expert",
+              phone: "555-123-4567",
+            },
           ],
           studentCoordinators: [
             {
