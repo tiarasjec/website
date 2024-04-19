@@ -11,6 +11,8 @@ import Script from "next/script";
 import { TailwindIndicator } from "@/components/shared/tailwind";
 import Lenis from "@/components/shared/lenis";
 import { StarsCanvas } from "@/components/ui/Stars";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -49,6 +51,8 @@ export default function RootLayout({
           <PrelineScript />
           <Toaster />
           <TailwindIndicator />
+          <Analytics />
+          <SpeedInsights />
           <Footer />
         </body>
       </html>
