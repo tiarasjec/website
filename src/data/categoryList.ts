@@ -467,7 +467,7 @@ const categoriesList = {
           rules: ["RR"],
           prerequisites: ["PP"],
           thumbnail:
-            "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/capture_clash.png",
+            "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/capture_clash1.png",
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -704,7 +704,7 @@ const categoriesList = {
             " Beauty knows no bounds, redefining norms in an artful fusion of makeup and tress.",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/cosmeticraze.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -763,27 +763,27 @@ const categoriesList = {
             },
           ],
         },
-        "14": {
-          name: ". Seasoned-saute (ONLY FOR FACULTIES)",
-          description: "",
-          rules: ["RR"],
-          prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
-          startTime: "2024-05-12 10:00",
-          endTime: "2024-05-12 18:00",
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Emily Brown",
-              phone: "+5566778899",
-            },
-          ],
-        },
+        // "14": {
+        //   name: ". Seasoned-saute (ONLY FOR FACULTIES)",
+        //   description: "",
+        //   rules: ["RR"],
+        //   prerequisites: ["PP"],
+        //   thumbnail: "/codejam-thumbnail.jpg",
+        //   startTime: "2024-05-12 10:00",
+        //   endTime: "2024-05-12 18:00",
+        //   facultyCoordinators: [
+        //     {
+        //       name: "Michael Johnson",
+        //       phone: "+1122334455",
+        //     },
+        //   ],
+        //   studentCoordinators: [
+        //     {
+        //       name: "Emily Brown",
+        //       phone: "+5566778899",
+        //     },
+        //   ],
+        // },
       },
     ],
   },
@@ -849,7 +849,7 @@ const categoriesList = {
           description: ": Rocking the stage, one riff at a time!",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/techexpo-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/tunetussel.jpg",
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -870,7 +870,7 @@ const categoriesList = {
           description: "Mixing beats, igniting souls",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/spin_of_showdown.jpg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -891,7 +891,7 @@ const categoriesList = {
           description: " Step up, shake it off, and own the floor",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/groove.jpeg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -912,7 +912,7 @@ const categoriesList = {
           description: "Strut with style, own the runway",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/heritage_haute.jpeg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -933,7 +933,7 @@ const categoriesList = {
           description: "Witness sparks fly and metal clash in the ultimate showdown of robotic combat",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/techtitan.jpg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -954,7 +954,7 @@ const categoriesList = {
           description: "Taking imagination on flight with cutting-edge innovation",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/sky_surge.jpeg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
