@@ -42,49 +42,81 @@ const Page = () => {
       })
       .catch((error) => console.error("Error fetching events:", error));
   }, [pathname]);
+  const startTime = eventInfo?.startTime ? new Date(eventInfo.startTime) : null;
+  const formattedDate = startTime ? startTime.getDate() : "";
+  const formattedTime = startTime
+    ? startTime.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    : "";
+  const eventName = eventInfo?.name;
+  const parts = eventName?.split(/\(([^)]+)\)/);
+  console.log(parts);
   return (
     <>
       {/* Hero */}
       <div className="max-w-[85rem] p-24 pt-36 mx-auto px-4 sm:px-6 lg:px-8">
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
-          <div>
-            <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-            {eventInfo ? eventInfo?.name: ""}
+          <div className="mt-4 w-maxPhone  relative sm:w-2/3 lg:ml-3 h-90% sm:ml-1 sm:pl-5  lg:pl-10">
+            <h1 className="font-staat text-5xl text-white font-bold">
+              {parts ? parts[0] : ""}
             </h1>
-            <p className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
-              {eventInfo ? eventInfo?.description: ""}
-            </p>
-            {/* Buttons */}
-            <div className="mt-7 grid gap-3 w-full sm:inline-flex">
-              <a
-                className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                href="#"
-              >
-                Get started
-                <svg
-                  className="flex-shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="m9 18 6-6-6-6" />
-                </svg>
-              </a>
-              <a
-                className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-                href="#"
-              >
-                Contact sales team
-              </a>
+            <span className="text-2xl text-tiara_red">
+              {parts ? parts[1] : ""}
+            </span>
+            <br />
+            <span className="text-base tracking-widest font-tiara py-10">
+              <span className="bg-white px-2 py-1 rounded-lg text-black">
+                {formattedDate} May - {formattedTime}
+              </span>
+            </span>
+            <p className="mt-4 text-md">{eventInfo?.description}</p>
+            <h2 className="mt-5 text-tiara_red text-2xl">Prerequisites:</h2>
+            <ul className="relative ml-5 w-4/5">
+              {eventInfo?.prerequisites.map((pre, index) => (
+                <li key={index}>
+                  <span className="text-tiara_red">•</span> {pre}
+                </li>
+              ))}
+            </ul>
+            <h2 className="mt-3 text-tiara_red text-2xl">Guidelines:</h2>
+            <ul className="relative ml-5 w-4/5 lg:whitespace-nowrap">
+              {eventInfo?.rules.map((rule, index) => (
+                <li key={index}>
+                  <span className="text-tiara_red">•</span> {rule}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 w-full h-fit">
+              <div className="sm:flex sm:flex-col sm:gap-y-2 lg:flex-row gap-x-6">
+                <div className="mr-10">
+                  <h2 className="mt-3 text-tiara_red text-lg">
+                    Faculty Co-ordinators:
+                  </h2>
+                  {eventInfo?.facultyCoordinators.map((coordinator, index) => (
+                    <div key={index} className="flex flex-row gap-x-6 mt-2">
+                      <p className="text-white">{coordinator.name}</p>
+                      <p className="text-tiara_red">|</p>
+                      <p className="text-white">{coordinator.phone}</p>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <h2 className="mt-3 text-tiara_red text-lg ">
+                    Student Co-ordinators:
+                  </h2>
+                  {eventInfo?.studentCoordinators.map((coordinator, index) => (
+                    <div key={index} className="flex flex-row gap-x-6 mt-2">
+                      <p className="text-white">{coordinator.name}</p>
+                      <p className="text-tiara_red">|</p>
+                      <p className="text-white">{coordinator.phone}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            {/* End Buttons */}
           </div>
           {/* End Col */}
           <div className="relative ms-4">
@@ -95,7 +127,16 @@ const Page = () => {
               height={500}
               alt="Image Description"
             />
-
+            <div className="flex items-center justify-center mt-10">
+              <h4 className="mr-2 font-extrabold text-lg">
+                {eventInfo?.costs}/-
+              </h4>
+              <Button className="w-32 h-8">
+                <p className="tracking-widest text-sm font-tiara">
+                  register now
+                </p>
+              </Button>
+            </div>
             {/* End SVG*/}
           </div>
           {/* End Col */}

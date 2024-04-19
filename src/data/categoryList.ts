@@ -31,7 +31,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/syncline_sprints.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "Registration fee: $XX",
+          costs: "299",
           facultyCoordinators: [
             {
               name: "Dr. Robotics Expert",

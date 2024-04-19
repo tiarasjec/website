@@ -50,8 +50,12 @@ export default function EventsPage() {
                       >
                         {card.name}
                       </CardItem>
-                      <CardItem translateZ="100"  as={Link}
-                          href={card.href} className="w-full mt-4">
+                      <CardItem
+                        translateZ="100"
+                        as={Link}
+                        href={card.href}
+                        className="w-full mt-4"
+                      >
                         <Image
                           src={card.thumbnail}
                           height="800"
