@@ -7,14 +7,16 @@ import Loading from "@/app/loading";
 
 export interface Event {
   name: string;
+  team:string,
   description: string;
+  costs: number;
   rules: string[];
   prerequisites: string[];
   general_rules: string[];
   thumbnail: string;
   startTime: string;
   endTime: string;
-  costs: string;
+  // costs: string;
   facultyCoordinators: FacultyCoordinator[];
   studentCoordinators: StudentCoordinator[];
 }
@@ -78,9 +80,9 @@ const Page = () => {
                   {formattedTime.toString().toLowerCase()}
                 </span>
               </span>
-              <p className="mt-4 text-md">{eventInfo?.description}</p>
-              <h2 className="mt-5 text-tiara_red text-2xl">Prerequisites:</h2>
-              <ul className="relative ml-5 w-4/5">
+              <p className="mt-4 text-md ">{eventInfo?.description}</p>
+              <h2 className="mt-5 text-tiara_red text-2xl ">Prerequisites:</h2>
+              <ul className="relative ml-5 w-4/5 lg:whitespace-nowrap">
                 {eventInfo?.prerequisites.map((pre, index) => (
                   <li key={index}>
                     <span className="text-tiara_red">•</span> {pre}
@@ -122,7 +124,7 @@ const Page = () => {
                     <h2 className="mt-3 text-tiara_red text-lg">
                       Event Co-ordinators:
                     </h2>
-                    <div className="flex gap-x-6 mt-2 lg:whitespace-nowrap">
+                    <div className="flex flex-col gap-x-6 mt-2 lg:whitespace-nowrap">
                       {eventInfo?.studentCoordinators.map(
                         (coordinator, index) => (
                           <>
@@ -158,8 +160,8 @@ const Page = () => {
                   <span className="text-tiara_red">
                     {eventInfo?.costs}
                   </span>{" "}
-                  {eventInfo? "per team" : "per person"}
-                  {/* {eventInfo.costs<250:"for 4 events":" "}  */}
+                  {eventInfo?.team? "per team" : "per person"}
+                  {/* {eventInfo?.costs === 250?" upto selected 4 events":" "}  */}
                 </span>
                 <Button className="w-32 h-8">
                   <p className="tracking-widest text-sm font-tiara">

@@ -32,7 +32,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/syncline_sprints.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "299",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Dr. Robotics Expert",
@@ -75,7 +75,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/dirtdash_rc.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Dr. RC Expert",
@@ -121,7 +121,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/blitzbot_soccer.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -167,7 +167,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/robo_clash.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -205,7 +205,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/one_piece.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -239,7 +239,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/zen_flow.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -272,7 +272,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/typing_titans.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -312,7 +312,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/hydroblast.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -357,7 +357,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/drone_clash.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -401,7 +401,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/cad_ventures.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -445,7 +445,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/business_bay.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -489,7 +489,7 @@ const categoriesList = {
             "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/black_mirror.png",
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
-          costs: "250",
+          costs: 250,
           facultyCoordinators: [
             {
               name: "Michael Johnson",
@@ -523,6 +523,7 @@ const categoriesList = {
             ": World with pixels in a vibrant mosaic of visual eloquence",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail:
             "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/capture_clash1.png",
           startTime: "2024-05-10 09:00",
@@ -535,8 +536,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Jane Smith",
-              phone: "+9876543210",
+              name: "Muhammad Mukthaar",
+              phone: "8157866491",
+            },
+            {
+              name: "Uthpal",
+              phone: "8147063820",
             },
           ],
         },
@@ -547,6 +552,7 @@ const categoriesList = {
             "Cinematic brilliance and creative flair in one thrilling reel.",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/reeload.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -558,8 +564,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Kaneeksha Kiran",
+              phone: "9071201842",
+            },
+            {
+              name: "Vishak Kumble",
+              phone: "9746547253",
             },
           ],
         },
@@ -569,6 +579,7 @@ const categoriesList = {
           description: "Plunge into the frenetic realm of journalism",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/headline_hustle.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -592,6 +603,7 @@ const categoriesList = {
             "Management excellence and success through leadership with each member a pillar of expertise navigating challenges with finesse",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/synergy.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -603,8 +615,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Canute Pinto",
+              phone: "8904155670",
+            },
+            {
+              name: "Apeksha Neha",
+              phone: "8431151695",
             },
           ],
         },
@@ -614,6 +630,7 @@ const categoriesList = {
           description: "Transforming canvas into mesmerizing masterpiece",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/lines_and_shades.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -625,8 +642,8 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Sabin PS",
+              phone: "9980878406",
             },
           ],
         },
@@ -637,6 +654,7 @@ const categoriesList = {
             ": Unleash artistic alchemy with patterns converge on human canvas",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/mask.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -659,6 +677,7 @@ const categoriesList = {
           description: "The art of rhetoric to shape the tides of debate",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/rersuasion_pit.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -670,8 +689,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Apeksha A",
+              phone: "9567026847",
+            },
+            {
+              name: "Sandesh bekal",
+              phone: "9663557289",
             },
           ],
         },
@@ -681,6 +704,7 @@ const categoriesList = {
           description: "Life's laughs, unleashed one punchline at a time.",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/humor_hustle.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -692,8 +716,12 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Sathwik A Bangera",
+              phone: "6361973634",
+            },
+            {
+              name: "Thejaswi bhandary",
+              phone: "961116785",
             },
           ],
         },
@@ -704,6 +732,7 @@ const categoriesList = {
             "Embark on an exhilarating adventure, unravelling mysteries and uncovering treasures, in thrill of the hunt",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/treasure_trek.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -715,9 +744,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              name: "Vineeth Shenoy P",
+              phone: "9449559975"
             },
+            {
+              name: "Anusha K",
+              phone: "9591053484"
+            },
+            {
+              name: "Charisma Shivani",
+              phone: "8660832070"
+            }
           ],
         },
         "9": {
@@ -727,6 +764,7 @@ const categoriesList = {
             "Dive into the heart-pounding battlegrounds of BGMI, where every move carves in the adrenaline-fueled arena of mobile gaming.",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/bgmi.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -738,9 +776,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Preetham",
+              "phone": "8618524411"
             },
+            {
+              "name": "Nishanth",
+              "phone": "7676729896"
+            },
+            {
+              "name": "Abhinav Sudesh",
+              "phone": "9108668456"
+            }
           ],
         },
         "10": {
@@ -749,6 +795,7 @@ const categoriesList = {
           description: "We fight to win",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/defy_the_limits.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -760,9 +807,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Kavish",
+              "phone": "9740540640"
             },
+            {
+              "name": "Gavrav Salian",
+              "phone": "8310515805"
+            },
+            {
+              "name": "G Ram Kishan Rao",
+              "phone": "8217633312"
+            }
           ],
         },
         "11": {
@@ -772,6 +827,7 @@ const categoriesList = {
             " Beauty knows no bounds, redefining norms in an artful fusion of makeup and tress.",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 1800,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/cosmeticraze.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -783,9 +839,13 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Shrilakshmi Shetty",
+              "phone": "7483845980"
             },
+            {
+              "name": "Jessica Fernandes",
+              "phone": "7019978723"
+            }
           ],
         },
         "12": {
@@ -795,6 +855,7 @@ const categoriesList = {
             "Beneath the sky, amidst chaos, legends rise with every swing of the bat",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 900,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/gully_googly.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -806,9 +867,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "KarthikH",
+              "phone": "7907783754"
             },
+            {
+              "name": "Abhishek U Acharva",
+              "phone": "9739454720"
+            },
+            {
+              "name": "AbhiramS",
+              "phone": "7338475817"
+            }
           ],
         },
         "13": {
@@ -817,28 +886,7 @@ const categoriesList = {
           description: "Just give it a shot",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
-          startTime: "2024-05-12 10:00",
-          endTime: "2024-05-12 18:00",
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Emily Brown",
-              phone: "+5566778899",
-            },
-          ],
-        },
-        "14": {
-          team: false,
-          name: ". Seasoned-saute (ONLY FOR FACULTIES)",
-          description: "",
-          rules: ["RR"],
-          prerequisites: ["PP"],
+          costs: 900,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/dunkin.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -850,11 +898,42 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Rahul sc",
+              "phone": "6363728668"
             },
+            {
+              "name": "Vedika kodi",
+              "phone": "9483302374"
+            },
+            {
+              "name": "Shane Noronha",
+              "phone": "9483913853"
+            }
           ],
         },
+        // "14": {
+        //   team: false,
+        //   name: "Seasoned-saute (ONLY FOR FACULTIES)",
+        //   description: "",
+        //   rules: ["RR"],
+        //   prerequisites: ["PP"],
+        //   costs: 250,
+        //   thumbnail: "",
+        //   startTime: "2024-05-12 10:00",
+        //   endTime: "2024-05-12 18:00",
+        //   facultyCoordinators: [
+        //     {
+        //       name: "Michael Johnson",
+        //       phone: "+1122334455",
+        //     },
+        //   ],
+        //   studentCoordinators: [
+        //     {
+        //       name: "Emily Brown",
+        //       phone: "+5566778899",
+        //     },
+        //   ],
+        // },
         // "14": {
         //   name: ". Seasoned-saute (ONLY FOR FACULTIES)",
         //   description: "",
@@ -891,6 +970,7 @@ const categoriesList = {
           description: "Every step ignites the fire!",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/cultural/rythmic_fusion.png",
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
@@ -902,9 +982,13 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Jane Smith",
-              phone: "+9876543210",
+              "name": "Ananya Aithal",
+              "phone": "6364199432"
             },
+            {
+              "name": "Sumanth",
+              "phone": "968650968"
+            }
           ],
         },
         "1": {
@@ -913,6 +997,7 @@ const categoriesList = {
           description: " Harmony in every note, unity in every voice",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 250,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/cultural/harmony_heaven.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -924,9 +1009,13 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Vijna Shetty",
+              "phone": "7795830582"
             },
+            {
+              "name": "Ashel Dsouza",
+              "phone": "9110879491"
+            }
           ],
         },
       },
@@ -939,10 +1028,11 @@ const categoriesList = {
     events: [
       {
         "0": {
-          name: " TUNE TUSSLE (Battle Of Bands)",
-          description: ": Rocking the stage, one riff at a time!",
+          name: "TUNE TUSSLE (Battle Of Bands)",
+          description: "Rocking the stage, one riff at a time!",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 300,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/tunetussel.jpg",
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
@@ -954,9 +1044,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Jane Smith",
-              phone: "+9876543210",
+              "name": "SASHA",
+              "phone": "9480161867"
             },
+            {
+              "name": "AJITH RODRIGUES",
+              "phone": "6362070751"
+            },
+            {
+              "name": "SEAN R MONIS",
+              "phone": "9448106775"
+            }
           ],
         },
         "1": {
@@ -964,6 +1062,7 @@ const categoriesList = {
           description: "Mixing beats, igniting souls",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 300,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/spin_of_showdown.jpg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -975,9 +1074,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "MELON",
+              "phone": "7760316201"
             },
+            {
+              "name": "HAVAN KOTIAN",
+              "phone": "8951726188"
+            },
+            {
+              "name": "RENVIL CASTELINO",
+              "phone": "8139979122"
+            }
           ],
         },
         "2": {
@@ -985,6 +1092,7 @@ const categoriesList = {
           description: " Step up, shake it off, and own the floor",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 300,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/groove.jpeg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -996,9 +1104,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "DHANUSH",
+              "phone": "7019811724"
             },
+            {
+              "name": "RISHIKA",
+              "phone": "8624901265"
+            },
+            {
+              "name": "SOURABH",
+              "phone": "9113962008"
+            }
           ],
         },
         "3": {
@@ -1006,6 +1122,7 @@ const categoriesList = {
           description: "Strut with style, own the runway",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 300,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/heritage_haute.jpeg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -1017,9 +1134,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "SAHANA",
+              "phone": "9110259198"
             },
+            {
+              "name": "ANUSHA",
+              "phone": "7259583371"
+            },
+            {
+              "name": "MELISHA DSOUZA",
+              "phone": "8217458056"
+            }
           ],
         },
         "4": {
@@ -1027,6 +1152,7 @@ const categoriesList = {
           description: "Witness sparks fly and metal clash in the ultimate showdown of robotic combat",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 300,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/techtitan.jpg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -1038,9 +1164,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Arvin Seth",
+              "phone": "9108366524"
             },
+            {
+              "name": "Delson Tellis",
+              "phone": "8310990921"
+            },
+            {
+              "name": "Shreyas",
+              "phone": "7090265515"
+            }
           ],
         },
         "5": {
@@ -1048,6 +1182,7 @@ const categoriesList = {
           description: "Taking imagination on flight with cutting-edge innovation",
           rules: ["RR"],
           prerequisites: ["PP"],
+          costs: 300,
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/sky_surge.jpeg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -1059,9 +1194,17 @@ const categoriesList = {
           ],
           studentCoordinators: [
             {
-              name: "Emily Brown",
-              phone: "+5566778899",
+              "name": "Oshin",
+              "phone": "7349031558"
             },
+            {
+              "name": "Prajwal",
+              "phone": "7019111734"
+            },
+            {
+              "name": "Mayur",
+              "phone": "9353832081"
+            }
           ],
         },
       },
