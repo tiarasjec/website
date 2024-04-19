@@ -845,8 +845,8 @@ const categoriesList = {
     events: [
       {
         "0": {
-          name: "TechExpo4",
-          description: "Showcasing latest tech innovations",
+          name: " TUNE TUSSLE (Battle Of Bands)",
+          description: ": Rocking the stage, one riff at a time!",
           rules: ["RR"],
           prerequisites: ["PP"],
           thumbnail: "/techexpo-thumbnail.jpg",
@@ -866,8 +866,92 @@ const categoriesList = {
           ],
         },
         "1": {
-          name: "CodeJam",
-          description: "A coding competition for enthusiasts",
+          name: "SPIN-OFF SHOWDOWN (BATTLE OF DJ) ",
+          description: "Mixing beats, igniting souls",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          thumbnail: "/codejam-thumbnail.jpg",
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
+        "2": {
+          name: "GROOVE",
+          description: " Step up, shake it off, and own the floor",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          thumbnail: "/codejam-thumbnail.jpg",
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
+        "3": {
+          name: "HERITAGE HAUTE (Fashion walk)",
+          description: "Strut with style, own the runway",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          thumbnail: "/codejam-thumbnail.jpg",
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
+        "4": {
+          name: "TECH TITAN TUSSLE (ROBOWARs) ",
+          description: "Witness sparks fly and metal clash in the ultimate showdown of robotic combat",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          thumbnail: "/codejam-thumbnail.jpg",
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
+        "5": {
+          name: "SKY SURGE (RC Plane)",
+          description: "Taking imagination on flight with cutting-edge innovation",
           rules: ["RR"],
           prerequisites: ["PP"],
           thumbnail: "/codejam-thumbnail.jpg",
