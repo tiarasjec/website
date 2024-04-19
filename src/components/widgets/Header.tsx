@@ -26,18 +26,18 @@ const navItems: NavItem[] = [
     label: "events",
     href: "/events",
   },
-  {
-    label: "team",
-    href: "/team",
-  },
+  // {
+  //   label: "team",
+  //   href: "/team",
+  // },
   {
     label: "about",
     href: "/about",
   },
-  {
-    label: "rulebook",
-    href: "/rulebook",
-  },
+  // {
+  //   label: "rulebook",
+  //   href: "/rulebook",
+  // },
 ];
 
 export function Header() {

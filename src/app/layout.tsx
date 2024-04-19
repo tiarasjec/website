@@ -9,6 +9,8 @@ import PrelineScript from "@/components/shared/preline";
 import { Toaster } from "@/components/ui/toaster";
 import Script from "next/script";
 import { TailwindIndicator } from "@/components/shared/tailwind";
+import Lenis from "@/components/shared/lenis";
+import { StarsCanvas } from "@/components/ui/Stars";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -17,19 +19,11 @@ export const metadata: Metadata = {
     default: "Tiara 2024",
     template: `%s - `,
   },
-  description: "Tiara 2024 is a new way to experience the web.",
+  description:
+    "Tiara is a National-level Techno-Cultural fest, conducted for young minds aspiring to be extraordinary, that is open to all students of undergraduate level and above to come and showcase their talents and represent their respective institutions on the grand stage of Tiara.",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.png",
   },
-};
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
 };
 
 export default function RootLayout({
@@ -44,10 +38,13 @@ export default function RootLayout({
           className={cn("bg-background font-sans antialiased", inter.variable)}
         >
           <SessionProvider>
-            <div className="flex min-h-screen w-full flex-col">
-              <Header />
-              {children}
-            </div>
+            <Lenis>
+              <StarsCanvas />
+              <div className="flex min-h-screen w-full flex-col">
+                <Header />
+                {children}
+              </div>
+            </Lenis>
           </SessionProvider>
           <PrelineScript />
           <Toaster />

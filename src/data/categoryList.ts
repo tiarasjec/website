@@ -1,5 +1,7 @@
 const categoriesList = {
   technical: {
+    // Small description of the category
+    description: "Technical events are a showcase of innovation and creativity in the field of technology.",
     thumbnail:
       "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/technical_thumbnail.png",
     events: [
@@ -472,6 +474,7 @@ const categoriesList = {
   },
 
   "non_technical": {
+    description: "Non-technical events are a showcase of creativity and talent in various fields such as art, music, and literature.",
     thumbnail:
       "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/nontechnical_thumbnail.png",
     events: [
@@ -777,29 +780,6 @@ const categoriesList = {
           description: "Just give it a shot",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
-          startTime: "2024-05-12 10:00",
-          endTime: "2024-05-12 18:00",
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Emily Brown",
-              phone: "+5566778899",
-            },
-          ],
-        },
-        "14": {
-          team: false,
-          name: ". Seasoned-saute (ONLY FOR FACULTIES)",
-          description: "",
-          rules: ["RR"],
-          prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
           thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/dunkin.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
@@ -816,6 +796,28 @@ const categoriesList = {
             },
           ],
         },
+        // "14": {
+        //   team: false,
+        //   name: "Seasoned-saute (ONLY FOR FACULTIES)",
+        //   description: "",
+        //   rules: ["RR"],
+        //   prerequisites: ["PP"],
+        //   thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/dunkin.png",
+        //   startTime: "2024-05-12 10:00",
+        //   endTime: "2024-05-12 18:00",
+        //   facultyCoordinators: [
+        //     {
+        //       name: "Michael Johnson",
+        //       phone: "+1122334455",
+        //     },
+        //   ],
+        //   studentCoordinators: [
+        //     {
+        //       name: "Emily Brown",
+        //       phone: "+5566778899",
+        //     },
+        //   ],
+        // },
         // "14": {
         //   name: ". Seasoned-saute (ONLY FOR FACULTIES)",
         //   description: "",
@@ -842,6 +844,7 @@ const categoriesList = {
   },
 
   cultural: {
+    description: "Cultural events are a celebration of art, music, dance, and creativity.",
     thumbnail:
       "https://raw.githubusercontent.com/tiarasjec/assets/main/cultural/cultural_thumbnail.png",
     events: [
@@ -895,6 +898,7 @@ const categoriesList = {
   },
 
   mega: {
+    description: "Mega events are the grand spectacles of the fest, featuring a variety of competitions and performances that showcase the talents and skills of participants in a larger-than-life setting.",
     thumbnail:
       "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/mega_thumbnail.png",
     events: [
