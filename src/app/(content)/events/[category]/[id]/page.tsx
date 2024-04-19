@@ -72,7 +72,6 @@ const Page = () => {
               </span>
             </span>
             <p className="mt-4 text-md">{eventInfo?.description}</p>
-            <span className="font-tiara"> cost ₹ {eventInfo?.costs} {eventInfo?.team ? "per team" : "per person"} </span>
             <h2 className="mt-5 text-tiara_red text-2xl">Prerequisites:</h2>
             <ul className="relative ml-5 w-4/5">
               {eventInfo?.prerequisites.map((pre, index) => (
@@ -95,7 +94,7 @@ const Page = () => {
                   <h2 className="mt-3 text-tiara_red text-lg">
                     Faculty Co-ordinators:
                   </h2>
-                  <div className="flex flex-col gap-x-6 mt-2 lg:whitespace-nowrap">
+                  <div className="flex flex-col w-96 gap-x-6 mt-2 lg:whitespace-nowrap">
                     {eventInfo?.facultyCoordinators.map(
                       (coordinator, index) => (
                         <>
@@ -116,7 +115,7 @@ const Page = () => {
                   <h2 className="mt-3 text-tiara_red text-lg">
                     Student Co-ordinators:
                   </h2>
-                  <div className="flex flex-col gap-x-6 mt-2 lg:whitespace-nowrap">
+                  <div className="flex flex-col w-96 gap-x-6 mt-2 lg:whitespace-nowrap">
                     {eventInfo?.studentCoordinators.map(
                       (coordinator, index) => (
                         <>
@@ -145,10 +144,10 @@ const Page = () => {
               height={500}
               alt="Image Description"
             />
-            <div className="flex items-center justify-center mt-10">
-              <h4 className="mr-2 font-extrabold text-lg">
-                {eventInfo?.costs}/-
-              </h4>
+            <div className="flex flex-col gap-2 items-center justify-center mt-10">
+            <span className="font-tiara"> cost ₹ <span className="text-tiara_red">{eventInfo?.costs}</span> {eventInfo?.team ? "per team" : "per person"} 
+            {/* {eventInfo.costs<250:"for 4 events":" "}  */}
+            </span>
               <Button className="w-32 h-8">
                 <p className="tracking-widest text-sm font-tiara">
                   register now
