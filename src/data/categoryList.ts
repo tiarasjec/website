@@ -467,7 +467,7 @@ const categoriesList = {
           rules: ["RR"],
           prerequisites: ["PP"],
           thumbnail:
-            "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/capture_clash.png",
+            "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/capture_clash1.png",
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -489,7 +489,7 @@ const categoriesList = {
             "Cinematic brilliance and creative flair in one thrilling reel.",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/reeload.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -510,7 +510,7 @@ const categoriesList = {
           description: "Plunge into the frenetic realm of journalism",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/headline_hustle.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -532,7 +532,7 @@ const categoriesList = {
             "Management excellence and success through leadership with each member a pillar of expertise navigating challenges with finesse",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/synergy.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -553,7 +553,7 @@ const categoriesList = {
           description: "Transforming canvas into mesmerizing masterpiece",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/lines_and_shades.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -575,7 +575,7 @@ const categoriesList = {
             ": Unleash artistic alchemy with patterns converge on human canvas",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/mask.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -596,7 +596,7 @@ const categoriesList = {
           description: "The art of rhetoric to shape the tides of debate",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/rersuasion_pit.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -617,7 +617,7 @@ const categoriesList = {
           description: "Life's laughs, unleashed one punchline at a time.",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/humor_hustle.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -639,7 +639,7 @@ const categoriesList = {
             "Embark on an exhilarating adventure, unravelling mysteries and uncovering treasures, in thrill of the hunt",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/treasure_trek.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -661,7 +661,7 @@ const categoriesList = {
             "Dive into the heart-pounding battlegrounds of BGMI, where every move carves in the adrenaline-fueled arena of mobile gaming.",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/bgmi.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -682,7 +682,7 @@ const categoriesList = {
           description: "We fight to win",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/defy_the_limits.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -704,7 +704,7 @@ const categoriesList = {
             " Beauty knows no bounds, redefining norms in an artful fusion of makeup and tress.",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/cosmeticraze.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -726,7 +726,7 @@ const categoriesList = {
             "Beneath the sky, amidst chaos, legends rise with every swing of the bat",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/gully_googly.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -747,7 +747,7 @@ const categoriesList = {
           description: "Just give it a shot",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/dunkin.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -763,27 +763,27 @@ const categoriesList = {
             },
           ],
         },
-        "14": {
-          name: ". Seasoned-saute (ONLY FOR FACULTIES)",
-          description: "",
-          rules: ["RR"],
-          prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
-          startTime: "2024-05-12 10:00",
-          endTime: "2024-05-12 18:00",
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Emily Brown",
-              phone: "+5566778899",
-            },
-          ],
-        },
+        // "14": {
+        //   name: ". Seasoned-saute (ONLY FOR FACULTIES)",
+        //   description: "",
+        //   rules: ["RR"],
+        //   prerequisites: ["PP"],
+        //   thumbnail: "/codejam-thumbnail.jpg",
+        //   startTime: "2024-05-12 10:00",
+        //   endTime: "2024-05-12 18:00",
+        //   facultyCoordinators: [
+        //     {
+        //       name: "Michael Johnson",
+        //       phone: "+1122334455",
+        //     },
+        //   ],
+        //   studentCoordinators: [
+        //     {
+        //       name: "Emily Brown",
+        //       phone: "+5566778899",
+        //     },
+        //   ],
+        // },
       },
     ],
   },
@@ -798,7 +798,7 @@ const categoriesList = {
           description: "Every step ignites the fire!",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/techexpo-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/cultural/rythmic_fusion.png",
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -819,7 +819,7 @@ const categoriesList = {
           description: " Harmony in every note, unity in every voice",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/cultural/harmony_heaven.png",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -845,11 +845,11 @@ const categoriesList = {
     events: [
       {
         "0": {
-          name: "TechExpo4",
-          description: "Showcasing latest tech innovations",
+          name: " TUNE TUSSLE (Battle Of Bands)",
+          description: ": Rocking the stage, one riff at a time!",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/techexpo-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/tunetussel.jpg",
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -866,11 +866,95 @@ const categoriesList = {
           ],
         },
         "1": {
-          name: "CodeJam",
-          description: "A coding competition for enthusiasts",
+          name: "SPIN-OFF SHOWDOWN (BATTLE OF DJ) ",
+          description: "Mixing beats, igniting souls",
           rules: ["RR"],
           prerequisites: ["PP"],
-          thumbnail: "/codejam-thumbnail.jpg",
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/spin_of_showdown.jpg",
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
+        "2": {
+          name: "GROOVE",
+          description: " Step up, shake it off, and own the floor",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/groove.jpeg",
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
+        "3": {
+          name: "HERITAGE HAUTE (Fashion walk)",
+          description: "Strut with style, own the runway",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/heritage_haute.jpeg",
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
+        "4": {
+          name: "TECH TITAN TUSSLE (ROBOWARs) ",
+          description: "Witness sparks fly and metal clash in the ultimate showdown of robotic combat",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/techtitan.jpg",
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
+        "5": {
+          name: "SKY SURGE (RC Plane)",
+          description: "Taking imagination on flight with cutting-edge innovation",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          thumbnail: "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/sky_surge.jpeg",
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
