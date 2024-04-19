@@ -5,6 +5,7 @@ import { CardType } from "@/components/ui/hover/scroll";
 import Image from "next/image";
 import Link from "next/link";
 import Lenis from "@/components/shared/lenis";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 function toTitleCase(str: string) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -36,18 +37,45 @@ export default function EventsPage() {
           <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {cards
               .sort((a, b) => a.name.localeCompare(b.name))
-              .map((card) => {
+              .map((card, index) => {
                 return (
-                  <Link href={card.href} key={card.id}>
-                    <Image
-                      className="cursor-pointer rounded-lg border border-tiara_red hover:shadow-xl transition duration-300 ease-in-out"
-                      key={card.id}
-                      src={card.thumbnail}
-                      alt={card.name}
-                      width={450}
-                      height={300}
-                    />
-                  </Link>
+                  <CardContainer className="inter-var h-60 w-96 m-20">
+                    <CardBody
+                      className="bg-gray-900 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 mb-20 border  "
+                    >
+                      <CardItem
+                        translateZ="50"
+                        className="text-xl font-bold text-white dark:text-white py-4"
+                      >
+                        {card.name}
+                      </CardItem>
+                      <CardItem
+                        translateZ="100"
+                        as={Link}
+                        href={card.href}
+                        className="w-full mt-4"
+                      >
+                        <Image
+                          src={card.thumbnail}
+                          height="800"
+                          width="800"
+                          className="w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                          alt="thumbnail"
+                        />
+                      </CardItem>
+                      {/* <div className="flex justify-between items-center mt-20">
+                        <CardItem
+                          translateZ={20}
+                          as={Link}
+                          href={card.href}
+                          target="__blank"
+                          className="px-4 py-2 rounded-xl text-sm font-normal text-white"
+                        >
+                          Check out description
+                        </CardItem>
+                      </div> */}
+                    </CardBody>
+                  </CardContainer>
                 );
               })}
           </div>
