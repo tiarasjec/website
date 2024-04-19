@@ -954,7 +954,7 @@ const categoriesList = {
   },
 
   cultural: {
-    description: "Cultural events are a celebration of art, music, dance, and creativity.",
+    description: "Cultural events are a celebration of art, dance, and creativity.",
     thumbnail:
       "https://raw.githubusercontent.com/tiarasjec/assets/main/cultural/cultural_thumbnail.png",
     events: [
