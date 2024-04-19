@@ -50,12 +50,10 @@ const Page = () => {
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
           <div>
             <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-              Start your journey with{" "}
-              <span className="text-blue-600">Preline</span>
+            {eventInfo ? eventInfo?.name: ""}
             </h1>
             <p className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
-              Hand-picked professionals and expertly crafted components,
-              designed for any kind of entrepreneur.
+              {eventInfo ? eventInfo?.description: ""}
             </p>
             {/* Buttons */}
             <div className="mt-7 grid gap-3 w-full sm:inline-flex">
