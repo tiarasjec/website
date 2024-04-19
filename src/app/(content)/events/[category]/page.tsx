@@ -31,26 +31,33 @@ export default function EventsPage() {
         </div>
       </div>
       <div className="w-full flex justify-center ">
-        <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="p-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
           {cards
             .sort((a, b) => a.name.localeCompare(b.name))
             .map((card, index) => {
               return (
-                <CardContainer key={index} className="inter-var h-60 w-96 m-20">
-                  <CardBody className="relative group/card  hover:shadow-2xl hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 mb-20 border  ">
+                <CardContainer
+                  key={index}
+                  className="w-[20rem] h-[30rem] md:w-[25rem] md:h-[35rem] lg:w-[30rem] lg:h-[40rem]"
+                  containerClassName="relative flex items-center justify-center transition-all duration-200 ease-linear"
+                >
+                  <CardBody className="relative">
                     <CardItem
+                      as="h3"
                       translateZ="50"
-                      className="text-xl font-bold text-white dark:text-white py-4"
+                      className="text-2xl font-bold text-white text-center"
                     >
                       {card.name}
                     </CardItem>
                     <CardItem translateZ="100" className="w-full mt-4">
                       <Image
                         src={card.thumbnail}
-                        height="800"
-                        width="800"
-                        className="w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        className="rounded-xl "
                         alt="thumbnail"
+                        width={1200}
+                        height={800}
+                        priority
+                        sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, 33vw"
                       />
                     </CardItem>
                     {/* <div className="flex justify-between items-center mt-20">
