@@ -1,3 +1,4 @@
+import { tiaraFont } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -83,7 +84,8 @@ const CountdownItem = ({
             exit={{ y: "-100%" }}
             transition={{ ease: "backIn", duration: 0.75 }}
             className={cn(
-              "font-tiara block text-2xl md:text-4xl lg:text-6xl xl:text-7xl text-white font-medium",
+              "block text-2xl md:text-4xl lg:text-6xl xl:text-7xl text-white font-medium",
+              tiaraFont.className,
               className
             )}
           >
@@ -91,7 +93,12 @@ const CountdownItem = ({
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className="font-tiara tracking-widest text-xs md:text-sm lg:text-base font-light text-gray-300">
+      <span
+        className={cn(
+          "tracking-widest text-xs md:text-sm lg:text-base font-light text-gray-300",
+          tiaraFont.className
+        )}
+      >
         {text}
       </span>
     </div>
