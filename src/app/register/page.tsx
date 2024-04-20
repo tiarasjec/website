@@ -49,6 +49,26 @@ const Checkbox: React.FC<CheckboxProps> = ({
   );
 };
 
+function processEvents(
+  category: string,
+  categoriesList: any,
+  setEvents: React.Dispatch<React.SetStateAction<Event[]>>
+) {
+  const eventsData: Event[] = [];
+  const categoryEvents: Events = categoriesList[category].events[0]; // Assuming you only want the first array of events
+
+  Object.keys(categoryEvents).forEach((key) => {
+    const event = categoryEvents[key];
+    eventsData.push({
+      name: event.name,
+      key: key,
+      amount: event.costs,
+    });
+  });
+
+  setEvents(eventsData);
+}
+
 // const events: Event[] = [
 //   { name: "SyncLine Sprint", key: "syncLineSprint", amount: 5 },
 //   { name: "DirtDash RC", key: "dirtDashRC", amount: 10 },
@@ -98,29 +118,39 @@ const Register: React.FC = () => {
   const [checkedItems, setCheckedItems] = useState<CheckedItem[]>([]);
   const [phoneNumber, setPhoneNumber] = React.useState("+91");
   const [events, setEvents] = React.useState<Event[]>([]);
-
+  const [technical, setTechnical] = React.useState<Event[]>([]);
+  const [nontechnical, setNonTechnical] = React.useState<Event[]>([]);
+  const [cultural, setCultural] = React.useState<Event[]>([]);
+  const [mega, setMega] = React.useState<Event[]>([]);
 
   useEffect(() => {
-    const technicalEvents: Events = categoriesList.technical.events[0];
-    Object.keys(technicalEvents).forEach((key) => {
-     console.log(technicalEvents[key]);
-      setEvents((prevEvents) => [
-        ...prevEvents,
-        {
-          name: technicalEvents[key].name,
-          key: key,
-          amount: technicalEvents[key].costs,
-        },
-      ])
-    });
+    // const technicalEvents: Events = categoriesList.technical.events[0];
+    // Object.keys(technicalEvents).forEach((key) => {
+    //  console.log(technicalEvents[key]);
+    //   setEvents((prevEvents) => [
+    //     ...prevEvents,
+    //     {
+    //       name: technicalEvents[key].name,
+    //       key: key,
+    //       amount: technicalEvents[key].costs,
+    //     },
+    //   ])
+    // });
+    processEvents("technical", categoriesList, setTechnical);
+    processEvents("non_technical", categoriesList, setNonTechnical);
+    processEvents("cultural", categoriesList, setCultural);
+    processEvents("mega", categoriesList, setMega);
+    console.log(technical);
+    console.log(nontechnical);
+    console.log(cultural);
+    console.log(mega);
   }, []);
 
-  
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const key = event.target.value;
     const isChecked = event.target.checked;
     if (isChecked) {
-      const selectedEvent = events.find((event) => event.key === key);
+      const selectedEvent = technical.find((event) => event.key === key);
       if (selectedEvent) {
         setCheckedItems([...checkedItems, { ...selectedEvent, checked: true }]);
       }
@@ -140,7 +170,10 @@ const Register: React.FC = () => {
         <CardHeader className="flex flex-row items-start bg-muted/50">
           <div className="grid gap-0.5">
             <CardTitle className="group flex items-center gap-2 text-lg">
-              <span className="font-tiara">Ti<span className="text-red-500">ar</span>a{"'"} 24</span> Event Registration
+              <span className="font-tiara">
+                Ti<span className="text-red-500">ar</span>a{"'"} 24
+              </span>{" "}
+              Event Registration
             </CardTitle>
             <CardDescription>
               Your name and email are pre-filled from your Google account.
@@ -179,7 +212,7 @@ const Register: React.FC = () => {
           />
         </div>
         <Separator className="my-2" />
-        {events.map((event) => (
+        {technical.map((event) => (
           <div
             key={event.key}
             className="flex justify-between items-center p-4 mb-2"
@@ -199,7 +232,11 @@ const Register: React.FC = () => {
         sumOfCheckedItemsAmount={sumOfCheckedItemsAmount}
         phoneNumber={phoneNumber}
       />
-      <TabsDemo />
+      <TabsDemo
+        {...{ technical, nontechnical, cultural, mega }}
+        checkedItems={checkedItems}
+        handleCheckboxChange={handleCheckboxChange}
+      />
     </div>
   );
 };
