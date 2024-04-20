@@ -1,12 +1,3 @@
-import {
-  ChevronLeft,
-  ChevronRight,
-  Copy,
-  CreditCard,
-  MoreVertical,
-  Truck,
-} from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -23,16 +14,8 @@ import { Suspense } from "react";
 import React from "react";
 import { useSession } from "next-auth/react";
 import { Label } from "./label";
+import { CheckedItem } from "@/lib/interfaces";
 
-interface Event {
-  name: string;
-  key: string;
-  amount: number;
-}
-
-interface CheckedItem extends Event {
-  checked: boolean;
-}
 
 export default function Checkout({
   checkedItems,

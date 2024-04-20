@@ -13,24 +13,9 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { TabsDemo } from "@/components/razorpay/perCategory";
 import { categoriesList } from "@/data/categoryList";
+import { Event, CheckedItem, CheckboxProps, EventList, Events } from "@/lib/interfaces";
 
-interface Event {
-  name: string;
-  key: string;
-  amount: number;
-  team: boolean;
-}
 
-interface CheckedItem extends Event {
-  checked: boolean;
-}
-
-interface CheckboxProps {
-  className: string;
-  value: string;
-  checked: boolean;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
 const Checkbox: React.FC<CheckboxProps> = ({
   className,
@@ -70,24 +55,7 @@ function processEvents(
   setEvents(eventsData);
 }
 
-interface EventList {
-  team: boolean;
-  name: string;
-  description: string;
-  rules: string[];
-  prerequisites: string[];
-  general_rules: string[];
-  thumbnail: string;
-  startTime: string;
-  endTime: string;
-  costs: number;
-  facultyCoordinators: { name: string; phone: string }[];
-  studentCoordinators: { name: string; phone: string }[];
-}
 
-interface Events {
-  [key: string]: EventList;
-}
 
 const Register: React.FC = () => {
   const session = useSession({
@@ -97,23 +65,17 @@ const Register: React.FC = () => {
     },
   });
 
-  // const [checkedItems, setCheckedItems] = useState<CheckedItem[]>([]);
-  const [technicalCheckedItems, setTechnicalCheckedItems] = useState<
-    CheckedItem[]
-  >([]);
-  const [nontechnicalCheckedItems, setNontechnicalCheckedItems] = useState<
-    CheckedItem[]
-  >([]);
-  const [culturalCheckedItems, setCulturalCheckedItems] = useState<
-    CheckedItem[]
-  >([]);
+  const [technicalCheckedItems, setTechnicalCheckedItems] = useState<CheckedItem[]>([]);
+  const [nontechnicalCheckedItems, setNontechnicalCheckedItems] = useState<CheckedItem[]>([]);
+  const [culturalCheckedItems, setCulturalCheckedItems] = useState<CheckedItem[]>([]);
   const [megaCheckedItems, setMegaCheckedItems] = useState<CheckedItem[]>([]);
-
+  
   const [phoneNumber, setPhoneNumber] = React.useState("+91");
   const [technical, setTechnical] = React.useState<Event[]>([]);
   const [nontechnical, setNonTechnical] = React.useState<Event[]>([]);
   const [cultural, setCultural] = React.useState<Event[]>([]);
   const [mega, setMega] = React.useState<Event[]>([]);
+  
 
   useEffect(() => {
     processEvents("technical", categoriesList, setTechnical);
