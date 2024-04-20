@@ -90,7 +90,7 @@ const Page = () => {
                 ))}
               </ul>
               <h2 className="mt-3 text-tiara_red text-2xl">Guidelines:</h2>
-              <ul className="relative ml-5 w-4/5 lg:whitespace-nowrap">
+              <ul className="relative ml-5">
                 {eventInfo?.rules.map((rule, index) => (
                   <li key={index}>
                     <span className="text-tiara_red">•</span> {rule}
