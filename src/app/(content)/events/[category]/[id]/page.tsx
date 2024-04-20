@@ -43,6 +43,7 @@ const Page = () => {
       .then((response) => response.json())
       .then((dataList) => {
         setEventInfo(dataList);
+        new Promise((resolve) => setTimeout(resolve, 5000));
         setLoading(false);
       })
       .catch((error) => console.error("Error fetching events:", error));
@@ -74,12 +75,12 @@ const Page = () => {
                 {parts ? parts[1] : ""}
               </span>
               <br />
-              <span className="text-base tracking-widest font-tiara py-10">
+              {/* <span className="text-base tracking-widest font-tiara py-10">
                 <span className="bg-white px-2 py-1 rounded-lg text-black">
                   {formattedDate.toString().toLowerCase()}th may -{" "}
                   {formattedTime.toString().toLowerCase()}
                 </span>
-              </span>
+              </span> */}
               <p className="mt-4 text-md ">{eventInfo?.description}</p>
               <h2 className="mt-5 text-tiara_red text-2xl ">Prerequisites:</h2>
               <ul className="relative ml-5 w-4/5 lg:whitespace-nowrap">
