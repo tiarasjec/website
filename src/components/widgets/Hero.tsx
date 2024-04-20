@@ -108,7 +108,7 @@ export const Header = () => {
           ease: "easeInOut",
         }}
         className={cn(
-          "pt-32 text-center text-5xl md:text-6xl lg:text-9xl",
+          "pt-32 text-center text-5xl md:text-6xl lg:text-9xl text-white",
           tiaraFont.className
         )}
       >
