@@ -1,12 +1,14 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { tiaraFont } from "@/lib/fonts";
 
 const CYCLES_PER_LETTER = 2;
 const SHUFFLE_TIME = 50;
 
 const CHARS = "!@#$%^&*():{};|,.<>/?";
 
-export const EncryptButton = ({ targetText } : { targetText: string }) => {
+export const EncryptButton = ({ targetText }: { targetText: string }) => {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const [text, setText] = useState(targetText);
@@ -15,7 +17,8 @@ export const EncryptButton = ({ targetText } : { targetText: string }) => {
     let pos = 0;
 
     intervalRef.current = setInterval(() => {
-      const scrambled = targetText.split("")
+      const scrambled = targetText
+        .split("")
         .map((char, index) => {
           if (pos / CYCLES_PER_LETTER > index) {
             return char;
@@ -56,7 +59,7 @@ export const EncryptButton = ({ targetText } : { targetText: string }) => {
       className="group relative overflow-hidden rounded-lg border-[1px] px-4 py-2 font-mono font-medium  transition-colors bg-secondary text-tiara_red shadow hover:bg-secondary/80"
     >
       <div className="relative z-10 flex items-center gap-2">
-        <span className="font-tiara tracking-widest">{text}</span>
+        <span className={cn("tracking-widest", tiaraFont)}>{text}</span>
       </div>
       <motion.span
         initial={{

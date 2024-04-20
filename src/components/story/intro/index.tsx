@@ -3,6 +3,7 @@ import * as Scrollytelling from "@bsmnt/scrollytelling";
 
 import s from "./intro.module.scss";
 import { cn } from "@/lib/utils";
+import { tiaraFont } from "@/lib/fonts";
 
 export const LabIntro = () => {
   return (
@@ -40,7 +41,7 @@ export const LabIntro = () => {
             movementY: { value: -40, unit: "px" },
           }}
         >
-          <h2 className={cn(s.title, "font-tiara tracking-widest")}>
+          <h2 className={cn(s.title, "tracking-widest", tiaraFont.className)}>
             A peek into the latest in tech
           </h2>
         </Scrollytelling.Parallax>
@@ -116,7 +117,7 @@ const Marquee = ({
         {Array.from({ length: 10 }, (_, i) => (
           <div
             key={i}
-            className={cn(s.marqueeItem, "font-tiara tracking-widest")}
+            className={cn(s.marqueeItem, "tracking-widest", tiaraFont.className)}
           >
             Ti<span className="text-tiara_red">ar</span>a{" "}
             <span className="text-tiara_red">{"'"}</span>24

@@ -10,6 +10,8 @@ import Image from "next/image";
 import React from "react";
 import { LampContainer } from "../ui/lamp";
 import ShiftingCountdown from "./Countdown";
+import { tiaraFont } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 export const HeroParallax = ({
   images,
@@ -105,7 +107,10 @@ export const Header = () => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="font-tiara pt-32 text-center text-5xl md:text-6xl lg:text-9xl"
+        className={cn(
+          "pt-32 text-center text-5xl md:text-6xl lg:text-9xl",
+          tiaraFont.className
+        )}
       >
         Ti<span className="text-tiara_red">ar</span>a{" "}
         <span className="text-tiara_red">{"'"}</span>24{" "}
@@ -118,7 +123,10 @@ export const Header = () => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="font-tiara mt-2 text-center text-xl md:text-2xl"
+        className={cn(
+          "mt-2 text-center text-xl md:text-2xl",
+          tiaraFont.className
+        )}
       >
         explore the <span className="text-tiara_red">unknown</span>
       </motion.h2>

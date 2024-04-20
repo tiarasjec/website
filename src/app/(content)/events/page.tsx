@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { tiaraFont } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 export default function EventsPage() {
   const [categories, setCategories] = useState<LinkProps[]>([]);
@@ -22,7 +24,7 @@ export default function EventsPage() {
     <>
       <Container className="mx-auto pt-16">
         <div className="py-4 mx-6 sm:mx-12 space-y-4 mt-10 pt-10">
-          <h1 id="about" className="text-center text-4xl font-tiara">
+          <h1 id="about" className={cn("text-center text-4xl", tiaraFont.className)}>
             Events categories
           </h1>
         </div>
