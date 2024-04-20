@@ -4,11 +4,13 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Buy from "../razorpay/Buy";
-import { Suspense } from "react";
+import { Suspense, use } from "react";
 import React from "react";
 import { useSession } from "next-auth/react";
 import { CheckedItem } from "@/lib/interfaces";
 import renderCheckedItemsList from "./renderCheckedItemList";
+import { useState,useEffect } from "react";
+import { set } from "react-hook-form";
 
 export default function Checkout({
   technicalCheckedItems,
@@ -22,12 +24,18 @@ export default function Checkout({
   nontechnicalCheckedItems: CheckedItem[];
   culturalCheckedItems: CheckedItem[];
   megaCheckedItems: CheckedItem[];
-  sumOfCheckedItemsAmount: number;
+  sumOfCheckedItemsAmount: ()=> number;
   phoneNumber: string;
 }) {
   const session = useSession({
     required: true,
   });
+  const [total, setTotal] = useState(0);
+  useEffect(() => {
+    const total = sumOfCheckedItemsAmount();
+    setTotal(total);
+
+  },[sumOfCheckedItemsAmount]);
   return (
     <Card className="overflow-hidden w-full max-w-lg">
       <CardContent className="p-6 text-sm">
@@ -43,7 +51,7 @@ export default function Checkout({
               <span className="text-muted-foreground">Total</span>
               <span>
                 {"\u20B9"}
-                {sumOfCheckedItemsAmount} /-
+                {total} /-
               </span>
             </li>
           </ul>
@@ -52,7 +60,7 @@ export default function Checkout({
               name={session.data?.user?.name!}
               email={session.data?.user?.email!}
               contact={phoneNumber}
-              amount={sumOfCheckedItemsAmount}
+              amount={total}
             />
           </Suspense>
         </div>

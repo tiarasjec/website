@@ -101,10 +101,6 @@ const Register: React.FC = () => {
             ...technicalCheckedItems,
             { ...selectedEvent, checked: true },
           ]);
-        } else {
-          setTechnicalCheckedItems(
-            technicalCheckedItems.filter((item) => item.key !== key)
-          );
         }
       } else if (category === "nontechnical") {
         const selectedEvent = nontechnical.find((event) => event.key === key);
@@ -113,10 +109,6 @@ const Register: React.FC = () => {
             ...nontechnicalCheckedItems,
             { ...selectedEvent, checked: true },
           ]);
-        } else {
-          setNontechnicalCheckedItems(
-            technicalCheckedItems.filter((item) => item.key !== key)
-          );
         }
       } else if (category === "cultural") {
         const selectedEvent = cultural.find((event) => event.key === key);
@@ -126,13 +118,7 @@ const Register: React.FC = () => {
             { ...selectedEvent, checked: true },
           ]);
         }
-        else {
-          setCulturalCheckedItems(
-            culturalCheckedItems.filter((item) => item.key !== key)
-          );
-        }
-      } 
-      else if (category === "mega") {
+      } else if (category === "mega") {
         const selectedEvent = mega.find((event) => event.key === key);
         if (selectedEvent) {
           setMegaCheckedItems([
@@ -140,19 +126,45 @@ const Register: React.FC = () => {
             { ...selectedEvent, checked: true },
           ]);
         }
-        else {
-          setMegaCheckedItems(
-            megaCheckedItems.filter((item) => item.key !== key)
-          );
-        }
-      } 
+      }
+    } else {
+      if (category === "technical") {
+        setTechnicalCheckedItems(
+          technicalCheckedItems.filter((item) => item.key !== key)
+        );
+      } else if (category === "nontechnical") {
+        setNontechnicalCheckedItems(
+          nontechnicalCheckedItems.filter((item) => item.key !== key)
+        );
+      } else if (category === "cultural") {
+        setCulturalCheckedItems(
+          culturalCheckedItems.filter((item) => item.key !== key)
+        );
+      } else if (category === "mega") {
+        setMegaCheckedItems(
+          megaCheckedItems.filter((item) => item.key !== key)
+        );
+      }
     }
   };
+  
 
   const sumOfCheckedItemsAmount = megaCheckedItems.reduce(
     (acc, item) => (item.checked ? acc + item.amount : acc),
     0
   );
+
+  const getSumofCheckedItems = () =>{
+      const categories = [technicalCheckedItems, nontechnicalCheckedItems, culturalCheckedItems, megaCheckedItems]
+      let totalSum = 0
+      for (const category of categories){
+        totalSum += category.reduce(
+          (acc, item) => (item.checked ? acc + item.amount : acc),
+          0
+        );
+      }
+      return totalSum;
+  }
 
   return (
     <div className="flex flex-col sm:flex-row w-full items-start justify-center gap-4 p-2 pt-36">
@@ -216,7 +228,7 @@ const Register: React.FC = () => {
         nontechnicalCheckedItems={nontechnicalCheckedItems}
         culturalCheckedItems={culturalCheckedItems}
         megaCheckedItems={megaCheckedItems}
-        sumOfCheckedItemsAmount={sumOfCheckedItemsAmount}
+        sumOfCheckedItemsAmount={getSumofCheckedItems}
         phoneNumber={phoneNumber}
       />
     </div>
