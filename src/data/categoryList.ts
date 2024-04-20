@@ -1146,8 +1146,22 @@ const categoriesList = {
           team: false,
           name: " RHYTHMIC FUSION (Group Dance)",
           description: "Every step ignites the fire!",
-          rules: ["RR"],
-          prerequisites: ["PP"],
+          "prerequisites": [
+            "All dance forms are allowed.",
+            "Team size: Minimum number of dancers in a team - 7",
+            "No maximum limit for participants.",
+            "Sound tracks should be submitted in a pen drive prior to the event to the respective event coordinator.",
+            "An individual cannot take part in multiple groups in the same event.",
+            "College ID is mandatory at the event site."
+          ],
+          "rules": [
+            "Each team will be allotted 5 minutes for their performance and 1 minute for stage setting, totaling 6 minutes.",
+            "Exceeding the time limit may lead to negative marking.",
+            "An instance of vulgarity / disturbing content will lead to a forceful halt of performance and immediate disqualification.",
+            "No use of any powdered substances/fire/water / animals / smoke machine on stage.",
+            "Audio file should be in MP3 format.",
+            "Judges and organizers' decisions are final and binding."
+          ],
           costs: 250,
           thumbnail:
             "https://raw.githubusercontent.com/tiarasjec/assets/main/cultural/rythmic_fusion.png",
@@ -1174,8 +1188,21 @@ const categoriesList = {
           team: false,
           name: "HARMONY HAVEN (Group Singing",
           description: " Harmony in every note, unity in every voice",
-          rules: ["RR"],
-          prerequisites: ["PP"],
+          "prerequisites": [],
+          "rules": [
+            "Team size and composition:",
+            "Maximum no. of members (including accompanists) - 12",
+            "Minimum vocalists - 4",
+            "Maximum vocalists - 7",
+            "Maximum no. of instruments per team: 3",
+            "Time limit: 2 minutes of setup time + 5 minutes of performance time (8 minutes in total).",
+            "No pre-recorded instrumentals or vocals will be allowed.",
+            "One individual is allowed to be a part of only one group. (Being part of more than one group will result in immediate disqualification).",
+            "Any regional languages, as well as English songs, will be permitted.",
+            "Explicit or offensive lyrics/gestures/misconduct will be disqualified immediately.",
+            "Participants must bring their own instruments.",
+            "Judges and organizers' decisions are final and binding."
+          ],
           costs: 250,
           thumbnail:
             "https://raw.githubusercontent.com/tiarasjec/assets/main/cultural/harmony_heaven.png",
@@ -1212,8 +1239,18 @@ const categoriesList = {
         "0": {
           name: "TUNE TUSSLE (Battle Of Bands)",
           description: "Rocking the stage, one riff at a time!",
-          rules: ["RR"],
-          prerequisites: ["PP"],
+          "prerequisites": [],
+          "rules": [
+            "Team size: 3-7 members",
+            "Minimum number of members per band - 3 (minimum use of 3 instruments is a must).",
+            "Maximum number of members per band - 7 (Members performing for more than one band will lead to disqualification of all the involved bands)",
+            "Time limit 5+15 (exceeding the time limit will lead to loss of points).",
+            "There is no specific genre for the battle however the overall atmosphere of the music has to be western.",
+            "Slot Picking, ID and age verification wilt be done one day prior to the battle i.e. on the 5th of March 2023. (All the band members need not be present; However, the Band representatives need to have the necessary documents for verification for all the members).",
+            "Audition links to be submitted by May 1st 2024 with all the necessary details of the bands (including brief introduction of the bands with social media links, links to the released music or YouTube covers and the details of band members. Bands failing to do so will not be considered into the battle). The selected Bands will be contacted back. Submission: tiara@sjec.ac.in.",
+            "All the Rules and regulations will be briefed to the band representatives on the day prior to the battle.",
+            "Participants must convey their message concisely and effectively, avoiding unnecessary details and jargon."
+          ],
           costs: 300,
           thumbnail:
             "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/tunetussel.jpg",
@@ -1243,8 +1280,18 @@ const categoriesList = {
         "1": {
           name: "SPIN-OFF SHOWDOWN (BATTLE OF DJ) ",
           description: "Mixing beats, igniting souls",
-          rules: ["RR"],
-          prerequisites: ["PP"],
+          "prerequisites": [
+            "All contestants must register themselves on the website."
+          ],
+          "rules": [
+            "The SPIN WIZARD is an individual event.",
+            "Time limit: 5 minutes of setup time + 10 minutes of performance time (15 minutes in total).",
+            "The use of any kind of abusive / offensive / pornographic / illegal content is strictly prohibited. Such contest entries will be disqualified immediately.",
+            "Contestants are requested to bring their own headphones and pen drives.",
+            "Use of Controllers is permitted.",
+            "Judge's decision in all matters is final and cannot be appealed or contested.",
+            "Results will be announced right after the competition."
+          ],
           costs: 300,
           thumbnail:
             "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/spin_of_showdown.jpg",
@@ -1274,8 +1321,20 @@ const categoriesList = {
         "2": {
           name: "GROOVE",
           description: " Step up, shake it off, and own the floor",
-          rules: ["RR"],
-          prerequisites: ["PP"],
+          "prerequisites": [
+            "Individual participation.",
+            "Participants must present a physical college ID card and PID to participate in the event."
+          ],
+          "rules": [
+            "All the rounds will be battle and there will be elimination.",
+            "Random songs will be played on the spot.",
+            "Two participants will be called on the stage simultaneously. The first participant dances to a song played on the spot while the other stays still.",
+            "At the signal of the judges, the first participant will stop and the second participant will immediately begin dancing to the continuation of the same song.",
+            "The process will be repeated every time the song is changed. The starting sequence for each song will be performed by participants 1 and 2 alternately.",
+            "Judgement will be based on Creativity, Musicality, Confidence, Entertainment factor, Execution and Expression will be considered.",
+            "Judges and organizer's decisions are final and binding.",
+            "Judges and coordinator may tweak the rules based on the number of participants."
+          ],
           costs: 300,
           thumbnail:
             "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/groove.jpeg",
@@ -1305,8 +1364,22 @@ const categoriesList = {
         "3": {
           name: "HERITAGE HAUTE (Fashion walk)",
           description: "Strut with style, own the runway",
-          rules: ["RR"],
-          prerequisites: ["PP"],
+          "prerequisites": [
+            "All the participants must be from the same college.",
+            "Participants must present a physical college ID card and PID to participate in the event."
+          ],
+          "rules": [
+            "A team can have a minimum of 8 models to a maximum of 16 models.",
+            "A total of 5 minutes will be allotted purely for the performance, and an additional 2 minutes will be allotted for setting up the stage.",
+            "Use of water, fire or any kind of fireworks (party poppers) will lead to immediate disqualification.",
+            "There are no gender restrictions for the team composition.",
+            "Performance should be based on the theme given.",
+            "Any deviation from a fashion-related choreography will lead to a deduction in score.",
+            "Any violation with respect to the campus rules could lead to disqualification.",
+            "Any sort of intoxication in the campus or the green room will lead to disqualification.",
+            "Judgement will be based on coordination, music, confidence, gesture, creativity, garments and accessories.",
+            "The decisions of the judges and organisers will be final."
+          ],
           costs: 300,
           thumbnail:
             "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/heritage_haute.jpeg",
@@ -1337,8 +1410,25 @@ const categoriesList = {
           name: "TECH TITAN TUSSLE (ROBOWARs) ",
           description:
             "Witness sparks fly and metal clash in the ultimate showdown of robotic combat",
-          rules: ["RR"],
-          prerequisites: ["PP"],
+            "prerequisites": [
+              "Participants must carry any valid ID for registration."
+            ],
+            "rules": [
+              "Team size: 3-6 members.",
+              "Compliance with organizers' directives is mandatory; violations lead to disqualification.",
+              "Judges' decisions are final.",
+              "Bot weight limit: 3lb and 8kg categories.",
+              "Only wireless bots allowed.",
+              "Various weapons allowed with exceptions and limitations.",
+              "Knock-out format for contests.",
+              "Safety inspection before the event; unsafe bots discarded.",
+              "Bot declared immobile if unable to exhibit linear motion of at least one inch within 10 seconds.",
+              "LEGO kits, readymade kits, etc., not permitted; readymade gear boxes allowed.",
+              "Organizers reserve the right to modify rules.",
+              "Strict enforcement of allocated time; no extensions.",
+              "Unsafe bots disqualified during the match.",
+              "Criteria for judging informed on event day."
+            ],
           costs: 300,
           thumbnail:
             "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/techtitan.jpg",
@@ -1369,8 +1459,31 @@ const categoriesList = {
           name: "SKY SURGE (RC Plane)",
           description:
             "Taking imagination on flight with cutting-edge innovation",
-          rules: ["RR"],
-          prerequisites: ["PP"],
+            "prerequisites": [
+              "Propellor Palooza is an open-to-all event.",
+              "Teams can have a maximum of 4 members.",
+              "Teams must register through the official Tiara'24 website. Spot entries are not allowed.",
+              "Team members must possess a Tiara ID to participate.",
+              "Participants must design and fabricate an RC aircraft; readymade models are not allowed.",
+              "The same aircraft should be used in both rounds.",
+              "Use of 2.4 GHz radio is required for all competing aircraft.",
+              "Receivers installed in the aircraft must be in 'receiver mode only'.",
+              "Last date for abstract submission: April 30, 2024."
+            ],
+            "rules": [
+              "Teams must adhere to design constraints including T/W ratio, propeller diameter, and wingspan limitations.",
+              "Only electric motors are allowed; IC engines or other means of providing thrust are prohibited.",
+              "Use of gyroscopes (gyros) and programming assistance in receivers is prohibited.",
+              "Programming for any step of the mission is not allowed.",
+              "Use of FPV or any other support for flying is not allowed.",
+              "The competition will be conducted in 3 rounds, with final points being the sum of points earned in each round.",
+              "Teams will have 2 attempts in round 2 and 3, and the best of the scores will be considered from each round.",
+              "Metal propellers are not allowed.",
+              "Organizers will check all systems (servos, motors, etc.) for functionality before the competition.",
+              "In case of disputes/discrepancies, the organizers' decision will be final and binding.",
+              "Any changes in rules will be updated on the official Tiara'24 website and notified to registered teams.",
+              "For details about the competition rounds, please refer to the rulebook."
+            ],
           costs: 300,
           thumbnail:
             "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/sky_surge.jpeg",
