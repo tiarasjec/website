@@ -3,14 +3,15 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import Buy from "../razorpay/Buy";
 import { Suspense, use } from "react";
 import React from "react";
 import { useSession } from "next-auth/react";
 import { CheckedItem } from "@/lib/interfaces";
 import renderCheckedItemsList from "./renderCheckedItemList";
 import { useState,useEffect } from "react";
-import { set } from "react-hook-form";
+import Loading from "@/app/loading";
+
+const Buy = React.lazy(() => import("@/components/razorpay/Buy"));
 
 export default function Checkout({
   technicalCheckedItems,
@@ -36,6 +37,8 @@ export default function Checkout({
     setTotal(total);
 
   },[sumOfCheckedItemsAmount]);
+
+  
   return (
     <Card className="overflow-hidden w-full max-w-lg">
       <CardContent className="p-6 text-sm">
@@ -55,7 +58,7 @@ export default function Checkout({
               </span>
             </li>
           </ul>
-          <Suspense fallback={null}>
+          <Suspense fallback={<Loading />}>
             <Buy
               name={session.data?.user?.name!}
               email={session.data?.user?.email!}
