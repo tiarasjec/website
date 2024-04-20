@@ -18,6 +18,7 @@ interface Event {
   name: string;
   key: string;
   amount: number;
+  // team:boolean;
 }
 
 interface CheckedItem extends Event {
@@ -48,25 +49,43 @@ const Checkbox: React.FC<CheckboxProps> = ({
   );
 };
 
-const events: Event[] = [
-  { name: "SyncLine Sprint", key: "syncLineSprint", amount: 5 },
-  { name: "DirtDash RC", key: "dirtDashRC", amount: 10 },
-  { name: "BlitzBot Soccer", key: "blitzBotSoccer", amount: 15 },
-  { name: "RoboClash", key: "roboClash", amount: 20 },
-  { name: "ONE PIECE", key: "onePiece", amount: 25 },
-  { name: "ZenFlow", key: "zenFlow", amount: 30 },
-  { name: "TYPING TITANS", key: "typingTitans", amount: 35 },
-  { name: "HYDROBLAST", key: "hydroBlast", amount: 40 },
-  { name: "Drone Clash", key: "droneClash", amount: 45 },
-  { name: "BUSINESS BAY", key: "businessBay", amount: 50 },
-  { name: "BLACK MIRROR", key: "blackMirror", amount: 55 },
-  { name: "CADventures", key: "cadventures", amount: 60 },
-];
+// const events: Event[] = [
+//   { name: "SyncLine Sprint", key: "syncLineSprint", amount: 5 },
+//   { name: "DirtDash RC", key: "dirtDashRC", amount: 10 },
+//   { name: "BlitzBot Soccer", key: "blitzBotSoccer", amount: 15 },
+//   { name: "RoboClash", key: "roboClash", amount: 20 },
+//   { name: "ONE PIECE", key: "onePiece", amount: 25 },
+//   { name: "ZenFlow", key: "zenFlow", amount: 30 },
+//   { name: "TYPING TITANS", key: "typingTitans", amount: 35 },
+//   { name: "HYDROBLAST", key: "hydroBlast", amount: 40 },
+//   { name: "Drone Clash", key: "droneClash", amount: 45 },
+//   { name: "BUSINESS BAY", key: "businessBay", amount: 50 },
+//   { name: "BLACK MIRROR", key: "blackMirror", amount: 55 },
+//   { name: "CADventures", key: "cadventures", amount: 60 },
+// ];
 
 // interface eventItems {
 //   name: string;
 //   costs: number;
 // }
+interface EventList {
+  team: boolean;
+  name: string;
+  description: string;
+  rules: string[];
+  prerequisites: string[];
+  general_rules: string[];
+  thumbnail: string;
+  startTime: string;
+  endTime: string;
+  costs: number;
+  facultyCoordinators: { name: string; phone: string }[];
+  studentCoordinators: { name: string; phone: string }[];
+}
+
+interface Events {
+  [key: string]: EventList;
+}
 
 const Register: React.FC = () => {
   const session = useSession({
@@ -80,20 +99,20 @@ const Register: React.FC = () => {
   const [phoneNumber, setPhoneNumber] = React.useState("+91");
   const [events, setEvents] = React.useState<Event[]>([]);
 
+
   useEffect(() => {
-    const eventsData: any[] = [];
-    Object.entries(categoriesList).forEach(([category, value]) => {
-      Object.entries(value["events"]).forEach(([key, val]) => {
-        eventsData.push({
-          name: val["name"],
-          costs: val["costs"],
-        });
-      });
-      console.log(eventsData);
+    const technicalEvents: Events = categoriesList.technical.events[0];
+    Object.keys(technicalEvents).forEach((key) => {
+     console.log(technicalEvents[key]);
+      setEvents((prevEvents) => [
+        ...prevEvents,
+        {
+          name: technicalEvents[key].name,
+          key: key,
+          amount: technicalEvents[key].costs,
+        },
+      ])
     });
-    setEvents(eventsData);
-    // console.log(eventsData);
-    console.log("la");
   }, []);
 
   
