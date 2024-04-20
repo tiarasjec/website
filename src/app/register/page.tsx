@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Checkout from "@/components/ui/checkout";
 import { signIn, useSession } from "next-auth/react";
 import { Label } from "@/components/ui/label";
@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { TabsDemo } from "@/components/razorpay/perCategory";
+import { categoriesList } from "@/data/categoryList";
 
 interface Event {
   name: string;
@@ -61,6 +63,11 @@ const events: Event[] = [
   { name: "CADventures", key: "cadventures", amount: 60 },
 ];
 
+// interface eventItems {
+//   name: string;
+//   costs: number;
+// }
+
 const Register: React.FC = () => {
   const session = useSession({
     required: true,
@@ -71,7 +78,25 @@ const Register: React.FC = () => {
 
   const [checkedItems, setCheckedItems] = useState<CheckedItem[]>([]);
   const [phoneNumber, setPhoneNumber] = React.useState("+91");
+  const [events, setEvents] = React.useState<Event[]>([]);
 
+  useEffect(() => {
+    const eventsData: any[] = [];
+    Object.entries(categoriesList).forEach(([category, value]) => {
+      Object.entries(value["events"]).forEach(([key, val]) => {
+        eventsData.push({
+          name: val["name"],
+          costs: val["costs"],
+        });
+      });
+      console.log(eventsData);
+    });
+    setEvents(eventsData);
+    // console.log(eventsData);
+    console.log("la");
+  }, []);
+
+  
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const key = event.target.value;
     const isChecked = event.target.checked;
@@ -91,7 +116,7 @@ const Register: React.FC = () => {
   );
 
   return (
-    <div className="flex flex-col sm:flex-row w-full items-start justify-center gap-4 p-2">
+    <div className="flex flex-col sm:flex-row w-full items-start justify-center gap-4 p-2 pt-36">
       <Card className="w-full max-w-xl">
         <CardHeader className="flex flex-row items-start bg-muted/50">
           <div className="grid gap-0.5">
@@ -155,6 +180,7 @@ const Register: React.FC = () => {
         sumOfCheckedItemsAmount={sumOfCheckedItemsAmount}
         phoneNumber={phoneNumber}
       />
+      <TabsDemo />
     </div>
   );
 };
