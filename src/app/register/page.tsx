@@ -16,7 +16,6 @@ import { categoriesList } from "@/data/categoryList";
 import { Event, CheckedItem, CheckboxProps, EventList, Events } from "@/lib/interfaces";
 
 
-
 const Checkbox: React.FC<CheckboxProps> = ({
   className,
   value,
@@ -213,7 +212,10 @@ const Register: React.FC = () => {
         />
       </Card>
       <Checkout
-        checkedItems={megaCheckedItems}
+        technicalCheckedItems={technicalCheckedItems}
+        nontechnicalCheckedItems={nontechnicalCheckedItems}
+        culturalCheckedItems={culturalCheckedItems}
+        megaCheckedItems={megaCheckedItems}
         sumOfCheckedItemsAmount={sumOfCheckedItemsAmount}
         phoneNumber={phoneNumber}
       />

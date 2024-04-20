@@ -19,3 +19,5 @@ const renderCheckedItemsList = (checkedItems: CheckedItem[], category: string) =
       )
     );
   }
+
+export default renderCheckedItemsList;

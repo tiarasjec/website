@@ -1,28 +1,27 @@
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Input } from "@/components/ui/input";
 import Buy from "../razorpay/Buy";
 import { Suspense } from "react";
 import React from "react";
 import { useSession } from "next-auth/react";
-import { Label } from "./label";
 import { CheckedItem } from "@/lib/interfaces";
-
+import renderCheckedItemsList from "./renderCheckedItemList";
 
 export default function Checkout({
-  checkedItems,
+  technicalCheckedItems,
+  nontechnicalCheckedItems,
+  culturalCheckedItems,
+  megaCheckedItems,
   sumOfCheckedItemsAmount,
   phoneNumber,
 }: {
-  checkedItems: CheckedItem[];
+  technicalCheckedItems: CheckedItem[];
+  nontechnicalCheckedItems: CheckedItem[];
+  culturalCheckedItems: CheckedItem[];
+  megaCheckedItems: CheckedItem[];
   sumOfCheckedItemsAmount: number;
   phoneNumber: string;
 }) {
@@ -34,17 +33,10 @@ export default function Checkout({
       <CardContent className="p-6 text-sm">
         <div className="grid gap-3">
           <h1 className="text-lg font-semibold">Events summary</h1>
-          {checkedItems.length > 0 ? <ul className="grid gap-3">
-            {checkedItems.map((item) => (
-              <li className="flex items-center justify-between" key={item.key}>
-                <span className="text-muted-foreground">{item.name}</span>
-                <span>
-                  {"\u20B9"}
-                  {item.amount}
-                </span>
-              </li>
-            ))}
-          </ul> : <p className="text-muted-foreground">No events selected</p>}
+          {renderCheckedItemsList(technicalCheckedItems, "technical")}
+          {renderCheckedItemsList(nontechnicalCheckedItems, "nontechnical")}
+          {renderCheckedItemsList(culturalCheckedItems, "cultural")}
+          {renderCheckedItemsList(megaCheckedItems, "mega")}
           <Separator className="my-2" />
           <ul className="grid gap-3">
             <li className="flex items-center justify-between font-semibold">
