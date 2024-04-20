@@ -63,7 +63,7 @@ export function TabsDemo({
   handleCheckboxChange:(event: React.ChangeEvent<HTMLInputElement>) => void;
 }) {
   return (
-    <Tabs defaultValue="account" className="w-[400px]">
+    <Tabs defaultValue="account" className="h-[400px] overflow-y-auto">
       <TabsList className="grid w-full grid-cols-4">
         <TabsTrigger value="technical">Technical</TabsTrigger>
         <TabsTrigger value="nontechnical">Non Technical</TabsTrigger>
@@ -100,7 +100,22 @@ export function TabsDemo({
           <CardHeader>
             <CardTitle>Choose a Technical Event</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2"></CardContent>
+          <CardContent className="space-y-2">
+          {nontechnical.map((event) => (
+          <div
+            key={event.key}
+            className="flex justify-between items-center p-4 mb-2"
+          >
+            <Label className="mr-2">{event.name}</Label>
+            <Checkbox
+              className="w-6 h-6 rounded-full"
+              value={event.key}
+              checked={checkedItems.some((item) => item.key === event.key)}
+              onChange={handleCheckboxChange}
+            />
+          </div>
+        ))}
+          </CardContent>
         </Card>
       </TabsContent>
       {/*Cultural Events */}
@@ -109,7 +124,22 @@ export function TabsDemo({
           <CardHeader>
             <CardTitle>Choose a Cultural Event</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2"></CardContent>
+          <CardContent className="space-y-2">
+          {cultural.map((event) => (
+          <div
+            key={event.key}
+            className="flex justify-between items-center p-4 mb-2"
+          >
+            <Label className="mr-2">{event.name}</Label>
+            <Checkbox
+              className="w-6 h-6 rounded-full"
+              value={event.key}
+              checked={checkedItems.some((item) => item.key === event.key)}
+              onChange={handleCheckboxChange}
+            />
+          </div>
+        ))}
+          </CardContent>
         </Card>
       </TabsContent>
       {/*Mega Events */}
@@ -118,7 +148,22 @@ export function TabsDemo({
           <CardHeader>
             <CardTitle>Choose a Mega event</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2"></CardContent>
+          <CardContent className="space-y-2">
+          {mega.map((event) => (
+          <div
+            key={event.key}
+            className="flex justify-between items-center p-4 mb-2"
+          >
+            <Label className="mr-2">{event.name}</Label>
+            <Checkbox
+              className="w-6 h-6 rounded-full"
+              value={event.key}
+              checked={checkedItems.some((item) => item.key === event.key)}
+              onChange={handleCheckboxChange}
+            />
+          </div>
+        ))}
+          </CardContent>
         </Card>
       </TabsContent>
     </Tabs>

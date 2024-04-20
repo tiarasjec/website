@@ -18,7 +18,7 @@ interface Event {
   name: string;
   key: string;
   amount: number;
-  // team:boolean;
+  team:boolean;
 }
 
 interface CheckedItem extends Event {
@@ -63,31 +63,13 @@ function processEvents(
       name: event.name,
       key: key,
       amount: event.costs,
+      team: event.team,
     });
   });
 
   setEvents(eventsData);
 }
 
-// const events: Event[] = [
-//   { name: "SyncLine Sprint", key: "syncLineSprint", amount: 5 },
-//   { name: "DirtDash RC", key: "dirtDashRC", amount: 10 },
-//   { name: "BlitzBot Soccer", key: "blitzBotSoccer", amount: 15 },
-//   { name: "RoboClash", key: "roboClash", amount: 20 },
-//   { name: "ONE PIECE", key: "onePiece", amount: 25 },
-//   { name: "ZenFlow", key: "zenFlow", amount: 30 },
-//   { name: "TYPING TITANS", key: "typingTitans", amount: 35 },
-//   { name: "HYDROBLAST", key: "hydroBlast", amount: 40 },
-//   { name: "Drone Clash", key: "droneClash", amount: 45 },
-//   { name: "BUSINESS BAY", key: "businessBay", amount: 50 },
-//   { name: "BLACK MIRROR", key: "blackMirror", amount: 55 },
-//   { name: "CADventures", key: "cadventures", amount: 60 },
-// ];
-
-// interface eventItems {
-//   name: string;
-//   costs: number;
-// }
 interface EventList {
   team: boolean;
   name: string;
@@ -124,18 +106,6 @@ const Register: React.FC = () => {
   const [mega, setMega] = React.useState<Event[]>([]);
 
   useEffect(() => {
-    // const technicalEvents: Events = categoriesList.technical.events[0];
-    // Object.keys(technicalEvents).forEach((key) => {
-    //  console.log(technicalEvents[key]);
-    //   setEvents((prevEvents) => [
-    //     ...prevEvents,
-    //     {
-    //       name: technicalEvents[key].name,
-    //       key: key,
-    //       amount: technicalEvents[key].costs,
-    //     },
-    //   ])
-    // });
     processEvents("technical", categoriesList, setTechnical);
     processEvents("non_technical", categoriesList, setNonTechnical);
     processEvents("cultural", categoriesList, setCultural);
@@ -212,30 +182,16 @@ const Register: React.FC = () => {
           />
         </div>
         <Separator className="my-2" />
-        {technical.map((event) => (
-          <div
-            key={event.key}
-            className="flex justify-between items-center p-4 mb-2"
-          >
-            <Label className="mr-2">{event.name}</Label>
-            <Checkbox
-              className="w-6 h-6 rounded-full"
-              value={event.key}
-              checked={checkedItems.some((item) => item.key === event.key)}
-              onChange={handleCheckboxChange}
-            />
-          </div>
-        ))}
+        <TabsDemo
+        {...{ technical, nontechnical, cultural, mega }}
+        checkedItems={checkedItems}
+        handleCheckboxChange={handleCheckboxChange}
+      />
       </Card>
       <Checkout
         checkedItems={checkedItems}
         sumOfCheckedItemsAmount={sumOfCheckedItemsAmount}
         phoneNumber={phoneNumber}
-      />
-      <TabsDemo
-        {...{ technical, nontechnical, cultural, mega }}
-        checkedItems={checkedItems}
-        handleCheckboxChange={handleCheckboxChange}
       />
     </div>
   );
