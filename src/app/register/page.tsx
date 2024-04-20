@@ -18,7 +18,7 @@ interface Event {
   name: string;
   key: string;
   amount: number;
-  team:boolean;
+  team: boolean;
 }
 
 interface CheckedItem extends Event {
@@ -97,9 +97,19 @@ const Register: React.FC = () => {
     },
   });
 
-  const [checkedItems, setCheckedItems] = useState<CheckedItem[]>([]);
+  // const [checkedItems, setCheckedItems] = useState<CheckedItem[]>([]);
+  const [technicalCheckedItems, setTechnicalCheckedItems] = useState<
+    CheckedItem[]
+  >([]);
+  const [nontechnicalCheckedItems, setNontechnicalCheckedItems] = useState<
+    CheckedItem[]
+  >([]);
+  const [culturalCheckedItems, setCulturalCheckedItems] = useState<
+    CheckedItem[]
+  >([]);
+  const [megaCheckedItems, setMegaCheckedItems] = useState<CheckedItem[]>([]);
+
   const [phoneNumber, setPhoneNumber] = React.useState("+91");
-  const [events, setEvents] = React.useState<Event[]>([]);
   const [technical, setTechnical] = React.useState<Event[]>([]);
   const [nontechnical, setNonTechnical] = React.useState<Event[]>([]);
   const [cultural, setCultural] = React.useState<Event[]>([]);
@@ -116,20 +126,69 @@ const Register: React.FC = () => {
     console.log(mega);
   }, []);
 
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    category: string
+  ) => {
     const key = event.target.value;
     const isChecked = event.target.checked;
     if (isChecked) {
-      const selectedEvent = technical.find((event) => event.key === key);
-      if (selectedEvent) {
-        setCheckedItems([...checkedItems, { ...selectedEvent, checked: true }]);
-      }
-    } else {
-      setCheckedItems(checkedItems.filter((item) => item.key !== key));
+      if (category === "technical") {
+        const selectedEvent = technical.find((event) => event.key === key);
+        if (selectedEvent) {
+          setTechnicalCheckedItems([
+            ...technicalCheckedItems,
+            { ...selectedEvent, checked: true },
+          ]);
+        } else {
+          setTechnicalCheckedItems(
+            technicalCheckedItems.filter((item) => item.key !== key)
+          );
+        }
+      } else if (category === "nontechnical") {
+        const selectedEvent = nontechnical.find((event) => event.key === key);
+        if (selectedEvent) {
+          setNontechnicalCheckedItems([
+            ...nontechnicalCheckedItems,
+            { ...selectedEvent, checked: true },
+          ]);
+        } else {
+          setNontechnicalCheckedItems(
+            technicalCheckedItems.filter((item) => item.key !== key)
+          );
+        }
+      } else if (category === "cultural") {
+        const selectedEvent = cultural.find((event) => event.key === key);
+        if (selectedEvent) {
+          setCulturalCheckedItems([
+            ...culturalCheckedItems,
+            { ...selectedEvent, checked: true },
+          ]);
+        }
+        else {
+          setCulturalCheckedItems(
+            culturalCheckedItems.filter((item) => item.key !== key)
+          );
+        }
+      } 
+      else if (category === "mega") {
+        const selectedEvent = mega.find((event) => event.key === key);
+        if (selectedEvent) {
+          setMegaCheckedItems([
+            ...megaCheckedItems,
+            { ...selectedEvent, checked: true },
+          ]);
+        }
+        else {
+          setMegaCheckedItems(
+            megaCheckedItems.filter((item) => item.key !== key)
+          );
+        }
+      } 
     }
   };
 
-  const sumOfCheckedItemsAmount = checkedItems.reduce(
+  const sumOfCheckedItemsAmount = megaCheckedItems.reduce(
     (acc, item) => (item.checked ? acc + item.amount : acc),
     0
   );
@@ -183,13 +242,16 @@ const Register: React.FC = () => {
         </div>
         <Separator className="my-2" />
         <TabsDemo
-        {...{ technical, nontechnical, cultural, mega }}
-        checkedItems={checkedItems}
-        handleCheckboxChange={handleCheckboxChange}
-      />
+          {...{ technical, nontechnical, cultural, mega }}
+          technicalCheckedItems={technicalCheckedItems}
+          nontechnicalCheckedItems={nontechnicalCheckedItems}
+          culturalCheckedItems={culturalCheckedItems}
+          megaCheckedItems={megaCheckedItems}
+          handleCheckboxChange={handleCheckboxChange}
+        />
       </Card>
       <Checkout
-        checkedItems={checkedItems}
+        checkedItems={megaCheckedItems}
         sumOfCheckedItemsAmount={sumOfCheckedItemsAmount}
         phoneNumber={phoneNumber}
       />
