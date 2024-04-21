@@ -72,12 +72,12 @@ const Page = () => {
                                 <h1 className="text-3xl mt-3 font-bold text-center">{eventInfo?.name}</h1>
                                 <p className=" mt-4 text-xl text-center">{eventInfo?.description}</p>
                             </div>
-                            <div className="bg-white rounded-xl flex w-3/6 h-10 text-black text-2xl justify-center items-center mt-4 font-tiara ml-4">
+                            {/* <div className="bg-white rounded-xl flex w-3/6 h-10 text-black text-2xl justify-center items-center mt-4 font-tiara ml-4">
                                 <span className="">
                                     {formattedDate.toString().toLowerCase()}th may -{" "}
                                     {formattedTime.toString().toLowerCase()}
                                 </span>
-                            </div>
+                            </div> */}
                             <div className="w-full mt-5">
                                 <h1 className="text-2xl font-bold text-tiara_red ml-4">Prerequisites</h1>
                                 <ul className="mt-4 ml-5">
