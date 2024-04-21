@@ -13,6 +13,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Info from "./hover/info";
 
 const Buy = React.lazy(() => import("@/components/razorpay/Buy"));
 
@@ -57,11 +58,16 @@ export default function Checkout({
           {itemsWith250.length > 0 && (
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  Super pass events of 250{" "}
-                  <span className="ml-auto">
-                    {Math.floor(itemsWith250.length / 4) + 1 + "x 250"}
+                <AccordionTrigger className="no-underline">
+                  Event Pass{" "}
+                  <span className="ml-2">
+                      <Info info={"Events priced at 250 rupees are per person for up to every 4 events"} />
                   </span>
+                  <span className="ml-auto">
+                    {Math.floor(itemsWith250.length / 4) + 1 + `x  ${"\u20B9"}250/person`}
+                   
+                  </span>
+                  
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="grid gap-3">
@@ -72,6 +78,9 @@ export default function Checkout({
                       >
                         <span className="text-muted-foreground">
                           {item.name}
+                        </span>
+                        <span className="text-muted-foreground">
+                          1 x
                         </span>
                       </li>
                     ))}

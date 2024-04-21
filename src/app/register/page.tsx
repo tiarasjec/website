@@ -13,8 +13,13 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { TabsDemo } from "@/components/razorpay/perCategory";
 import { categoriesList } from "@/data/categoryList";
-import { Event, CheckedItem, CheckboxProps, EventList, Events } from "@/lib/interfaces";
-
+import {
+  Event,
+  CheckedItem,
+  CheckboxProps,
+  EventList,
+  Events,
+} from "@/lib/interfaces";
 
 const Checkbox: React.FC<CheckboxProps> = ({
   className,
@@ -54,8 +59,6 @@ function processEvents(
   setEvents(eventsData);
 }
 
-
-
 const Register: React.FC = () => {
   const session = useSession({
     required: true,
@@ -64,17 +67,25 @@ const Register: React.FC = () => {
     },
   });
 
-  const [technicalCheckedItems, setTechnicalCheckedItems] = useState<CheckedItem[]>([]);
-  const [nontechnicalCheckedItems, setNontechnicalCheckedItems] = useState<CheckedItem[]>([]);
-  const [culturalCheckedItems, setCulturalCheckedItems] = useState<CheckedItem[]>([]);
+  const [technicalCheckedItems, setTechnicalCheckedItems] = useState<
+    CheckedItem[]
+  >([]);
+  const [nontechnicalCheckedItems, setNontechnicalCheckedItems] = useState<
+    CheckedItem[]
+  >([]);
+  const [culturalCheckedItems, setCulturalCheckedItems] = useState<
+    CheckedItem[]
+  >([]);
   const [megaCheckedItems, setMegaCheckedItems] = useState<CheckedItem[]>([]);
-  
+
   const [phoneNumber, setPhoneNumber] = React.useState("+91");
+  const [teamName, setTeamName] = React.useState("");
   const [technical, setTechnical] = React.useState<Event[]>([]);
   const [nontechnical, setNonTechnical] = React.useState<Event[]>([]);
   const [cultural, setCultural] = React.useState<Event[]>([]);
   const [mega, setMega] = React.useState<Event[]>([]);
-  
+
+  const [hasTeams, setHasTeams] = React.useState<boolean>(false);
 
   useEffect(() => {
     processEvents("technical", categoriesList, setTechnical);
@@ -109,6 +120,10 @@ const Register: React.FC = () => {
             ...nontechnicalCheckedItems,
             { ...selectedEvent, checked: true },
           ]);
+          console.log(selectedEvent.team);
+          if (selectedEvent.team) {
+            setHasTeams(true);
+          }
         }
       } else if (category === "cultural") {
         const selectedEvent = cultural.find((event) => event.key === key);
@@ -133,8 +148,10 @@ const Register: React.FC = () => {
           technicalCheckedItems.filter((item) => item.key !== key)
         );
       } else if (category === "nontechnical") {
+        const newCheckedItems = nontechnicalCheckedItems.filter((item) => item.key !== key);
+        newCheckedItems.find((item) => item.team) ? setHasTeams(true) : setHasTeams(false);
         setNontechnicalCheckedItems(
-          nontechnicalCheckedItems.filter((item) => item.key !== key)
+          newCheckedItems
         );
       } else if (category === "cultural") {
         setCulturalCheckedItems(
@@ -147,45 +164,47 @@ const Register: React.FC = () => {
       }
     }
   };
-  
+
   const [itemswith250, setItemswith250] = React.useState<CheckedItem[]>([]);
 
-useEffect(() => {
-  const allItems: CheckedItem[] = [
-    ...technicalCheckedItems,
-    ...nontechnicalCheckedItems,
-    ...culturalCheckedItems,
-    ...megaCheckedItems,
-  ];
+  useEffect(() => {
+    const allItems: CheckedItem[] = [
+      ...technicalCheckedItems,
+      ...nontechnicalCheckedItems,
+      ...culturalCheckedItems,
+      ...megaCheckedItems,
+    ];
 
-  const itemsWithAmount250 = allItems.filter((item) => item.amount === 250);
-  setItemswith250(itemsWithAmount250);
-}, [technicalCheckedItems, nontechnicalCheckedItems, culturalCheckedItems, megaCheckedItems]);
+    const itemsWithAmount250 = allItems.filter((item) => item.amount === 250);
+    setItemswith250(itemsWithAmount250);
+  }, [
+    technicalCheckedItems,
+    nontechnicalCheckedItems,
+    culturalCheckedItems,
+    megaCheckedItems,
+  ]);
 
-
-
-  const sumOfCheckedItemsAmount = megaCheckedItems.reduce(
-    (acc, item) => (item.checked ? acc + item.amount : acc),
-    0
-  );
-
-  const getSumofCheckedItems = () =>{
-      const categories = [technicalCheckedItems, nontechnicalCheckedItems, culturalCheckedItems, megaCheckedItems]
-      let totalSum = 0
-      for (const category of categories){
-        totalSum += category.reduce(
-          (acc, item) => {
-            if(item.checked && item.amount !== 250){
-              return acc + item.amount
-            }
-            return acc
-          },
-          0
-        );
-      }
-      totalSum += (Math.floor(itemswith250.length / 4) + 1)*250
-      return totalSum;
-  }
+  const getSumofCheckedItems = () => {
+    const categories = [
+      technicalCheckedItems,
+      nontechnicalCheckedItems,
+      culturalCheckedItems,
+      megaCheckedItems,
+    ];
+    let totalSum = 0;
+    for (const category of categories) {
+      totalSum += category.reduce((acc, item) => {
+        if (item.checked && item.amount !== 250) {
+          return acc + item.amount;
+        }
+        return acc;
+      }, 0);
+    }
+    if (itemswith250.length > 0) {
+      totalSum += (Math.floor(itemswith250.length / 4) + 1) * 250;
+    }
+    return totalSum;
+  };
 
   return (
     <div className="flex flex-col sm:flex-row w-full items-start justify-center gap-4 p-2 pt-36">
@@ -231,8 +250,23 @@ useEffect(() => {
             aria-label="Phone number"
             placeholder="Phone number"
             value={phoneNumber}
+            required
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
+          {hasTeams && (
+            <>
+              <Label htmlFor="team_name">Team Name</Label>
+              <Input
+                type="text"
+                id="team_name"
+                aria-label="Team Name"
+                placeholder="Enter your team name"
+                value={teamName}
+                required
+                onChange={(e) => setTeamName(e.target.value)}
+              />
+            </>
+          )}
         </div>
         <Separator className="my-2" />
         <TabsDemo

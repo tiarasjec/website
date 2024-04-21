@@ -16,6 +16,7 @@ const renderCheckedItemsList = (
               <span>
                 {"\u20B9"}
                 {item.amount}
+                {item.team? "/team":"/person"}
               </span>
             </li>
           )

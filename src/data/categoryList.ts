@@ -994,7 +994,7 @@ const categoriesList = {
           ],
         },
         "12": {
-          team: false,
+          team: true,
           name: " Gully-googly (Gully cricket)",
           description:
             "Beneath the sky, amidst chaos, legends rise with every swing of the bat",
@@ -1045,7 +1045,7 @@ const categoriesList = {
           ],
         },
         "13": {
-          team: false,
+          team: true,
           name: " Dunkin-dribble (3x3 Basketball)",
           description: "Just give it a shot",
           "prerequisites": [
