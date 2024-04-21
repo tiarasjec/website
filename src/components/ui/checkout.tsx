@@ -14,6 +14,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Info from "./hover/info";
+import { Label } from "./label";
+import { Input } from "./input";
 
 const Buy = React.lazy(() => import("@/components/razorpay/Buy"));
 
@@ -23,7 +25,6 @@ export default function Checkout({
   culturalCheckedItems,
   megaCheckedItems,
   sumOfCheckedItemsAmount,
-  phoneNumber,
   itemsWith250,
 }: {
   technicalCheckedItems: CheckedItem[];
@@ -32,12 +33,12 @@ export default function Checkout({
   megaCheckedItems: CheckedItem[];
   itemsWith250: CheckedItem[];
   sumOfCheckedItemsAmount: () => number;
-  phoneNumber: string;
 }) {
   const session = useSession({
     required: true,
   });
   const [total, setTotal] = useState(0);
+  const [phoneNumber, setPhoneNumber] = React.useState("+91");
   useEffect(() => {
     const total = sumOfCheckedItemsAmount();
     setTotal(total);
@@ -50,24 +51,26 @@ export default function Checkout({
     megaCheckedItems.filter((item) => item.amount === 250).length;
 
   return (
-    <Card className="overflow-hidden w-full max-w-lg">
+    <Card className="overflow-hidden w-full border-hidden">
       <CardContent className="p-6 text-sm">
         <div className="grid gap-3">
           <h1 className="text-lg font-semibold">Events summary</h1>
-
           {itemsWith250.length > 0 && (
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="no-underline">
                   Event Pass{" "}
                   <span className="ml-2">
-                      <Info info={"Events priced at 250 rupees are per person for up to every 4 events"} />
+                    <Info
+                      info={
+                        "Events priced at 250 rupees are per person for up to every 4 events"
+                      }
+                    />
                   </span>
                   <span className="ml-auto">
-                    {Math.ceil(itemsWith250.length / 4) + `x  ${"\u20B9"}250/person`}
-                   
+                    {Math.ceil(itemsWith250.length / 4) +
+                      `x  ${"\u20B9"}250/person`}
                   </span>
-                  
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="grid gap-3">
@@ -79,9 +82,7 @@ export default function Checkout({
                         <span className="text-muted-foreground">
                           {item.name}
                         </span>
-                        <span className="text-muted-foreground">
-                          1 x
-                        </span>
+                        <span className="text-muted-foreground">1 x</span>
                       </li>
                     ))}
                   </ul>
@@ -104,6 +105,16 @@ export default function Checkout({
           {renderCheckedItemsList(megaCheckedItems, "mega", countOf250)}
           <Separator className="my-2" />
           <ul className="grid gap-3">
+          <Label htmlFor="phone">Phone Number</Label>
+          <Input
+            type="tel"
+            id="phone"
+            aria-label="Phone number"
+            placeholder="Phone number"
+            value={phoneNumber}
+            required
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
             <li className="flex items-center justify-between font-semibold">
               <span className="text-muted-foreground">Total</span>
               <span>

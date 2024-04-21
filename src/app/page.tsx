@@ -2,9 +2,9 @@
 import { HeroParallax } from "@/components/widgets/Hero";
 import { useEffect, useState } from "react";
 import { LabIntro } from "@/components/story/intro";
-import { CyllinderStory } from "@/components/story/cylinder";
 import { Last } from "@/components/story/last";
 import Loading from "./loading";
+import Lenis from "@/components/shared/lenis";
 
 export default function Home() {
   const [images, setImages] = useState<{ src: string; alt: string }[]>([]);
@@ -15,8 +15,7 @@ export default function Home() {
     fetch("/api/hero")
       .then((response) => response.json())
       .then((data) => {
-        setLoading(false), 
-        setImages(data);
+        setLoading(false), setImages(data);
       })
 
       .catch((error) => console.error("Error fetching images:", error));
@@ -26,10 +25,11 @@ export default function Home() {
     <Loading />
   ) : (
     <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 py-0 md:gap-8 md:py-0">
+      <Lenis>
         <HeroParallax images={images} />
         <LabIntro />
-        {/* <CyllinderStory /> */}
         <Last />
+      </Lenis>
     </main>
   );
 }

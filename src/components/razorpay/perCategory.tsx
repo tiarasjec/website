@@ -1,20 +1,18 @@
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "../ui/input";
 
 interface Event {
   name: string;
   key: string;
   amount: number;
-  team:boolean;
+  team: boolean;
 }
 
 interface CheckedItem extends Event {
@@ -35,7 +33,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   onChange,
 }) => {
   return (
-    <input
+    <Input
       type="checkbox"
       className={className}
       value={value}
@@ -64,24 +62,35 @@ export function TabsDemo({
   nontechnicalCheckedItems: CheckedItem[];
   culturalCheckedItems: CheckedItem[];
   megaCheckedItems: CheckedItem[];
-  handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>, category: string) => void;
+  handleCheckboxChange: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    category: string
+  ) => void;
 }) {
   return (
-    <Tabs defaultValue="technical" className="">
-      <TabsList className="grid w-full grid-cols-4">
-        <TabsTrigger value="technical">Technical</TabsTrigger>
-        <TabsTrigger value="nontechnical">Non Technical</TabsTrigger>
-        <TabsTrigger value="cultural">Cultural</TabsTrigger>
-        <TabsTrigger value="mega">Mega</TabsTrigger>
+    <Tabs defaultValue="technical" className="border-hidden w-full pl-2">
+      <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-2 h-auto border-hidden">
+        <TabsTrigger value="technical">
+          <span className="flex flex-wrap border">Technical</span>
+        </TabsTrigger>
+        <TabsTrigger value="nontechnical">
+          <span className="flex flex-wrap">Non Technical</span>
+        </TabsTrigger>
+        <TabsTrigger value="cultural">
+          <span className="flex flex-wrap">Cultural</span>
+        </TabsTrigger>
+        <TabsTrigger value="mega">
+          <span className="flex flex-wrap">Mega</span>
+        </TabsTrigger>
       </TabsList>
       <div className="h-[400px] overflow-y-auto">
         {/* Technical Events */}
         <TabsContent value="technical">
           <Card>
             <CardHeader>
-              <CardTitle>Choose a Technical Event</CardTitle>
+              <CardTitle>Choose a Technical Events</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2">
+            <CardContent className="space-y-2 border-hidden">
               {technical.map((event) => (
                 <div
                   key={event.key}
@@ -89,12 +98,12 @@ export function TabsDemo({
                 >
                   <Label className="mr-2">{event.name}</Label>
                   <Checkbox
-                    className="w-6 h-6 rounded-full"
+                    className="w-6 h-6 bg-zinc-800"
                     value={event.key}
                     checked={technicalCheckedItems.some(
                       (item) => item.key === event.key
                     )}
-                    onChange={(e)=>handleCheckboxChange(e,"technical")}
+                    onChange={(e) => handleCheckboxChange(e, "technical")}
                   />
                 </div>
               ))}
@@ -105,7 +114,7 @@ export function TabsDemo({
         <TabsContent value="nontechnical">
           <Card>
             <CardHeader>
-              <CardTitle>Choose a Technical Event</CardTitle>
+              <CardTitle>Choose a Non Technical Events</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               {nontechnical.map((event) => (
@@ -115,12 +124,12 @@ export function TabsDemo({
                 >
                   <Label className="mr-2">{event.name}</Label>
                   <Checkbox
-                    className="w-6 h-6 rounded-full"
+                    className="w-6 h-6"
                     value={event.key}
                     checked={nontechnicalCheckedItems.some(
                       (item) => item.key === event.key
                     )}
-                    onChange={(e)=>handleCheckboxChange(e,"nontechnical")}
+                    onChange={(e) => handleCheckboxChange(e, "nontechnical")}
                   />
                 </div>
               ))}
@@ -131,7 +140,7 @@ export function TabsDemo({
         <TabsContent value="cultural">
           <Card>
             <CardHeader>
-              <CardTitle>Choose a Cultural Event</CardTitle>
+              <CardTitle>Choose a Cultural Events</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               {cultural.map((event) => (
@@ -141,12 +150,12 @@ export function TabsDemo({
                 >
                   <Label className="mr-2">{event.name}</Label>
                   <Checkbox
-                    className="w-6 h-6 rounded-full"
+                    className="w-6 h-6"
                     value={event.key}
                     checked={culturalCheckedItems.some(
                       (item) => item.key === event.key
                     )}
-                    onChange={(e)=>handleCheckboxChange(e,"cultural")}
+                    onChange={(e) => handleCheckboxChange(e, "cultural")}
                   />
                 </div>
               ))}
@@ -157,7 +166,7 @@ export function TabsDemo({
         <TabsContent value="mega">
           <Card>
             <CardHeader>
-              <CardTitle>Choose a Mega event</CardTitle>
+              <CardTitle>Choose a Mega events</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               {mega.map((event) => (
@@ -167,12 +176,12 @@ export function TabsDemo({
                 >
                   <Label className="mr-2">{event.name}</Label>
                   <Checkbox
-                    className="w-6 h-6 rounded-full"
+                    className="w-6 h-6"
                     value={event.key}
                     checked={megaCheckedItems.some(
                       (item) => item.key === event.key
                     )}
-                    onChange={(e)=>handleCheckboxChange(e,"mega")}
+                    onChange={(e) => handleCheckboxChange(e, "mega")}
                   />
                 </div>
               ))}

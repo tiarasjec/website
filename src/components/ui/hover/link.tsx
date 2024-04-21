@@ -1,6 +1,8 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import { tiaraFont } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 // export const HoverImageLinks = () => {
 //   return (
@@ -107,7 +109,7 @@ export const Link = ({ heading, image, subheading, href }: LinkProps) => {
                 whileHover: { x: 16 },
               }}
               transition={{ type: "spring" }}
-              className="inline-block"
+              className={cn("inline-block tracking-wider", tiaraFont.className)}
               key={i}
             >
               {l}

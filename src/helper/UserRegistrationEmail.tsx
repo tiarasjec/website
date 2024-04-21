@@ -19,6 +19,7 @@ import {
 } from "@react-email/components";
 import { Tailwind } from "@react-email/tailwind";
 import * as React from "react";
+import { startTransition } from "react";
 
 interface UserRegistrationEmailProps {
   registrationId?: string;
