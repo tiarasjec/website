@@ -58,7 +58,7 @@ export default function Checkout({
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>
-                  Bus pass events of 250{" "}
+                  Super pass events of 250{" "}
                   <span className="ml-auto">
                     {Math.floor(itemsWith250.length / 4) + 1 + "x 250"}
                   </span>

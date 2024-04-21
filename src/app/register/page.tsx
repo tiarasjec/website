@@ -174,10 +174,16 @@ useEffect(() => {
       let totalSum = 0
       for (const category of categories){
         totalSum += category.reduce(
-          (acc, item) => (item.checked ? acc + item.amount : acc),
+          (acc, item) => {
+            if(item.checked && item.amount !== 250){
+              return acc + item.amount
+            }
+            return acc
+          },
           0
         );
       }
+      totalSum += (Math.floor(itemswith250.length / 4) + 1)*250
       return totalSum;
   }
 
