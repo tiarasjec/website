@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation"; // Import usePathname from next/n
 import { CardType } from "@/components/ui/hover/scroll";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { tiaraFont } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 function toTitleCase(str: string) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -26,7 +28,12 @@ export default function EventsPage() {
   return (
     <div className="h-fit">
       <div className="-ml-5 flex justify-center items-center pt-32 z-50">
-        <div className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-tiara w-fit text-center duration-500">
+        <div
+          className={cn(
+            "text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl w-fit text-center duration-500",
+            tiaraFont.className
+          )}
+        >
           {toTitleCase(pathname.split("/")[2])} Events
         </div>
       </div>

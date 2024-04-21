@@ -7,6 +7,7 @@ import TICKET from "@/assets/ticket.png";
 
 import s from "./last.module.scss";
 import { cn } from "@/lib/utils";
+import { tiaraFont } from "@/lib/fonts";
 
 export const Last = () => {
   return (
@@ -61,7 +62,7 @@ export const Last = () => {
               ],
             }}
           >
-            <h2 className={cn(s["title"], "font-tiara tracking-widest")}>
+            <h2 className={cn(s["title"], "tracking-widest", tiaraFont.className)}>
               Ti<span className="text-tiara_red">ar</span>a registrations!{" "}
               <br />
               coming out soon!

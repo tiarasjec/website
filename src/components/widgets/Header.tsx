@@ -11,6 +11,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { tiaraFont } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 interface NavItem {
   label: string;
@@ -79,7 +81,7 @@ export function Header() {
                 <a
                   key={i}
                   href={navItem.href}
-                  className="font-tiara tracking-widest"
+                  className={cn("tracking-widest", tiaraFont.className)}
                 >
                   {navItem.label}
                 </a>
@@ -94,7 +96,10 @@ export function Header() {
               ) : (
                 <Button
                   disabled
-                  className="font-tiara tracking-widest flex items-center font-medium md:my-6 pointer-events-none"
+                  className={cn(
+                    "tracking-widest flex items-center font-medium md:my-6 pointer-events-none",
+                    tiaraFont.className
+                  )}
                   onClick={() =>
                     signIn("google", {
                       callbackUrl: "/events",
