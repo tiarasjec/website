@@ -9,7 +9,7 @@ export default function Privacy() {
    
     return (
         <Container className="mx-auto ">
-            <div className="py-4 mx-6  sm:mx-12 space-y-4 pt-32">
+            <div className="py-4 mx-6  sm:mx-12 space-y-4 pt-32 text-white">
                 <h1 className={cn("text-5xl", tiaraFont)}>Privacy Policy</h1>
                 <p>
                     At Tiara, we take your privacy seriously and are committed to protecting your personal information. This

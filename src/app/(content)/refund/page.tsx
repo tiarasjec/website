@@ -9,7 +9,7 @@ export default function Refund() {
    
     return (
         <Container className="mx-auto">
-            <div className="py-4 mx-6  sm:mx-12 space-y-4 pt-32">
+            <div className="py-4 mx-6  sm:mx-12 space-y-4 pt-32 text-white">
                 <h1 className={cn("text-5xl", tiaraFont)}>Refund Policy</h1>
                 {legalInfo.Refund.map((refund, index) => (
                     <div key={index}>
