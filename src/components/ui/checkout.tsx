@@ -64,7 +64,7 @@ export default function Checkout({
                       <Info info={"Events priced at 250 rupees are per person for up to every 4 events"} />
                   </span>
                   <span className="ml-auto">
-                    {Math.floor(itemsWith250.length / 4) + 1 + `x  ${"\u20B9"}250/person`}
+                    {Math.ceil(itemsWith250.length / 4) + `x  ${"\u20B9"}250/person`}
                    
                   </span>
                   
