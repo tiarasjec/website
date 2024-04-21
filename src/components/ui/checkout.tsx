@@ -7,6 +7,12 @@ import { CheckedItem } from "@/lib/interfaces";
 import renderCheckedItemsList from "./renderCheckedItemList";
 import { useState, useEffect } from "react";
 import Loading from "@/app/loading";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Buy = React.lazy(() => import("@/components/razorpay/Buy"));
 
@@ -47,13 +53,34 @@ export default function Checkout({
       <CardContent className="p-6 text-sm">
         <div className="grid gap-3">
           <h1 className="text-lg font-semibold">Events summary</h1>
-          <span>
-            {itemsWith250.map((item) => (
-              <span key={item.key}>
-                {item.name}({item.amount})
-              </span>
-            ))}
-          </span>
+
+          {itemsWith250.length > 0 && (
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  Bus pass events of 250{" "}
+                  <span className="ml-auto">
+                    {Math.floor(itemsWith250.length / 4) + 1 + "x 250"}
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="grid gap-3">
+                    {itemsWith250.map((item) => (
+                      <li
+                        className="flex items-center justify-between"
+                        key={item.key}
+                      >
+                        <span className="text-muted-foreground">
+                          {item.name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          )}
+
           {renderCheckedItemsList(
             technicalCheckedItems,
             "technical",
