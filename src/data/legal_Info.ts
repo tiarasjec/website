@@ -89,7 +89,7 @@ const legalInfo = {
             Discover, ensuring the secure handling of payment information by our store and its service
             providers.
             For more information on Razorpay&#39;s terms and conditions and their secure handling of payment
-            information, please refer to their website at https://razorpay.com.`,
+            information, please refer to their website at <a href="https://razorpay.com">razorpay.com</a>`,
         },
         {
             title: "Links to Other Sites",
@@ -113,7 +113,7 @@ const legalInfo = {
             We value your trust and remain dedicated to ensuring the highest standards of data protection and
             privacy.
             For inquiries or clarifications on our privacy policy or personal data handling, you may reach us
-            at tiara@sjec.ac.in.`,
+            at <a href="mailto:tiara@sjec.ac.in">tiara@sjec.ac.in</a>`,
         },
     ],
     Refund: [
@@ -123,11 +123,11 @@ const legalInfo = {
         },
         {
             title: "Payment Process",
-            description: `Our payment process is designed to be easy and convenient for you. We offer multiple payment options, including credit/debit cards, net banking, and UPI. Once you select your preferred payment method, you will be redirected to Razorpay's secure payment gateway to complete the payment process.`,
+            description: `Our payment process is designed to be easy and convenient for you. We offer multiple payment options, including credit/debit cards, net banking, and UPI. Once you select your preferred payment method, you will be redirected to Razorpay${"'"}s secure payment gateway to complete the payment process.`,
         },
         {
             title: "Refund Policy",
-            description: `We understand that sometimes processing errors or technical glitches can occur during the payment process, leading to an unsuccessful transaction. In such cases, the amount paid by you will be credited back to your account automatically within 5-7 business days. Please note that this refund is only applicable in the case of an unsuccessful transaction due to processing errors and not for any other reasons. Please fill out the form : https://forms.gle/wU6fomGC7zXmB4jq9`,
+            description: `We understand that sometimes processing errors or technical glitches can occur during the payment process, leading to an unsuccessful transaction. In such cases, the amount paid by you will be credited back to your account automatically within 5-7 business days. Please note that this refund is only applicable in the case of an unsuccessful transaction due to processing errors and not for any other reasons. Please fill out the form : <a href='https://forms.gle/wU6fomGC7zXmB4jq9'>here</a>`,
         },
         {
             title: "Non-Refundable Services",
@@ -139,7 +139,7 @@ const legalInfo = {
         },
         {
             title: "Contact Information",
-            description: `If you have any questions or concerns about our refund policy or payment process, please do not hesitate to contact our team. You can reach us at tiara@sjec.ac.in, and we will be happy to assist you.            `,
+            description: `If you have any questions or concerns about our refund policy or payment process, please do not hesitate to contact our team. You can reach us at <a href="mailto:tiara@sjec.ac.in">tiara@sjec.ac.in</a>, and we will be happy to assist you.            `,
         },
     ],
     terms: [
@@ -183,7 +183,7 @@ const legalInfo = {
         {
             title: "SECTION 5 - EVENTS AND SERVICES AT TIARA 2024            ",
             description: `Certain events and services may be available exclusively through the TIARA 2024 website, organized by St. Joseph Engineering College student organizers. These events and services may have limited capacities and are subject to availability.
-            We have made every effort to display as accurately as possible the details and images of our events and services that appear on the website. We cannot guarantee that your computer or mobile device's display of any details or images will be accurate.
+            We have made every effort to display as accurately as possible the details and images of our events and services that appear on the website. We cannot guarantee that your computer or mobile device${"'"}s display of any details or images will be accurate.
             St. Joseph Engineering College student organizers, college staff, and the principal reserve the right, but are not obligated, to limit the attendance or participation of any person, from any geographic region or jurisdiction. We may exercise this right on a case-by-case basis. We reserve the right to limit the quantities of any events or services that we offer. All descriptions of events or services or their pricing are subject to change at any time without notice, at the sole discretion of us. We reserve the right to discontinue any event or service at any time.
             We do not warrant that the quality of any events, services, information, or other material obtained by you at TIARA 2024 will meet your expectations, or that any errors in the Service will be corrected.
             `,
@@ -208,7 +208,7 @@ const legalInfo = {
             title: "SECTION 8 - THIRD-PARTY LINKS",
             description: `Certain content, products, and services available via TIARA 2024, the college fest organized by student organizers of St. Joseph Engineering College, may include materials from third parties.
             Third-party links on the TIARA 2024 website may direct you to third-party websites that are not affiliated with the college staff. We, the college staff, are not responsible for examining or evaluating the content or accuracy, and we do not warrant and will not have any liability or responsibility for any third-party materials or websites, or for any other materials, products, or services of third parties.
-            We are not liable for any harm or damages related to the purchase or use of goods, services, resources, content, or any other transactions made in connection with any third-party websites. Please review carefully the third-party's policies and practices and make sure you understand them before you engage in any transaction. Complaints, claims, concerns, or questions regarding third-party products should be directed to the third-party.
+            We are not liable for any harm or damages related to the purchase or use of goods, services, resources, content, or any other transactions made in connection with any third-party websites. Please review carefully the third-party${"'"}s policies and practices and make sure you understand them before you engage in any transaction. Complaints, claims, concerns, or questions regarding third-party products should be directed to the third-party.
             `,
         },
         {
@@ -239,13 +239,13 @@ const legalInfo = {
             description: `We do not guarantee, represent, or warrant that your use of our service, i.e., the TIARA 2024 event, will be uninterrupted, timely, secure, or error-free.
             We do not warrant that the results that may be obtained from the use of the event will be accurate or reliable.
             You agree that from time to time, we, the college staff and student organizers, may need to remove the event for indefinite periods of time or cancel the event at any time, without notice to you.
-            You expressly agree that your use of, or inability to use, the event is at your sole risk. The event and all products and services delivered to you through the event are (except as expressly stated by us) provided 'as is' and 'as available' for your use, without any representation, warranties or conditions of any kind, either express or implied, including all implied warranties or conditions of merchantability, merchantable quality, fitness for a particular purpose, durability, title, and non-infringement.
+            You expressly agree that your use of, or inability to use, the event is at your sole risk. The event and all products and services delivered to you through the event are (except as expressly stated by us) provided ${"'"}as is${"'"} and ${"'"}as available${"'"} for your use, without any representation, warranties or conditions of any kind, either express or implied, including all implied warranties or conditions of merchantability, merchantable quality, fitness for a particular purpose, durability, title, and non-infringement.
             In no case shall St. Joseph Engineering College, its directors, officers, employees, affiliates, agents, contractors, interns, suppliers, service providers, or licensors, including the student organizers, be liable for any injury, loss, claim, or any direct, indirect, incidental, punitive, special, or consequential damages of any kind, including, without limitation, lost profits, lost revenue, lost savings, loss of data, replacement costs, or any similar damages, whether based in contract, tort (including negligence), strict liability or otherwise, arising from your use of any of the event or any products or services procured using the event, or for any other claim related in any way to your use of the event or any product or service, including, but not limited to, any errors or omissions in any content or any loss or damage of any kind incurred as a result of the use of the event or any content (or product) posted, transmitted, or otherwise made available via the event, even if advised of their possibility. Because some states or jurisdictions do not allow the exclusion or limitation of liability for consequential or incidental damages, in such states or jurisdictions, our liability shall be limited to the maximum extent permitted by law.
             `,
         },
         {
             title: "SECTION 14 - INDEMNIFICATION",
-            description: `You agree to indemnify, defend and hold harmless St. Joseph Engineering College and its student organizers, college staff, parent, subsidiaries, affiliates, partners, officers, directors, agents, contractors, licensors, service providers, subcontractors, suppliers, interns, and employees, harmless from any claim or demand, including reasonable attorneys' fees, made by any third-party due to or arising out of your breach of these Terms of Service or the documents they incorporate by reference, or your violation of any law or the rights of a third-party in relation to your participation in TIARA 2024.
+            description: `You agree to indemnify, defend and hold harmless St. Joseph Engineering College and its student organizers, college staff, parent, subsidiaries, affiliates, partners, officers, directors, agents, contractors, licensors, service providers, subcontractors, suppliers, interns, and employees, harmless from any claim or demand, including reasonable attorneys fees, made by any third-party due to or arising out of your breach of these Terms of Service or the documents they incorporate by reference, or your violation of any law or the rights of a third-party in relation to your participation in TIARA 2024.
             `,
         },
         {
@@ -281,8 +281,8 @@ const legalInfo = {
         {
             title: "SECTION 20 - CONTACT INFORMATION            ",
             description: `Any questions about the Terms of Service of TIARA 2024, held by St. Joseph Engineering College, should be directed to the student organizers and college staff at the following contact information:
-            Email: tiara@sjec.ac.in
-            Phone: +91 63643 49426 or +91 94831 13722
+            Email: <a href="mailto:tiara@sjec.ac.in">tiara@sjec.ac.in</a>
+            Phone: <a href =tel: "+916364349426">91 63643 49426</a>  or <a href = tel:"+919483113722" >91 94831 13722</a>
             `,
         },
     ],
