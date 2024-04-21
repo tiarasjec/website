@@ -14,7 +14,7 @@ export default function Terms() {
                 {legalInfo.terms.map((terms, index) => (
                     <div key={index}>
                         <h1 className={cn("text-2xl", tiaraFont)}>{terms.title}</h1>
-                        <p>{terms.description}</p>
+                        <p dangerouslySetInnerHTML={{ __html: terms.description }}></p>
                     </div>
                ))}
             </div>

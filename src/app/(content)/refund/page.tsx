@@ -14,7 +14,7 @@ export default function Refund() {
                 {legalInfo.Refund.map((refund, index) => (
                     <div key={index}>
                         <h1 className={cn("text-2xl", tiaraFont)}>{refund.title}</h1>
-                        <p>{refund.description}</p>
+                        <p dangerouslySetInnerHTML={{ __html: refund.description }}></p>
                     </div>
                ))}
             </div>

@@ -19,7 +19,7 @@ export default function Privacy() {
                 {legalInfo.policy.map((policy, index) => (
                     <div key={index}>
                         <h1 className={cn("text-2xl", tiaraFont)}>{policy.title}</h1>
-                        <p>{policy.description}</p>
+                        <p dangerouslySetInnerHTML={{ __html: policy.description }}></p>
                     </div>
                ))}
             </div>
