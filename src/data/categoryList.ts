@@ -1,7 +1,7 @@
 const categoriesList = {
   technical: {
-    description:
-      "Technical events are a showcase of innovation and creativity in the field of technology.",
+    // Small description of the category
+    description: "Technical events are a showcase of innovation and creativity in the field of technology.",
     thumbnail:
       "https://raw.githubusercontent.com/tiarasjec/assets/main/technical/technical_thumbnail.png",
     events: [
@@ -513,9 +513,8 @@ const categoriesList = {
     ],
   },
 
-  non_technical: {
-    description:
-      "Non-technical events are a showcase of creativity and talent in various fields such as art, music, and literature.",
+  "non_technical": {
+    description: "Non-technical events are a showcase of creativity and talent in various fields such as art, music, and literature.",
     thumbnail:
       "https://raw.githubusercontent.com/tiarasjec/assets/main/nontechnical/nontechnical_thumbnail.png",
     events: [
@@ -1136,8 +1135,7 @@ const categoriesList = {
   },
 
   cultural: {
-    description:
-      "Cultural events are a celebration of art, dance, and creativity.",
+    description: "Cultural events are a celebration of art, dance, and creativity.",
     thumbnail:
       "https://raw.githubusercontent.com/tiarasjec/assets/main/cultural/cultural_thumbnail.png",
     events: [
@@ -1230,8 +1228,7 @@ const categoriesList = {
   },
 
   mega: {
-    description:
-      "Mega events are the grand spectacles of the fest, featuring a variety of competitions and performances that showcase the talents and skills of participants in a larger-than-life setting.",
+    description: "Mega events are the grand spectacles of the fest, featuring a variety of competitions and performances that showcase the talents and skills of participants in a larger-than-life setting.",
     thumbnail:
       "https://raw.githubusercontent.com/tiarasjec/assets/main/mega/mega_thumbnail.png",
     events: [
