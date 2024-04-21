@@ -38,16 +38,21 @@ export default function Checkout({
 
   },[sumOfCheckedItemsAmount]);
 
-  
+    let countOf250 =
+  technicalCheckedItems.filter((item) => item.amount === 250).length +
+  nontechnicalCheckedItems.filter((item) => item.amount === 250).length +
+  culturalCheckedItems.filter((item) => item.amount === 250).length +
+  megaCheckedItems.filter((item) => item.amount === 250).length;
+
   return (
     <Card className="overflow-hidden w-full max-w-lg">
       <CardContent className="p-6 text-sm">
         <div className="grid gap-3">
           <h1 className="text-lg font-semibold">Events summary</h1>
-          {renderCheckedItemsList(technicalCheckedItems, "technical")}
-          {renderCheckedItemsList(nontechnicalCheckedItems, "nontechnical")}
-          {renderCheckedItemsList(culturalCheckedItems, "cultural")}
-          {renderCheckedItemsList(megaCheckedItems, "mega")}
+          {renderCheckedItemsList(technicalCheckedItems, "technical",countOf250)}
+          {renderCheckedItemsList(nontechnicalCheckedItems, "nontechnical",countOf250)}
+          {renderCheckedItemsList(culturalCheckedItems, "cultural",countOf250)}
+          {renderCheckedItemsList(megaCheckedItems, "mega",countOf250)}
           <Separator className="my-2" />
           <ul className="grid gap-3">
             <li className="flex items-center justify-between font-semibold">

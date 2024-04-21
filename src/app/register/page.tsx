@@ -86,7 +86,7 @@ const Register: React.FC = () => {
     console.log(cultural);
     console.log(mega);
   }, []);
-
+  let index;
   const handleCheckboxChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     category: string
