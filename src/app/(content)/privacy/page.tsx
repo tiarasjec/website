@@ -6,12 +6,9 @@ import { tiaraFont } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import {legalInfo} from "../../../data/legal_Info"
 export default function Privacy() {
-    interface Privacy { 
-        title: string;
-        content : string;
-    }
+   
     return (
-        <Container className="mx-auto">
+        <Container className="mx-auto ">
             <div className="py-4 mx-6  sm:mx-12 space-y-4 pt-32">
                 <h1 className={cn("text-5xl", tiaraFont)}>Privacy Policy</h1>
                 <p>
@@ -22,7 +19,7 @@ export default function Privacy() {
                 {legalInfo.policy.map((policy, index) => (
                     <div key={index}>
                         <h1 className={cn("text-2xl", tiaraFont)}>{policy.title}</h1>
-                        <p>{policy.content}</p>
+                        <p>{policy.description}</p>
                     </div>
                ))}
             </div>
