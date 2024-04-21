@@ -148,6 +148,21 @@ const Register: React.FC = () => {
     }
   };
   
+  const [itemswith250, setItemswith250] = React.useState<CheckedItem[]>([]);
+
+useEffect(() => {
+  const allItems: CheckedItem[] = [
+    ...technicalCheckedItems,
+    ...nontechnicalCheckedItems,
+    ...culturalCheckedItems,
+    ...megaCheckedItems,
+  ];
+
+  const itemsWithAmount250 = allItems.filter((item) => item.amount === 250);
+  setItemswith250(itemsWithAmount250);
+}, [technicalCheckedItems, nontechnicalCheckedItems, culturalCheckedItems, megaCheckedItems]);
+
+
 
   const sumOfCheckedItemsAmount = megaCheckedItems.reduce(
     (acc, item) => (item.checked ? acc + item.amount : acc),
@@ -228,6 +243,7 @@ const Register: React.FC = () => {
         nontechnicalCheckedItems={nontechnicalCheckedItems}
         culturalCheckedItems={culturalCheckedItems}
         megaCheckedItems={megaCheckedItems}
+        itemsWith250={itemswith250}
         sumOfCheckedItemsAmount={getSumofCheckedItems}
         phoneNumber={phoneNumber}
       />

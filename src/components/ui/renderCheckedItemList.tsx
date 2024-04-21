@@ -10,21 +10,15 @@ const renderCheckedItemsList = (
     <ul className="grid gap-3">
       {checkedItems.map((item, index) => {
         return (
-          <li className="flex items-center justify-between" key={item.key}>
-            <span className="text-muted-foreground">{item.name}</span>
-            {item.amount === 250 ? (
-              index % 4 === 0 ? (
-                `${Math.floor(countOf250 / 4) + 1}x 250`
-              ) : (
-                ""
-              )
-            ) : (
+          item.amount !== 250 && (
+            <li className="flex items-center justify-between" key={item.key}>
+              <span className="text-muted-foreground">{item.name}</span>
               <span>
                 {"\u20B9"}
                 {item.amount}
               </span>
-            )}
-          </li>
+            </li>
+          )
         );
       })}
     </ul>
