@@ -22,9 +22,9 @@ export async function sendEmail(email: string, name: string) {
     });
 
     const mailOptions = {
-      from: "tiara@gmail.com",
+      from: process.env.GMAIL_USER,
       to: email,
-      subject: "Testing email for now", // Email subject
+      subject: "Tiara 2024 Registration",
       html: emailHtml,
     };
 

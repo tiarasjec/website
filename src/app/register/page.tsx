@@ -13,24 +13,8 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { TabsDemo } from "@/components/razorpay/perCategory";
 import { categoriesList } from "@/data/categoryList";
+import { Event, CheckedItem, CheckboxProps, EventList, Events } from "@/lib/interfaces";
 
-interface Event {
-  name: string;
-  key: string;
-  amount: number;
-  team:boolean;
-}
-
-interface CheckedItem extends Event {
-  checked: boolean;
-}
-
-interface CheckboxProps {
-  className: string;
-  value: string;
-  checked: boolean;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
 const Checkbox: React.FC<CheckboxProps> = ({
   className,
@@ -70,24 +54,7 @@ function processEvents(
   setEvents(eventsData);
 }
 
-interface EventList {
-  team: boolean;
-  name: string;
-  description: string;
-  rules: string[];
-  prerequisites: string[];
-  general_rules: string[];
-  thumbnail: string;
-  startTime: string;
-  endTime: string;
-  costs: number;
-  facultyCoordinators: { name: string; phone: string }[];
-  studentCoordinators: { name: string; phone: string }[];
-}
 
-interface Events {
-  [key: string]: EventList;
-}
 
 const Register: React.FC = () => {
   const session = useSession({
@@ -97,13 +64,17 @@ const Register: React.FC = () => {
     },
   });
 
-  const [checkedItems, setCheckedItems] = useState<CheckedItem[]>([]);
+  const [technicalCheckedItems, setTechnicalCheckedItems] = useState<CheckedItem[]>([]);
+  const [nontechnicalCheckedItems, setNontechnicalCheckedItems] = useState<CheckedItem[]>([]);
+  const [culturalCheckedItems, setCulturalCheckedItems] = useState<CheckedItem[]>([]);
+  const [megaCheckedItems, setMegaCheckedItems] = useState<CheckedItem[]>([]);
+  
   const [phoneNumber, setPhoneNumber] = React.useState("+91");
-  const [events, setEvents] = React.useState<Event[]>([]);
   const [technical, setTechnical] = React.useState<Event[]>([]);
   const [nontechnical, setNonTechnical] = React.useState<Event[]>([]);
   const [cultural, setCultural] = React.useState<Event[]>([]);
   const [mega, setMega] = React.useState<Event[]>([]);
+  
 
   useEffect(() => {
     processEvents("technical", categoriesList, setTechnical);
@@ -115,24 +86,106 @@ const Register: React.FC = () => {
     console.log(cultural);
     console.log(mega);
   }, []);
-
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  let index;
+  const handleCheckboxChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    category: string
+  ) => {
     const key = event.target.value;
     const isChecked = event.target.checked;
     if (isChecked) {
-      const selectedEvent = technical.find((event) => event.key === key);
-      if (selectedEvent) {
-        setCheckedItems([...checkedItems, { ...selectedEvent, checked: true }]);
+      if (category === "technical") {
+        const selectedEvent = technical.find((event) => event.key === key);
+        if (selectedEvent) {
+          setTechnicalCheckedItems([
+            ...technicalCheckedItems,
+            { ...selectedEvent, checked: true },
+          ]);
+        }
+      } else if (category === "nontechnical") {
+        const selectedEvent = nontechnical.find((event) => event.key === key);
+        if (selectedEvent) {
+          setNontechnicalCheckedItems([
+            ...nontechnicalCheckedItems,
+            { ...selectedEvent, checked: true },
+          ]);
+        }
+      } else if (category === "cultural") {
+        const selectedEvent = cultural.find((event) => event.key === key);
+        if (selectedEvent) {
+          setCulturalCheckedItems([
+            ...culturalCheckedItems,
+            { ...selectedEvent, checked: true },
+          ]);
+        }
+      } else if (category === "mega") {
+        const selectedEvent = mega.find((event) => event.key === key);
+        if (selectedEvent) {
+          setMegaCheckedItems([
+            ...megaCheckedItems,
+            { ...selectedEvent, checked: true },
+          ]);
+        }
       }
     } else {
-      setCheckedItems(checkedItems.filter((item) => item.key !== key));
+      if (category === "technical") {
+        setTechnicalCheckedItems(
+          technicalCheckedItems.filter((item) => item.key !== key)
+        );
+      } else if (category === "nontechnical") {
+        setNontechnicalCheckedItems(
+          nontechnicalCheckedItems.filter((item) => item.key !== key)
+        );
+      } else if (category === "cultural") {
+        setCulturalCheckedItems(
+          culturalCheckedItems.filter((item) => item.key !== key)
+        );
+      } else if (category === "mega") {
+        setMegaCheckedItems(
+          megaCheckedItems.filter((item) => item.key !== key)
+        );
+      }
     }
   };
+  
+  const [itemswith250, setItemswith250] = React.useState<CheckedItem[]>([]);
 
-  const sumOfCheckedItemsAmount = checkedItems.reduce(
+useEffect(() => {
+  const allItems: CheckedItem[] = [
+    ...technicalCheckedItems,
+    ...nontechnicalCheckedItems,
+    ...culturalCheckedItems,
+    ...megaCheckedItems,
+  ];
+
+  const itemsWithAmount250 = allItems.filter((item) => item.amount === 250);
+  setItemswith250(itemsWithAmount250);
+}, [technicalCheckedItems, nontechnicalCheckedItems, culturalCheckedItems, megaCheckedItems]);
+
+
+
+  const sumOfCheckedItemsAmount = megaCheckedItems.reduce(
     (acc, item) => (item.checked ? acc + item.amount : acc),
     0
   );
+
+  const getSumofCheckedItems = () =>{
+      const categories = [technicalCheckedItems, nontechnicalCheckedItems, culturalCheckedItems, megaCheckedItems]
+      let totalSum = 0
+      for (const category of categories){
+        totalSum += category.reduce(
+          (acc, item) => {
+            if(item.checked && item.amount !== 250){
+              return acc + item.amount
+            }
+            return acc
+          },
+          0
+        );
+      }
+      totalSum += (Math.floor(itemswith250.length / 4) + 1)*250
+      return totalSum;
+  }
 
   return (
     <div className="flex flex-col sm:flex-row w-full items-start justify-center gap-4 p-2 pt-36">
@@ -183,14 +236,21 @@ const Register: React.FC = () => {
         </div>
         <Separator className="my-2" />
         <TabsDemo
-        {...{ technical, nontechnical, cultural, mega }}
-        checkedItems={checkedItems}
-        handleCheckboxChange={handleCheckboxChange}
-      />
+          {...{ technical, nontechnical, cultural, mega }}
+          technicalCheckedItems={technicalCheckedItems}
+          nontechnicalCheckedItems={nontechnicalCheckedItems}
+          culturalCheckedItems={culturalCheckedItems}
+          megaCheckedItems={megaCheckedItems}
+          handleCheckboxChange={handleCheckboxChange}
+        />
       </Card>
       <Checkout
-        checkedItems={checkedItems}
-        sumOfCheckedItemsAmount={sumOfCheckedItemsAmount}
+        technicalCheckedItems={technicalCheckedItems}
+        nontechnicalCheckedItems={nontechnicalCheckedItems}
+        culturalCheckedItems={culturalCheckedItems}
+        megaCheckedItems={megaCheckedItems}
+        itemsWith250={itemswith250}
+        sumOfCheckedItemsAmount={getSumofCheckedItems}
         phoneNumber={phoneNumber}
       />
     </div>
