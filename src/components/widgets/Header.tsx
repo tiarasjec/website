@@ -88,10 +88,10 @@ export function Header() {
               ))}
               {session && session.user ? (
                 <Button
-                  className="flex items-center gap-x-2 md:border-s md:border-zinc-600 font-medium md:my-6 md:ps-6"
+                  className="flex tracking-widest font-tiara items-center gap-x-2 md:border-s md:border-zinc-600 font-medium md:my-6 md:ps-6"
                   onClick={() => signOut()}
                 >
-                  Logout
+                Logout
                 </Button>
               ) : (
                 <Button
