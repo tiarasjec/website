@@ -23,8 +23,15 @@ const generatedSignature = (
 };
 
 export async function POST(request: NextRequest) {
-  const { orderCreationId, razorpayPaymentId, razorpaySignature } =
-    await request.json();
+  const {
+    orderCreationId,
+    razorpayPaymentId,
+    razorpaySignature,
+    teams,
+    events,
+    contact,
+    college,
+  } = await request.json();
   const session = await auth();
 
   if (!session) {
@@ -64,29 +71,48 @@ export async function POST(request: NextRequest) {
       { status: 400 }
     );
   } else if (signature === razorpaySignature) {
-    await prisma.payment.upsert({
-      where: {
-        razorpayPaymentId,
-        user: {
-          email: session.user?.email,
-        },
-      },
-      update: {
-        status: PaymentStatus.SUCCESS,
-        orderCreationId,
-      },
-      create: {
-        signature: razorpaySignature,
-        razorpayPaymentId,
-        orderCreationId,
-        status: PaymentStatus.SUCCESS,
-        user: {
-          connect: {
-            email: session.user?.email!,
+    prisma.$transaction(async (prisma) => [
+      await prisma.payment.upsert({
+        where: {
+          razorpayPaymentId,
+          user: {
+            email: session.user?.email,
           },
         },
-      },
-    });
+        update: {
+          status: PaymentStatus.SUCCESS,
+          orderCreationId,
+        },
+        create: {
+          signature: razorpaySignature,
+          razorpayPaymentId,
+          orderCreationId,
+          status: PaymentStatus.SUCCESS,
+          user: {
+            connect: {
+              email: session.user?.email!,
+            },
+          },
+        },
+      }),
+
+      await prisma.user.update({
+        where: {
+          email: session.user?.email!,
+        },
+        data: {
+          events,
+          teams: {
+            createMany: {
+              data: teams,
+            },
+          },
+          college,
+          contact,
+        },
+      }),
+    ]);
+
     sendEmail(session.user?.email!, session.user?.name!);
     return NextResponse.json(
       { message: "payment verified successfully", isOk: true },

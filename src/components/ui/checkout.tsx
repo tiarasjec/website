@@ -26,13 +26,18 @@ export default function Checkout({
   megaCheckedItems,
   sumOfCheckedItemsAmount,
   itemsWith250,
+  college,
+  selectedEvents,
 }: {
   technicalCheckedItems: CheckedItem[];
   nontechnicalCheckedItems: CheckedItem[];
   culturalCheckedItems: CheckedItem[];
   megaCheckedItems: CheckedItem[];
   itemsWith250: CheckedItem[];
+  college:string;
+  selectedEvents: string[];
   sumOfCheckedItemsAmount: () => number;
+  
 }) {
   const session = useSession({
     required: true,
@@ -153,13 +158,13 @@ export default function Checkout({
           </ul>
           <Suspense fallback={<Loading />}>
             <Buy
-              college={"XYZ College"}
-              teamList={teamNames}
-              events={["technical", "nontechnical", "cultural", "mega"]}
+              teams={teamNames}
+              events={selectedEvents}
               name={session.data?.user?.name!}
               email={session.data?.user?.email!}
               contact={phoneNumber}
               amount={total}
+              college={college}
             />
           </Suspense>
         </div>

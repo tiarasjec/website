@@ -29,7 +29,7 @@ export interface makePaymentProps {
     college: string;
     contact: string;
     events: string[];
-    teamList: string[];
+    teams: string[];
   };
 }
 
@@ -46,7 +46,7 @@ export const makePayment = async ({
     headers: {
       "Content-Type": "application/json", // Assuming the API expects JSON
     },
-    body: JSON.stringify({ amount, prefillData }), // Pass amount as a parameter in the request body
+    body: JSON.stringify({ amount, prefillData }), 
   });
   const { orderId } = await response.json();
   const options = {
@@ -62,12 +62,15 @@ export const makePayment = async ({
       contact: prefillData.contact,
     },
     handler: async function (response: any) {
-      console.log(response);
       const data = {
         orderCreationId: orderId,
         razorpayPaymentId: response.razorpay_payment_id,
         razorpayOrderId: response.razorpay_order_id,
         razorpaySignature: response.razorpay_signature,
+        college: prefillData.college,
+        events: prefillData.events,
+        teams: prefillData.teams,
+        phone:prefillData.contact,
       };
 
       const result = await fetch("/api/razorpay/verify", {

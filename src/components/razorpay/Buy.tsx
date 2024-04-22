@@ -16,12 +16,13 @@ interface UserData {
 
 const Buy = (userData: {
   events: string[];
-  teamList: string[];
+  teams: string[];
   amount: number;
   college: string;
   contact: string;
   email: string;
   name: string;
+  
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -39,7 +40,7 @@ const Buy = (userData: {
             email: userData.email,
             college: userData.college,
             contact: userData.contact,
-            teamList: userData.teamList,
+            teams: userData.teams,
             events: userData.events,
           },
         });
