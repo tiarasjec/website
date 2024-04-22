@@ -1,0 +1,36 @@
+name: Sync build assets to CDN
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Website
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Sync build assets
+        uses: patrickwyler/gcs-bucket-sync-action@1.4
+        with:
+            secrets: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS }}
+            bucket: "tiara-assets"
+            exclude: '.*\.md$|\.gitignore$|\.git/.*$|\.github/.*$'
+            sync_dir_from: ".next/static"
+            sync_dir_to: "assets/_next/static"
+            
