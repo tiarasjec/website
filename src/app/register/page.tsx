@@ -67,6 +67,8 @@ const Register: React.FC = () => {
   const [cultural, setCultural] = React.useState<Event[]>([]);
   const [mega, setMega] = React.useState<Event[]>([]);
   const [hasTeams, setHasTeams] = React.useState<boolean>(false);  
+  const [college, setCollege] = React.useState<string>("");
+  const [teamCount, setTeamCount] = React.useState<number>(0);
   
   useEffect(() => {
     processEvents("technical", categoriesList, setTechnical);
@@ -222,7 +224,17 @@ const Register: React.FC = () => {
             disabled
           />
           <br />
-          {hasTeams && (
+          <Label htmlFor="text">College</Label>
+          <Input
+            type="text"
+            id="college"
+            aria-label="College"
+            placeholder="College"
+            value={college}
+            required
+            onChange={(e) => setCollege(e.target.value)}
+          />
+          {/* {hasTeams && (
             <>
               <Label htmlFor="team_name">Team Name</Label>
               <Input
@@ -235,7 +247,7 @@ const Register: React.FC = () => {
                 onChange={(e) => setTeamName(e.target.value)}
               />
             </>
-          )}
+          )} */}
         </div>
         <Separator className="my-2" />
         <div className="flex justify-between flex-col lg:flex-row">

@@ -35,4 +35,8 @@ interface Event {
     [key: string]: EventList;
   }
 
+  interface Teams{
+    
+  }
+
 export type { Event, CheckedItem, CheckboxProps, EventList, Events };

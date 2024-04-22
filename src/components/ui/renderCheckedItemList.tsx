@@ -4,8 +4,16 @@ import { useEffect } from "react";
 const renderCheckedItemsList = (
   checkedItems: CheckedItem[],
   category: string,
-  countOf250: number
+  countOf250: number,
+  setTeamCount?: (count: number) => void
 ) => {
+  useEffect(() => {
+    if (setTeamCount) {
+      const teamItems = checkedItems.filter((item) => item.team === true);
+      const count = teamItems.length;
+      setTeamCount(count);
+    }
+  }, [checkedItems]);
   return checkedItems.length > 0 ? (
     <ul className="grid gap-3">
       {checkedItems.map((item, index) => {
