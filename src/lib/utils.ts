@@ -26,7 +26,10 @@ export interface makePaymentProps {
   prefillData: {
     name: string;
     email: string;
+    college: string;
     contact: string;
+    events: string[];
+    teamList: string[];
   };
 }
 
@@ -43,7 +46,7 @@ export const makePayment = async ({
     headers: {
       "Content-Type": "application/json", // Assuming the API expects JSON
     },
-    body: JSON.stringify({ amount }), // Pass amount as a parameter in the request body
+    body: JSON.stringify({ amount, prefillData }), // Pass amount as a parameter in the request body
   });
   const { orderId } = await response.json();
   const options = {
@@ -59,6 +62,7 @@ export const makePayment = async ({
       contact: prefillData.contact,
     },
     handler: async function (response: any) {
+      console.log(response);
       const data = {
         orderCreationId: orderId,
         razorpayPaymentId: response.razorpay_payment_id,

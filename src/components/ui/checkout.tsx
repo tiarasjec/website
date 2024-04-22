@@ -127,7 +127,7 @@ export default function Checkout({
             {teamCount > 0 &&
               Array.from({ length: teamCount }).map((_, index) => (
                 <>
-                  <Label htmlFor="team_name">Team Name {index+1}</Label>
+                  <Label htmlFor="team_name">Team Name {index + 1}</Label>
                   <Input
                     key={index}
                     type="text"
@@ -153,6 +153,9 @@ export default function Checkout({
           </ul>
           <Suspense fallback={<Loading />}>
             <Buy
+              college={"XYZ College"}
+              teamList={teamNames}
+              events={["technical", "nontechnical", "cultural", "mega"]}
               name={session.data?.user?.name!}
               email={session.data?.user?.email!}
               contact={phoneNumber}

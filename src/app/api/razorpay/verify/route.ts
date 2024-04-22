@@ -76,6 +76,7 @@ export async function POST(request: NextRequest) {
         orderCreationId,
       },
       create: {
+        signature: razorpaySignature,
         razorpayPaymentId,
         orderCreationId,
         status: PaymentStatus.SUCCESS,
