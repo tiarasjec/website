@@ -13,7 +13,7 @@ const renderCheckedItemsList = (
       const count = teamItems.length;
       setTeamCount(count);
     }
-  }, [checkedItems]);
+  }, [checkedItems,setTeamCount]);
   return checkedItems.length > 0 ? (
     <ul className="grid gap-3">
       {checkedItems.map((item, index) => {
