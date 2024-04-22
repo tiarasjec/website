@@ -3,17 +3,6 @@ import { makePayment } from "@/lib/utils";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-interface Props {
-  makePayment: (productId: object) => void;
-}
-
-interface UserData {
-  name: string;
-  email: string;
-  contact: string;
-  amount: number;
-}
-
 const Buy = (userData: {
   events: string[];
   teams: string[];

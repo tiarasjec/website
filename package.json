@@ -61,12 +61,13 @@
     "react-icons": "^5.1.0",
     "react-intersection-observer": "^9.8.1",
     "sass": "^1.75.0",
+    "shadcn-ui": "^0.8.0",
     "sharp": "^0.33.3",
     "shortid": "^2.2.16",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.163.0",
-    "zod": "^3.22.4"
+    "zod": "^3.23.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
