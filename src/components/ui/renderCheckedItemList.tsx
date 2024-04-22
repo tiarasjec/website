@@ -1,7 +1,7 @@
 import { CheckedItem } from "@/lib/interfaces";
 import { useEffect } from "react";
 
-const renderCheckedItemsList = (
+const RenderCheckedItemsList = (
   checkedItems: CheckedItem[],
   category: string,
   countOf250: number,
@@ -24,7 +24,7 @@ const renderCheckedItemsList = (
               <span>
                 {"\u20B9"}
                 {item.amount}
-                {item.team? "/team":"/person"}
+                {item.team ? "/team" : "/person"}
               </span>
             </li>
           )
@@ -36,4 +36,4 @@ const renderCheckedItemsList = (
   );
 };
 
-export default renderCheckedItemsList;
+export default RenderCheckedItemsList;

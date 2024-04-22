@@ -4,7 +4,7 @@ import { Suspense, use } from "react";
 import React from "react";
 import { useSession } from "next-auth/react";
 import { CheckedItem } from "@/lib/interfaces";
-import renderCheckedItemsList from "./renderCheckedItemList";
+import RenderCheckedItemsList from "./renderCheckedItemList";
 import { useState, useEffect } from "react";
 import Loading from "@/app/loading";
 import {
@@ -99,19 +99,19 @@ export default function Checkout({
             </Accordion>
           )}
 
-          {renderCheckedItemsList(
+          {RenderCheckedItemsList(
             technicalCheckedItems,
             "technical",
             countOf250
           )}
-          {renderCheckedItemsList(
+          {RenderCheckedItemsList(
             nontechnicalCheckedItems,
             "nontechnical",
             countOf250,
             setTeamCount
           )}
-          {renderCheckedItemsList(culturalCheckedItems, "cultural", countOf250)}
-          {renderCheckedItemsList(megaCheckedItems, "mega", countOf250)}
+          {RenderCheckedItemsList(culturalCheckedItems, "cultural", countOf250)}
+          {RenderCheckedItemsList(megaCheckedItems, "mega", countOf250)}
           <Separator className="my-2" />
           <ul className="grid gap-3">
             <Label htmlFor="phone">Phone Number</Label>
@@ -127,7 +127,7 @@ export default function Checkout({
             {teamCount > 0 &&
               Array.from({ length: teamCount }).map((_, index) => (
                 <>
-                  <Label htmlFor="team_name">Team Name {index+1}</Label>
+                  <Label htmlFor="team_name">Team Name {index + 1}</Label>
                   <Input
                     key={index}
                     type="text"
