@@ -82,7 +82,7 @@ const legalInfo = {
             description: `We offer multiple modes of payment on our website, including debit card, UPI ID, and other digital
             payment options. All payment details provided by you are encrypted and processed securely
             through our payment gateway partner, Razorpay. As mentioned earlier, your card data is not stored
-            on our or Razorpay&#39;s servers, and all purchase transaction data is only used to complete your
+            on our or Razorpay${"'"}s servers, and all purchase transaction data is only used to complete your
             purchase and will not be saved.
             Our payment gateway follows the PCI-DSS standards set by the PCI Security Standards Council,
             which includes leading credit and debit card brands like Visa, Mastercard, American Express, and
