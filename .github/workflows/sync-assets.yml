@@ -26,6 +26,8 @@ jobs:
         run: npm run build
         env:
             AUTH_SECRET: "secret" # prevent error on build
+            RAZORPAY_KEY: "test_key"
+            RAZORPAY_SECRET: "test_secret"
 
       - name: Sync build assets
         uses: patrickwyler/gcs-bucket-sync-action@1.4
