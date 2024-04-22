@@ -12,6 +12,8 @@ export const baseURL = process.env.NEXT_PUBLIC_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/`
   : `http://localhost:${process.env.PORT ?? 3000}/`;
 
+export const tiaraAssetsPrefix = "https://assets.tiarasjec.in";
+
 declare global {
   interface Window {
     Razorpay: any;
