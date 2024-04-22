@@ -36,5 +36,5 @@ jobs:
             bucket: "tiara-assets"
             exclude: '.*\.md$|\.gitignore$|\.git/.*$|\.github/.*$'
             sync_dir_from: ".next/static"
-            sync_dir_to: "assets/_next/static"
+            sync_dir_to: "_next/static"
             
