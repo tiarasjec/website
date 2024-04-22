@@ -11,7 +11,6 @@ const Buy = (userData: {
   contact: string;
   email: string;
   name: string;
-  
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -34,7 +33,15 @@ const Buy = (userData: {
           },
         });
       }}
-      disabled={userData.amount === 0 || isLoading ? true : false}
+      disabled={
+        userData.amount === 0 ||
+        userData.college.length === 0 ||
+        userData.contact.length === 10 ||
+        userData.events.length === 0 ||
+        isLoading
+          ? true
+          : false
+      }
       className={` font-semibold py-2 px-4 rounded ${
         isLoading ? "opacity-50 cursor-not-allowed" : ""
       }`}
