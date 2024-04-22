@@ -1,9 +1,11 @@
+import { tiaraAssetsPrefix } from '@/lib/utils';
+
 const categoriesList = {
   technical: {
     // Small description of the category
     description:
       "Technical events are a showcase of innovation and creativity in the field of technology.",
-    thumbnail: "https://assets.tiarasjec.in/technical/technical_thumbnail.png",
+    thumbnail: `${tiaraAssetsPrefix}/technical/technical_thumbnail.png`,
     events: [
       {
         "0": {
@@ -31,7 +33,7 @@ const categoriesList = {
           ],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
           thumbnail:
-            "https://assets.tiarasjec.in/technical/syncline_sprints.png",
+            `${tiaraAssetsPrefix}/technical/syncline_sprints.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -73,7 +75,7 @@ const categoriesList = {
           ],
           prerequisites: ["RC car building and driving skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: "https://assets.tiarasjec.in/technical/dirtdash_rc.png",
+          thumbnail: `${tiaraAssetsPrefix}/technical/dirtdash_rc.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -119,7 +121,7 @@ const categoriesList = {
           ],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
           thumbnail:
-            "https://assets.tiarasjec.in/technical/blitzbot_soccer.png",
+            `${tiaraAssetsPrefix}/technical/blitzbot_soccer.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -164,7 +166,7 @@ const categoriesList = {
             "Understanding of sumo wrestling rules.",
           ],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: "https://assets.tiarasjec.in/technical/robo_clash.png",
+          thumbnail: `${tiaraAssetsPrefix}/technical/robo_clash.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -201,7 +203,7 @@ const categoriesList = {
           ],
           prerequisites: ["Basic engineering and design skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: "https://assets.tiarasjec.in/technical/one_piece.png",
+          thumbnail: `${tiaraAssetsPrefix}/technical/one_piece.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -234,7 +236,7 @@ const categoriesList = {
           ],
           prerequisites: ["Problem-solving and spatial reasoning skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: "https://assets.tiarasjec.in/technical/zen_flow.png",
+          thumbnail: `${tiaraAssetsPrefix}/technical/zen_flow.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -266,7 +268,7 @@ const categoriesList = {
           ],
           prerequisites: ["Typing skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: "https://assets.tiarasjec.in/technical/typing_titans.png",
+          thumbnail: `${tiaraAssetsPrefix}/technical/typing_titans.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -305,7 +307,7 @@ const categoriesList = {
           ],
           prerequisites: ["Knowledge of rocketry and water rocket design."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: "https://assets.tiarasjec.in/technical/hydroblast.png",
+          thumbnail: `${tiaraAssetsPrefix}/technical/hydroblast.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -349,7 +351,7 @@ const categoriesList = {
           ],
           prerequisites: ["Drone building and piloting skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: "https://assets.tiarasjec.in/technical/drone_clash.png",
+          thumbnail: `${tiaraAssetsPrefix}/technical/drone_clash.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -392,7 +394,7 @@ const categoriesList = {
           ],
           prerequisites: ["Drone building and piloting skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: "https://assets.tiarasjec.in/technical/cad_ventures.png",
+          thumbnail: `${tiaraAssetsPrefix}/technical/cad_ventures.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -435,7 +437,7 @@ const categoriesList = {
           ],
           prerequisites: ["Drone building and piloting skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: "https://assets.tiarasjec.in/technical/business_bay.png",
+          thumbnail: `${tiaraAssetsPrefix}/technical/business_bay.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -478,7 +480,7 @@ const categoriesList = {
           ],
           prerequisites: ["Drone building and piloting skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: "https://assets.tiarasjec.in/technical/black_mirror.png",
+          thumbnail: `${tiaraAssetsPrefix}/technical/black_mirror.png`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -507,7 +509,7 @@ const categoriesList = {
     description:
       "Non-technical events are a showcase of creativity and talent in various fields such as art, music, and literature.",
     thumbnail:
-      "https://assets.tiarasjec.in/nontechnical/nontechnical_thumbnail.png",
+      `${tiaraAssetsPrefix}/nontechnical/nontechnical_thumbnail.png`,
     events: [
       {
         "0": {
@@ -529,7 +531,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            "https://assets.tiarasjec.in/nontechnical/capture_clash1.png",
+            `${tiaraAssetsPrefix}/nontechnical/capture_clash1.png`,
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -571,7 +573,7 @@ const categoriesList = {
             "The judges' and organizers' decisions will be the final ones.",
           ],
           costs: 250,
-          thumbnail: "https://assets.tiarasjec.in/nontechnical/reeload.png",
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/reeload.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -612,7 +614,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            "https://assets.tiarasjec.in/nontechnical/headline_hustle.png",
+            `${tiaraAssetsPrefix}/nontechnical/headline_hustle.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -641,7 +643,7 @@ const categoriesList = {
           ],
           prerequisites: ["PP"],
           costs: 250,
-          thumbnail: "https://assets.tiarasjec.in/nontechnical/synergy.png",
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/synergy.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -678,7 +680,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            "https://assets.tiarasjec.in/nontechnical/lines_and_shades.png",
+            `${tiaraAssetsPrefix}/nontechnical/lines_and_shades.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -710,7 +712,7 @@ const categoriesList = {
             "The decisions made by the judges and organizers are final.",
           ],
           costs: 250,
-          thumbnail: "https://assets.tiarasjec.in/nontechnical/mask.png",
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/mask.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -740,7 +742,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            "https://assets.tiarasjec.in/nontechnical/rersuasion_pit.png",
+            `${tiaraAssetsPrefix}/nontechnical/rersuasion_pit.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -777,7 +779,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            "https://assets.tiarasjec.in/nontechnical/humor_hustle.png",
+            `${tiaraAssetsPrefix}/nontechnical/humor_hustle.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -810,7 +812,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            "https://assets.tiarasjec.in/nontechnical/treasure_trek.png",
+            `${tiaraAssetsPrefix}/nontechnical/treasure_trek.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -858,7 +860,7 @@ const categoriesList = {
             "The judges' and organizers' decisions will be final.",
           ],
           costs: 250,
-          thumbnail: "https://assets.tiarasjec.in/nontechnical/bgmi.png",
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/bgmi.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -907,7 +909,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            "https://assets.tiarasjec.in/nontechnical/defy_the_limits.png",
+            `${tiaraAssetsPrefix}/nontechnical/defy_the_limits.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -947,7 +949,7 @@ const categoriesList = {
           ],
           costs: 1800,
           thumbnail:
-            "https://assets.tiarasjec.in/nontechnical/cosmeticraze.png",
+            `${tiaraAssetsPrefix}/nontechnical/cosmeticraze.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -994,7 +996,7 @@ const categoriesList = {
           ],
           costs: 900,
           thumbnail:
-            "https://assets.tiarasjec.in/nontechnical/gully_googly.png",
+            `${tiaraAssetsPrefix}/nontechnical/gully_googly.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1036,7 +1038,7 @@ const categoriesList = {
             "The match will be played on a half court.",
           ],
           costs: 900,
-          thumbnail: "https://assets.tiarasjec.in/nontechnical/dunkin.png",
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/dunkin.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1111,7 +1113,7 @@ const categoriesList = {
   cultural: {
     description:
       "Cultural events are a celebration of art, dance, and creativity.",
-    thumbnail: "https://assets.tiarasjec.in/cultural/cultural_thumbnail.png",
+    thumbnail: `${tiaraAssetsPrefix}/cultural/cultural_thumbnail.png`,
     events: [
       {
         "0": {
@@ -1135,7 +1137,7 @@ const categoriesList = {
             "Judges and organizers' decisions are final and binding.",
           ],
           costs: 250,
-          thumbnail: "https://assets.tiarasjec.in/cultural/rythmic_fusion.png",
+          thumbnail: `${tiaraAssetsPrefix}/cultural/rythmic_fusion.png`,
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -1175,7 +1177,7 @@ const categoriesList = {
             "Judges and organizers' decisions are final and binding.",
           ],
           costs: 250,
-          thumbnail: "https://assets.tiarasjec.in/cultural/harmony_heaven.png",
+          thumbnail: `${tiaraAssetsPrefix}/cultural/harmony_heaven.png`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1202,7 +1204,7 @@ const categoriesList = {
   mega: {
     description:
       "Mega events are the grand spectacles of the fest, featuring a variety of competitions and performances that showcase the talents and skills of participants in a larger-than-life setting.",
-    thumbnail: "https://assets.tiarasjec.in/mega/mega_thumbnail.png",
+    thumbnail: `${tiaraAssetsPrefix}/mega/mega_thumbnail.png`,
     events: [
       {
         "0": {
@@ -1221,7 +1223,7 @@ const categoriesList = {
             "Participants must convey their message concisely and effectively, avoiding unnecessary details and jargon.",
           ],
           costs: 300,
-          thumbnail: "https://assets.tiarasjec.in/mega/tunetussel.jpg",
+          thumbnail: `${tiaraAssetsPrefix}/mega/tunetussel.jpg`,
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -1261,7 +1263,7 @@ const categoriesList = {
             "Results will be announced right after the competition.",
           ],
           costs: 300,
-          thumbnail: "https://assets.tiarasjec.in/mega/spin_of_showdown.jpg",
+          thumbnail: `${tiaraAssetsPrefix}/mega/spin_of_showdown.jpg`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1303,7 +1305,7 @@ const categoriesList = {
             "Judges and coordinator may tweak the rules based on the number of participants.",
           ],
           costs: 300,
-          thumbnail: "https://assets.tiarasjec.in/mega/groove.jpeg",
+          thumbnail: `${tiaraAssetsPrefix}/mega/groove.jpeg`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1347,7 +1349,7 @@ const categoriesList = {
             "The decisions of the judges and organisers will be final.",
           ],
           costs: 300,
-          thumbnail: "https://assets.tiarasjec.in/mega/heritage_haute.jpeg",
+          thumbnail: `${tiaraAssetsPrefix}/mega/heritage_haute.jpeg`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1395,7 +1397,7 @@ const categoriesList = {
             "Criteria for judging informed on event day.",
           ],
           costs: 300,
-          thumbnail: "https://assets.tiarasjec.in/mega/techtitan.jpg",
+          thumbnail: `${tiaraAssetsPrefix}/mega/techtitan.jpg`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1449,7 +1451,7 @@ const categoriesList = {
             "For details about the competition rounds, please refer to the rulebook.",
           ],
           costs: 300,
-          thumbnail: "https://assets.tiarasjec.in/mega/sky_surge.jpeg",
+          thumbnail: `${tiaraAssetsPrefix}/mega/sky_surge.jpeg`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
