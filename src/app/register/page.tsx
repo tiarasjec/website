@@ -20,7 +20,6 @@ import {
   EventList,
   Events,
 } from "@/lib/interfaces";
-import { tiaraFont } from "@/lib/fonts";
 
 const Checkbox: React.FC<CheckboxProps> = ({
   className,
@@ -93,6 +92,10 @@ const Register: React.FC = () => {
     processEvents("non_technical", categoriesList, setNonTechnical);
     processEvents("cultural", categoriesList, setCultural);
     processEvents("mega", categoriesList, setMega);
+    console.log(technical);
+    console.log(nontechnical);
+    console.log(cultural);
+    console.log(mega);
   }, []);
   let index;
   const handleCheckboxChange = (
