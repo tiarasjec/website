@@ -58,8 +58,7 @@ const Page = () => {
           })
         : "";
     const eventName = eventInfo?.name;
-    const parts = eventName?.split(/\(([^)]+)\)/);
-    console.log(eventInfo?.prerequisites);
+    const parts = eventName?.split(/\(([^)]+)\)/)
     return (
         <>
             {/* Hero */}
