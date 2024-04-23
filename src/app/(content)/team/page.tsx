@@ -1,30 +1,33 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { usePathname } from "next/navigation"; // Import usePathname from next/navigation
-import { CardType } from "@/components/ui/hover/scroll";
+import React from "react";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { tiaraFont } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
+import { cn, tiaraAssetsPrefix } from "@/lib/utils";
 
-function toTitleCase(str: string) {
-  return str.replace(/\w\S*/g, function (txt) {
-    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-  });
-}
 
-export default function EventsPage() {
-  const [cards, setCards] = useState<CardType[]>([]);
-  const pathname = usePathname();
-  useEffect(() => {
-    const path = pathname.split("/")[2];
-    fetch(`/api/events/${path}`)
-      .then((response) => response.json())
-      .then((dataList) => {
-        setCards(dataList);
-      })
-      .catch((error) => console.error("Error fetching events:", error));
-  }, [pathname]);
+const coreTeam = [
+    `${tiaraAssetsPrefix}/coreteam/chaitra.png`,
+    `${tiaraAssetsPrefix}/coreteam/roopesh.png`,
+    `${tiaraAssetsPrefix}/coreteam/convener_1.png`,
+    `${tiaraAssetsPrefix}/coreteam/convener_2.png`,
+    `${tiaraAssetsPrefix}/coreteam/cultural.png`,
+    `${tiaraAssetsPrefix}/coreteam/design.png`,
+    `${tiaraAssetsPrefix}/coreteam/discipline.png`,
+    `${tiaraAssetsPrefix}/coreteam/logistics.png`,
+    `${tiaraAssetsPrefix}/coreteam/media.png`,
+    `${tiaraAssetsPrefix}/coreteam/non_technical_1.png`,
+    `${tiaraAssetsPrefix}/coreteam/non_technical_2.png`,
+    `${tiaraAssetsPrefix}/coreteam/registration.png`,
+    `${tiaraAssetsPrefix}/coreteam/prizes_awards.png`,
+    `${tiaraAssetsPrefix}/coreteam/social_media.png`,
+    `${tiaraAssetsPrefix}/coreteam/stage_decoration.png`,
+    `${tiaraAssetsPrefix}/coreteam/technical.png`,
+    `${tiaraAssetsPrefix}/coreteam/website.png`,
+];
+
+
+export default function CoreTeamPage() {
   return (
     <div className="h-fit">
       <div className="-ml-5 flex justify-center items-center pt-32 z-50">
@@ -34,13 +37,14 @@ export default function EventsPage() {
             tiaraFont.className
           )}
         >
-          {toTitleCase(pathname.split("/")[2])} Events
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+                Core Team
+            </h1>
         </div>
       </div>
       <div className="w-full flex justify-center ">
         <div className="p-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
-          {cards
-            .sort((a, b) => a.name.localeCompare(b.name))
+          {coreTeam
             .map((card, index) => {
               return (
                 <CardContainer
@@ -50,7 +54,7 @@ export default function EventsPage() {
                   <CardBody className="relative">
                     <CardItem translateZ="100" className="w-full mt-4">
                       <Image
-                        src={card.thumbnail}
+                        src={card}
                         className="rounded-xl "
                         alt="thumbnail"
                         width={1200}

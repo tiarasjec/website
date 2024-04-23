@@ -40,13 +40,11 @@ export default function RootLayout({
           className={cn("bg-background font-sans antialiased", inter.variable)}
         >
           <SessionProvider>
-            <Lenis>
               <StarsCanvas />
               <div className="flex min-h-screen w-full flex-col">
                 <Header />
                 {children}
               </div>
-            </Lenis>
           </SessionProvider>
           <PrelineScript />
           <Toaster />

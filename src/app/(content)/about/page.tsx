@@ -8,8 +8,11 @@ export default function About() {
   return (
     <Container className="mx-auto">
       <div className="py-4 mx-6  sm:mx-12 space-y-4 pt-32">
-        <h1 id="about" className={cn("text-4xl", tiaraFont)}>
-          About
+        <h1
+          id="about"
+          className={cn("text-6xl text-center", tiaraFont.className)}
+        >
+          About Ti<span className="text-tiara_red">ar</span>a
         </h1>
         <p>
           St Joseph Engineering College has come together to host a national
