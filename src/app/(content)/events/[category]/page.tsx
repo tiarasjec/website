@@ -34,7 +34,7 @@ export default function EventsPage() {
             tiaraFont.className
           )}
         >
-          {toTitleCase(pathname.split("/")[2])} Events
+          {toTitleCase(pathname.split("/")[2]).split("_").join(" ")} Events
         </div>
       </div>
       <div className="w-full flex justify-center ">

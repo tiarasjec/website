@@ -63,7 +63,6 @@ const Register: React.FC = () => {
   const [cultural, setCultural] = React.useState<Event[]>([]);
   const [mega, setMega] = React.useState<Event[]>([]);
   const [hasTeams, setHasTeams] = React.useState<boolean>(false);
-  const [college, setCollege] = React.useState<string>("");
   const [teamCount, setTeamCount] = React.useState<number>(0);
   const [selectedEventNames, setSelectedEventNames] = React.useState<string[]>(
     []
@@ -251,16 +250,7 @@ const Register: React.FC = () => {
             disabled
           />
           <br />
-          <Label htmlFor="text">College</Label>
-          <Input
-            type="text"
-            id="college"
-            aria-label="College"
-            placeholder="College"
-            value={college}
-            required
-            onChange={(e) => setCollege(e.target.value)}
-          />
+
           {/* {hasTeams && (
             <>
               <Label htmlFor="team_name">Team Name</Label>
@@ -293,7 +283,6 @@ const Register: React.FC = () => {
             megaCheckedItems={megaCheckedItems}
             itemsWith250={itemswith250}
             sumOfCheckedItemsAmount={getSumofCheckedItems}
-            college={college}
             selectedEvents={selectedEventNames}
           />
         </div>

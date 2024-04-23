@@ -17,9 +17,7 @@ import Info from "./hover/info";
 import { Label } from "./label";
 import { Input } from "./input";
 
-
 const Buy = React.lazy(() => import("@/components/razorpay/Buy"));
-
 
 export default function Checkout({
   technicalCheckedItems,
@@ -28,7 +26,6 @@ export default function Checkout({
   megaCheckedItems,
   sumOfCheckedItemsAmount,
   itemsWith250,
-  college,
   selectedEvents,
 }: {
   technicalCheckedItems: CheckedItem[];
@@ -36,7 +33,6 @@ export default function Checkout({
   culturalCheckedItems: CheckedItem[];
   megaCheckedItems: CheckedItem[];
   itemsWith250: CheckedItem[];
-  college: string;
   selectedEvents: string[];
   sumOfCheckedItemsAmount: () => number;
 }) {
@@ -57,14 +53,17 @@ export default function Checkout({
     megaCheckedItems.filter((item) => item.amount === 250).length;
   const [teamCount, setTeamCount] = useState<Teams[]>([]);
   const [teamNames, setTeamNames] = useState<string[]>([]);
+  const [college, setCollege] = React.useState<string>("");
 
   const handleTeamNameChange = (id: number, newName: string, event: string) => {
-    setTeamCount((teamCount) => teamCount.map((teams)=>{
-      if(teams.event===event){
-        teams.name=newName;
-      }
-      return teams;
-    }));
+    setTeamCount((teamCount) =>
+      teamCount.map((teams) => {
+        if (teams.event === event) {
+          teams.name = newName;
+        }
+        return teams;
+      })
+    );
   };
 
   return (
@@ -123,12 +122,22 @@ export default function Checkout({
           {RenderCheckedItemsList(megaCheckedItems, "mega", countOf250)}
           <Separator className="my-2" />
           <ul className="grid gap-3">
+            <Label htmlFor="text">College</Label>
+            <Input
+              type="text"
+              id="college"
+              aria-label="College"
+              placeholder="Enter your college name"
+              value={college}
+              required
+              onChange={(e) => setCollege(e.target.value)}
+            />
             <Label htmlFor="phone">Phone Number</Label>
             <Input
               type="tel"
               id="phone"
               aria-label="Phone number"
-              placeholder="Phone number"
+              placeholder="Enter your phone number"
               value={phoneNumber}
               required
               onChange={(e) => setPhoneNumber(e.target.value)}
@@ -136,7 +145,9 @@ export default function Checkout({
             {teamCount.length > 0 &&
               teamCount.map((team, index) => (
                 <>
-                  <Label htmlFor={`team_name_${index}`}>Team Name for {team.event}</Label>
+                  <Label htmlFor={`team_name_${index}`}>
+                    Team Name for {team.event}
+                  </Label>
                   <Input
                     key={index}
                     type="text"
