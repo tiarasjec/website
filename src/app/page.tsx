@@ -8,22 +8,22 @@ import Lenis from "@/components/shared/lenis";
 import { tiaraAssetsPrefix } from "@/lib/utils";
 
 const images = [
-  { alt: "Image 0", src: `${tiaraAssetsPrefix}/hero/3(1).webp` },
-  { alt: "Image 1", src: `${tiaraAssetsPrefix}/hero/3(10).webp` },
-  { alt: "Image 2", src: `${tiaraAssetsPrefix}/hero/3(11).webp` },
-  { alt: "Image 3", src: `${tiaraAssetsPrefix}/hero/3(12).webp` },
-  { alt: "Image 4", src: `${tiaraAssetsPrefix}/hero/3(13).webp` },
-  { alt: "Image 5", src: `${tiaraAssetsPrefix}/hero/3(14).webp` },
-  { alt: "Image 6", src: `${tiaraAssetsPrefix}/hero/3(15).webp` },
-  { alt: "Image 7", src: `${tiaraAssetsPrefix}/hero/3(16).webp` },
-  { alt: "Image 8", src: `${tiaraAssetsPrefix}/hero/3(2).webp` },
-  { alt: "Image 9", src: `${tiaraAssetsPrefix}/hero/3(3).webp` },
-  { alt: "Image 10", src: `${tiaraAssetsPrefix}/hero/3(4).webp` },
-  { alt: "Image 11", src: `${tiaraAssetsPrefix}/hero/3(5).webp` },
-  { alt: "Image 12", src: `${tiaraAssetsPrefix}/hero/3(6).webp` },
-  { alt: "Image 13", src: `${tiaraAssetsPrefix}/hero/3(7).webp` },
-  { alt: "Image 14", src: `${tiaraAssetsPrefix}/hero/3(8).webp` },
-  { alt: "Image 15", src: `${tiaraAssetsPrefix}/hero/3(9).webp` },
+  { alt: "Image 0", src: `${tiaraAssetsPrefix}/hero/3(1).avif` },
+  { alt: "Image 1", src: `${tiaraAssetsPrefix}/hero/3(10).avif` },
+  { alt: "Image 2", src: `${tiaraAssetsPrefix}/hero/3(11).avif` },
+  { alt: "Image 3", src: `${tiaraAssetsPrefix}/hero/3(12).avif` },
+  { alt: "Image 4", src: `${tiaraAssetsPrefix}/hero/3(13).avif` },
+  { alt: "Image 5", src: `${tiaraAssetsPrefix}/hero/3(14).avif` },
+  { alt: "Image 6", src: `${tiaraAssetsPrefix}/hero/3(15).avif` },
+  { alt: "Image 7", src: `${tiaraAssetsPrefix}/hero/3(16).avif` },
+  { alt: "Image 8", src: `${tiaraAssetsPrefix}/hero/3(2).avif` },
+  { alt: "Image 9", src: `${tiaraAssetsPrefix}/hero/3(3).avif` },
+  { alt: "Image 10", src: `${tiaraAssetsPrefix}/hero/3(4).avif` },
+  { alt: "Image 11", src: `${tiaraAssetsPrefix}/hero/3(5).avif` },
+  { alt: "Image 12", src: `${tiaraAssetsPrefix}/hero/3(6).avif` },
+  { alt: "Image 13", src: `${tiaraAssetsPrefix}/hero/3(7).avif` },
+  { alt: "Image 14", src: `${tiaraAssetsPrefix}/hero/3(8).avif` },
+  { alt: "Image 15", src: `${tiaraAssetsPrefix}/hero/3(9).avif` },
 ];
 
 export default function Home() {

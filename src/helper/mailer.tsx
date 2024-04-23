@@ -3,21 +3,26 @@ import { renderAsync } from "@react-email/render";
 import UserRegistrationEmail from "./UserRegistrationEmail";
 import React from "react";
 
-export async function sendEmail(email: string, name: string) {
+export async function sendEmail(
+  email: string,
+  name: string,
+  events: string[],
+  registrationLink: string
+) {
   try {
     const [html, text] = await Promise.all([
       renderAsync(
         <UserRegistrationEmail
-          registrationId="registrationId"
-          teamName="teamName"
-          registrationLink="registrationLink"
+          events={events}
+          name={name}
+          registrationLink={registrationLink}
         />
       ),
       renderAsync(
         <UserRegistrationEmail
-          registrationId="registrationId"
-          teamName="teamName"
-          registrationLink="registrationLink"
+          events={events}
+          name={name}
+          registrationLink={registrationLink}
         />,
         {
           plainText: true,
@@ -34,13 +39,13 @@ export async function sendEmail(email: string, name: string) {
     });
 
     const mailOptions = {
-      from: process.env.GMAIL_USER,
+      from: `"Tiara 2024" <${process.env.GMAIL_USER}>`,
       to: email,
       subject: "Tiara 2024 Registration",
       html,
       text,
     };
-    
+
     const mailResponse = await transporter.sendMail(mailOptions);
     return mailResponse;
   } catch (error: unknown) {

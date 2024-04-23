@@ -86,6 +86,16 @@ export function Header() {
                   {navItem.label}
                 </a>
               ))}
+              <Button asChild
+                className={cn(
+                  "tracking-widest flex items-center font-medium md:my-6 bg-tiara_red hover:bg-tiara_red/90 text-white",
+                  tiaraFont.className
+                )}
+              >
+                <Link href="https://assets.tiarasjec.in/rulebook.pdf">
+                  rulebook
+                </Link>
+              </Button>
               {session && session.user ? (
                 <Button
                   asChild

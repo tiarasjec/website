@@ -6,7 +6,7 @@ import { auth } from "@/auth";
 import { sendEmail } from "@/helper/mailer";
 import { SentMessageInfo } from "nodemailer/lib/smtp-transport";
 
-const generatedSignature = (            
+const generatedSignature = (
   razorpayOrderId: string,
   razorpayPaymentId: string
 ) => {
@@ -48,13 +48,14 @@ export async function POST(request: NextRequest) {
     );
   }
 
-
-
-  const signature = generatedSignature(data.orderCreationId, data.razorpayPaymentId);
+  const signature = generatedSignature(
+    data.orderCreationId,
+    data.razorpayPaymentId
+  );
   if (signature !== data.razorpaySignature) {
     await prisma.payment.upsert({
       where: {
-       razorpayPaymentId: data.razorpayPaymentId,
+        razorpayPaymentId: data.razorpayPaymentId,
         user: {
           email: session.user?.email,
         },
@@ -82,8 +83,20 @@ export async function POST(request: NextRequest) {
     );
   } else if (signature === data.razorpaySignature) {
     let email: SentMessageInfo | boolean = false;
+
+    const user = await prisma.user.findUnique({
+      where: {
+        email: session.user?.email!,
+      },
+    });
+
     try {
-      email = await sendEmail(session.user?.email!, session.user?.name!);
+      email = await sendEmail(
+        session.user?.email!,
+        session.user?.name!,
+        data.events,
+        `https://tiarasjec.in/api/verify/${user?.id}`
+      );
     } catch (error) {
       console.error(error);
     }
@@ -134,9 +147,9 @@ export async function POST(request: NextRequest) {
           events: mergedEvents,
           teams: {
             createMany: {
-              data: data.teams
-            }
-          }
+              data: data.teams,
+            },
+          },
         },
         create: {
           registrationEmailSent: !!email,
@@ -145,13 +158,13 @@ export async function POST(request: NextRequest) {
           events: data.events,
           teams: {
             createMany: {
-              data: data.teams
-            }
-          }
+              data: data.teams,
+            },
+          },
         },
         include: {
           teams: true,
-        }
+        },
       });
     });
 

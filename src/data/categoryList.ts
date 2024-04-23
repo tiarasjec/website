@@ -5,7 +5,7 @@ const categoriesList = {
     // Small description of the category
     description:
       "Technical events are a showcase of innovation and creativity in the field of technology.",
-    thumbnail: `${tiaraAssetsPrefix}/technical/technical_thumbnail.png`,
+    thumbnail: `${tiaraAssetsPrefix}/technical/technical_thumbnail.avif`,
     events: [
       {
         "0": {
@@ -33,7 +33,7 @@ const categoriesList = {
           ],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
           thumbnail:
-            `${tiaraAssetsPrefix}/technical/syncline_sprints.png`,
+            `${tiaraAssetsPrefix}/technical/syncline_sprints.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -75,7 +75,7 @@ const categoriesList = {
           ],
           prerequisites: ["RC car building and driving skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/dirtdash_rc.png`,
+          thumbnail: `${tiaraAssetsPrefix}/technical/dirtdash_rc.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -121,7 +121,7 @@ const categoriesList = {
           ],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
           thumbnail:
-            `${tiaraAssetsPrefix}/technical/blitzbot_soccer.png`,
+            `${tiaraAssetsPrefix}/technical/blitzbot_soccer.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -166,7 +166,7 @@ const categoriesList = {
             "Understanding of sumo wrestling rules.",
           ],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/robo_clash.png`,
+          thumbnail: `${tiaraAssetsPrefix}/technical/robo_clash.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -189,7 +189,7 @@ const categoriesList = {
         },
         "4": {
           team: false,
-          name: "ONE PIECE",
+          name: "One Piece (Boat Building)",
           description:
             "Embark on your quest with ingenuity in this nautical challenge.",
           rules: [
@@ -203,7 +203,7 @@ const categoriesList = {
           ],
           prerequisites: ["Basic engineering and design skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/one_piece.png`,
+          thumbnail: `${tiaraAssetsPrefix}/technical/one_piece.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -236,7 +236,7 @@ const categoriesList = {
           ],
           prerequisites: ["Problem-solving and spatial reasoning skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/zen_flow.png`,
+          thumbnail: `${tiaraAssetsPrefix}/technical/zen_flow.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -255,7 +255,7 @@ const categoriesList = {
         },
         "6": {
           team: false,
-          name: "TYPING TITANS!!!",
+          name: "Typing Titans (Typing Challenge)",
           description:
             "Race to master the keys in the ultimate typing showdown.",
           rules: [
@@ -268,7 +268,7 @@ const categoriesList = {
           ],
           prerequisites: ["Typing skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/typing_titans.png`,
+          thumbnail: `${tiaraAssetsPrefix}/technical/typing_titans.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -291,7 +291,7 @@ const categoriesList = {
         },
         "7": {
           team: false,
-          name: "HydroBlast",
+          name: "HydroBlast (Water Rocketry)",
           description:
             "Ascend to Ambitious Victory with Hydro-Powered Mastery.",
           rules: [
@@ -307,7 +307,7 @@ const categoriesList = {
           ],
           prerequisites: ["Knowledge of rocketry and water rocket design."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/hydroblast.png`,
+          thumbnail: `${tiaraAssetsPrefix}/technical/hydroblast.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -351,7 +351,7 @@ const categoriesList = {
           ],
           prerequisites: ["Drone building and piloting skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/drone_clash.png`,
+          thumbnail: `${tiaraAssetsPrefix}/technical/drone_clash.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -394,7 +394,7 @@ const categoriesList = {
           ],
           prerequisites: ["Drone building and piloting skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/cad_ventures.png`,
+          thumbnail: `${tiaraAssetsPrefix}/technical/cad_ventures.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -417,7 +417,7 @@ const categoriesList = {
         },
         "10": {
           team: false,
-          name: "Business bay (SHARK TANK)",
+          name: "Business Bay (Shark Tank)",
           description: "A dynamic thrill of Ideas and Toss.",
           rules: [
             "Open to all drone enthusiasts.",
@@ -437,7 +437,7 @@ const categoriesList = {
           ],
           prerequisites: ["Drone building and piloting skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/business_bay.png`,
+          thumbnail: `${tiaraAssetsPrefix}/technical/business_bay.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -460,7 +460,7 @@ const categoriesList = {
         },
         "11": {
           team: false,
-          name: "Black mirror (Technical Treasure Hunt)",
+          name: "Black Mirror (Technical Treasure Hunt)",
           description: "Fusion of storytelling and puzzles tangled in quest.",
           rules: [
             "Open to all drone enthusiasts.",
@@ -480,7 +480,7 @@ const categoriesList = {
           ],
           prerequisites: ["Drone building and piloting skills."],
           general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/black_mirror.png`,
+          thumbnail: `${tiaraAssetsPrefix}/technical/black_mirror.avif`,
           startTime: "2024-05-09 10:00:00",
           endTime: "2024-05-09 17:00:00",
           costs: 250,
@@ -505,7 +505,7 @@ const categoriesList = {
     description:
       "Non-technical events are a showcase of creativity and talent in various fields such as art, music, and literature.",
     thumbnail:
-      `${tiaraAssetsPrefix}/nontechnical/nontechnical_thumbnail.png`,
+      `${tiaraAssetsPrefix}/nontechnical/nontechnical_thumbnail.avif`,
     events: [
       {
         "0": {
@@ -527,7 +527,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            `${tiaraAssetsPrefix}/nontechnical/capture_clash1.png`,
+            `${tiaraAssetsPrefix}/nontechnical/capture_clash1.avif`,
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -549,7 +549,7 @@ const categoriesList = {
         },
         "1": {
           team: false,
-          name: " Reeload (Reel)",
+          name: "Reeload (Reel Making)",
           description:
             "Cinematic brilliance and creative flair in one thrilling reel.",
           prerequisites: [
@@ -569,7 +569,7 @@ const categoriesList = {
             "The judges' and organizers' decisions will be the final ones.",
           ],
           costs: 250,
-          thumbnail: `${tiaraAssetsPrefix}/nontechnical/reeload.png`,
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/reeload.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -591,7 +591,7 @@ const categoriesList = {
         },
         "2": {
           team: false,
-          name: "Headline hustle (Mock Press)",
+          name: "Headline Hustle (Mock Press)",
           description: "Plunge into the frenetic realm of journalism",
           prerequisites: [
             "Each participant is required to perform individually, showcasing their skills and abilities without assistance from teammates.",
@@ -610,7 +610,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            `${tiaraAssetsPrefix}/nontechnical/headline_hustle.png`,
+            `${tiaraAssetsPrefix}/nontechnical/headline_hustle.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -628,7 +628,7 @@ const categoriesList = {
         },
         "3": {
           team: false,
-          name: "Synergy ( Best Management Team)",
+          name: "Synergy (Best Management Team)",
           description:
             "Management excellence and success through leadership with each member a pillar of expertise navigating challenges with finesse",
           rules: [
@@ -639,7 +639,7 @@ const categoriesList = {
           ],
           prerequisites: ["PP"],
           costs: 250,
-          thumbnail: `${tiaraAssetsPrefix}/nontechnical/synergy.png`,
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/synergy.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -676,7 +676,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            `${tiaraAssetsPrefix}/nontechnical/lines_and_shades.png`,
+            `${tiaraAssetsPrefix}/nontechnical/lines_and_shades.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -709,7 +709,7 @@ const categoriesList = {
             "The decisions made by the judges and organizers are final.",
           ],
           costs: 250,
-          thumbnail: `${tiaraAssetsPrefix}/nontechnical/mask.png`,
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/mask.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -727,7 +727,7 @@ const categoriesList = {
         },
         "6": {
           team: false,
-          name: "Persuasion pit (Debate)",
+          name: "Persuasion Pit (Debate)",
           description: "The art of rhetoric to shape the tides of debate",
           prerequisites: ["Teams consist of two members each."],
           rules: [
@@ -739,7 +739,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            `${tiaraAssetsPrefix}/nontechnical/rersuasion_pit.png`,
+            `${tiaraAssetsPrefix}/nontechnical/rersuasion_pit.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -761,7 +761,7 @@ const categoriesList = {
         },
         "7": {
           team: false,
-          name: "Humor hustle(Stand-Up Comedy)",
+          name: "Humor Hustle (Stand-Up Comedy)",
           description: "Life's laughs, unleashed one punchline at a time.",
           prerequisites: [
             "Teams may consist of a maximum of two participants.",
@@ -776,7 +776,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            `${tiaraAssetsPrefix}/nontechnical/humor_hustle.png`,
+            `${tiaraAssetsPrefix}/nontechnical/humor_hustle.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -798,7 +798,7 @@ const categoriesList = {
         },
         "8": {
           team: false,
-          name: "Treasure trek (Treasure hunt)",
+          name: "Treasure Trek (Treasure Hunt)",
           description:
             "Embark on an exhilarating adventure, unravelling mysteries and uncovering treasures, in thrill of the hunt",
           prerequisites: ["Teams are limited to three members each."],
@@ -809,7 +809,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            `${tiaraAssetsPrefix}/nontechnical/treasure_trek.png`,
+            `${tiaraAssetsPrefix}/nontechnical/treasure_trek.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -835,7 +835,7 @@ const categoriesList = {
         },
         "9": {
           team: false,
-          name: "BGMI",
+          name: "BGMI (Battle Ground Mobile India)",
           description:
             "Dive into the heart-pounding battlegrounds of BGMI, where every move carves in the adrenaline-fueled arena of mobile gaming.",
           prerequisites: ["A valid college ID is required for participation."],
@@ -857,7 +857,7 @@ const categoriesList = {
             "The judges' and organizers' decisions will be final.",
           ],
           costs: 250,
-          thumbnail: `${tiaraAssetsPrefix}/nontechnical/bgmi.png`,
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/bgmi.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -884,7 +884,7 @@ const categoriesList = {
         },
         "10": {
           team: false,
-          name: " Valorant",
+          name: "Valorant",
           description: "We fight to win",
           prerequisites: [
             "Participants must play on their main Riot account and be at least 16 years old.",
@@ -907,7 +907,7 @@ const categoriesList = {
           ],
           costs: 250,
           thumbnail:
-            `${tiaraAssetsPrefix}/nontechnical/defy_the_limits.png`,
+            `${tiaraAssetsPrefix}/nontechnical/defy_the_limits.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -925,7 +925,7 @@ const categoriesList = {
         },
         "11": {
           team: false,
-          name: "Cosmeticraze (Make-up and hairstyle)",
+          name: "Cosmeticraze (Make-up and Hairstyle)",
           description:
             " Beauty knows no bounds, redefining norms in an artful fusion of makeup and tress.",
           prerequisites: ["Three members make a team, including the model."],
@@ -937,9 +937,9 @@ const categoriesList = {
             "Organizers reserve the right to disqualify participants who violate competition rules, engage in unethical behavior, or fail to meet eligibility requirements.",
             "Judges' and organizers' decisions shall be final.",
           ],
-          costs: 1800,
+          costs: 250,
           thumbnail:
-            `${tiaraAssetsPrefix}/nontechnical/cosmeticraze.png`,
+            `${tiaraAssetsPrefix}/nontechnical/cosmeticraze.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -962,7 +962,7 @@ const categoriesList = {
         },
         "12": {
           team: true,
-          name: " Gully-googly (Gully cricket)",
+          name: "Gully-Googly (Gully Cricket)",
           description:
             "Beneath the sky, amidst chaos, legends rise with every swing of the bat",
           prerequisites: [
@@ -985,9 +985,9 @@ const categoriesList = {
             "If a match ends in a draw, a super-over will be played. If the super over also ends in a draw, the winner will be decided by a toss.",
             "Decisions made by the judges, organizers, and umpires will be deemed final and binding.",
           ],
-          costs: 900,
+          costs: 1800,
           thumbnail:
-            `${tiaraAssetsPrefix}/nontechnical/gully_googly.png`,
+            `${tiaraAssetsPrefix}/nontechnical/gully_googly.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1014,7 +1014,7 @@ const categoriesList = {
         },
         "13": {
           team: true,
-          name: " Dunkin-dribble (3x3 Basketball)",
+          name: "Dunkin-Dribble (3x3 Basketball)",
           description: "Just give it a shot",
           prerequisites: [
             "Each team should consist of three members.",
@@ -1030,7 +1030,7 @@ const categoriesList = {
             "The match will be played on a half court.",
           ],
           costs: 900,
-          thumbnail: `${tiaraAssetsPrefix}/nontechnical/dunkin.png`,
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/dunkin.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1106,12 +1106,12 @@ const categoriesList = {
   cultural: {
     description:
       "Cultural events are a celebration of art, dance, and creativity.",
-    thumbnail: `${tiaraAssetsPrefix}/cultural/cultural_thumbnail.png`,
+    thumbnail: `${tiaraAssetsPrefix}/cultural/cultural_thumbnail.avif`,
     events: [
       {
         "0": {
           team: false,
-          name: " RHYTHMIC FUSION (Group Dance)",
+          name: "Rythmic Fusion (Group Dance)",
           description: "Every step ignites the fire!",
           prerequisites: [
             "All dance forms are allowed.",
@@ -1130,7 +1130,7 @@ const categoriesList = {
             "Judges and organizers' decisions are final and binding.",
           ],
           costs: 250,
-          thumbnail: `${tiaraAssetsPrefix}/cultural/rythmic_fusion.png`,
+          thumbnail: `${tiaraAssetsPrefix}/cultural/rythmic_fusion.avif`,
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -1153,7 +1153,7 @@ const categoriesList = {
         },
         "1": {
           team: false,
-          name: "HARMONY HAVEN (Group Singing",
+          name: "Harmony Heaven (Group Singing)",
           description: " Harmony in every note, unity in every voice",
           prerequisites: [],
           rules: [
@@ -1171,7 +1171,7 @@ const categoriesList = {
             "Judges and organizers' decisions are final and binding.",
           ],
           costs: 250,
-          thumbnail: `${tiaraAssetsPrefix}/cultural/harmony_heaven.png`,
+          thumbnail: `${tiaraAssetsPrefix}/cultural/harmony_heaven.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1199,11 +1199,11 @@ const categoriesList = {
   mega: {
     description:
       "Mega events are the grand spectacles of the fest, featuring a variety of competitions and performances that showcase the talents and skills of participants in a larger-than-life setting.",
-    thumbnail: `${tiaraAssetsPrefix}/mega/mega_thumbnail.png`,
+    thumbnail: `${tiaraAssetsPrefix}/mega/mega_thumbnail.avif`,
     events: [
       {
         "0": {
-          name: "TUNE TUSSLE (Battle Of Bands)",
+          name: "Tune Tussel (Battle of Bands)",
           description: "Rocking the stage, one riff at a time!",
           prerequisites: [],
           rules: [
@@ -1218,7 +1218,7 @@ const categoriesList = {
             "Participants must convey their message concisely and effectively, avoiding unnecessary details and jargon.",
           ],
           costs: 300,
-          thumbnail: `${tiaraAssetsPrefix}/mega/tunetussel.jpg`,
+          thumbnail: `${tiaraAssetsPrefix}/mega/tune_tussel.avif`,
           startTime: "2024-05-10 09:00",
           endTime: "2024-05-10 17:00",
           facultyCoordinators: [
@@ -1244,7 +1244,7 @@ const categoriesList = {
           ],
         },
         "1": {
-          name: "SPIN-OFF SHOWDOWN (BATTLE OF DJ) ",
+          name: "Spin the Disc (Battle of DJs)",
           description: "Mixing beats, igniting souls",
           prerequisites: [
             "All contestants must register themselves on the website.",
@@ -1259,7 +1259,7 @@ const categoriesList = {
             "Results will be announced right after the competition.",
           ],
           costs: 300,
-          thumbnail: `${tiaraAssetsPrefix}/mega/spin_of_showdown.jpg`,
+          thumbnail: `${tiaraAssetsPrefix}/mega/spin_the_disc.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1285,7 +1285,7 @@ const categoriesList = {
           ],
         },
         "2": {
-          name: "GROOVE",
+          name: "Groove (Dance Battle)",
           description: " Step up, shake it off, and own the floor",
           prerequisites: [
             "Individual participation.",
@@ -1302,7 +1302,7 @@ const categoriesList = {
             "Judges and coordinator may tweak the rules based on the number of participants.",
           ],
           costs: 300,
-          thumbnail: `${tiaraAssetsPrefix}/mega/groove.jpeg`,
+          thumbnail: `${tiaraAssetsPrefix}/mega/groove.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1328,7 +1328,7 @@ const categoriesList = {
           ],
         },
         "3": {
-          name: "HERITAGE HAUTE (Fashion walk)",
+          name: "Heritage Haute (Fashion Show)",
           description: "Strut with style, own the runway",
           prerequisites: [
             "All the participants must be from the same college.",
@@ -1347,7 +1347,7 @@ const categoriesList = {
             "The decisions of the judges and organisers will be final.",
           ],
           costs: 300,
-          thumbnail: `${tiaraAssetsPrefix}/mega/heritage_haute.jpeg`,
+          thumbnail: `${tiaraAssetsPrefix}/mega/heritage_haute.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1373,7 +1373,7 @@ const categoriesList = {
           ],
         },
         "4": {
-          name: "TECH TITAN TUSSLE (ROBOWARs) ",
+          name: "Tech Titan Tussle (Robo War, 3lbs)",
           description:
             "Witness sparks fly and metal clash in the ultimate showdown of robotic combat",
           prerequisites: [
@@ -1396,7 +1396,7 @@ const categoriesList = {
             "Criteria for judging informed on event day.",
           ],
           costs: 300,
-          thumbnail: `${tiaraAssetsPrefix}/mega/techtitan.jpg`,
+          thumbnail: `${tiaraAssetsPrefix}/mega/techtitan.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
@@ -1422,7 +1422,55 @@ const categoriesList = {
           ],
         },
         "5": {
-          name: "SKY SURGE (RC Plane)",
+          name: "Tech Titan Tussle (Robo War, 8KG)",
+          description:
+            "Witness sparks fly and metal clash in the ultimate showdown of robotic combat",
+          prerequisites: [
+            "Participants must carry any valid ID for registration.",
+          ],
+          rules: [
+            "Team size: 3-6 members.",
+            "Compliance with organizers' directives is mandatory; violations lead to disqualification.",
+            "Judges' decisions are final.",
+            "Bot weight limit: 3lb and 8kg categories.",
+            "Only wireless bots allowed.",
+            "Various weapons allowed with exceptions and limitations.",
+            "Knock-out format for contests.",
+            "Safety inspection before the event; unsafe bots discarded.",
+            "Bot declared immobile if unable to exhibit linear motion of at least one inch within 10 seconds.",
+            "LEGO kits, readymade kits, etc., not permitted; readymade gear boxes allowed.",
+            "Organizers reserve the right to modify rules.",
+            "Strict enforcement of allocated time; no extensions.",
+            "Unsafe bots disqualified during the match.",
+            "Criteria for judging informed on event day.",
+          ],
+          costs: 300,
+          thumbnail: `${tiaraAssetsPrefix}/mega/techtitan.avif`,
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Arvin Seth",
+              phone: "9108366524",
+            },
+            {
+              name: "Delson Tellis",
+              phone: "8310990921",
+            },
+            {
+              name: "Shreyas",
+              phone: "7090265515",
+            },
+          ],
+        },
+        "6": {
+          name: "Sky Surge (RC Plane Extreme)",
           description:
             "Taking imagination on flight with cutting-edge innovation",
           prerequisites: [
@@ -1451,7 +1499,7 @@ const categoriesList = {
             "For details about the competition rounds, please refer to the rulebook.",
           ],
           costs: 300,
-          thumbnail: `${tiaraAssetsPrefix}/mega/sky_surge.jpeg`,
+          thumbnail: `${tiaraAssetsPrefix}/mega/sky_surge.avif`,
           startTime: "2024-05-12 10:00",
           endTime: "2024-05-12 18:00",
           facultyCoordinators: [
