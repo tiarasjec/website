@@ -38,7 +38,6 @@ interface Events {
 interface Teams {
   name: string;
   event: string;
-  id:number;
 }
 
 export type { Event, CheckedItem, CheckboxProps, EventList, Events,Teams };

@@ -1,12 +1,6 @@
 import { CheckedItem } from "@/lib/interfaces";
 import { useEffect } from "react";
-
-
-interface Teams{
-  name:string;
-  event:string;
-  id:number;
-}
+import { Teams } from "@/lib/interfaces";
 
 const renderCheckedItemsList = (
   checkedItems: CheckedItem[],
@@ -20,7 +14,6 @@ const renderCheckedItemsList = (
       console.log(teamItems);
       // const teams = {name:teamItems.name,team:teamItems.team};
       const listOfteams = teamItems.map((item, index) => ({
-        id: index,
         name: "",
         event:item.name
       }));

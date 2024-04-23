@@ -60,7 +60,7 @@ export default function Checkout({
 
   const handleTeamNameChange = (id: number, newName: string, event: string) => {
     setTeamCount((teamCount) => teamCount.map((teams)=>{
-      if(teams.id===id){
+      if(teams.event===event){
         teams.name=newName;
       }
       return teams;
@@ -148,7 +148,7 @@ export default function Checkout({
                     value={team.name || ""}
                     required
                     onChange={(e) =>
-                      handleTeamNameChange(team.id, e.target.value, team.event)
+                      handleTeamNameChange(index, e.target.value, team.event)
                     }
                   />
                 </>
