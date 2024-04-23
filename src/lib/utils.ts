@@ -55,6 +55,7 @@ export const makePayment = async ({
   const options = {
     key: key,
     name: productName,
+    image: `${tiaraAssetsPrefix}/t24.png`,
     currency: "INR",
     amount: amount,
     order_id: orderId,
