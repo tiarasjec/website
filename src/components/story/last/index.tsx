@@ -62,10 +62,12 @@ export const Last = () => {
               ],
             }}
           >
-            <h2 className={cn(s["title"], "tracking-widest", tiaraFont.className)}>
-              Ti<span className="text-tiara_red">ar</span>a registrations!{" "}
+            <h2
+              className={cn(s["title"], "tracking-widest", tiaraFont.className)}
+            >
+              Ti<span className="text-tiara_red">ar</span>a registrations{" "}
               <br />
-              coming out soon!
+              out now!
             </h2>
           </Scrollytelling.Animation>
         </div>
