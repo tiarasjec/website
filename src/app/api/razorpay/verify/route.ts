@@ -39,7 +39,6 @@ interface PaymentResponse {
 
 export async function POST(request: NextRequest) {
   const data: PaymentResponse = await request.json();
-  console.log(data);
   const session = await auth();
 
   if (!session) {
@@ -122,10 +121,7 @@ export async function POST(request: NextRequest) {
           teams: true,
         },
       });
-      console.log(existingUser);
-
       const mergedEvents = [...existingUser?.events!, ...data.events];
-      const mergedTeams = [...existingUser?.teams!, ...data.teams];
 
       await prisma.user.upsert({
         where: {

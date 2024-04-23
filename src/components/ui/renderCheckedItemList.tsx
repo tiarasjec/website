@@ -11,13 +11,10 @@ const RenderCheckedItemsList = (
   useEffect(() => {
     if (setTeamCount) {
       const teamItems = checkedItems.filter((item) => item.team === true);
-      console.log(teamItems);
-      // const teams = {name:teamItems.name,team:teamItems.team};
       const listOfteams = teamItems.map((item, index) => ({
         name: "",
         event:item.name
       }));
-      console.log(listOfteams);
       setTeamCount(listOfteams);
     }
   }, [checkedItems,setTeamCount]);
