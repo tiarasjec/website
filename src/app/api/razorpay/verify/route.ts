@@ -6,7 +6,7 @@ import { auth } from "@/auth";
 import { sendEmail } from "@/helper/mailer";
 import { SentMessageInfo } from "nodemailer/lib/smtp-transport";
 
-const generatedSignature = (
+const generatedSignature = (            
   razorpayOrderId: string,
   razorpayPaymentId: string
 ) => {
@@ -23,16 +23,23 @@ const generatedSignature = (
   return sig;
 };
 
+interface PaymentResponse {
+  orderCreationId: string;
+  razorpayPaymentId: string;
+  razorpayOrderId: string;
+  razorpaySignature: string;
+  college: string;
+  events: string[];
+  teams: {
+    name: string;
+    event: string;
+  }[];
+  phone: string;
+}
+
 export async function POST(request: NextRequest) {
-  const {
-    orderCreationId,
-    razorpayPaymentId,
-    razorpaySignature,
-    teams,
-    events,
-    contact,
-    college,
-  } = await request.json();
+  const data: PaymentResponse = await request.json();
+  console.log(data);
   const session = await auth();
 
   if (!session) {
@@ -42,22 +49,25 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const signature = generatedSignature(orderCreationId, razorpayPaymentId);
-  if (signature !== razorpaySignature) {
+
+
+  const signature = generatedSignature(data.orderCreationId, data.razorpayPaymentId);
+  if (signature !== data.razorpaySignature) {
     await prisma.payment.upsert({
       where: {
-        razorpayPaymentId,
+       razorpayPaymentId: data.razorpayPaymentId,
         user: {
           email: session.user?.email,
         },
       },
       update: {
         status: PaymentStatus.FAILED,
-        orderCreationId,
+        orderCreationId: data.orderCreationId,
       },
       create: {
-        razorpayPaymentId,
-        orderCreationId,
+        signature: data.razorpaySignature,
+        razorpayPaymentId: data.razorpayPaymentId,
+        orderCreationId: data.orderCreationId,
         status: PaymentStatus.FAILED,
         user: {
           connect: {
@@ -71,7 +81,7 @@ export async function POST(request: NextRequest) {
       { message: "payment verification failed", isOk: false },
       { status: 400 }
     );
-  } else if (signature === razorpaySignature) {
+  } else if (signature === data.razorpaySignature) {
     let email: SentMessageInfo | boolean = false;
     try {
       email = await sendEmail(session.user?.email!, session.user?.name!);
@@ -82,19 +92,19 @@ export async function POST(request: NextRequest) {
     prisma.$transaction(async (prisma) => {
       await prisma.payment.upsert({
         where: {
-          razorpayPaymentId,
+          razorpayPaymentId: data.razorpayPaymentId,
           user: {
             email: session.user?.email,
           },
         },
         update: {
           status: PaymentStatus.SUCCESS,
-          orderCreationId,
+          orderCreationId: data.orderCreationId,
         },
         create: {
-          signature: razorpaySignature,
-          razorpayPaymentId,
-          orderCreationId,
+          signature: data.razorpaySignature,
+          razorpayPaymentId: data.razorpayPaymentId,
+          orderCreationId: data.orderCreationId,
           status: PaymentStatus.SUCCESS,
           user: {
             connect: {
@@ -112,38 +122,45 @@ export async function POST(request: NextRequest) {
           teams: true,
         },
       });
+      console.log(existingUser);
 
-      const mergedEvents = [...existingUser?.events!, ...events];
-      const mergedTeams = [...existingUser?.teams!, ...teams];
+      const mergedEvents = [...existingUser?.events!, ...data.events];
+      const mergedTeams = [...existingUser?.teams!, ...data.teams];
 
       await prisma.user.upsert({
         where: {
           email: session.user?.email!,
         },
         update: {
-          contact,
-          college,
+          registrationEmailSent: !!email,
+          contact: data.phone,
+          college: data.college,
           events: mergedEvents,
           teams: {
-            updateMany: {
-              where : {
-                id: session.user?.id!
-              },
-              data: mergedTeams
+            createMany: {
+              data: data.teams
             }
           }
         },
         create: {
-          contact,
-          college,
-          events,
-          teams,
+          registrationEmailSent: !!email,
+          contact: data.phone,
+          college: data.college,
+          events: data.events,
+          teams: {
+            createMany: {
+              data: data.teams
+            }
+          }
         },
+        include: {
+          teams: true,
+        }
       });
     });
 
     return NextResponse.json(
-      { message: "payment verified successfully", isOk: true },
+      { message: "Payment verified successfully", isOk: true },
       { status: 200 }
     );
   }
