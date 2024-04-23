@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { Suspense, use } from "react";
 import React from "react";
 import { useSession } from "next-auth/react";
-import { CheckedItem } from "@/lib/interfaces";
+import { CheckedItem,Teams } from "@/lib/interfaces";
 import renderCheckedItemsList from "./renderCheckedItemList";
 import { useState, useEffect } from "react";
 import Loading from "@/app/loading";
@@ -17,7 +17,9 @@ import Info from "./hover/info";
 import { Label } from "./label";
 import { Input } from "./input";
 
+
 const Buy = React.lazy(() => import("@/components/razorpay/Buy"));
+
 
 export default function Checkout({
   technicalCheckedItems,
@@ -34,10 +36,9 @@ export default function Checkout({
   culturalCheckedItems: CheckedItem[];
   megaCheckedItems: CheckedItem[];
   itemsWith250: CheckedItem[];
-  college:string;
+  college: string;
   selectedEvents: string[];
   sumOfCheckedItemsAmount: () => number;
-  
 }) {
   const session = useSession({
     required: true,
@@ -54,13 +55,16 @@ export default function Checkout({
     nontechnicalCheckedItems.filter((item) => item.amount === 250).length +
     culturalCheckedItems.filter((item) => item.amount === 250).length +
     megaCheckedItems.filter((item) => item.amount === 250).length;
-  const [teamCount, setTeamCount] = useState(0);
+  const [teamCount, setTeamCount] = useState<Teams[]>([]);
   const [teamNames, setTeamNames] = useState<string[]>([]);
 
-  const handleTeamNameChange = (index: number, newName: string) => {
-    const updatedTeamNames = [...teamNames];
-    updatedTeamNames[index] = newName;
-    setTeamNames(updatedTeamNames);
+  const handleTeamNameChange = (id: number, newName: string, event: string) => {
+    setTeamCount((teamCount) => teamCount.map((teams)=>{
+      if(teams.id===id){
+        teams.name=newName;
+      }
+      return teams;
+    }));
   };
 
   return (
@@ -129,20 +133,22 @@ export default function Checkout({
               required
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
-            {teamCount > 0 &&
-              Array.from({ length: teamCount }).map((_, index) => (
+            {teamCount.length > 0 &&
+              teamCount.map((team, index) => (
                 <>
-                  <Label htmlFor="team_name">Team Name {index + 1}</Label>
+                  <Label htmlFor={`team_name_${index}`}>
+                    Team Name {index + 1}
+                  </Label>
                   <Input
                     key={index}
                     type="text"
                     id={`team_name_${index}`}
                     aria-label="Team Name"
-                    placeholder="Enter your team name"
-                    value={teamNames[index] || ""}
+                    placeholder={`Team Name for ${team.event}`}
+                    value={team.name || ""}
                     required
                     onChange={(e) =>
-                      handleTeamNameChange(index, e.target.value)
+                      handleTeamNameChange(team.id, e.target.value, team.event)
                     }
                   />
                 </>
@@ -158,7 +164,7 @@ export default function Checkout({
           </ul>
           <Suspense fallback={<Loading />}>
             <Buy
-              teams={teamNames}
+              teams={teamCount}
               events={selectedEvents}
               name={session.data?.user?.name!}
               email={session.data?.user?.email!}

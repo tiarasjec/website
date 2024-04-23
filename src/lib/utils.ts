@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { toast } from "@/components/ui/use-toast";
+import { Teams } from "./interfaces";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -29,7 +30,7 @@ export interface makePaymentProps {
     college: string;
     contact: string;
     events: string[];
-    teams: string[];
+    teams: Teams[];
   };
 }
 

@@ -2,10 +2,11 @@
 import { makePayment } from "@/lib/utils";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import {Teams} from "@/lib/interfaces";
 
 const Buy = (userData: {
   events: string[];
-  teams: string[];
+  teams: Teams[];
   amount: number;
   college: string;
   contact: string;
