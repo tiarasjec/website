@@ -173,7 +173,7 @@ export default function Checkout({
               </span>
             </li>
           </ul>
-          <Text className="text-xs text-muted-foreground">
+          <Text className="text-xs">
             By registering for the events, you agree to our{" "}
             <Link href="/terms">
               <span className="underline">Terms & Conditions</span>
