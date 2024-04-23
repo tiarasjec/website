@@ -39,7 +39,7 @@ export async function sendEmail(
     });
 
     const mailOptions = {
-      from: process.env.GMAIL_USER,
+      from: `"Tiara 2024" <${process.env.GMAIL_USER}>`,
       to: email,
       subject: "Tiara 2024 Registration",
       html,

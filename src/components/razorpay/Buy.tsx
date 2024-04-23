@@ -22,7 +22,7 @@ const Buy = (userData: {
         makePayment({
           productId: null,
           productName: "Tiara 2024 Registration",
-          description: "Tiara is a National-level Techno-Cultural fest, conducted for young minds aspiring to be extraordinary, that is open to all students of undergraduate level and above to come and showcase their talents and represent their respective institutions on the grand stage of Tiara.",
+          description: "Tiara is a National-level Techno-Cultural fest, conducted for young minds aspiring to be extraordinary.",
           amount: userData.amount,
           prefillData: {
             name: userData.name,
