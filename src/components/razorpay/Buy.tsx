@@ -21,7 +21,7 @@ const Buy = (userData: {
         setIsLoading(true);
         makePayment({
           productId: null,
-          productName: "Tiara 2024 Registration",
+          productName: "Tiara 2024",
           description: "Tiara is a National-level Techno-Cultural fest, conducted for young minds aspiring to be extraordinary.",
           amount: userData.amount,
           prefillData: {
