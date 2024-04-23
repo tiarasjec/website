@@ -143,7 +143,7 @@ export default function Checkout({
                     id={`team_name_${index}`}
                     aria-label="Team Name"
                     placeholder={`Team Name for ${team.event}`}
-                    value={team.name || ""}
+                    value={team.name}
                     required
                     onChange={(e) =>
                       handleTeamNameChange(index, e.target.value, team.event)
