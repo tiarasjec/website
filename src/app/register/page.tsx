@@ -12,11 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { categoriesList } from "@/data/categoryList";
 import { tiaraFont } from "@/lib/fonts";
-import {
-  CheckedItem,
-  Event,
-  Events,
-} from "@/lib/interfaces";
+import { CheckedItem, Event, Events } from "@/lib/interfaces";
 import { cn } from "@/lib/utils";
 import { signIn, useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
@@ -66,10 +62,13 @@ const Register: React.FC = () => {
   const [nontechnical, setNonTechnical] = React.useState<Event[]>([]);
   const [cultural, setCultural] = React.useState<Event[]>([]);
   const [mega, setMega] = React.useState<Event[]>([]);
-  const [hasTeams, setHasTeams] = React.useState<boolean>(false);  
+  const [hasTeams, setHasTeams] = React.useState<boolean>(false);
   const [college, setCollege] = React.useState<string>("");
   const [teamCount, setTeamCount] = React.useState<number>(0);
-  
+  const [selectedEventNames, setSelectedEventNames] = React.useState<string[]>(
+    []
+  );
+
   useEffect(() => {
     processEvents("technical", categoriesList, setTechnical);
     processEvents("non_technical", categoriesList, setNonTechnical);
@@ -86,6 +85,7 @@ const Register: React.FC = () => {
       if (category === "technical") {
         const selectedEvent = technical.find((event) => event.key === key);
         if (selectedEvent) {
+          setSelectedEventNames([...selectedEventNames, selectedEvent.name]);
           setTechnicalCheckedItems([
             ...technicalCheckedItems,
             { ...selectedEvent, checked: true },
@@ -94,6 +94,7 @@ const Register: React.FC = () => {
       } else if (category === "nontechnical") {
         const selectedEvent = nontechnical.find((event) => event.key === key);
         if (selectedEvent) {
+          setSelectedEventNames([...selectedEventNames, selectedEvent.name]);
           setNontechnicalCheckedItems([
             ...nontechnicalCheckedItems,
             { ...selectedEvent, checked: true },
@@ -105,6 +106,7 @@ const Register: React.FC = () => {
       } else if (category === "cultural") {
         const selectedEvent = cultural.find((event) => event.key === key);
         if (selectedEvent) {
+          setSelectedEventNames([...selectedEventNames, selectedEvent.name]);
           setCulturalCheckedItems([
             ...culturalCheckedItems,
             { ...selectedEvent, checked: true },
@@ -113,6 +115,7 @@ const Register: React.FC = () => {
       } else if (category === "mega") {
         const selectedEvent = mega.find((event) => event.key === key);
         if (selectedEvent) {
+          setSelectedEventNames([...selectedEventNames, selectedEvent.name]);
           setMegaCheckedItems([
             ...megaCheckedItems,
             { ...selectedEvent, checked: true },
@@ -121,10 +124,22 @@ const Register: React.FC = () => {
       }
     } else {
       if (category === "technical") {
+        const event = technical.find((item) => item.key === key);
+        if (event) {
+          setSelectedEventNames(
+            selectedEventNames.filter((name) => name !== event.name)
+          );
+        }
         setTechnicalCheckedItems(
           technicalCheckedItems.filter((item) => item.key !== key)
         );
       } else if (category === "nontechnical") {
+        const event = nontechnical.find((item) => item.key === key);
+        if (event) {
+          setSelectedEventNames(
+            selectedEventNames.filter((name) => name !== event.name)
+          );
+        }
         const newCheckedItems = nontechnicalCheckedItems.filter(
           (item) => item.key !== key
         );
@@ -133,10 +148,22 @@ const Register: React.FC = () => {
           : setHasTeams(false);
         setNontechnicalCheckedItems(newCheckedItems);
       } else if (category === "cultural") {
+        const event = cultural.find((item) => item.key === key);
+        if (event) {
+          setSelectedEventNames(
+            selectedEventNames.filter((name) => name !== event.name)
+          );
+        }
         setCulturalCheckedItems(
           culturalCheckedItems.filter((item) => item.key !== key)
         );
       } else if (category === "mega") {
+        const event = mega.find((item) => item.key === key);
+        if (event) {
+          setSelectedEventNames(
+            selectedEventNames.filter((name) => name !== event.name)
+          );
+        }
         setMegaCheckedItems(
           megaCheckedItems.filter((item) => item.key !== key)
         );
@@ -266,6 +293,8 @@ const Register: React.FC = () => {
             megaCheckedItems={megaCheckedItems}
             itemsWith250={itemswith250}
             sumOfCheckedItemsAmount={getSumofCheckedItems}
+            college={college}
+            selectedEvents={selectedEventNames}
           />
         </div>
       </Card>

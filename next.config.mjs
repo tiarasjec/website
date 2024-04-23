@@ -23,6 +23,12 @@ const nextConfig = {
         hostname: "assets.tiarasjec.in",
         port: "",
         pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+        pathname: "/**"
       }
     ],
   },

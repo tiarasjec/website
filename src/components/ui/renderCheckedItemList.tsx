@@ -1,19 +1,23 @@
 import { CheckedItem } from "@/lib/interfaces";
 import { useEffect } from "react";
+import { Teams } from "@/lib/interfaces";
 
 const RenderCheckedItemsList = (
   checkedItems: CheckedItem[],
   category: string,
   countOf250: number,
-  setTeamCount?: (count: number) => void
+  setTeamCount?: (object: Teams[]) => void
 ) => {
   useEffect(() => {
     if (setTeamCount) {
       const teamItems = checkedItems.filter((item) => item.team === true);
-      const count = teamItems.length;
-      setTeamCount(count);
+      const listOfteams = teamItems.map((item, index) => ({
+        name: "",
+        event:item.name
+      }));
+      setTeamCount(listOfteams);
     }
-  }, [checkedItems]);
+  }, [checkedItems,setTeamCount]);
   return checkedItems.length > 0 ? (
     <ul className="grid gap-3">
       {checkedItems.map((item, index) => {

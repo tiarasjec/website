@@ -40,8 +40,7 @@ export async function sendEmail(email: string, name: string) {
       html,
       text,
     };
-
-    // Send email
+    
     const mailResponse = await transporter.sendMail(mailOptions);
     return mailResponse;
   } catch (error: unknown) {
