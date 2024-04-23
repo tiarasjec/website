@@ -5,7 +5,7 @@ export default function Loading() {
   return (
     <div
       className={cn(
-        "text-6xl md:text-9xl min-h-screen flex items-center justify-center animate-pulse ",
+        "text-6xl md:text-9xl min-h-screen flex items-center justify-center animate-pulse",
         tiaraFont.className
       )}
     >

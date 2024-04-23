@@ -64,7 +64,7 @@ const Footer = () => {
             </a>
             <a
               className="ml-3 text-white hover:text-tiara_red transition-all"
-              href="tel:+91 "
+              href="tel:+916364349426"
             >
               <PhoneIcon />
             </a>

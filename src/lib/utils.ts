@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { toast } from "@/components/ui/use-toast";
+import { Teams } from "./interfaces";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -11,6 +12,8 @@ export const baseURL = process.env.NEXT_PUBLIC_URL
   : process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/`
   : `http://localhost:${process.env.PORT ?? 3000}/`;
+
+export const tiaraAssetsPrefix = "https://assets.tiarasjec.in";
 
 declare global {
   interface Window {
@@ -26,7 +29,10 @@ export interface makePaymentProps {
   prefillData: {
     name: string;
     email: string;
+    college: string;
     contact: string;
+    events: string[];
+    teams: Teams[];
   };
 }
 
@@ -43,12 +49,13 @@ export const makePayment = async ({
     headers: {
       "Content-Type": "application/json", // Assuming the API expects JSON
     },
-    body: JSON.stringify({ amount }), // Pass amount as a parameter in the request body
+    body: JSON.stringify({ amount, prefillData }), 
   });
   const { orderId } = await response.json();
   const options = {
     key: key,
     name: productName,
+    image: `${tiaraAssetsPrefix}/t24.png`,
     currency: "INR",
     amount: amount,
     order_id: orderId,
@@ -64,6 +71,10 @@ export const makePayment = async ({
         razorpayPaymentId: response.razorpay_payment_id,
         razorpayOrderId: response.razorpay_order_id,
         razorpaySignature: response.razorpay_signature,
+        college: prefillData.college,
+        events: prefillData.events,
+        teams: prefillData.teams,
+        phone:prefillData.contact,
       };
 
       const result = await fetch("/api/razorpay/verify", {

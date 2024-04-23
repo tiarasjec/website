@@ -1,42 +1,21 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Checkout from "@/components/ui/checkout";
-import { signIn, useSession } from "next-auth/react";
-import { Label } from "@/components/ui/label";
+import { TabsDemo } from "@/components/razorpay/perCategory";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Checkout from "@/components/ui/checkout";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { TabsDemo } from "@/components/razorpay/perCategory";
 import { categoriesList } from "@/data/categoryList";
-import {
-  Event,
-  CheckedItem,
-  CheckboxProps,
-  EventList,
-  Events,
-} from "@/lib/interfaces";
-
-const Checkbox: React.FC<CheckboxProps> = ({
-  className,
-  value,
-  checked,
-  onChange,
-}) => {
-  return (
-    <input
-      type="checkbox"
-      className={className}
-      value={value}
-      checked={checked}
-      onChange={onChange}
-    />
-  );
-};
+import { tiaraFont } from "@/lib/fonts";
+import { CheckedItem, Event, Events } from "@/lib/interfaces";
+import { cn } from "@/lib/utils";
+import { signIn, useSession } from "next-auth/react";
+import React, { useEffect, useState } from "react";
 
 function processEvents(
   category: string,
@@ -78,26 +57,23 @@ const Register: React.FC = () => {
   >([]);
   const [megaCheckedItems, setMegaCheckedItems] = useState<CheckedItem[]>([]);
 
-  const [phoneNumber, setPhoneNumber] = React.useState("+91");
   const [teamName, setTeamName] = React.useState("");
   const [technical, setTechnical] = React.useState<Event[]>([]);
   const [nontechnical, setNonTechnical] = React.useState<Event[]>([]);
   const [cultural, setCultural] = React.useState<Event[]>([]);
   const [mega, setMega] = React.useState<Event[]>([]);
-
   const [hasTeams, setHasTeams] = React.useState<boolean>(false);
+  const [teamCount, setTeamCount] = React.useState<number>(0);
+  const [selectedEventNames, setSelectedEventNames] = React.useState<string[]>(
+    []
+  );
 
   useEffect(() => {
     processEvents("technical", categoriesList, setTechnical);
     processEvents("non_technical", categoriesList, setNonTechnical);
     processEvents("cultural", categoriesList, setCultural);
     processEvents("mega", categoriesList, setMega);
-    console.log(technical);
-    console.log(nontechnical);
-    console.log(cultural);
-    console.log(mega);
   }, []);
-  let index;
   const handleCheckboxChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     category: string
@@ -108,6 +84,7 @@ const Register: React.FC = () => {
       if (category === "technical") {
         const selectedEvent = technical.find((event) => event.key === key);
         if (selectedEvent) {
+          setSelectedEventNames([...selectedEventNames, selectedEvent.name]);
           setTechnicalCheckedItems([
             ...technicalCheckedItems,
             { ...selectedEvent, checked: true },
@@ -116,11 +93,11 @@ const Register: React.FC = () => {
       } else if (category === "nontechnical") {
         const selectedEvent = nontechnical.find((event) => event.key === key);
         if (selectedEvent) {
+          setSelectedEventNames([...selectedEventNames, selectedEvent.name]);
           setNontechnicalCheckedItems([
             ...nontechnicalCheckedItems,
             { ...selectedEvent, checked: true },
           ]);
-          console.log(selectedEvent.team);
           if (selectedEvent.team) {
             setHasTeams(true);
           }
@@ -128,6 +105,7 @@ const Register: React.FC = () => {
       } else if (category === "cultural") {
         const selectedEvent = cultural.find((event) => event.key === key);
         if (selectedEvent) {
+          setSelectedEventNames([...selectedEventNames, selectedEvent.name]);
           setCulturalCheckedItems([
             ...culturalCheckedItems,
             { ...selectedEvent, checked: true },
@@ -136,6 +114,7 @@ const Register: React.FC = () => {
       } else if (category === "mega") {
         const selectedEvent = mega.find((event) => event.key === key);
         if (selectedEvent) {
+          setSelectedEventNames([...selectedEventNames, selectedEvent.name]);
           setMegaCheckedItems([
             ...megaCheckedItems,
             { ...selectedEvent, checked: true },
@@ -144,20 +123,46 @@ const Register: React.FC = () => {
       }
     } else {
       if (category === "technical") {
+        const event = technical.find((item) => item.key === key);
+        if (event) {
+          setSelectedEventNames(
+            selectedEventNames.filter((name) => name !== event.name)
+          );
+        }
         setTechnicalCheckedItems(
           technicalCheckedItems.filter((item) => item.key !== key)
         );
       } else if (category === "nontechnical") {
-        const newCheckedItems = nontechnicalCheckedItems.filter((item) => item.key !== key);
-        newCheckedItems.find((item) => item.team) ? setHasTeams(true) : setHasTeams(false);
-        setNontechnicalCheckedItems(
-          newCheckedItems
+        const event = nontechnical.find((item) => item.key === key);
+        if (event) {
+          setSelectedEventNames(
+            selectedEventNames.filter((name) => name !== event.name)
+          );
+        }
+        const newCheckedItems = nontechnicalCheckedItems.filter(
+          (item) => item.key !== key
         );
+        newCheckedItems.find((item) => item.team)
+          ? setHasTeams(true)
+          : setHasTeams(false);
+        setNontechnicalCheckedItems(newCheckedItems);
       } else if (category === "cultural") {
+        const event = cultural.find((item) => item.key === key);
+        if (event) {
+          setSelectedEventNames(
+            selectedEventNames.filter((name) => name !== event.name)
+          );
+        }
         setCulturalCheckedItems(
           culturalCheckedItems.filter((item) => item.key !== key)
         );
       } else if (category === "mega") {
+        const event = mega.find((item) => item.key === key);
+        if (event) {
+          setSelectedEventNames(
+            selectedEventNames.filter((name) => name !== event.name)
+          );
+        }
         setMegaCheckedItems(
           megaCheckedItems.filter((item) => item.key !== key)
         );
@@ -201,19 +206,19 @@ const Register: React.FC = () => {
       }, 0);
     }
     if (itemswith250.length > 0) {
-      totalSum += (Math.floor(itemswith250.length / 4) + 1) * 250;
+      totalSum += Math.ceil(itemswith250.length / 4) * 250;
     }
     return totalSum;
   };
 
   return (
-    <div className="flex flex-col sm:flex-row w-full items-start justify-center gap-4 p-2 pt-36">
-      <Card className="w-full max-w-xl">
+    <div className="w-full gap-4 p-2 pt-36 md:px-20 lg:px-28 xl:px-40 mx-auto duration-500">
+      <Card className="w-full">
         <CardHeader className="flex flex-row items-start bg-muted/50">
           <div className="grid gap-0.5">
             <CardTitle className="group flex items-center gap-2 text-lg">
-              <span className={tiaraFont.className}>
-                Ti<span className="text-red-500">ar</span>a{"'"} 24
+              <span className={cn("tracking-widest", tiaraFont.className)}>
+                Ti<span className="text-red-500">ar</span>a {"'"}24
               </span>{" "}
               Event Registration
             </CardTitle>
@@ -224,7 +229,7 @@ const Register: React.FC = () => {
             </CardDescription>
           </div>
         </CardHeader>
-        <div className="p-4">
+        <div className="md:flex md:items-center p-4 gap-4">
           <Label htmlFor="name">Name</Label>
           <Input
             type="text"
@@ -234,6 +239,7 @@ const Register: React.FC = () => {
             value={session.data?.user?.name!}
             disabled
           />
+          <br />
           <Label htmlFor="email">Email</Label>
           <Input
             type="email"
@@ -243,17 +249,9 @@ const Register: React.FC = () => {
             value={session.data?.user?.email!}
             disabled
           />
-          <Label htmlFor="phone">Phone Number</Label>
-          <Input
-            type="tel"
-            id="phone"
-            aria-label="Phone number"
-            placeholder="Phone number"
-            value={phoneNumber}
-            required
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          />
-          {hasTeams && (
+          <br />
+
+          {/* {hasTeams && (
             <>
               <Label htmlFor="team_name">Team Name</Label>
               <Input
@@ -266,27 +264,29 @@ const Register: React.FC = () => {
                 onChange={(e) => setTeamName(e.target.value)}
               />
             </>
-          )}
+          )} */}
         </div>
         <Separator className="my-2" />
-        <TabsDemo
-          {...{ technical, nontechnical, cultural, mega }}
-          technicalCheckedItems={technicalCheckedItems}
-          nontechnicalCheckedItems={nontechnicalCheckedItems}
-          culturalCheckedItems={culturalCheckedItems}
-          megaCheckedItems={megaCheckedItems}
-          handleCheckboxChange={handleCheckboxChange}
-        />
+        <div className="flex justify-between flex-col lg:flex-row">
+          <TabsDemo
+            {...{ technical, nontechnical, cultural, mega }}
+            technicalCheckedItems={technicalCheckedItems}
+            nontechnicalCheckedItems={nontechnicalCheckedItems}
+            culturalCheckedItems={culturalCheckedItems}
+            megaCheckedItems={megaCheckedItems}
+            handleCheckboxChange={handleCheckboxChange}
+          />
+          <Checkout
+            technicalCheckedItems={technicalCheckedItems}
+            nontechnicalCheckedItems={nontechnicalCheckedItems}
+            culturalCheckedItems={culturalCheckedItems}
+            megaCheckedItems={megaCheckedItems}
+            itemsWith250={itemswith250}
+            sumOfCheckedItemsAmount={getSumofCheckedItems}
+            selectedEvents={selectedEventNames}
+          />
+        </div>
       </Card>
-      <Checkout
-        technicalCheckedItems={technicalCheckedItems}
-        nontechnicalCheckedItems={nontechnicalCheckedItems}
-        culturalCheckedItems={culturalCheckedItems}
-        megaCheckedItems={megaCheckedItems}
-        itemsWith250={itemswith250}
-        sumOfCheckedItemsAmount={getSumofCheckedItems}
-        phoneNumber={phoneNumber}
-      />
     </div>
   );
 };

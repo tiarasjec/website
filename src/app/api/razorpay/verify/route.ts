@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { PaymentStatus } from "@prisma/client";
 import { auth } from "@/auth";
 import { sendEmail } from "@/helper/mailer";
+import { SentMessageInfo } from "nodemailer/lib/smtp-transport";
 
 const generatedSignature = (
   razorpayOrderId: string,
@@ -22,9 +23,22 @@ const generatedSignature = (
   return sig;
 };
 
+interface PaymentResponse {
+  orderCreationId: string;
+  razorpayPaymentId: string;
+  razorpayOrderId: string;
+  razorpaySignature: string;
+  college: string;
+  events: string[];
+  teams: {
+    name: string;
+    event: string;
+  }[];
+  phone: string;
+}
+
 export async function POST(request: NextRequest) {
-  const { orderCreationId, razorpayPaymentId, razorpaySignature } =
-    await request.json();
+  const data: PaymentResponse = await request.json();
   const session = await auth();
 
   if (!session) {
@@ -34,22 +48,26 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const signature = generatedSignature(orderCreationId, razorpayPaymentId);
-  if (signature !== razorpaySignature) {
+  const signature = generatedSignature(
+    data.orderCreationId,
+    data.razorpayPaymentId
+  );
+  if (signature !== data.razorpaySignature) {
     await prisma.payment.upsert({
       where: {
-        razorpayPaymentId,
+        razorpayPaymentId: data.razorpayPaymentId,
         user: {
           email: session.user?.email,
         },
       },
       update: {
         status: PaymentStatus.FAILED,
-        orderCreationId,
+        orderCreationId: data.orderCreationId,
       },
       create: {
-        razorpayPaymentId,
-        orderCreationId,
+        signature: data.razorpaySignature,
+        razorpayPaymentId: data.razorpayPaymentId,
+        orderCreationId: data.orderCreationId,
         status: PaymentStatus.FAILED,
         user: {
           connect: {
@@ -63,32 +81,95 @@ export async function POST(request: NextRequest) {
       { message: "payment verification failed", isOk: false },
       { status: 400 }
     );
-  } else if (signature === razorpaySignature) {
-    await prisma.payment.upsert({
+  } else if (signature === data.razorpaySignature) {
+    let email: SentMessageInfo | boolean = false;
+
+    const user = await prisma.user.findUnique({
       where: {
-        razorpayPaymentId,
-        user: {
-          email: session.user?.email,
-        },
-      },
-      update: {
-        status: PaymentStatus.SUCCESS,
-        orderCreationId,
-      },
-      create: {
-        razorpayPaymentId,
-        orderCreationId,
-        status: PaymentStatus.SUCCESS,
-        user: {
-          connect: {
-            email: session.user?.email!,
-          },
-        },
+        email: session.user?.email!,
       },
     });
-    sendEmail(session.user?.email!, session.user?.name!);
+
+    try {
+      email = await sendEmail(
+        session.user?.email!,
+        session.user?.name!,
+        data.events,
+        `https://tiarasjec.in/api/verify/${user?.id}`
+      );
+    } catch (error) {
+      console.error(error);
+    }
+
+    prisma.$transaction(async (prisma) => {
+      await prisma.payment.upsert({
+        where: {
+          razorpayPaymentId: data.razorpayPaymentId,
+          user: {
+            email: session.user?.email,
+          },
+        },
+        update: {
+          status: PaymentStatus.SUCCESS,
+          orderCreationId: data.orderCreationId,
+        },
+        create: {
+          signature: data.razorpaySignature,
+          razorpayPaymentId: data.razorpayPaymentId,
+          orderCreationId: data.orderCreationId,
+          status: PaymentStatus.SUCCESS,
+          user: {
+            connect: {
+              email: session.user?.email!,
+            },
+          },
+        },
+      });
+
+      const existingUser = await prisma.user.findUnique({
+        where: {
+          email: session.user?.email!,
+        },
+        include: {
+          teams: true,
+        },
+      });
+      const mergedEvents = [...existingUser?.events!, ...data.events];
+
+      await prisma.user.upsert({
+        where: {
+          email: session.user?.email!,
+        },
+        update: {
+          registrationEmailSent: !!email,
+          contact: data.phone,
+          college: data.college,
+          events: mergedEvents,
+          teams: {
+            createMany: {
+              data: data.teams,
+            },
+          },
+        },
+        create: {
+          registrationEmailSent: !!email,
+          contact: data.phone,
+          college: data.college,
+          events: data.events,
+          teams: {
+            createMany: {
+              data: data.teams,
+            },
+          },
+        },
+        include: {
+          teams: true,
+        },
+      });
+    });
+
     return NextResponse.json(
-      { message: "payment verified successfully", isOk: true },
+      { message: "Payment verified successfully", isOk: true },
       { status: 200 }
     );
   }

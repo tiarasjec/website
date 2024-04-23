@@ -24,7 +24,10 @@ export default function EventsPage() {
     <>
       <Container className="mx-auto pt-16">
         <div className="py-4 mx-6 sm:mx-12 space-y-4 mt-10 pt-10">
-          <h1 id="about" className={cn("text-center text-4xl", tiaraFont.className)}>
+          <h1
+            id="about"
+            className={cn("text-center text-4xl", tiaraFont.className)}
+          >
             Events categories
           </h1>
         </div>

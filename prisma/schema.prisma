@@ -7,58 +7,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserRole {
+  PARTICIPANT
+  ADMIN
+}
+
 model Payment {
   signature         String?
   status            PaymentStatus @default(PENDING)
   created_at        DateTime      @default(now())
   updated_at        DateTime      @updatedAt
-  userId            String        @map("user_id")
   orderCreationId   String
   razorpayPaymentId String        @id
   user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId            String        @map("user_id")
 
   @@index([userId])
   @@map("payments")
-}
-
-model Faculty {
-  id         String   @id @default(cuid())
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-  userId     String   @map("user_id")
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  events     Event[]  @relation("EventToFaculty")
-
-  @@map("faculty")
-}
-
-model Student {
-  id         String   @id @default(cuid())
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-  userId     String   @map("user_id")
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  events     Event[]  @relation("EventToStudent")
-
-  @@map("students")
-}
-
-model Event {
-  id              String           @id @default(cuid())
-  name            String
-  description     String
-  date            DateTime
-  location        String
-  image           String
-  created_at      DateTime         @default(now())
-  updated_at      DateTime         @updatedAt
-  userId          String           @map("user_id")
-  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  faculties       Faculty[]        @relation("EventToFaculty")
-  registeredUsers RegisteredUser[] @relation("EventToRegisteredUser")
-  students        Student[]        @relation("EventToStudent")
-
-  @@map("events")
 }
 
 model Account {
@@ -93,22 +58,36 @@ model Session {
 }
 
 model User {
-  id             String          @id @default(cuid())
-  name           String?
-  email          String?         @unique
-  emailVerified  DateTime?       @map("email_verified")
-  image          String?
-  created_at     DateTime        @default(now())
-  updated_at     DateTime        @updatedAt
-  accounts       Account[]
-  events         Event[]
-  faculties      Faculty[]
-  payment        Payment[]
-  registeredUser RegisteredUser?
-  sessions       Session[]
-  students       Student[]
+  id                    String    @id @default(cuid())
+  name                  String?
+  email                 String?   @unique
+  emailVerified         DateTime? @map("email_verified")
+  image                 String?
+  created_at            DateTime  @default(now())
+  updated_at            DateTime  @updatedAt
+  role                  UserRole  @default(PARTICIPANT)
+  accounts              Account[]
+  events                String[]
+  teams                 Team[]
+  college               String?
+  contact               String?
+  registrationEmailSent Boolean?  @default(false)
+  payment               Payment[]
+  sessions              Session[]
 
   @@map("users")
+}
+
+model Team {
+  id         String   @id @default(cuid())
+  name       String
+  event      String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String   @map("user_id")
+
+  @@map("teams")
 }
 
 model VerificationToken {
@@ -118,19 +97,6 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map("verificationtokens")
-}
-
-model RegisteredUser {
-  id         String   @id @default(cuid())
-  userId     String   @unique @map("user_id")
-  college    String
-  phone      String
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  events     Event[]  @relation("EventToRegisteredUser")
-
-  @@map("registeredusers")
 }
 
 enum PaymentStatus {

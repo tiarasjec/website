@@ -28,10 +28,10 @@ const navItems: NavItem[] = [
     label: "events",
     href: "/events",
   },
-  // {
-  //   label: "team",
-  //   href: "/team",
-  // },
+  {
+    label: "team",
+    href: "/team",
+  },
   {
     label: "about",
     href: "/about",
@@ -86,28 +86,40 @@ export function Header() {
                   {navItem.label}
                 </a>
               ))}
+              <Button asChild
+                className={cn(
+                  "tracking-widest flex items-center font-medium md:my-6 bg-tiara_red hover:bg-tiara_red/90 text-white",
+                  tiaraFont.className
+                )}
+              >
+                <Link href="https://assets.tiarasjec.in/rulebook.pdf">
+                  rulebook
+                </Link>
+              </Button>
               {session && session.user ? (
                 <Button
-                  className="flex tracking-widest font-tiara items-center gap-x-2 md:border-s md:border-zinc-600 font-medium md:my-6 md:ps-6"
-                  onClick={() => signOut()}
+                  asChild
+                  className={cn(
+                    "tracking-widest flex items-center font-medium md:my-6",
+                    tiaraFont.className
+                  )}
                 >
-                Logout
+                  <Link href={"/register"}>register</Link>
                 </Button>
               ) : (
                 <Button
-                  disabled
                   className={cn(
-                    "tracking-widest flex items-center font-medium md:my-6 pointer-events-none",
+                    "tracking-widest flex items-center font-medium md:my-6",
                     tiaraFont.className
                   )}
-                  onClick={() =>
-                    signIn("google", {
-                      callbackUrl: "/events",
+                  onClick={async () =>
+                    await signIn("google", {
+                      callbackUrl: "/register",
                       redirect: true,
                     })
                   }
                 >
-                  login
+                  register now!
                 </Button>
               )}
             </div>

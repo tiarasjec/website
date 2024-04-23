@@ -34,7 +34,7 @@ export default function EventsPage() {
             tiaraFont.className
           )}
         >
-          {toTitleCase(pathname.split("/")[2])} Events
+          {toTitleCase(pathname.split("/")[2]).split("_").join(" ")} Events
         </div>
       </div>
       <div className="w-full flex justify-center ">
@@ -45,17 +45,9 @@ export default function EventsPage() {
               return (
                 <CardContainer
                   key={index}
-                  className="w-[20rem] h-[30rem] md:w-[25rem] md:h-[35rem] lg:w-[30rem] lg:h-[40rem]"
                   containerClassName="relative flex items-center justify-center transition-all duration-200 ease-linear"
                 >
                   <CardBody className="relative">
-                    <CardItem
-                      as="h3"
-                      translateZ="50"
-                      className="text-2xl font-bold text-white text-center"
-                    >
-                      {card.name}
-                    </CardItem>
                     <CardItem translateZ="100" className="w-full mt-4">
                       <Image
                         src={card.thumbnail}
@@ -67,17 +59,6 @@ export default function EventsPage() {
                         sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, 33vw"
                       />
                     </CardItem>
-                    {/* <div className="flex justify-between items-center mt-20">
-                        <CardItem
-                          translateZ={20}
-                          as={Link}
-                          href={card.href}
-                          target="__blank"
-                          className="px-4 py-2 rounded-xl text-sm font-normal text-white"
-                        >
-                          Check out description
-                        </CardItem>
-                      </div> */}
                   </CardBody>
                 </CardContainer>
               );
