@@ -1,16 +1,10 @@
 "use client";
-import React from "react";
 import SJECLogo from "@/assets/sjeclogo.png";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { tiaraFont } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 

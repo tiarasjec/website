@@ -1,17 +1,11 @@
-import { CalendarIcon } from "@radix-ui/react-icons"
-import {InfoCircleFilled} from '@ant-design/icons';
+import { InfoCircleFilled } from '@ant-design/icons';
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/components/ui/hover-card";
 
 function Info({info}:{info:string}) {
   return (

@@ -1,9 +1,7 @@
 "use client";
 import { HeroParallax } from "@/components/widgets/Hero";
-import { useEffect, useState } from "react";
 import { LabIntro } from "@/components/story/intro";
 import { Last } from "@/components/story/last";
-import Loading from "./loading";
 import Lenis from "@/components/shared/lenis";
 import { tiaraAssetsPrefix } from "@/lib/utils";
 

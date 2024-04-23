@@ -1,10 +1,9 @@
 "use client";
 
-import * as React from "react";
 import Container from "@/components/shared/container";
 import { tiaraFont } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-import { legalInfo } from "../../../data/legal_Info"
+import { legalInfo } from "../../../data/legal_Info";
 import { Text } from "@/components/shared/text";
 export default function Refund() {
    
