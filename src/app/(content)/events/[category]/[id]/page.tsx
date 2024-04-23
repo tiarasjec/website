@@ -79,14 +79,20 @@ const Page = () => {
                                 </span>
                             </div> */}
                             <div className="w-full mt-5">
-                                <h1 className="text-2xl font-bold text-tiara_red ml-4">Prerequisites</h1>
-                                <ul className="mt-4 ml-5">
-                                    {eventInfo?.prerequisites.map((prerequisite, index) => (
-                                        <li className="text-lg list-disc marker:text-tiara_red" key={index}>
-                                            {prerequisite}
-                                        </li>
-                                    ))}
-                                </ul>
+                                {eventInfo && eventInfo.prerequisites.length === 0 ? (
+                                    ""
+                                ) : (
+                                    <>
+                                        <h1 className="text-2xl font-bold text-tiara_red ml-4">Prerequisites</h1>
+                                        <ul className="mt-4 ml-5">
+                                            {eventInfo?.prerequisites.map((prerequisite, index) => (
+                                                <li className="text-lg list-disc marker:text-tiara_red" key={index}>
+                                                    {prerequisite}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                )}
                             </div>
                             <div className="w-full mt-5">
                                 <h1 className="text-2xl font-bold text-tiara_red ml-4">Rules</h1>
