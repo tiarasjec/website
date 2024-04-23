@@ -104,6 +104,7 @@ const config = {
     addVariablesForColors,
     require("@tailwindcss/forms"),
     require("preline/plugin"),
+    require('@tailwindcss/typography'),
   ],
 } satisfies Config;
 
