@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import Container from "@/components/shared/container";
 import { tiaraFont } from "@/lib/fonts";
 import { cn } from "@/lib/utils";

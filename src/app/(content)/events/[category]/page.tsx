@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Import usePathname from next/navigation
 import { CardType } from "@/components/ui/hover/scroll";
 import Image from "next/image";

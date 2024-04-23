@@ -1,6 +1,5 @@
 import { auth } from "@/auth";
-import { tiaraFont } from "@/lib/fonts";
-import { cn, tiaraAssetsPrefix } from "@/lib/utils";
+import { tiaraAssetsPrefix } from "@/lib/utils";
 import {
   Body,
   Container,
@@ -14,7 +13,6 @@ import {
   Text,
 } from "@react-email/components";
 import { Tailwind } from "@react-email/tailwind";
-import * as React from "react";
 
 interface UserRegistrationEmailProps {
   events: string[];
