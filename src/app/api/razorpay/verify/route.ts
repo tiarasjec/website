@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { PaymentStatus } from "@prisma/client";
 import { auth } from "@/auth";
 import { sendEmail } from "@/helper/mailer";
+import { SentMessageInfo } from "nodemailer/lib/smtp-transport";
 
 const generatedSignature = (
   razorpayOrderId: string,
@@ -71,7 +72,14 @@ export async function POST(request: NextRequest) {
       { status: 400 }
     );
   } else if (signature === razorpaySignature) {
-    prisma.$transaction(async (prisma) => [
+    let email: SentMessageInfo | boolean = false;
+    try {
+      email = await sendEmail(session.user?.email!, session.user?.name!);
+    } catch (error) {
+      console.error(error);
+    }
+
+    prisma.$transaction(async (prisma) => {
       await prisma.payment.upsert({
         where: {
           razorpayPaymentId,
@@ -94,26 +102,46 @@ export async function POST(request: NextRequest) {
             },
           },
         },
-      }),
+      });
 
-      await prisma.user.update({
+      const existingUser = await prisma.user.findUnique({
         where: {
           email: session.user?.email!,
         },
-        data: {
-          events,
-          teams: {
-            createMany: {
-              data: teams,
-            },
-          },
-          college,
-          contact,
+        include: {
+          teams: true,
         },
-      }),
-    ]);
+      });
 
-    sendEmail(session.user?.email!, session.user?.name!);
+      const mergedEvents = [...existingUser?.events!, ...events];
+      const mergedTeams = [...existingUser?.teams!, ...teams];
+
+      await prisma.user.upsert({
+        where: {
+          email: session.user?.email!,
+        },
+        update: {
+          contact,
+          college,
+          events: mergedEvents,
+          teams: {
+            updateMany: {
+              where : {
+                id: session.user?.id!
+              },
+              data: mergedTeams
+            }
+          }
+        },
+        create: {
+          contact,
+          college,
+          events,
+          teams,
+        },
+      });
+    });
+
     return NextResponse.json(
       { message: "payment verified successfully", isOk: true },
       { status: 200 }
