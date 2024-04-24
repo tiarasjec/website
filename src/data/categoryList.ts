@@ -1062,29 +1062,29 @@ const categoriesList = {
             },
           ],
         },
-        // "14": {
-        //   team: false,
-        //   name: "Seasoned-saute (ONLY FOR FACULTIES)",
-        //   description: "",
-        //   rules: ["RR"],
-        //   prerequisites: ["PP"],
-        //   costs: 250,
-        //   thumbnail: "",
-        //   startTime: "2024-05-12 10:00",
-        //   endTime: "2024-05-12 18:00",
-        //   facultyCoordinators: [
-        //     {
-        //       name: "Michael Johnson",
-        //       phone: "+1122334455",
-        //     },
-        //   ],
-        //   studentCoordinators: [
-        //     {
-        //       name: "Emily Brown",
-        //       phone: "+5566778899",
-        //     },
-        //   ],
-        // },
+        "14": {
+          team: false,
+          name: "Seasoned-saute (ONLY FOR FACULTIES)",
+          description: "",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          costs: 1,
+          thumbnail: "",
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
         // "14": {
         //   name: ". Seasoned-saute (ONLY FOR FACULTIES)",
         //   description: "",
