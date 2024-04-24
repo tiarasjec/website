@@ -2,6 +2,7 @@ import { auth } from "@/auth";
 import { tiaraAssetsPrefix } from "@/lib/utils";
 import {
   Body,
+  Button,
   Container,
   Head,
   Heading,
@@ -67,12 +68,31 @@ export const UserRegistrationEmail = async ({
               src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${registrationLink}`}
               alt={name}
             />
+            <Section className="text-center mt-[32px] mb-[32px]">
+              <Button
+                className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
+                href={`${tiaraAssetsPrefix}/rulebook.pdf`}
+              >
+                Download Rulebook
+              </Button>
+            </Section>
             <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
             <Text className="text-[#666666] text-[12px] leading-[24px]">
               Thanks & Regards, <br /> Team Tiara <br />
               For any queries and concerns, feel free to contact us at:
               tiara@sjec.ac.in
             </Text>
+            <div className="flex flex-col items-center justify-center text-[12px] space-x-4">
+              <Button href="https://tiarasjec.in/privacy">
+                Privacy Policy
+              </Button>
+              <Button href="https://tiarasjec.in/refund">
+                Refund Policy
+              </Button>
+              <Button href="https://tiarasjec.in/terms">
+                Terms and Conditions
+              </Button>
+            </div>
           </Container>
         </Body>
       </Tailwind>
