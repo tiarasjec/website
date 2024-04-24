@@ -1068,7 +1068,7 @@ const categoriesList = {
         //   description: "",
         //   rules: ["RR"],
         //   prerequisites: ["PP"],
-        //   costs: 250,
+        //   costs: 1,
         //   thumbnail: "",
         //   startTime: "2024-05-12 10:00",
         //   endTime: "2024-05-12 18:00",

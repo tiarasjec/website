@@ -36,6 +36,71 @@ export interface makePaymentProps {
   };
 }
 
+interface RazorpaySuccesshandlerArgs {
+  razorpay_signature: string;
+  razorpay_order_id: string;
+  razorpay_payment_id: string;
+}
+
+export interface RazorpayOptions {
+  key: string;
+  amount: number;
+  currency: string;
+  name: string;
+  description?: string;
+  image?: string;
+  order_id: string;
+  handler?: (args: RazorpaySuccesshandlerArgs) => void;
+  prefill?: {
+    name?: string;
+    email?: string;
+    contact?: string;
+    method?: "card" | "netbanking" | "wallet" | "emi" | "upi";
+  };
+  notes?: {};
+  theme?: {
+    hide_topbar?: boolean;
+    color?: string;
+    backdrop_color?: string;
+  };
+  modal?: {
+    backdropclose?: boolean;
+    escape?: boolean;
+    handleback?: boolean;
+    confirm_close?: boolean;
+    ondismiss?: () => void;
+    animation?: boolean;
+  };
+  subscription_id?: string;
+  subscription_card_change?: boolean;
+  recurring?: boolean;
+  callback_url?: string;
+  redirect?: boolean;
+  customer_id?: string;
+  timeout?: number;
+  remember_customer?: boolean;
+  readonly?: {
+    contact?: boolean;
+    email?: boolean;
+    name?: boolean;
+  };
+  hidden?: {
+    contact?: boolean;
+    email?: boolean;
+  };
+  send_sms_hash?: boolean;
+  allow_rotation?: boolean;
+  retry?: {
+    enabled?: boolean;
+    max_count?: boolean;
+  };
+  config?: {
+    display: {
+      language: "en" | "ben" | "hi" | "mar" | "guj" | "tam" | "tel";
+    };
+  };
+}
+
 export const makePayment = async ({
   productId = null,
   productName,
@@ -49,11 +114,11 @@ export const makePayment = async ({
     headers: {
       "Content-Type": "application/json", // Assuming the API expects JSON
     },
-    body: JSON.stringify({ amount, prefillData }), 
+    body: JSON.stringify({ amount, prefillData }),
   });
   const { orderId } = await response.json();
-  const options = {
-    key: key,
+  const options: RazorpayOptions = {
+    key: key!,
     name: productName,
     image: `${tiaraAssetsPrefix}/t24.png`,
     currency: "INR",
@@ -65,7 +130,14 @@ export const makePayment = async ({
       email: prefillData.email,
       contact: prefillData.contact,
     },
-    handler: async function (response: any) {
+    notes: {
+      customerName: prefillData.name,
+      customerEmail: prefillData.email,
+      customerContact: prefillData.contact,
+      college: prefillData.college,
+      events: prefillData.events.join(", "),
+    },
+    handler: async function (response) {
       const data = {
         orderCreationId: orderId,
         razorpayPaymentId: response.razorpay_payment_id,
@@ -74,7 +146,7 @@ export const makePayment = async ({
         college: prefillData.college,
         events: prefillData.events,
         teams: prefillData.teams,
-        phone:prefillData.contact,
+        phone: prefillData.contact,
       };
 
       const result = await fetch("/api/razorpay/verify", {
@@ -85,13 +157,13 @@ export const makePayment = async ({
       const res = await result.json();
       if (res.isOk) {
         toast({
-          title: "Payment successful",
+          title: "✅ Payment successful",
           description: "Your payment was successful",
         });
         window.location.href = "/";
       } else {
         toast({
-          title: "Payment failed",
+          title: "❌ Payment failed",
           description:
             "Please try again. Contact support for help. " + res.error,
           variant: "destructive",
