@@ -14,7 +14,6 @@ import {
   Text,
 } from "@react-email/components";
 import { Tailwind } from "@react-email/tailwind";
-import Link from "next/link";
 
 interface UserRegistrationEmailProps {
   events: string[];
@@ -72,7 +71,7 @@ export const UserRegistrationEmail = async ({
             <Section className="text-center mt-[32px] mb-[32px]">
               <Button
                 className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
-                href={`https://assets.tiarasjec.in/rulebook.pdf`}
+                href={`${tiaraAssetsPrefix}/rulebook.pdf`}
               >
                 Download Rulebook
               </Button>
