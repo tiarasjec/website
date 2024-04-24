@@ -10,7 +10,6 @@ const coreTeam = [
   `${tiaraAssetsPrefix}/coreteam/convener_1.avif`,
   `${tiaraAssetsPrefix}/coreteam/convener_2.avif`,
   `${tiaraAssetsPrefix}/coreteam/cultural.avif`,
-  `${tiaraAssetsPrefix}/coreteam/design.avif`,
   `${tiaraAssetsPrefix}/coreteam/discipline.avif`,
   `${tiaraAssetsPrefix}/coreteam/logistics.avif`,
   `${tiaraAssetsPrefix}/coreteam/media.avif`,
@@ -20,9 +19,10 @@ const coreTeam = [
   `${tiaraAssetsPrefix}/coreteam/prizes_awards.avif`,
   `${tiaraAssetsPrefix}/coreteam/social_media.avif`,
   `${tiaraAssetsPrefix}/coreteam/sponsership.avif`,
-  `${tiaraAssetsPrefix}/coreteam/stage_decoration.avif`,
   `${tiaraAssetsPrefix}/coreteam/technical.avif`,
   `${tiaraAssetsPrefix}/coreteam/website.avif`,
+  `${tiaraAssetsPrefix}/coreteam/stage_decoration.avif`,
+  `${tiaraAssetsPrefix}/coreteam/design.avif`,
 ];
 
 const webTeam = [
