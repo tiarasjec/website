@@ -86,9 +86,11 @@ export const UserRegistrationEmail = async ({
               <Button href="https://tiarasjec.in/privacy">
                 Privacy Policy
               </Button>
+              &nbsp;|&nbsp;
               <Button href="https://tiarasjec.in/refund">
                 Refund Policy
               </Button>
+              &nbsp;|&nbsp;
               <Button href="https://tiarasjec.in/terms">
                 Terms and Conditions
               </Button>
