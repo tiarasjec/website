@@ -32,30 +32,9 @@
     will-change: transform;
   }
 
-  .pc {
-    top: 50%;
-    right: 0;
-    transform: translate(-50%, -50%);
-    width: tovw(603px);
-    height: tovw(664px);
-    z-index: 1;
-  }
 
   .title {
     color: white;
     mix-blend-mode: difference;
-  }
-
-  .smile {
-    width: tovw(308px);
-    height: tovw(300px);
-    z-index: 10;
-    top: 70%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-
-    @media screen and (max-width: 800px) {
-      top: 55%;
-    }
   }
 }

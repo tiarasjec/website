@@ -30,10 +30,6 @@ const navItems: NavItem[] = [
     label: "about",
     href: "/about",
   },
-  // {
-  //   label: "rulebook",
-  //   href: "/rulebook",
-  // },
 ];
 
 export function Header() {
