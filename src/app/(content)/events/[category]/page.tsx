@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Import usePathname from next/navigation
 import { CardType } from "@/components/ui/hover/scroll";
 import Image from "next/image";
@@ -42,6 +42,9 @@ export default function EventsPage() {
           {cards
             .sort((a, b) => a.name.localeCompare(b.name))
             .map((card, index) => {
+              if (card.id === "5") {
+                return null;
+              }
               return (
                 <CardContainer
                   key={index}

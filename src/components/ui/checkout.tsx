@@ -7,6 +7,7 @@ import { CheckedItem, Teams } from "@/lib/interfaces";
 import RenderCheckedItemsList from "./renderCheckedItemList";
 import { useState, useEffect } from "react";
 import Loading from "@/app/loading";
+import { Text } from "../shared/text";
 import {
   Accordion,
   AccordionContent,
@@ -16,6 +17,7 @@ import {
 import Info from "./hover/info";
 import { Label } from "./label";
 import { Input } from "./input";
+import Link from "next/link";
 
 const Buy = React.lazy(() => import("@/components/razorpay/Buy"));
 
@@ -171,6 +173,21 @@ export default function Checkout({
               </span>
             </li>
           </ul>
+          <Text className="text-xs">
+            By registering for the events, you agree to our{" "}
+            <Link href="/terms">
+              <span className="underline">Terms & Conditions</span>
+            </Link>
+            ,{" "}
+            <Link href="/privacy">
+              <span className="underline">Privacy Policy</span>
+            </Link>{" "}
+            and{" "}
+            <Link href="/refund">
+              <span className="underline">Refund Policy</span>
+            </Link>
+            .
+          </Text>
           <Suspense fallback={<Loading />}>
             <Buy
               teams={teamCount}

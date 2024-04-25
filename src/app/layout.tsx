@@ -2,17 +2,17 @@ import "@/app/globals.css";
 import { Header } from "@/components/widgets/Header";
 import Footer from "@components/widgets/Footer";
 import { cn } from "@/lib/utils";
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
 import PrelineScript from "@/components/shared/preline";
 import { Toaster } from "@/components/ui/toaster";
 import Script from "next/script";
 import { TailwindIndicator } from "@/components/shared/tailwind";
-import Lenis from "@/components/shared/lenis";
 import { StarsCanvas } from "@/components/ui/Stars";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Glow from "@/components/shared/glow";
 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -41,6 +41,7 @@ export default function RootLayout({
         >
           <SessionProvider>
               <StarsCanvas />
+              <Glow />
               <div className="flex min-h-screen w-full flex-col">
                 <Header />
                 {children}

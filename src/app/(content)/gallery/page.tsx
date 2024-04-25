@@ -1,6 +1,6 @@
 "use client";
 import { Gallery } from "@/components/widgets/Gallery";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function GalleryPage() {
   const [images, setImages] = useState<{ src: string; alt: string }[]>([]);

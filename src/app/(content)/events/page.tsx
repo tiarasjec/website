@@ -2,9 +2,6 @@
 import Container from "@/components/shared/container";
 import { Link, LinkProps } from "@/components/ui/hover/link";
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import React from "react";
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { tiaraFont } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 

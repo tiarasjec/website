@@ -25,7 +25,7 @@ export interface CardType {
   href: string;
   thumbnail: string;
   name: string;
-  id: number;
+  id: string;
 }
 
 export const Scroll = ({ cards }: { cards: CardType[] }) => {

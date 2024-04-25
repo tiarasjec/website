@@ -8,7 +8,7 @@ import type { Points as PointsType } from "three";
 export const StarBackground = (props: PointsProps) => {
   const ref = useRef<PointsType | null>(null);
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5000), { radius: 1.2 })
+    random.inSphere(new Float32Array(6000), { radius: 1.2 }) // 6000 stars as it is divisible by 3, or else you will get a NaN error
   );
 
   useFrame((_state, delta) => {
