@@ -6,6 +6,7 @@ import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { tiaraFont } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 function toTitleCase(str: string) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -16,6 +17,7 @@ function toTitleCase(str: string) {
 export default function EventsPage() {
   const [cards, setCards] = useState<CardType[]>([]);
   const pathname = usePathname();
+  
   useEffect(() => {
     const path = pathname.split("/")[2];
     fetch(`/api/events/${path}`)
@@ -46,6 +48,7 @@ export default function EventsPage() {
                 return null;
               }
               return (
+                <Link href ={`/events/${pathname.split("/")[2]}/${card.id}`}>
                 <CardContainer
                   key={index}
                   containerClassName="relative flex items-center justify-center transition-all duration-200 ease-linear"
@@ -63,7 +66,8 @@ export default function EventsPage() {
                       />
                     </CardItem>
                   </CardBody>
-                </CardContainer>
+                  </CardContainer>
+                  </Link>
               );
             })}
         </div>
