@@ -7,6 +7,7 @@ import Loading from "@/app/loading";
 import { EncryptButton } from "@components/ui/hover/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { tiaraFont } from "@/lib/fonts";
 
 export interface Event {
@@ -39,6 +40,7 @@ const Page = () => {
     const [eventInfo, setEventInfo] = useState<Event>();
     const pathname = usePathname();
     const [loading, setLoading] = useState<boolean>(true);
+    const { data: session } = useSession();
 
     useEffect(() => {
         setLoading(true);
@@ -47,7 +49,6 @@ const Page = () => {
             .then((response) => response.json())
             .then((dataList) => {
                 setEventInfo(dataList);
-                new Promise((resolve) => setTimeout(resolve, 5000));
                 setLoading(false);
             })
             .catch((error) => console.error("Error fetching events:", error));
@@ -61,7 +62,7 @@ const Page = () => {
           })
         : "";
     const eventName = eventInfo?.name;
-    const parts = eventName?.split(/\(([^)]+)\)/)
+    const parts = eventName?.split(/\(([^)]+)\)/);
     return (
         <>
             {/* Hero */}
@@ -129,19 +130,34 @@ const Page = () => {
                                     alt="image"
                                     className=" rounded-lg shadow-lg shadow-slate-500/50 mt-16 "
                                 />
-                                <div className={cn(
-                    "tracking-widest  font-medium mt-8 text-center text-xl ",
-                    tiaraFont.className
-                  )}>
+                                <div
+                                    className={cn(
+                                        "tracking-widest  font-medium mt-8 text-center text-xl ",
+                                        tiaraFont.className
+                                    )}
+                                >
                                     <span>
                                         {" "}
                                         cost ₹ <span className="text-tiara_red">{eventInfo?.costs}</span>{" "}
                                     </span>
                                 </div>
-                                    <div className="mt-8 text-center">
+                                <div className="mt-8 text-center">
+                                    {session && session.user ? (
                                         <Link href="/register">
+                                            <EncryptButton targetText="Register" />
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            onClick={async () =>
+                                                await signIn("google", {
+                                                    callbackUrl: "/register",
+                                                    redirect: true,
+                                                })
+                                            }
+                                        >
                                             <EncryptButton targetText="Register Now" />
-                                            </Link>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                             <div></div>
