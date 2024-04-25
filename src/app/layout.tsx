@@ -12,6 +12,7 @@ import { TailwindIndicator } from "@/components/shared/tailwind";
 import { StarsCanvas } from "@/components/ui/Stars";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Glow from "@/components/shared/glow";
 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -40,6 +41,7 @@ export default function RootLayout({
         >
           <SessionProvider>
               <StarsCanvas />
+              <Glow />
               <div className="flex min-h-screen w-full flex-col">
                 <Header />
                 {children}
