@@ -5,6 +5,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Loading from "@/app/loading";
 import { EncryptButton } from "@components/ui/hover/button";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { tiaraFont } from "@/lib/fonts";
 
 export interface Event {
     name: string;
@@ -65,7 +68,7 @@ const Page = () => {
             {loading ? (
                 <Loading />
             ) : (
-                <div className="w-full mt-32">
+                <div className="w-full mt-32 px-5">
                     <div className="w-full h-full xl:grid  grid-cols-2  sm:flex flex-col">
                         <div className="">
                             <div className="w-full">
@@ -116,24 +119,29 @@ const Page = () => {
                             </div>
                         </div>
 
-                        <div className="bg-black flex justify-center items-start">
+                        <div className=" flex justify-center items-start">
                             <div>
                                 {/* <h1 className="text-3xl font-bold text-white">{eventInfo?.name}</h1> */}
                                 <Image
                                     src={eventInfo?.thumbnail || ""}
-                                    width={500}
-                                    height={500}
+                                    width={400}
+                                    height={400}
                                     alt="image"
-                                    className="rounded-md shadow-lg shadow-slate-500/50 hover:shadow-slate-500  hover:scale-110  hover:mt-5 transition-all duration-300 w-[500px] mt-16"
+                                    className=" rounded-lg shadow-lg shadow-slate-500/50 mt-16 "
                                 />
-                                <div className="mt-8 text-center font-tiara">
+                                <div className={cn(
+                    "tracking-widest  font-medium mt-8 text-center text-xl ",
+                    tiaraFont.className
+                  )}>
                                     <span>
                                         {" "}
                                         cost ₹ <span className="text-tiara_red">{eventInfo?.costs}</span>{" "}
                                     </span>
                                 </div>
-                                <div className="mt-8 text-center">
-                                    <EncryptButton targetText="Register Now" />
+                                    <div className="mt-8 text-center">
+                                        <Link href="/register">
+                                            <EncryptButton targetText="Register Now" />
+                                            </Link>
                                 </div>
                             </div>
                             <div></div>
