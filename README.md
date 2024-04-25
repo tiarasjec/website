@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tiara 2024 Website
+
+Tiara is a platform for young minds aspiring to be extraordinary. It's a National-level Techno-Cultural fest, open to all college students, where participants can showcase their talents and represent their respective institutions on the grand stage of Tiara. Our event aims to spread awareness and knowledge in new areas of Technology and Culture to contribute to the nation's development.
+
+### Event Details
+
+Join us at Tiara 2024 to unleash your potential, explore new horizons, and contribute to the development of our nation through technology and culture!
+
+- **Date:** May 9th, 10th, and 11th, 2024.
+- **Location:** St Joseph Engineering College, Vamanjoor, Mangaluru, Karnataka, India.
+
+Visit [tiarasjec.in](https://tiarasjec.in/) to learn more about Tiara 2024.
+
+## Technologies Used
+
+Tiara 2024 website is built using Next.js and Prisma ORM. We utilize a serverless PostgreSQL database with Neon DB.
+
+- **Frontend:** Next.js, React, Tailwind CSS.
+- **Backend:** Next.js API Routes, Prisma ORM with PostgreSQL.
+- **Database:** Neon DB (Serverless PostgreSQL).
+- **CDN:** GCP (Google Cloud Platform) cloud storage buckets, provisioned by a CDN with Load balancer.
+- **Deployment:** [Vercel](https://vercel.app/)
 
 ## Getting Started
 
-First, run the development server:
+To get started with the Tiara 2024 website locally:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone this repository.
+2. Install dependencies using `npm install`.
+3. Copy the `.env.example` file to `.env` and insert the environment variables.
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Building for Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To build the Tiara 2024 website for production:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Make sure you have environment variables setup.
+2. Run the build command:
+   ```bash
+   npm run build
+   ```
+3. Start the production server:
+   ```bash
+   npm start
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-## Learn More
+
+### Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
