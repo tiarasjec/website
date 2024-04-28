@@ -128,7 +128,7 @@ const Page = () => {
                                     width={400}
                                     height={400}
                                     alt="image"
-                                    className=" rounded-lg shadow-lg shadow-slate-500/50 mt-16 "
+                                    className=" rounded-lg shadow-lg shadow-slate-500/50 mt-16"
                                 />
                                 <div
                                     className={cn(
@@ -138,7 +138,7 @@ const Page = () => {
                                 >
                                     <span>
                                         {" "}
-                                        cost ₹ <span className="text-tiara_red">{eventInfo?.costs}</span>{" "}
+                                            cost ₹<span className="text-tiara_red">{eventInfo?.costs}</span><span>/{eventInfo?.team ? "team" : "person"}</span>{" "}
                                     </span>
                                 </div>
                                 <div className="mt-8 text-center">
