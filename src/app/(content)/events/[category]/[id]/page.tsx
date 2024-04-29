@@ -70,7 +70,7 @@ const Page = () => {
                 <Loading />
             ) : (
                 <div className="w-full mt-32 px-5">
-                    <div className="w-full h-full xl:grid  grid-cols-2  sm:flex flex-col">
+                    <div className="w-full h-full lg:grid  grid-cols-2  sm:flex flex-col">
                         <div className="">
                             <div className="w-full">
                                 <h1 className="text-3xl mt-3 font-bold text-center">{eventInfo?.name}</h1>
