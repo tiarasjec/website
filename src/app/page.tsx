@@ -4,6 +4,8 @@ import { LabIntro } from "@/components/story/intro";
 import { Last } from "@/components/story/last";
 import Lenis from "@/components/shared/lenis";
 import { tiaraAssetsPrefix } from "@/lib/utils";
+import EventsPage from "./(content)/events/page";
+import { Button } from "@/components/ui/button";
 
 const images = [
   { alt: "Image 0", src: `${tiaraAssetsPrefix}/hero/3(1).avif` },
@@ -30,6 +32,8 @@ export default function Home() {
       <Lenis>
         <HeroParallax images={images} />
         <LabIntro />
+        {/* <Last /> */}
+        <EventsPage />
         <Last />
       </Lenis>
     </main>

@@ -4,6 +4,7 @@ import * as Scrollytelling from "@bsmnt/scrollytelling";
 import s from "./last.module.scss";
 import { cn } from "@/lib/utils";
 import { tiaraFont } from "@/lib/fonts";
+import { Button } from "@/components/ui/button";
 
 export const Last = () => {
   return (
@@ -47,8 +48,7 @@ export const Last = () => {
             <h2
               className={cn(s["title"], "tracking-widest", tiaraFont.className)}
             >
-              Ti<span className="text-tiara_red">ar</span>a registrations{" "}
-              <br />
+              Ti<span className="text-tiara_red">ar</span>a registrations <br />
               out now!
             </h2>
           </Scrollytelling.Animation>
