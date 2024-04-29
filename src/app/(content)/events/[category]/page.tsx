@@ -48,26 +48,51 @@ export default function EventsPage() {
                 return null;
               }
               return (
-                <Link href ={`/events/${pathname.split("/")[2]}/${card.id}`}>
-                <CardContainer
-                  key={index}
-                  containerClassName="relative flex items-center justify-center transition-all duration-200 ease-linear"
-                >
-                  <CardBody className="relative">
-                    <CardItem translateZ="100" className="w-full mt-4">
-                      <Image
-                        src={card.thumbnail}
-                        className="rounded-xl "
-                        alt="thumbnail"
-                        width={1200}
-                        height={800}
-                        priority
-                        sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                      />
-                    </CardItem>
-                  </CardBody>
-                  </CardContainer>
+                
+                
+                (card.id !== "15" && card.id !== "14") ? (
+                  <Link href={`/events/${pathname.split("/")[2]}/${card.id}`} key={index}>
+                    <CardContainer
+                      key={index}
+                      containerClassName="relative flex items-center justify-center transition-all duration-200 ease-linear"
+                    >
+                      <CardBody className="relative">
+                        <CardItem translateZ="100" className="w-full mt-4">
+                          <Image
+                            src={card.thumbnail}
+                            className="rounded-xl"
+                            alt="thumbnail"
+                            width={1200}
+                            height={800}
+                            priority
+                            sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                          />
+                        </CardItem>
+                      </CardBody>
+                    </CardContainer>
                   </Link>
+                ) : (
+                  <CardContainer
+                    key={index}
+                    containerClassName="relative flex items-center justify-center transition-all duration-200 ease-linear"
+                  >
+                    <CardBody className="relative">
+                      <CardItem translateZ="100" className="w-full mt-4">
+                        <Image
+                          src={card.thumbnail}
+                          className="rounded-xl"
+                          alt="thumbnail"
+                          width={1200}
+                          height={800}
+                          priority
+                          sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                        />
+                      </CardItem>
+                    </CardBody>
+                  </CardContainer>
+                )
+                
+                
               );
             })}
         </div>
