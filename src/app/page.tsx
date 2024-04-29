@@ -1,11 +1,10 @@
-"use client";
-import { HeroParallax } from "@/components/widgets/Hero";
-import { LabIntro } from "@/components/story/intro";
-import { Last } from "@/components/story/last";
+"use client";;
 import Lenis from "@/components/shared/lenis";
+import { LabIntro } from "@/components/story/intro";
+import { HeroParallax } from "@/components/widgets/Hero";
 import { tiaraAssetsPrefix } from "@/lib/utils";
+import RegisterNow from "../components/ui/registernow";
 import EventsPage from "./(content)/events/page";
-import { Button } from "@/components/ui/button";
 
 const images = [
   { alt: "Image 0", src: `${tiaraAssetsPrefix}/hero/3(1).avif` },
@@ -32,9 +31,8 @@ export default function Home() {
       <Lenis>
         <HeroParallax images={images} />
         <LabIntro />
-        {/* <Last /> */}
         <EventsPage />
-        <Last />
+        <RegisterNow />
       </Lenis>
     </main>
   );

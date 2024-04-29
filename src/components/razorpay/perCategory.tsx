@@ -131,7 +131,7 @@ export function EventTabs({
                     />
                   ) : (
                     <div className="ml-36">
-                      <Info info={"Registration is available on-site"} />
+                     <Info info={"Registration is not available online but will be available offline on the day of Tiara."} />
                       </div>
                   )}
                 </div>
