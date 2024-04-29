@@ -1,12 +1,8 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "../ui/input";
+import Info from "../ui/hover/info";
 
 interface Event {
   name: string;
@@ -43,7 +39,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   );
 };
 
-export function TabsDemo({
+export function EventTabs({
   technical,
   nontechnical,
   cultural,
@@ -98,7 +94,7 @@ export function TabsDemo({
                 >
                   <Label className="mr-2">{event.name}</Label>
                   <Checkbox
-                    className="w-6 h-6 bg-zinc-800"
+                    className="w-6 h-6 mr-2"
                     value={event.key}
                     checked={technicalCheckedItems.some(
                       (item) => item.key === event.key
@@ -116,6 +112,7 @@ export function TabsDemo({
             <CardHeader>
               <CardTitle>Choose a Non Technical Events</CardTitle>
             </CardHeader>
+
             <CardContent className="space-y-2">
               {nontechnical.map((event) => (
                 <div
@@ -123,14 +120,20 @@ export function TabsDemo({
                   className="flex justify-between items-center p-4 mb-2"
                 >
                   <Label className="mr-2">{event.name}</Label>
-                  <Checkbox
-                    className="w-6 h-6"
-                    value={event.key}
-                    checked={nontechnicalCheckedItems.some(
-                      (item) => item.key === event.key
-                    )}
-                    onChange={(e) => handleCheckboxChange(e, "nontechnical")}
-                  />
+                  {parseInt(event.key) < 14 ? (
+                    <Checkbox
+                      className="w-6 h-6 mr-2"
+                      value={event.key}
+                      checked={nontechnicalCheckedItems.some(
+                        (item) => item.key === event.key
+                      )}
+                      onChange={(e) => handleCheckboxChange(e, "nontechnical")}
+                    />
+                  ) : (
+                    <div className="ml-36">
+                      <Info info={"Registration is available on-site"} />
+                      </div>
+                  )}
                 </div>
               ))}
             </CardContent>
@@ -142,7 +145,7 @@ export function TabsDemo({
             <CardHeader>
               <CardTitle>Choose a Cultural Events</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2">
+            <CardContent className="space-y-2 ">
               {cultural.map((event) => (
                 <div
                   key={event.key}
@@ -150,7 +153,7 @@ export function TabsDemo({
                 >
                   <Label className="mr-2">{event.name}</Label>
                   <Checkbox
-                    className="w-6 h-6"
+                    className="w-6 h-6 mr-2"
                     value={event.key}
                     checked={culturalCheckedItems.some(
                       (item) => item.key === event.key
@@ -176,7 +179,7 @@ export function TabsDemo({
                 >
                   <Label className="mr-2">{event.name}</Label>
                   <Checkbox
-                    className="w-6 h-6"
+                    className="w-6 h-6 mr-2"
                     value={event.key}
                     checked={megaCheckedItems.some(
                       (item) => item.key === event.key
