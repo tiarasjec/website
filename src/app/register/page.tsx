@@ -1,5 +1,5 @@
 "use client";
-import { TabsDemo } from "@/components/razorpay/perCategory";
+import { EventTabs } from "@/components/razorpay/perCategory";
 import {
   Card,
   CardDescription,
@@ -250,25 +250,10 @@ const Register: React.FC = () => {
             disabled
           />
           <br />
-
-          {/* {hasTeams && (
-            <>
-              <Label htmlFor="team_name">Team Name</Label>
-              <Input
-                type="text"
-                id="team_name"
-                aria-label="Team Name"
-                placeholder="Enter your team name"
-                value={teamName}
-                required
-                onChange={(e) => setTeamName(e.target.value)}
-              />
-            </>
-          )} */}
         </div>
         <Separator className="my-2" />
         <div className="flex justify-between flex-col lg:flex-row">
-          <TabsDemo
+          <EventTabs
             {...{ technical, nontechnical, cultural, mega }}
             technicalCheckedItems={technicalCheckedItems}
             nontechnicalCheckedItems={nontechnicalCheckedItems}

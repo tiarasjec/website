@@ -101,7 +101,7 @@ export async function POST(request: NextRequest) {
       console.error(error);
     }
 
-    prisma.$transaction(async (prisma) => {
+    await prisma.$transaction(async (prisma) => {
       await prisma.payment.upsert({
         where: {
           razorpayPaymentId: data.razorpayPaymentId,

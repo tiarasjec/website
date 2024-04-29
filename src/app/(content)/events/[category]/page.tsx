@@ -44,7 +44,7 @@ export default function EventsPage() {
           {cards
             .sort((a, b) => a.name.localeCompare(b.name))
             .map((card, index) => {
-              if (card.id === "5") {
+              if (card.id === "50") {
                 return null;
               }
               return (
