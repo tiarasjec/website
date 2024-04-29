@@ -1421,7 +1421,7 @@ const categoriesList = {
             },
           ],
         },
-        "5": {
+        "50": {
           name: "Tech Titan Tussle (Robo War, 8KG)",
           description:
             "Witness sparks fly and metal clash in the ultimate showdown of robotic combat",
