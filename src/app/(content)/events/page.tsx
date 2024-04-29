@@ -23,7 +23,7 @@ export default function EventsPage() {
         <div className="py-4 mx-6 sm:mx-12 space-y-4 mt-10 pt-10">
           <h1
             id="about"
-            className={cn("text-center text-4xl", tiaraFont.className)}
+            className={cn("text-center text-4xl text-white", tiaraFont.className)}
           >
             Events categories
           </h1>

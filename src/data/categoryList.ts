@@ -1062,50 +1062,50 @@ const categoriesList = {
             },
           ],
         },
-        // "14": {
-        //   team: false,
-        //   name: "Seasoned-saute (ONLY FOR FACULTIES)",
-        //   description: "",
-        //   rules: ["RR"],
-        //   prerequisites: ["PP"],
-        //   costs: 1,
-        //   thumbnail: "",
-        //   startTime: "2024-05-12 10:00",
-        //   endTime: "2024-05-12 18:00",
-        //   facultyCoordinators: [
-        //     {
-        //       name: "Michael Johnson",
-        //       phone: "+1122334455",
-        //     },
-        //   ],
-        //   studentCoordinators: [
-        //     {
-        //       name: "Emily Brown",
-        //       phone: "+5566778899",
-        //     },
-        //   ],
-        // },
-        // "14": {
-        //   name: ". Seasoned-saute (ONLY FOR FACULTIES)",
-        //   description: "",
-        //   rules: ["RR"],
-        //   prerequisites: ["PP"],
-        //   thumbnail: "/codejam-thumbnail.jpg",
-        //   startTime: "2024-05-12 10:00",
-        //   endTime: "2024-05-12 18:00",
-        //   facultyCoordinators: [
-        //     {
-        //       name: "Michael Johnson",
-        //       phone: "+1122334455",
-        //     },
-        //   ],
-        //   studentCoordinators: [
-        //     {
-        //       name: "Emily Brown",
-        //       phone: "+5566778899",
-        //     },
-        //   ],
-        // },
+        "14": {
+          team: false,
+          name: "Buzz Wire",
+          description: "",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          costs: 1,
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/buzzwire.avif`,
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
+        "15": {
+          name: "Aim The Target",
+          description: "",
+          rules: ["RR"],
+          prerequisites: ["PP"],
+          thumbnail: `${tiaraAssetsPrefix}/nontechnical/aimthetarget.avif`,
+          startTime: "2024-05-12 10:00",
+          endTime: "2024-05-12 18:00",
+          facultyCoordinators: [
+            {
+              name: "Michael Johnson",
+              phone: "+1122334455",
+            },
+          ],
+          studentCoordinators: [
+            {
+              name: "Emily Brown",
+              phone: "+5566778899",
+            },
+          ],
+        },
       },
     ],
   },
@@ -1421,7 +1421,7 @@ const categoriesList = {
             },
           ],
         },
-        "5": {
+        "50": {
           name: "Tech Titan Tussle (Robo War, 8KG)",
           description:
             "Witness sparks fly and metal clash in the ultimate showdown of robotic combat",

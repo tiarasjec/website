@@ -1,23 +1,21 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Suspense, use } from "react";
-import React from "react";
-import { useSession } from "next-auth/react";
-import { CheckedItem, Teams } from "@/lib/interfaces";
-import RenderCheckedItemsList from "./renderCheckedItemList";
-import { useState, useEffect } from "react";
 import Loading from "@/app/loading";
-import { Text } from "../shared/text";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Info from "./hover/info";
-import { Label } from "./label";
-import { Input } from "./input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { CheckedItem, Teams } from "@/lib/interfaces";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
+import React, { Suspense, useEffect, useState } from "react";
+import { Text } from "../shared/text";
+import Info from "./hover/info";
+import { Input } from "./input";
+import { Label } from "./label";
+import RenderCheckedItemsList from "./renderCheckedItemList";
 
 const Buy = React.lazy(() => import("@/components/razorpay/Buy"));
 
