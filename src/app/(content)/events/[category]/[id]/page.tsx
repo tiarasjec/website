@@ -7,7 +7,6 @@ import Loading from "@/app/loading";
 import { EncryptButton } from "@components/ui/hover/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
 import { tiaraFont } from "@/lib/fonts";
 
 export interface Event {
@@ -40,7 +39,6 @@ const Page = () => {
     const [eventInfo, setEventInfo] = useState<Event>();
     const pathname = usePathname();
     const [loading, setLoading] = useState<boolean>(true);
-    const { data: session } = useSession();
 
     useEffect(() => {
         setLoading(true);
@@ -113,7 +111,10 @@ const Page = () => {
                                 <ul className="mt-4 ml-5">
                                     {eventInfo?.studentCoordinators.map((studentCoordinators, index) => (
                                         <li className="text-lg list-disc marker:text-tiara_red" key={index}>
-                                            {studentCoordinators.name} {" | "} {studentCoordinators.phone}
+                                            {studentCoordinators.name} {" | "}{" "}
+                                            <a className="" href={`tel:+91${studentCoordinators.phone}`}>
+                                                {studentCoordinators.phone}
+                                            </a>{" "}
                                         </li>
                                     ))}
                                 </ul>
@@ -138,26 +139,14 @@ const Page = () => {
                                 >
                                     <span>
                                         {" "}
-                                            cost ₹<span className="text-tiara_red">{eventInfo?.costs}</span><span>/{eventInfo?.team ? "team" : "person"}</span>{" "}
+                                        cost ₹<span className="text-tiara_red">{eventInfo?.costs}</span>
+                                        <span>/{eventInfo?.team ? "team" : "person"}</span>{" "}
                                     </span>
                                 </div>
                                 <div className="mt-8 text-center">
-                                    {session && session.user ? (
-                                        <Link href="/register">
-                                            <EncryptButton targetText="Register" />
-                                        </Link>
-                                    ) : (
-                                        <div
-                                            onClick={async () =>
-                                                await signIn("google", {
-                                                    callbackUrl: "/register",
-                                                    redirect: true,
-                                                })
-                                            }
-                                        >
-                                            <EncryptButton targetText="Register Now" />
-                                        </div>
-                                    )}
+                                    <Link href="/register">
+                                        <EncryptButton targetText="Register Now" />
+                                    </Link>
                                 </div>
                             </div>
                             <div></div>
