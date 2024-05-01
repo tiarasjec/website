@@ -70,9 +70,10 @@ const Page = () => {
                 <div className="w-full mt-32 px-5">
                     <div className="w-full h-full lg:grid  grid-cols-2  sm:flex flex-col">
                         <div className="">
-                            <div className="w-full">
-                                <h1 className="text-3xl mt-3 font-bold text-center">{eventInfo?.name}</h1>
-                                <p className=" mt-4 text-xl text-center">{eventInfo?.description}</p>
+                        <div className="w-full mt-5  2xl:ml-40 2xl:w-11/12 ">
+                                    <h1 className="text-4xl font-bold ml-4 2xl:text-6xl">{eventInfo?.name}</h1>
+                                    <p className="mt-4 ml-4 text-2xl 2xl:text-4xl">{eventInfo?.description}</p>
+                                
                             </div>
                             {/* <div className="bg-white rounded-xl flex w-3/6 h-10 text-black text-2xl justify-center items-center mt-4 font-tiara ml-4">
                                 <span className="">
@@ -80,15 +81,15 @@ const Page = () => {
                                     {formattedTime.toString().toLowerCase()}
                                 </span>
                             </div> */}
-                            <div className="w-full mt-5">
+                            <div className="w-full mt-10 2xl:ml-40 2xl:w-11/12 ">
                                 {eventInfo && eventInfo.prerequisites.length === 0 ? (
                                     ""
                                 ) : (
                                     <>
-                                        <h1 className="text-2xl font-bold text-tiara_red ml-4">Prerequisites</h1>
+                                        <h1 className="text-2xl font-bold text-tiara_red ml-4 2xl:text-4xl">Prerequisites</h1>
                                         <ul className="mt-4 ml-5">
                                             {eventInfo?.prerequisites.map((prerequisite, index) => (
-                                                <li className="text-lg list-disc marker:text-tiara_red" key={index}>
+                                                <li className="text-lg list-disc marker:text-tiara_red 2xl:text-2xl" key={index}>
                                                     {prerequisite}
                                                 </li>
                                             ))}
@@ -96,21 +97,21 @@ const Page = () => {
                                     </>
                                 )}
                             </div>
-                            <div className="w-full mt-5">
-                                <h1 className="text-2xl font-bold text-tiara_red ml-4">Rules</h1>
+                            <div className="w-full mt-5  2xl:ml-40 2xl:w-11/12">
+                                <h1 className="text-2xl font-bold text-tiara_red ml-4 2xl:text-4xl">Rules</h1>
                                 <ul className="mt-4 ml-5">
                                     {eventInfo?.rules.map((rules, index) => (
-                                        <li className="text-lg list-disc marker:text-tiara_red" key={index}>
+                                        <li className="text-lg list-disc marker:text-tiara_red 2xl:text-2xl" key={index}>
                                             {rules}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                            <div className="w-full mt-5">
-                                <h1 className="text-2xl font-bold text-tiara_red ml-4">Event Coordinators</h1>
+                            <div className="w-full mt-5  2xl:ml-40 2xl:w-11/12">
+                                <h1 className="text-2xl font-bold text-tiara_red ml-4 2xl:text-4xl">Event Coordinators</h1>
                                 <ul className="mt-4 ml-5">
                                     {eventInfo?.studentCoordinators.map((studentCoordinators, index) => (
-                                        <li className="text-lg list-disc marker:text-tiara_red" key={index}>
+                                        <li className="text-lg list-disc marker:text-tiara_red 2xl:text-2xl" key={index}>
                                             {studentCoordinators.name} {" | "}{" "}
                                             <a className="" href={`tel:+91${studentCoordinators.phone}`}>
                                                 {studentCoordinators.phone}
@@ -121,33 +122,35 @@ const Page = () => {
                             </div>
                         </div>
 
-                        <div className=" flex justify-center items-start">
-                            <div>
+                            <div className=" flex justify-center items-start p-10">
+                            
+                                <div>
+                                <div className="text-center 2xl:text-2xl">
+                                    <Link href="/register">
+                                        <EncryptButton targetText="register now" />
+                                    </Link>
+                                </div>
                                 {/* <h1 className="text-3xl font-bold text-white">{eventInfo?.name}</h1> */}
                                 <Image
                                     src={eventInfo?.thumbnail || ""}
                                     width={400}
                                     height={400}
                                     alt="image"
-                                    className=" rounded-lg shadow-lg shadow-slate-500/50 mt-16"
+                                    className=" rounded-lg shadow-lg shadow-slate-500/50 mt-16 2xl:w-[620px] 2xl:h-[620px]"
                                 />
                                 <div
                                     className={cn(
-                                        "tracking-widest  font-medium mt-8 text-center text-xl ",
+                                        "tracking-widest  font-medium mt-8 text-center text-xl p-10",
                                         tiaraFont.className
                                     )}
                                 >
-                                    <span>
+                                    <span className="2xl:text-4xl">
                                         {" "}
                                         cost ₹<span className="text-tiara_red">{eventInfo?.costs}</span>
                                         <span>/{eventInfo?.team ? "team" : "person"}</span>{" "}
                                     </span>
                                 </div>
-                                <div className="mt-8 text-center">
-                                    <Link href="/register">
-                                        <EncryptButton targetText="Register Now" />
-                                    </Link>
-                                </div>
+                                
                             </div>
                             <div></div>
                         </div>
