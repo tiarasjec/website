@@ -67,11 +67,11 @@ const Page = () => {
             {loading ? (
                 <Loading />
             ) : (
-                <div className="w-full mt-32 px-5">
+                <div className="w-full mt-32 px-5 ">
                     <div className="w-full h-full lg:grid  grid-cols-2  sm:flex flex-col">
                         <div className="">
-                        <div className="w-full mt-5  2xl:ml-40 2xl:w-11/12 ">
-                                    <h1 className="text-4xl font-bold ml-4 2xl:text-6xl">{eventInfo?.name}</h1>
+                        <div className="w-full mt-5 2xl:w-11/12 mx-auto ">
+                                    <h1 className="text-4xl font-bold ml-4 2xl:text-6xl ">{eventInfo?.name}</h1>
                                     <p className="mt-4 ml-4 text-2xl 2xl:text-4xl">{eventInfo?.description}</p>
                                 
                             </div>
@@ -81,7 +81,7 @@ const Page = () => {
                                     {formattedTime.toString().toLowerCase()}
                                 </span>
                             </div> */}
-                            <div className="w-full mt-10 2xl:ml-40 2xl:w-11/12 ">
+                            <div className="w-full mt-10  2xl:w-11/12 mx-auto ">
                                 {eventInfo && eventInfo.prerequisites.length === 0 ? (
                                     ""
                                 ) : (
@@ -97,7 +97,7 @@ const Page = () => {
                                     </>
                                 )}
                             </div>
-                            <div className="w-full mt-5  2xl:ml-40 2xl:w-11/12">
+                            <div className="w-full mt-5 2xl:w-11/12 mx-auto ">
                                 <h1 className="text-2xl font-bold text-tiara_red ml-4 2xl:text-4xl">Rules</h1>
                                 <ul className="mt-4 ml-5">
                                     {eventInfo?.rules.map((rules, index) => (
@@ -107,7 +107,7 @@ const Page = () => {
                                     ))}
                                 </ul>
                             </div>
-                            <div className="w-full mt-5  2xl:ml-40 2xl:w-11/12">
+                            <div className="w-full mt-5  2xl:w-11/12 mx-auto">
                                 <h1 className="text-2xl font-bold text-tiara_red ml-4 2xl:text-4xl">Event Coordinators</h1>
                                 <ul className="mt-4 ml-5">
                                     {eventInfo?.studentCoordinators.map((studentCoordinators, index) => (
