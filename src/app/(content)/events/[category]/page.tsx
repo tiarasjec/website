@@ -6,6 +6,7 @@ import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { tiaraFont } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 function toTitleCase(str: string) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -16,6 +17,7 @@ function toTitleCase(str: string) {
 export default function EventsPage() {
   const [cards, setCards] = useState<CardType[]>([]);
   const pathname = usePathname();
+  
   useEffect(() => {
     const path = pathname.split("/")[2];
     fetch(`/api/events/${path}`)
@@ -46,24 +48,51 @@ export default function EventsPage() {
                 return null;
               }
               return (
-                <CardContainer
-                  key={index}
-                  containerClassName="relative flex items-center justify-center transition-all duration-200 ease-linear"
-                >
-                  <CardBody className="relative">
-                    <CardItem translateZ="100" className="w-full mt-4">
-                      <Image
-                        src={card.thumbnail}
-                        className="rounded-xl "
-                        alt="thumbnail"
-                        width={1200}
-                        height={800}
-                        priority
-                        sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                      />
-                    </CardItem>
-                  </CardBody>
-                </CardContainer>
+                
+                
+                (card.id !== "15" && card.id !== "14") ? (
+                  <Link href={`/events/${pathname.split("/")[2]}/${card.id}`} key={index}>
+                    <CardContainer
+                      key={index}
+                      containerClassName="relative flex items-center justify-center transition-all duration-200 ease-linear"
+                    >
+                      <CardBody className="relative">
+                        <CardItem translateZ="100" className="w-full mt-4">
+                          <Image
+                            src={card.thumbnail}
+                            className="rounded-xl"
+                            alt="thumbnail"
+                            width={1200}
+                            height={800}
+                            priority
+                            sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                          />
+                        </CardItem>
+                      </CardBody>
+                    </CardContainer>
+                  </Link>
+                ) : (
+                  <CardContainer
+                    key={index}
+                    containerClassName="relative flex items-center justify-center transition-all duration-200 ease-linear"
+                  >
+                    <CardBody className="relative">
+                      <CardItem translateZ="100" className="w-full mt-4">
+                        <Image
+                          src={card.thumbnail}
+                          className="rounded-xl"
+                          alt="thumbnail"
+                          width={1200}
+                          height={800}
+                          priority
+                          sizes="(max-width: 640px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                        />
+                      </CardItem>
+                    </CardBody>
+                  </CardContainer>
+                )
+                
+                
               );
             })}
         </div>
