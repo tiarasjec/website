@@ -147,11 +147,7 @@ const Page = () => {
 
             <div className=" flex justify-center items-start p-10">
               <div>
-                <div className="text-center 2xl:text-2xl">
-                  <Link href="/register">
-                    <EncryptButton targetText="register now" />
-                  </Link>
-                </div>
+                
                 {/* <h1 className="text-3xl font-bold text-white">{eventInfo?.name}</h1> */}
                 <Image
                   src={eventInfo?.thumbnail || ""}
@@ -172,6 +168,11 @@ const Page = () => {
                     <span className="text-tiara_red">{eventInfo?.costs}</span>
                     <span>/{eventInfo?.team ? "team" : "person"}</span>{" "}
                   </span>
+                </div>
+                <div className="text-center 2xl:text-2xl">
+                  <Link href="/register">
+                    <EncryptButton targetText="register now" />
+                  </Link>
                 </div>
               </div>
               <div></div>
