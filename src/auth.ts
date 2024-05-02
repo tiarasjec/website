@@ -3,7 +3,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { UserRole } from "@prisma/client";
 import NextAuth, { type DefaultSession } from "next-auth";
 import Google, { GoogleProfile } from "next-auth/providers/google";
-import type { Adapter } from 'next-auth/adapters';
+import { JWT } from "next-auth/jwt";
 
 declare module "next-auth" {
   interface Session {
@@ -11,15 +11,20 @@ declare module "next-auth" {
       role: UserRole;
     } & DefaultSession["user"];
   }
+}
 
-  interface User {
+declare module "next-auth/jwt" {
+  interface JWT {
     role: UserRole;
   }
 }
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: PrismaAdapter(prisma) as Adapter,
+  adapter: PrismaAdapter(prisma),
   secret: process.env.AUTH_SECRET,
+  session: {
+    strategy: "jwt",
+  },
   providers: [
     Google({
       profile(profile: GoogleProfile) {
@@ -28,7 +33,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           name: profile.name,
           email: profile.email,
           image: profile.picture,
-          role: profile.role as UserRole ?? UserRole.PARTICIPANT,
+          role: (profile.role as UserRole) ?? UserRole.PARTICIPANT,
         };
       },
       authorization: {
@@ -41,21 +46,23 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
   ],
   callbacks: {
-    session({ session, user }) {
-      if (user.id && session.user) {
-        session.user.id = user.id;
-      }
-
-      if (user.role && session.user) {
-        session.user.role = user.role as UserRole;
-      }
-
-      if (session.user) {
-        session.user.name = user.name;
-        session.user.email = user.email as string;
-      }
-
-      return session;
+    async jwt({ token }) {
+      if (!token.sub) return token;
+      const user = await prisma.user.findUnique({
+        where: { id: token.sub },
+      });
+      if (!user) return token;
+      token.role = user.role;
+      return token;
+    },
+    session({ session, token }) {
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          role: token.role,
+        },
+      };
     },
   },
 });
