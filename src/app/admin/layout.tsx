@@ -1,12 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  CircleUser,
-  Home,
-  Menu,
-  Users,
-} from "lucide-react";
+import { CircleUser, Home, Menu, Users, CreditCard } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -42,15 +37,15 @@ export default function AdminDashboard({
                 href="/admin"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
-                <Home className="h-4 w-4" />
-                Dashboard
-              </Link>
-              <Link
-                href="/admin/users"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
                 <Users className="h-4 w-4" />
                 Users
+              </Link>
+              <Link
+                href="/admin/payments"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+              >
+                <CreditCard className="h-4 w-4" />
+                Payments
               </Link>
             </nav>
           </div>

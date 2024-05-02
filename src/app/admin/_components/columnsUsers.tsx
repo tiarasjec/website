@@ -4,8 +4,7 @@ import { User, Payment } from "@prisma/client";
 import { ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// We concat the User and Payment types to create a new type, as the same will be returned by the API, fetched from the database.
-export const columns: ColumnDef<User & { payment: Payment }>[] = [
+export const columns: ColumnDef<User>[] = [
   {
     header: ({ column }) => {
       return (

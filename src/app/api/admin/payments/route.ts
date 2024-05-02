@@ -17,10 +17,10 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
   }
 
-  const users = await prisma.user.findMany({
+  const payments = await prisma.payment.findMany({
     include: {
-      payment: true,
-    },
+        user: true,
+    }
   });
-  return NextResponse.json(users);
+  return NextResponse.json(payments);
 }
