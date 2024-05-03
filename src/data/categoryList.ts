@@ -682,7 +682,7 @@ const categoriesList = {
                 "5": {
                     team: false,
                     name: "Mask It! (Face Painting)",
-                    description: ": Unleash artistic alchemy with patterns converge on human canvas",
+                    description: "Unleash artistic alchemy with patterns converge on human canvas",
                     prerequisites: ["Teams shall consist of two members only."],
                     rules: [
                         "The theme will be announced at the beginning of the competition.",
