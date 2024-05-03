@@ -14,7 +14,6 @@ import { categoriesList } from "@/data/categoryList";
 import { tiaraFont } from "@/lib/fonts";
 import { CheckedItem, Event, Events } from "@/lib/interfaces";
 import { cn } from "@/lib/utils";
-import { signIn, useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 
 function processEvents(
@@ -38,14 +37,7 @@ function processEvents(
   setEvents(eventsData);
 }
 
-const Register: React.FC = () => {
-  const session = useSession({
-    required: true,
-    onUnauthenticated: async () => {
-      await signIn("google");
-    },
-  });
-
+export const Register = ({ name, email }: { name: string; email: string }) => {
   const [technicalCheckedItems, setTechnicalCheckedItems] = useState<
     CheckedItem[]
   >([]);
@@ -74,6 +66,7 @@ const Register: React.FC = () => {
     processEvents("cultural", categoriesList, setCultural);
     processEvents("mega", categoriesList, setMega);
   }, []);
+
   const handleCheckboxChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     category: string
@@ -236,7 +229,7 @@ const Register: React.FC = () => {
             id="name"
             aria-label="Name"
             placeholder="Name"
-            value={session.data?.user?.name!}
+            value={name}
             disabled
           />
           <br />
@@ -246,7 +239,7 @@ const Register: React.FC = () => {
             id="email"
             aria-label="Email"
             placeholder="Email"
-            value={session.data?.user?.email!}
+            value={email}
             disabled
           />
           <br />
@@ -275,5 +268,3 @@ const Register: React.FC = () => {
     </div>
   );
 };
-
-export default Register;

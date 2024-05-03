@@ -3,8 +3,8 @@ import Lenis from "@/components/shared/lenis";
 import { LabIntro } from "@/components/story/intro";
 import { HeroParallax } from "@/components/widgets/Hero";
 import { tiaraAssetsPrefix } from "@/lib/utils";
-import RegisterNow from "../components/ui/registernow";
-import EventsPage from "./(content)/events/page";
+import RegisterNow from "../../components/ui/registernow";
+import EventsPage from "./events/page";
 
 const images = [
   { alt: "Image 0", src: `${tiaraAssetsPrefix}/hero/3(1).avif` },
