@@ -17,6 +17,8 @@ import { cn } from "@/lib/utils";
 import { signIn, useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 
+export const maxDuration = 300;
+
 function processEvents(
   category: string,
   categoriesList: any,
