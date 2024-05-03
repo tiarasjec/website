@@ -415,6 +415,7 @@ const categoriesList = {
                        "Plagiarized content found in any video will lead to immediate disqualification.",
                        "Decision of the judges will be final in all regards."
                     ],
+                    prerequisites: [],
                     
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/business_bay.avif`,
@@ -620,7 +621,7 @@ const categoriesList = {
                         "Candidates should be present at the venue on time.",
                         "Participant must carry their own laptop and other accessories.",
                     ],
-                    prerequisites: ["PP"],
+                    prerequisites: [],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/synergy.avif`,
                     startTime: "2024-05-12 10:00",
