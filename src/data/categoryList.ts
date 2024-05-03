@@ -1,509 +1,489 @@
-import { tiaraAssetsPrefix } from '@/lib/utils';
+import { tiaraAssetsPrefix } from "@/lib/utils";
 
 const categoriesList = {
-  technical: {
-    // Small description of the category
-    description:
-      "Technical events are a showcase of innovation and creativity in the field of technology.",
-    thumbnail: `${tiaraAssetsPrefix}/technical/technical_thumbnail.avif`,
-    events: [
-      {
-        "0": {
-          team: false,
-          name: "SyncLine Sprint (Line Follower)",
-          description:
-            "Experience the adrenaline-fueled intensity in a high-speed race of synchronized robots.",
-          rules: [
-            "All team members must be full-time students.",
-            "No restrictions on team number per institute.",
-            "Team size: 3-5 members.",
-            "Registered ID card required.",
-            "Only one team in the arena at a time.",
-            "2 rounds with different maps.",
-            "Black line on white arena.",
-            "Autonomous robots after crossing start line.",
-            "Line width approx. 3 cm.",
-            "Teams provide batteries, power supply available.",
-            "Robot intact until results.",
-            "Judges' decision final.",
-          ],
-          prerequisites: [
-            "Knowledge of robotics and line following algorithms.",
-            "Robot building skills.",
-          ],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail:
-            `${tiaraAssetsPrefix}/technical/syncline_sprints.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
+    technical: {
+        // Small description of the category
+        description: "Technical events are a showcase of innovation and creativity in the field of technology.",
+        thumbnail: `${tiaraAssetsPrefix}/technical/technical_thumbnail.avif`,
+        events: [
             {
-              name: "Dr. Robotics Expert",
-              phone: "555-123-4567",
+                "0": {
+                    team: false,
+                    name: "SyncLine Sprint (Line Follower)",
+                    description: "Experience the adrenaline-fueled intensity in a high-speed race of synchronized robots.",
+                    rules: [
+                        "All team members must be full-time students.",
+                        "No restrictions on team number per institute.",
+                        "Team size: 3-5 members.",
+                        "Registered ID card required.",
+                        "Only one team in the arena at a time.",
+                        "2 rounds with different maps.",
+                        "Black line on white arena.",
+                        "Autonomous robots after crossing start line.",
+                        "Line width approx. 3 cm.",
+                        "Teams provide batteries, power supply available.",
+                        "Robot intact until results.",
+                        "Judges' decision final.",
+                    ],
+                    prerequisites: ["Knowledge of robotics and line following algorithms.", "Robot building skills."],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/syncline_sprints.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Dr. Robotics Expert",
+                            phone: "555-123-4567",
+                        },
+                        {
+                            name: "Dr. Robotics Expert",
+                            phone: "555-123-4567",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Sufaid",
+                            phone: "7795287262",
+                        },
+                        {
+                            name: "Shreyas Rai",
+                            phone: "9731068224",
+                        },
+                    ],
+                },
+                "1": {
+                    team: false,
+                    name: "DirtDash RC (RC Extreme)",
+                    description:
+                        "Unleash the thrill at off-road adventure as miniature marvels tear through rugged lanscapes.",
+                    rules: [
+                        "All team members must be full-time students.",
+                        "Registered ID card required.",
+                        "No restrictions on team number per institute.",
+                        "Team size: 2-4 members.",
+                        "2 rounds.",
+                        "Self-made RC vehicles only.",
+                        "One run per team.",
+                        "Judges' decision final.",
+                    ],
+                    prerequisites: ["RC car building and driving skills."],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/dirtdash_rc.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Dr. RC Expert",
+                            phone: "555-123-4567",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Mevil Dsa",
+                            phone: "9482905974",
+                        },
+                        {
+                            name: "Melrick",
+                            phone: "9686381387",
+                        },
+                    ],
+                },
+                "2": {
+                    team: false,
+                    name: "BlitzBot Soccer (Bot Soccer)",
+                    description: "Electrifying fusion of robotics and soccer.",
+                    rules: [
+                        "Team size: 2-4 members.",
+                        "Judges and organizers' decisions final.",
+                        "Bot size limitations: 30cm x 30cm x 20cm (LxWxH).",
+                        "Weight limit: 5kg with 10% tolerance.",
+                        "Wired or wireless bots allowed.",
+                        "No Lego or ready-made kits.",
+                        "No hitting mechanisms.",
+                        "Minimum wire length 5m (wired bots).",
+                        "Voltage limit: 12.5V.",
+                        "Arena size: 12ft x 8ft.",
+                        "2 halves of 2 minutes each.",
+                        "Bots cannot be immobile for more than 10 seconds.",
+                        "Specific rules for pushing, scoring, and penalties.",
+                    ],
+                    prerequisites: ["Robot building and programming skills.", "Understanding of soccer game rules."],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/blitzbot_soccer.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Michael Johnson",
+                            phone: "+1122334455",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Hensal Mathias",
+                            phone: "8867265012",
+                        },
+                        {
+                            name: "Ashton Dsouza",
+                            phone: "6364323663",
+                        },
+                    ],
+                },
+                "3": {
+                    team: false,
+                    name: "RoboClash (Robo Sumo)",
+                    description: "Innovation with electrifying clash.",
+                    rules: [
+                        "Team size: 2-4 members.",
+                        "Judges and organizers' decisions final.",
+                        "No video recording by teams.",
+                        "Bot size limitations: 30cm x 30cm x 20cm (LxWxH).",
+                        "Weight limit: 5kg with 10% tolerance.",
+                        "Wired or wireless bots allowed.",
+                        "No Lego or ready-made kits.",
+                        "No hitting or lifting mechanisms.",
+                        "Minimum wire length 5m (wired bots).",
+                        "Voltage limit: 12.5V.",
+                        "Arena details revealed on event day.",
+                        "2 halves of 1 minute and 30 seconds each.",
+                        "Specific rules for pushing and penalties.",
+                    ],
+                    prerequisites: ["Robot building and programming skills.", "Understanding of sumo wrestling rules."],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/robo_clash.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Michael Johnson",
+                            phone: "+1122334455",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Ian",
+                            phone: "6363960016",
+                        },
+                        {
+                            name: "Karthik",
+                            phone: "7483287716",
+                        },
+                    ],
+                },
+                "4": {
+                    team: false,
+                    name: "One Piece (Boat Building)",
+                    description: "Embark on your quest with ingenuity in this nautical challenge.",
+                    rules: [
+                        "Team size: 3-4 members.",
+                        "Materials provided on-site.",
+                        "Boat dimensions specified on-site.",
+                        "25 minutes to build the boat.",
+                        "Boats must float independently.",
+                        "No modifications after testing begins.",
+                        "Follow safety guidelines.",
+                    ],
+                    prerequisites: ["Basic engineering and design skills."],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/one_piece.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Michael Johnson",
+                            phone: "+1122334455",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Zaneeq",
+                            phone: "9663499096",
+                        },
+                        {
+                            name: "Rifaz",
+                            phone: "6363741326",
+                        },
+                    ],
+                },
+                "5": {
+                    team: false,
+                    name: "ZenFlow (Ease of Flow)",
+                    description: "Navigate obstacles with fluid precision.",
+                    rules: [
+                        "Team size: 3 members.",
+                        "1 round (6 minutes).",
+                        "Judges and organizers' decisions final.",
+                        "Use provided PVC pipes and joints.",
+                        "Pipes must pass along two sides of at least two cubes.",
+                        "No external materials allowed.",
+                        "Maximum time of 6 minutes.",
+                        "Screening round if needed.",
+                    ],
+                    prerequisites: ["Problem-solving and spatial reasoning skills."],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/zen_flow.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Michael Johnson",
+                            phone: "+1122334455",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Thashreef",
+                            phone: "9108452361",
+                        },
+                        {
+                            name: "Shafi",
+                            phone: "7619654359",
+                        },
+                    ],
+                },
+                "6": {
+                    team: false,
+                    name: "Typing Titans (Typing Challenge)",
+                    description: "Race to master the keys in the ultimate typing showdown.",
+                    rules: [
+                        "Open to all college students.",
+                        "Individual registration.",
+                        "No typing aids or software.",
+                        "No cheating or plagiarism.",
+                        "Judges' decisions final.",
+                        "Respectful behavior required.",
+                    ],
+                    prerequisites: ["Typing skills."],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/typing_titans.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Michael Johnson",
+                            phone: "+1122334455",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Omkar",
+                            phone: "6363302952",
+                        },
+                        {
+                            name: "Sahana",
+                            phone: "9845962616",
+                        },
+                    ],
+                },
+                "7": {
+                    team: false,
+                    name: "HydroBlast (Water Rocketry)",
+                    description: "Ascend to Ambitious Victory with Hydro-Powered Mastery.",
+                    rules: [
+                        "Team size: Up to 4 members.",
+                        "All members from the same institution.",
+                        "Judges' decisions final.",
+                        "Multi-stage rockets allowed.",
+                        "No electronic or chemical components (except water).",
+                        "No fire or explosives.",
+                        "Teams provide launchpads and pumps.",
+                        "Rocket volume limit: 2.5 liters.",
+                        "2 rounds: Distance challenge and target accuracy.",
+                    ],
+                    prerequisites: ["Knowledge of rocketry and water rocket design."],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/hydroblast.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Michael Johnson",
+                            phone: "+1122334455",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Awais",
+                            phone: "9591319165",
+                        },
+                        {
+                            name: "Jeevith",
+                            phone: "9591710600",
+                        },
+                    ],
+                },
+                "8": {
+                    team: false,
+                    name: "Drone Clash (Drone Challenge)",
+                    description: "Experience the ultimate rush of Drone Racing for an electrifying journey to victory.",
+                    rules: [
+                        "Open to all drone enthusiasts.",
+                        "Individual or team participation (up to 5 members).",
+                        "No restrictions on team composition.",
+                        "One attempt per bot.",
+                        "Penalties for collisions.",
+                        "No arena access during race.",
+                        "No test flights.",
+                        "Teams must have charged batteries.",
+                        "Drone must cross finish line to win.",
+                        "Off-the-shelf drones prohibited.",
+                        "Frame size limitations.",
+                        "Battery/power supply limitations.",
+                        "Line-of-sight operation.",
+                        "Radio telemetry range limitations.",
+                    ],
+                    prerequisites: ["Drone building and piloting skills."],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/drone_clash.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Michael Johnson",
+                            phone: "+1122334455",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Mukshith",
+                            phone: "9113223178",
+                        },
+                        {
+                            name: "Akshay",
+                            phone: "9741473448",
+                        },
+                    ],
+                },
+                "9": {
+                    team: false,
+                    name: "CADventures (3D CAD Challenge)",
+                    description: "Map your boundless creativity with CAD.",
+                    rules: [
+                        "All the team members must be full-time students at an accredited University/College (UG or PG).  ",
+                        "There are no restrictions on the number of teams from the same Institute. ",
+                        "The team should contain 1-2 members in total. ",
+                        "Every individual in the team must have registered ID card of the event. Without which entry will be denied at the arena. ",
+                        "The competition will consist of 2 rounds. ",
+                        // "No arena access during race.",
+                        // "No test flights.",
+                        // "Teams must have charged batteries.",
+                        // "Drone must cross finish line to win.",
+                        // "Off-the-shelf drones prohibited.",
+                        // "Frame size limitations.",
+                        // "Battery/power supply limitations.",
+                        // "Line-of-sight operation.",
+                        // "Radio telemetry range limitations.",
+                    ],
+                    prerequisites: [],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/cad_ventures.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Michael Johnson",
+                            phone: "+1122334455",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Rahul Revankar",
+                            phone: "8147841609",
+                        },
+                        {
+                            name: "Mohammed Zaid",
+                            phone: "7019180608",
+                        },
+                    ],
+                },
+                "10": {
+                    team: false,
+                    name: "Business Bay (Shark Tank)",
+                    description: "A dynamic thrill of Ideas and Toss.",
+                    rules: [
+                       "Team size: 2-3 Members",
+                       "Plagiarized content found in any video will lead to immediate disqualification.",
+                       "Decision of the judges will be final in all regards."
+                    ],
+                    
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/business_bay.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Michael Johnson",
+                            phone: "+1122334455",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Venita",
+                            phone: "9606133612",
+                        },
+                        {
+                            name: "Prajwal Dsouza",
+                            phone: "8277547570",
+                        },
+                    ],
+                },
+                "11": {
+                    team: false,
+                    name: "Black Mirror (Technical Treasure Hunt)",
+                    description: "Fusion of storytelling and puzzles tangled in quest.",
+                    rules: [
+                        "Teams of minimum two members maximum three members.  ",
+                        "Any department / semester combination allowed.",
+                        "All students must belong to the same college.  ",
+                        "Judges' and organizers' decisions shall be final.",
+                        // "Penalties for collisions.",
+                        // "No arena access during race.",
+                        // "No test flights.",
+                        // "Teams must have charged batteries.",
+                        // "Drone must cross finish line to win.",
+                        // "Off-the-shelf drones prohibited.",
+                        // "Frame size limitations.",
+                        // "Battery/power supply limitations.",
+                        // "Line-of-sight operation.",
+                        // "Radio telemetry range limitations.",
+                    ],
+                    prerequisites: [],
+                    general_rules: ["Sportsmanship and adherence to event guidelines."],
+                    thumbnail: `${tiaraAssetsPrefix}/technical/black_mirror.avif`,
+                    startTime: "2024-05-09 10:00:00",
+                    endTime: "2024-05-09 17:00:00",
+                    costs: 250,
+                    facultyCoordinators: [
+                        {
+                            name: "Michael Johnson",
+                            phone: "+1122334455",
+                        },
+                    ],
+                    studentCoordinators: [
+                        {
+                            name: "Vyasa M",
+                            phone: "8618497080",
+                        },
+                        {
+                            name: "Leon Veigas",
+                            phone: "7022449523",
+                        },
+                    ],
+                },
             },
-            {
-              name: "Dr. Robotics Expert",
-              phone: "555-123-4567",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Sufaid",
-              phone: "7795287262",
-            },
-            {
-              name: "Shreyas Rai",
-              phone: "9731068224",
-            },
-          ],
-        },
-        "1": {
-          team: false,
-          name: "DirtDash RC (RC Extreme)",
-          description:
-            "Unleash the thrill at off-road adventure as miniature marvels tear through rugged lanscapes.",
-          rules: [
-            "All team members must be full-time students.",
-            "Registered ID card required.",
-            "No restrictions on team number per institute.",
-            "Team size: 2-4 members.",
-            "2 rounds.",
-            "Self-made RC vehicles only.",
-            "One run per team.",
-            "Judges' decision final.",
-          ],
-          prerequisites: ["RC car building and driving skills."],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/dirtdash_rc.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Dr. RC Expert",
-              phone: "555-123-4567",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Mevil Dsa",
-              phone: "9482905974",
-            },
-            {
-              name: "Melrick",
-              phone: "9686381387",
-            },
-          ],
-        },
-        "2": {
-          team: false,
-          name: "BlitzBot Soccer (Bot Soccer)",
-          description: "Electrifying fusion of robotics and soccer.",
-          rules: [
-            "Team size: 2-4 members.",
-            "Judges and organizers' decisions final.",
-            "Bot size limitations: 30cm x 30cm x 20cm (LxWxH).",
-            "Weight limit: 5kg with 10% tolerance.",
-            "Wired or wireless bots allowed.",
-            "No Lego or ready-made kits.",
-            "No hitting mechanisms.",
-            "Minimum wire length 5m (wired bots).",
-            "Voltage limit: 12.5V.",
-            "Arena size: 12ft x 8ft.",
-            "2 halves of 2 minutes each.",
-            "Bots cannot be immobile for more than 10 seconds.",
-            "Specific rules for pushing, scoring, and penalties.",
-          ],
-          prerequisites: [
-            "Robot building and programming skills.",
-            "Understanding of soccer game rules.",
-          ],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail:
-            `${tiaraAssetsPrefix}/technical/blitzbot_soccer.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Hensal Mathias",
-              phone: "8867265012",
-            },
-            {
-              name: "Ashton Dsouza",
-              phone: "6364323663",
-            },
-          ],
-        },
-        "3": {
-          team: false,
-          name: "RoboClash (Robo Sumo)",
-          description: "Innovation with electrifying clash.",
-          rules: [
-            "Team size: 2-4 members.",
-            "Judges and organizers' decisions final.",
-            "No video recording by teams.",
-            "Bot size limitations: 30cm x 30cm x 20cm (LxWxH).",
-            "Weight limit: 5kg with 10% tolerance.",
-            "Wired or wireless bots allowed.",
-            "No Lego or ready-made kits.",
-            "No hitting or lifting mechanisms.",
-            "Minimum wire length 5m (wired bots).",
-            "Voltage limit: 12.5V.",
-            "Arena details revealed on event day.",
-            "2 halves of 1 minute and 30 seconds each.",
-            "Specific rules for pushing and penalties.",
-          ],
-          prerequisites: [
-            "Robot building and programming skills.",
-            "Understanding of sumo wrestling rules.",
-          ],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/robo_clash.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Ian",
-              phone: "6363960016",
-            },
-            {
-              name: "Karthik",
-              phone: "7483287716",
-            },
-          ],
-        },
-        "4": {
-          team: false,
-          name: "One Piece (Boat Building)",
-          description:
-            "Embark on your quest with ingenuity in this nautical challenge.",
-          rules: [
-            "Team size: 3-4 members.",
-            "Materials provided on-site.",
-            "Boat dimensions specified on-site.",
-            "25 minutes to build the boat.",
-            "Boats must float independently.",
-            "No modifications after testing begins.",
-            "Follow safety guidelines.",
-          ],
-          prerequisites: ["Basic engineering and design skills."],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/one_piece.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Emily Brown",
-              phone: "+5566778899",
-            },
-          ],
-        },
-        "5": {
-          team: false,
-          name: "ZenFlow (Ease of Flow)",
-          description: "Navigate obstacles with fluid precision.",
-          rules: [
-            "Team size: 3 members.",
-            "1 round (6 minutes).",
-            "Judges and organizers' decisions final.",
-            "Use provided PVC pipes and joints.",
-            "Pipes must pass along two sides of at least two cubes.",
-            "No external materials allowed.",
-            "Maximum time of 6 minutes.",
-            "Screening round if needed.",
-          ],
-          prerequisites: ["Problem-solving and spatial reasoning skills."],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/zen_flow.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Emily Brown",
-              phone: "+5566778899",
-            },
-          ],
-        },
-        "6": {
-          team: false,
-          name: "Typing Titans (Typing Challenge)",
-          description:
-            "Race to master the keys in the ultimate typing showdown.",
-          rules: [
-            "Open to all college students.",
-            "Individual registration.",
-            "No typing aids or software.",
-            "No cheating or plagiarism.",
-            "Judges' decisions final.",
-            "Respectful behavior required.",
-          ],
-          prerequisites: ["Typing skills."],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/typing_titans.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Omkar",
-              phone: "6363302952",
-            },
-            {
-              name: "Sahana",
-              phone: "9845962616",
-            },
-          ],
-        },
-        "7": {
-          team: false,
-          name: "HydroBlast (Water Rocketry)",
-          description:
-            "Ascend to Ambitious Victory with Hydro-Powered Mastery.",
-          rules: [
-            "Team size: Up to 4 members.",
-            "All members from the same institution.",
-            "Judges' decisions final.",
-            "Multi-stage rockets allowed.",
-            "No electronic or chemical components (except water).",
-            "No fire or explosives.",
-            "Teams provide launchpads and pumps.",
-            "Rocket volume limit: 2.5 liters.",
-            "2 rounds: Distance challenge and target accuracy.",
-          ],
-          prerequisites: ["Knowledge of rocketry and water rocket design."],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/hydroblast.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Awais",
-              phone: "9591319165",
-            },
-            {
-              name: "Jeevith",
-              phone: "9591710600",
-            },
-          ],
-        },
-        "8": {
-          team: false,
-          name: "Drone Clash (Drone Challenge)",
-          description:
-            "Experience the ultimate rush of Drone Racing for an electrifying journey to victory.",
-          rules: [
-            "Open to all drone enthusiasts.",
-            "Individual or team participation (up to 5 members).",
-            "No restrictions on team composition.",
-            "One attempt per bot.",
-            "Penalties for collisions.",
-            "No arena access during race.",
-            "No test flights.",
-            "Teams must have charged batteries.",
-            "Drone must cross finish line to win.",
-            "Off-the-shelf drones prohibited.",
-            "Frame size limitations.",
-            "Battery/power supply limitations.",
-            "Line-of-sight operation.",
-            "Radio telemetry range limitations.",
-          ],
-          prerequisites: ["Drone building and piloting skills."],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/drone_clash.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Mukshith",
-              phone: "9113223178",
-            },
-            {
-              name: "Akshay",
-              phone: "9741473448",
-            },
-          ],
-        },
-        "9": {
-          team: false,
-          name: "CADventures (3D CAD Challenge)",
-          description: "Map your boundless creativity with CAD.",
-          rules: [
-            "Open to all drone enthusiasts.",
-            "Individual or team participation (up to 5 members).",
-            "No restrictions on team composition.",
-            "One attempt per bot.",
-            "Penalties for collisions.",
-            "No arena access during race.",
-            "No test flights.",
-            "Teams must have charged batteries.",
-            "Drone must cross finish line to win.",
-            "Off-the-shelf drones prohibited.",
-            "Frame size limitations.",
-            "Battery/power supply limitations.",
-            "Line-of-sight operation.",
-            "Radio telemetry range limitations.",
-          ],
-          prerequisites: ["Drone building and piloting skills."],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/cad_ventures.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Rahul Revankar",
-              phone: "8147841609",
-            },
-            {
-              name: "Mohammed Zaid",
-              phone: "7019180608",
-            },
-          ],
-        },
-        "10": {
-          team: false,
-          name: "Business Bay (Shark Tank)",
-          description: "A dynamic thrill of Ideas and Toss.",
-          rules: [
-            "Open to all drone enthusiasts.",
-            "Individual or team participation (up to 5 members).",
-            "No restrictions on team composition.",
-            "One attempt per bot.",
-            "Penalties for collisions.",
-            "No arena access during race.",
-            "No test flights.",
-            "Teams must have charged batteries.",
-            "Drone must cross finish line to win.",
-            "Off-the-shelf drones prohibited.",
-            "Frame size limitations.",
-            "Battery/power supply limitations.",
-            "Line-of-sight operation.",
-            "Radio telemetry range limitations.",
-          ],
-          prerequisites: ["Drone building and piloting skills."],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/business_bay.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Venita",
-              phone: "9606133612",
-            },
-            {
-              name: "Prajwal Dsouza",
-              phone: "8277547570",
-            },
-          ],
-        },
-        "11": {
-          team: false,
-          name: "Black Mirror (Technical Treasure Hunt)",
-          description: "Fusion of storytelling and puzzles tangled in quest.",
-          rules: [
-            "Open to all drone enthusiasts.",
-            "Individual or team participation (up to 5 members).",
-            "No restrictions on team composition.",
-            "One attempt per bot.",
-            "Penalties for collisions.",
-            "No arena access during race.",
-            "No test flights.",
-            "Teams must have charged batteries.",
-            "Drone must cross finish line to win.",
-            "Off-the-shelf drones prohibited.",
-            "Frame size limitations.",
-            "Battery/power supply limitations.",
-            "Line-of-sight operation.",
-            "Radio telemetry range limitations.",
-          ],
-          prerequisites: ["Drone building and piloting skills."],
-          general_rules: ["Sportsmanship and adherence to event guidelines."],
-          thumbnail: `${tiaraAssetsPrefix}/technical/black_mirror.avif`,
-          startTime: "2024-05-09 10:00:00",
-          endTime: "2024-05-09 17:00:00",
-          costs: 250,
-          facultyCoordinators: [
-            {
-              name: "Michael Johnson",
-              phone: "+1122334455",
-            },
-          ],
-          studentCoordinators: [
-            {
-              name: "Vyasa M",
-              phone: "8618497080",
-            },
-            {
-              name: "Leon Veigas",
-              phone: "7022449523",
-            },
-          ],
-        },
-      },
-    ],
-  },
+        ],
+    },
 
     non_technical: {
         description:
