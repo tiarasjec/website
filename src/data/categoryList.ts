@@ -1225,15 +1225,15 @@ const categoriesList = {
                     ],
                     studentCoordinators: [
                         {
-                            name: "SASHA",
+                            name: "Sasha",
                             phone: "9480161867",
                         },
                         {
-                            name: "AJITH RODRIGUES",
+                            name: "Ajith Rodrigues",
                             phone: "6362070751",
                         },
                         {
-                            name: "SEAN R MONIS",
+                            name: "Sean R Monis",
                             phone: "9448106775",
                         },
                     ],
@@ -1263,15 +1263,15 @@ const categoriesList = {
                     ],
                     studentCoordinators: [
                         {
-                            name: "MELON",
+                            name: "Melon",
                             phone: "7760316201",
                         },
                         {
-                            name: "HAVAN KOTIAN",
+                            name: "Havan Kotian",
                             phone: "8951726188",
                         },
                         {
-                            name: "RENVIL CASTELINO",
+                            name: "Renvil Castelino",
                             phone: "8139979122",
                         },
                     ],
@@ -1305,15 +1305,15 @@ const categoriesList = {
                     ],
                     studentCoordinators: [
                         {
-                            name: "DHANUSH",
+                            name: "Dhanush",
                             phone: "7019811724",
                         },
                         {
-                            name: "RISHIKA",
+                            name: "Rishika",
                             phone: "8624901265",
                         },
                         {
-                            name: "SOURABH",
+                            name: "Sourabh",
                             phone: "9113962008",
                         },
                     ],
@@ -1349,15 +1349,15 @@ const categoriesList = {
                     ],
                     studentCoordinators: [
                         {
-                            name: "SAHANA",
+                            name: "Sahana",
                             phone: "9110259198",
                         },
                         {
-                            name: "ANUSHA",
+                            name: "Anusha",
                             phone: "7259583371",
                         },
                         {
-                            name: "MELISHA DSOUZA",
+                            name: "Melisha Dsouza",
                             phone: "8217458056",
                         },
                     ],
