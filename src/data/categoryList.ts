@@ -996,48 +996,48 @@ const categoriesList = {
                         },
                     ],
                 },
-                "13": {
-                    team: true,
-                    name: "Dunkin-Dribble (3x3 Basketball)",
-                    description: "Just give it a shot",
-                    prerequisites: [
-                        "Each team should consist of three members.",
-                        "Teams must wear appropriate sportswear to participate; those without proper attire will not be allowed to compete.",
-                        "Registration will be limited to the first 20 boys' teams and the first 10 girls' teams.",
-                        "The scheduled arrival time is 9 a.m.",
-                        "Failure to report at the assigned time will result in automatic disqualification for the team.",
-                        "Students from different colleges are allowed to form a single team.",
-                    ],
-                    rules: [
-                        "Decisions made by judges and organizers are considered final.",
-                        "The game will last for 10 minutes with 2 minutes of mid-break.",
-                        "The match will be played on a half court.",
-                    ],
-                    costs: 600,
-                    thumbnail: `${tiaraAssetsPrefix}/nontechnical/dunkin.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
-                    facultyCoordinators: [
-                        {
-                            name: "Michael Johnson",
-                            phone: "+1122334455",
-                        },
-                    ],
-                    studentCoordinators: [
-                        {
-                            name: "Rahul sc",
-                            phone: "6363728668",
-                        },
-                        {
-                            name: "Vedika kodi",
-                            phone: "9483302374",
-                        },
-                        {
-                            name: "Shane Noronha",
-                            phone: "9483913853",
-                        },
-                    ],
-                },
+                // "13": {
+                //     team: true,
+                //     name: "Dunkin-Dribble (3x3 Basketball)",
+                //     description: "Just give it a shot",
+                //     prerequisites: [
+                //         "Each team should consist of three members.",
+                //         "Teams must wear appropriate sportswear to participate; those without proper attire will not be allowed to compete.",
+                //         "Registration will be limited to the first 20 boys' teams and the first 10 girls' teams.",
+                //         "The scheduled arrival time is 9 a.m.",
+                //         "Failure to report at the assigned time will result in automatic disqualification for the team.",
+                //         "Students from different colleges are allowed to form a single team.",
+                //     ],
+                //     rules: [
+                //         "Decisions made by judges and organizers are considered final.",
+                //         "The game will last for 10 minutes with 2 minutes of mid-break.",
+                //         "The match will be played on a half court.",
+                //     ],
+                //     costs: 600,
+                //     thumbnail: `${tiaraAssetsPrefix}/nontechnical/dunkin.avif`,
+                //     startTime: "2024-05-12 10:00",
+                //     endTime: "2024-05-12 18:00",
+                //     facultyCoordinators: [
+                //         {
+                //             name: "Michael Johnson",
+                //             phone: "+1122334455",
+                //         },
+                //     ],
+                //     studentCoordinators: [
+                //         {
+                //             name: "Rahul sc",
+                //             phone: "6363728668",
+                //         },
+                //         {
+                //             name: "Vedika kodi",
+                //             phone: "9483302374",
+                //         },
+                //         {
+                //             name: "Shane Noronha",
+                //             phone: "9483913853",
+                //         },
+                //     ],
+                // },
                 "14": {
                     team: false,
                     name: "Buzz Wire",
