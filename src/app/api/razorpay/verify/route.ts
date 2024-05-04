@@ -24,6 +24,7 @@ const generatedSignature = (
 };
 
 interface PaymentResponse {
+  amount: number;
   orderCreationId: string;
   razorpayPaymentId: string;
   razorpayOrderId: string;
@@ -65,6 +66,7 @@ export async function POST(request: NextRequest) {
         orderCreationId: data.orderCreationId,
       },
       create: {
+        amount: data.amount,
         signature: data.razorpaySignature,
         razorpayPaymentId: data.razorpayPaymentId,
         orderCreationId: data.orderCreationId,
@@ -91,12 +93,15 @@ export async function POST(request: NextRequest) {
     });
 
     try {
-      email = await sendEmail(
-        session.user?.email!,
-        session.user?.name!,
-        data.events,
-        `https://tiarasjec.in/api/verify/${user?.id}`
-      );
+      email = await sendEmail({
+        amount: data.amount,
+        email: session.user?.email!,
+        teamNames: data.teams.map((team) => team.name),
+        contactNumber: data.phone,
+        name: session.user?.name!,
+        events: data.events,
+        registrationLink: `https://tiarasjec.in/api/verify/${user?.id}`,
+      });
     } catch (error) {
       console.error(error);
     }

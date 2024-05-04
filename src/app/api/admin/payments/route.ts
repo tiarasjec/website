@@ -1,7 +1,8 @@
 import { auth } from "@/auth";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { UserRole } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
+// import { razorpay } from "@/lib/razorpay";
 
 export async function GET() {
   const session = await auth();
@@ -19,8 +20,21 @@ export async function GET() {
 
   const payments = await prisma.payment.findMany({
     include: {
-        user: true,
-    }
+      user: true,
+    },
   });
+
+  // for (const prismaPayment of payments) {
+  //   const payment = await razorpay.payments.fetch(prismaPayment.razorpayPaymentId);
+  //   await prisma.payment.update({
+  //     where: {
+  //       razorpayPaymentId: prismaPayment.razorpayPaymentId,
+  //     },
+  //     data: {
+  //       amount: parseFloat(payment.amount.toString()),
+  //     }
+  //   })
+  // }
+
   return NextResponse.json(payments);
 }

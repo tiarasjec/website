@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
 }
 
@@ -10,11 +10,13 @@ datasource db {
 
 enum UserRole {
   PARTICIPANT
+  COORDINATOR
   ADMIN
 }
 
 model Payment {
   signature         String?
+  amount            Float         @default(0)
   status            PaymentStatus @default(PENDING)
   created_at        DateTime      @default(now())
   updated_at        DateTime      @updatedAt

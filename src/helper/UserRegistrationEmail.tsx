@@ -41,7 +41,7 @@ export const UserRegistrationEmail = async ({
               alt={name}
             />
             <Section className="mt-[32px] items-center">
-              <h1>Tiara 2024 Registraion</h1>
+              <h1>Tiara 2024 Registration</h1>
             </Section>
             <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
               <strong>

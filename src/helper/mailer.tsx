@@ -2,13 +2,27 @@ import nodemailer from "nodemailer";
 import { renderAsync } from "@react-email/render";
 import UserRegistrationEmail from "./UserRegistrationEmail";
 import React from "react";
+import RegistrationEmail from "./RegistrationEmail";
 
-export async function sendEmail(
-  email: string,
-  name: string,
-  events: string[],
-  registrationLink: string
-) {
+interface sendEmail {
+  amount: number;
+  email: string;
+  teamNames: string[];
+  contactNumber: string;
+  name: string;
+  events: string[];
+  registrationLink: string;
+}
+
+export async function sendEmail({
+  amount,
+  email,
+  teamNames,
+  contactNumber,
+  name,
+  events,
+  registrationLink,
+}: sendEmail) {
   try {
     const [html, text] = await Promise.all([
       renderAsync(
@@ -23,6 +37,30 @@ export async function sendEmail(
           events={events}
           name={name}
           registrationLink={registrationLink}
+        />,
+        {
+          plainText: true,
+        }
+      ),
+    ]);
+
+    const [html2, text2] = await Promise.all([
+      renderAsync(
+        <RegistrationEmail
+          amount={amount}
+          events={events}
+          email={email}
+          teamNames={teamNames}
+          contactNumber={contactNumber}
+        />
+      ),
+      renderAsync(
+        <RegistrationEmail
+          amount={amount}
+          events={events}
+          email={email}
+          teamNames={teamNames}
+          contactNumber={contactNumber}
         />,
         {
           plainText: true,
@@ -46,7 +84,16 @@ export async function sendEmail(
       text,
     };
 
+    const mailOptions2 = {
+      from: `"Tiara 2024" <${process.env.GMAIL_USER}>`,
+      to: process.env.GMAIL_USER,
+      subject: `${name} Registered for Tiara 2024!`,
+      html: html2,
+      text: text2,
+    };
+
     const mailResponse = await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions2);
     return mailResponse;
   } catch (error: unknown) {
     throw error;

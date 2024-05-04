@@ -1,12 +1,34 @@
 import { auth } from "@/auth";
 import { NextResponse } from "next/server";
-import Razorpay from "razorpay";
 import shortid from "shortid";
+import { razorpay } from "@/lib/razorpay";
+import { UserRole } from "@prisma/client";
 
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY as string,
-  key_secret: process.env.RAZORPAY_SECRET as string,
-});
+export async function GET() {
+  const session = await auth();
+
+  if (!session) {
+    return NextResponse.json(
+      { message: "Unauthorized", isOk: false },
+      { status: 401 }
+    );
+  }
+
+  if (session.user.role !== UserRole.ADMIN) {
+    return NextResponse.json(
+      { message: "Unauthorized", isOk: false },
+      { status: 403 }
+    );
+  }
+
+  try {
+    const paymentData = await razorpay.payments.all();
+    return NextResponse.json(paymentData, { status: 200 });
+  } catch (error) {
+    console.error("Error fetching payment data:", error);
+    return NextResponse.json({ error: "Payments not found" }, { status: 404 });
+  }
+}
 
 export async function POST(req: Request) {
   const session = await auth();
@@ -17,6 +39,7 @@ export async function POST(req: Request) {
       { status: 401 }
     );
   }
+
   const body = await req.json();
   const payment_capture = 1;
   const amount = body.amount * 100; // amount in paisa. In our case it's INR 1

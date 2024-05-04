@@ -139,6 +139,7 @@ export const makePayment = async ({
     },
     handler: async function (response) {
       const data = {
+        amount: amount,
         orderCreationId: orderId,
         razorpayPaymentId: response.razorpay_payment_id,
         razorpayOrderId: response.razorpay_order_id,

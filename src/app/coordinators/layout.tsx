@@ -1,14 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  CircleUser,
-  Menu,
-  Users,
-  CreditCard,
-  Coins,
-  Calendar,
-} from "lucide-react";
+import { CircleUser, Menu, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -36,7 +29,11 @@ export default function AdminDashboard({
     return <div>Unauthorized</div>;
   }
 
-  if (session.user.role !== UserRole.ADMIN) {
+  function isAllowedRole(role: UserRole): role is "COORDINATOR" | "ADMIN" {
+    return role === "COORDINATOR" || role === "ADMIN";
+  }
+
+  if (!isAllowedRole(session.user.role)) {
     return <div>Forbidden</div>;
   }
   return (
@@ -51,31 +48,10 @@ export default function AdminDashboard({
           <div className="flex-1">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
               <Link
-                href="/admin"
+                href="/coordinators"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <Users className="h-4 w-4" />
-                Users
-              </Link>
-              <Link
-                href="/admin/payments"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <CreditCard className="h-4 w-4" />
-                Payments
-              </Link>
-              <Link
-                href="/admin/razorpay"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <Coins className="h-4 w-4" />
-                Razorpay
-              </Link>
-              <Link
-                href="/admin/events"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <Calendar className="h-4 w-4" />
                 Events
               </Link>
             </nav>
@@ -104,31 +80,10 @@ export default function AdminDashboard({
                   <span className="sr-only">Tiara 2024</span>
                 </Link>
                 <Link
-                  href="/admin"
+                  href="/coordinators"
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
                 >
                   <Users className="h-5 w-5" />
-                  Users
-                </Link>
-                <Link
-                  href="/admin/payments"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-foreground hover:text-foreground"
-                >
-                  <CreditCard className="h-5 w-5" />
-                  Payments
-                </Link>
-                <Link
-                  href="/admin/razorpay"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <Coins className="h-4 w-4" />
-                  Razorpay
-                </Link>
-                <Link
-                  href="/admin/events"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <Calendar className="h-4 w-4" />
                   Events
                 </Link>
               </nav>
