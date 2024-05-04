@@ -11,7 +11,7 @@ async function getData() {
 }
 
 export default function AdminPage() {
-  const [data, setData] = React.useState<(User & { payment: Payment })[]>([]);
+  const [data, setData] = React.useState<(User & { payment: Payment[] })[]>([]);
 
   React.useEffect(() => {
     getData().then(setData);
