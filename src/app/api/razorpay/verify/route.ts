@@ -119,6 +119,7 @@ export async function POST(request: NextRequest) {
           orderCreationId: data.orderCreationId,
         },
         create: {
+          amount: data.amount,
           signature: data.razorpaySignature,
           razorpayPaymentId: data.razorpayPaymentId,
           orderCreationId: data.orderCreationId,
