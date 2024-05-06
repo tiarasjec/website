@@ -78,7 +78,7 @@ const Page = () => {
                             </div>
 
                             <div
-                                className={` w-5/8 h-16 bg-white rounded-xl flex lg:${formatedEndDate ? 'w-5/6' : 'w-4/6'}  lg:${formatedEndDate ? 'h-16' : 'h-12'} lg:text-5xl text-black  justify-center items-center mt-6 font-tiara ml-4 mx-auto`}
+                                className={`  ${formatedEndDate == "" ? "w-4/6" : "w-5/6"}  h-16 bg-white rounded-xl flex lg:text-5xl text-black  justify-center items-center mt-6 font-tiara ml-4 mx-auto`}
                             >
                                 <span
                                     className={cn(
