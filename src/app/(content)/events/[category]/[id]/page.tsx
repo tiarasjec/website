@@ -78,7 +78,9 @@ const Page = () => {
                             </div>
 
                             <div
-                                className={`  ${formatedEndDate == "" ? "w-4/6" : "w-5/6"}  h-16 bg-white rounded-xl flex lg:text-5xl text-black  justify-center items-center mt-6 font-tiara ml-4 mx-auto`}
+                                className={`  ${
+                                    formatedEndDate == "" ? "w-4/6" : "w-5/6"
+                                }  h-16 bg-white rounded-xl flex lg:text-5xl text-black  justify-center items-center mt-6 font-tiara ml-4 mx-auto`}
                             >
                                 <span
                                     className={cn(
@@ -93,10 +95,13 @@ const Page = () => {
                                                 "tracking-widest  font-medium text-center text-xl lg:text-2xl ",
                                                 tiaraFont.className
                                             )}
-                                        >th may to</span>
+                                        >
+                                            th may to{" "}
+                                        </span>
                                     ) : (
-                                      ""
-                                    )}{" "}
+                                        ""
+                                    )}
+                                    {""}
                                     {formatedEndDate.toString().toLowerCase()}th may{" "}
                                     {formattedTime.toString().toLowerCase()}
                                 </span>
