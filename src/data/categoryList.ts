@@ -463,7 +463,7 @@ const categoriesList = {
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/black_mirror.avif`,
                     startTime: "2024-05-10 09:00:00",
-                    // endTime: "2024-05-10 13:00:00",
+                    endTime: "2024-05-11 13:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -625,7 +625,7 @@ const categoriesList = {
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/synergy.avif`,
                     startTime: "2024-05-09 10:00",
-                    // endTime: "2024-05-09 12:00",
+                    endTime: "2024-05-10 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1385,7 +1385,7 @@ const categoriesList = {
                     costs: 300,
                     thumbnail: `${tiaraAssetsPrefix}/mega/techtitan.avif`,
                     startTime: "2024-05-09 10:00",
-                    // endTime: "2024-05-10 12:00",
+                    endTime: "2024-05-11 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1429,8 +1429,8 @@ const categoriesList = {
                     ],
                     costs: 300,
                     thumbnail: `${tiaraAssetsPrefix}/mega/techtitan.avif`,
-                    startTime: "2024-05-12 10:00",
-                    // endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 10:00",
+                    endTime: "2024-05-11 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
