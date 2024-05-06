@@ -19,7 +19,7 @@ export interface Event {
     general_rules: string[];
     thumbnail: string;
     startTime: string;
-    endTime: string;
+    endTime: string | undefined;
     // costs: string;
     facultyCoordinators: FacultyCoordinator[];
     studentCoordinators: StudentCoordinator[];
