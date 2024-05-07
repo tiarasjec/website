@@ -28,8 +28,8 @@ const categoriesList = {
                     prerequisites: ["Knowledge of robotics and line following algorithms.", "Robot building skills."],
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/syncline_sprints.avif`,
-                    startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    startTime: "2024-05-10 09:00:00",
+                    // endTime: "2024-05-10 11:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -71,7 +71,7 @@ const categoriesList = {
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/dirtdash_rc.avif`,
                     startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    // endTime: "2024-05-09 12:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -113,7 +113,7 @@ const categoriesList = {
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/blitzbot_soccer.avif`,
                     startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    // endTime: "2024-05-09 16:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -155,7 +155,7 @@ const categoriesList = {
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/robo_clash.avif`,
                     startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    // endTime: "2024-05-09 14:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -191,7 +191,7 @@ const categoriesList = {
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/one_piece.avif`,
                     startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    // endTime: "2024-05-09 12:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -228,7 +228,7 @@ const categoriesList = {
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/zen_flow.avif`,
                     startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    // endTime: "2024-05-09 12:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -263,7 +263,7 @@ const categoriesList = {
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/typing_titans.avif`,
                     startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    // endTime: "2024-05-09 12:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -300,8 +300,8 @@ const categoriesList = {
                     prerequisites: ["Knowledge of rocketry and water rocket design."],
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/hydroblast.avif`,
-                    startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    startTime: "2024-05-11 09:00:00",
+                    // endTime: "2024-05-09 17:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -343,8 +343,8 @@ const categoriesList = {
                     prerequisites: ["Drone building and piloting skills."],
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/drone_clash.avif`,
-                    startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    startTime: "2024-05-11 09:00:00",
+                    // endTime: "2024-05-09 17:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -386,8 +386,8 @@ const categoriesList = {
                     prerequisites: [],
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/cad_ventures.avif`,
-                    startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    startTime: "2024-05-09 14:00:00",
+                    // endTime: "2024-05-09 16:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -420,7 +420,7 @@ const categoriesList = {
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/business_bay.avif`,
                     startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    // endTime: "2024-05-09 12:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -462,8 +462,8 @@ const categoriesList = {
                     prerequisites: [],
                     general_rules: ["Sportsmanship and adherence to event guidelines."],
                     thumbnail: `${tiaraAssetsPrefix}/technical/black_mirror.avif`,
-                    startTime: "2024-05-09 10:00:00",
-                    endTime: "2024-05-09 17:00:00",
+                    startTime: "2024-05-10 09:00:00",
+                    endTime: "2024-05-11 13:00:00",
                     costs: 250,
                     facultyCoordinators: [
                         {
@@ -510,8 +510,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/capture_clash1.avif`,
-                    startTime: "2024-05-10 09:00",
-                    endTime: "2024-05-10 17:00",
+                    startTime: "2024-05-09 09:00",
+                    endTime: "2024-05-11 17:00",
                     facultyCoordinators: [
                         {
                             name: "John Doe",
@@ -551,8 +551,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/reeload.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 09:00",
+                    endTime: "2024-05-11 18:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -591,8 +591,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/headline_hustle.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-11 09:00",
+                    // endTime: "2024-05-11 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -624,8 +624,8 @@ const categoriesList = {
                     prerequisites: [],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/synergy.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 10:00",
+                    endTime: "2024-05-10 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -660,8 +660,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/lines_and_shades.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-11 13:00",
+                    // endTime: "2024-05-11 16:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -682,7 +682,7 @@ const categoriesList = {
                 "5": {
                     team: false,
                     name: "Mask It! (Face Painting)",
-                    description: ": Unleash artistic alchemy with patterns converge on human canvas",
+                    description: "Unleash artistic alchemy with patterns converge on human canvas",
                     prerequisites: ["Teams shall consist of two members only."],
                     rules: [
                         "The theme will be announced at the beginning of the competition.",
@@ -695,8 +695,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/mask.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-11 13:00",
+                    // endTime: "2024-05-11 16:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -728,8 +728,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/rersuasion_pit.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-10 09:00",
+                    // endTime: "2024-05-10 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -762,8 +762,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/humor_hustle.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-10 09:00",
+                    // endTime: "2024-05-10 13:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -794,8 +794,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/treasure_trek.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 10:00",
+                    // endTime: "2024-05-12 14:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -842,8 +842,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/bgmi.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-11 11:00",
+                    // endTime: "2024-05-11 16:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -890,8 +890,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/defy_the_limits.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 10:00",
+                    // endTime: "2024-05-12 14:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -928,8 +928,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/cosmeticraze.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-11 09:00",
+                    // endTime: "2024-05-11 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -974,7 +974,7 @@ const categoriesList = {
                     costs: 1000,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/gully_googly.avif`,
                     startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    // endTime: "2024-05-12 18:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1046,8 +1046,8 @@ const categoriesList = {
                     prerequisites: ["PP"],
                     costs: 1,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/buzzwire.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 09:00",
+                    endTime: "2024-05-11 18:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1075,8 +1075,8 @@ const categoriesList = {
                     rules: ["RR"],
                     prerequisites: ["PP"],
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/aimthetarget.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 09:00",
+                    endTime: "2024-05-11 18:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1129,8 +1129,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/cultural/rythmic_fusion.avif`,
-                    startTime: "2024-05-10 09:00",
-                    endTime: "2024-05-10 17:00",
+                    startTime: "2024-05-11 09:00",
+                    // endTime: "2024-05-11 17:00",
                     facultyCoordinators: [
                         {
                             name: "John Doe",
@@ -1169,8 +1169,8 @@ const categoriesList = {
                     ],
                     costs: 250,
                     thumbnail: `${tiaraAssetsPrefix}/cultural/harmony_heaven.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-10 09:00",
+                    // endTime: "2024-05-10 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1215,8 +1215,8 @@ const categoriesList = {
                     ],
                     costs: 300,
                     thumbnail: `${tiaraAssetsPrefix}/mega/tune_tussel.avif`,
-                    startTime: "2024-05-10 09:00",
-                    endTime: "2024-05-10 17:00",
+                    startTime: "2024-05-09 15:00",
+                    // endTime: "2024-05-10 16:00",
                     facultyCoordinators: [
                         {
                             name: "John Doe",
@@ -1225,15 +1225,15 @@ const categoriesList = {
                     ],
                     studentCoordinators: [
                         {
-                            name: "SASHA",
+                            name: "Sasha",
                             phone: "9480161867",
                         },
                         {
-                            name: "AJITH RODRIGUES",
+                            name: "Ajith Rodrigues",
                             phone: "6362070751",
                         },
                         {
-                            name: "SEAN R MONIS",
+                            name: "Sean R Monis",
                             phone: "9448106775",
                         },
                     ],
@@ -1253,8 +1253,8 @@ const categoriesList = {
                     ],
                     costs: 300,
                     thumbnail: `${tiaraAssetsPrefix}/mega/spin_the_disc.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 17:00",
+                    // endTime: "2024-05-09 18:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1263,15 +1263,15 @@ const categoriesList = {
                     ],
                     studentCoordinators: [
                         {
-                            name: "MELON",
+                            name: "Melon",
                             phone: "7760316201",
                         },
                         {
-                            name: "HAVAN KOTIAN",
+                            name: "Havan Kotian",
                             phone: "8951726188",
                         },
                         {
-                            name: "RENVIL CASTELINO",
+                            name: "Renvil Castelino",
                             phone: "8139979122",
                         },
                     ],
@@ -1295,8 +1295,8 @@ const categoriesList = {
                     ],
                     costs: 300,
                     thumbnail: `${tiaraAssetsPrefix}/mega/groove.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 10:00",
+                    // endTime: "2024-05-12 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1305,15 +1305,15 @@ const categoriesList = {
                     ],
                     studentCoordinators: [
                         {
-                            name: "DHANUSH",
+                            name: "Dhanush",
                             phone: "7019811724",
                         },
                         {
-                            name: "RISHIKA",
+                            name: "Rishika",
                             phone: "8624901265",
                         },
                         {
-                            name: "SOURABH",
+                            name: "Sourabh",
                             phone: "9113962008",
                         },
                     ],
@@ -1339,8 +1339,8 @@ const categoriesList = {
                     ],
                     costs: 300,
                     thumbnail: `${tiaraAssetsPrefix}/mega/heritage_haute.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-11 16:00",
+                    // endTime: "2024-05-11 17:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1349,15 +1349,15 @@ const categoriesList = {
                     ],
                     studentCoordinators: [
                         {
-                            name: "SAHANA",
+                            name: "Sahana",
                             phone: "9110259198",
                         },
                         {
-                            name: "ANUSHA",
+                            name: "Anusha",
                             phone: "7259583371",
                         },
                         {
-                            name: "MELISHA DSOUZA",
+                            name: "Melisha Dsouza",
                             phone: "8217458056",
                         },
                     ],
@@ -1384,8 +1384,8 @@ const categoriesList = {
                     ],
                     costs: 300,
                     thumbnail: `${tiaraAssetsPrefix}/mega/techtitan.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 10:00",
+                    endTime: "2024-05-11 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1429,8 +1429,8 @@ const categoriesList = {
                     ],
                     costs: 300,
                     thumbnail: `${tiaraAssetsPrefix}/mega/techtitan.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 10:00",
+                    endTime: "2024-05-11 12:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
@@ -1482,8 +1482,8 @@ const categoriesList = {
                     ],
                     costs: 300,
                     thumbnail: `${tiaraAssetsPrefix}/mega/sky_surge.avif`,
-                    startTime: "2024-05-12 10:00",
-                    endTime: "2024-05-12 18:00",
+                    startTime: "2024-05-09 10:00",
+                    // endTime: "2024-05-12 16:00",
                     facultyCoordinators: [
                         {
                             name: "Michael Johnson",
