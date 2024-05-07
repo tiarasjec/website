@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import Lenis from "@/components/shared/lenis";
 import { LabIntro } from "@/components/story/intro";
 import { HeroParallax } from "@/components/widgets/Hero";

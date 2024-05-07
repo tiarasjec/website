@@ -5,6 +5,7 @@ import { PaymentStatus } from "@prisma/client";
 import { auth } from "@/auth";
 import { sendEmail } from "@/helper/mailer";
 import { SentMessageInfo } from "nodemailer/lib/smtp-transport";
+import { razorpay } from "@/lib/razorpay";
 
 const generatedSignature = (
   razorpayOrderId: string,
@@ -53,37 +54,12 @@ export async function POST(request: NextRequest) {
     data.orderCreationId,
     data.razorpayPaymentId
   );
-  if (signature !== data.razorpaySignature) {
-    await prisma.payment.upsert({
-      where: {
-        razorpayPaymentId: data.razorpayPaymentId,
-        user: {
-          email: session.user?.email,
-        },
-      },
-      update: {
-        status: PaymentStatus.FAILED,
-        orderCreationId: data.orderCreationId,
-      },
-      create: {
-        amount: data.amount,
-        signature: data.razorpaySignature,
-        razorpayPaymentId: data.razorpayPaymentId,
-        orderCreationId: data.orderCreationId,
-        status: PaymentStatus.FAILED,
-        user: {
-          connect: {
-            email: session.user?.email!,
-          },
-        },
-      },
-    });
 
-    return NextResponse.json(
-      { message: "payment verification failed", isOk: false },
-      { status: 400 }
-    );
-  } else if (signature === data.razorpaySignature) {
+  const amount = parseFloat(
+    (await razorpay.payments.fetch(data.razorpayPaymentId)).amount.toString()
+  );
+
+  if (signature === data.razorpaySignature) {
     let email: SentMessageInfo | boolean = false;
 
     const user = await prisma.user.findUnique({
@@ -94,7 +70,7 @@ export async function POST(request: NextRequest) {
 
     try {
       email = await sendEmail({
-        amount: data.amount,
+        amount,
         email: session.user?.email!,
         teamNames: data.teams.map((team) => team.name),
         contactNumber: data.phone,
@@ -107,19 +83,9 @@ export async function POST(request: NextRequest) {
     }
 
     await prisma.$transaction(async (prisma) => {
-      await prisma.payment.upsert({
-        where: {
-          razorpayPaymentId: data.razorpayPaymentId,
-          user: {
-            email: session.user?.email,
-          },
-        },
-        update: {
-          status: PaymentStatus.SUCCESS,
-          orderCreationId: data.orderCreationId,
-        },
-        create: {
-          amount: data.amount,
+      await prisma.payment.create({
+        data: {
+          amount,
           signature: data.razorpaySignature,
           razorpayPaymentId: data.razorpayPaymentId,
           orderCreationId: data.orderCreationId,
@@ -140,28 +106,17 @@ export async function POST(request: NextRequest) {
           teams: true,
         },
       });
-      const mergedEvents = [...existingUser?.events!, ...data.events];
 
-      await prisma.user.upsert({
+      const mergedEvents = [...existingUser?.events!, ...data.events];
+      await prisma.user.update({
         where: {
           email: session.user?.email!,
         },
-        update: {
+        data: {
           registrationEmailSent: !!email,
           contact: data.phone,
           college: data.college,
           events: mergedEvents,
-          teams: {
-            createMany: {
-              data: data.teams,
-            },
-          },
-        },
-        create: {
-          registrationEmailSent: !!email,
-          contact: data.phone,
-          college: data.college,
-          events: data.events,
           teams: {
             createMany: {
               data: data.teams,

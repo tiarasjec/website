@@ -71,7 +71,11 @@ export const RegistrationEmail = async ({
               Email: {email}
             </Text>
             <Text className="mt-2 text-black text-[14px] leading-[24px]">
-              Amount Paid: ₹{amount}
+              Amount Paid:{" "}
+              {new Intl.NumberFormat("en-IN", {
+                style: "currency",
+                currency: "INR",
+              }).format(amount / 100)}
             </Text>
             <div className="flex flex-col items-center justify-center text-[12px] space-x-4">
               <Button href="https://tiarasjec.in/privacy">

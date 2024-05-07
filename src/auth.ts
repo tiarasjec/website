@@ -25,6 +25,20 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   session: {
     strategy: "jwt",
   },
+  pages: {
+    signIn: "/auth/signin",
+  },
+  cookies: {
+    pkceCodeVerifier: {
+      name: "next-auth.pkce.code_verifier",
+      options: {
+        httpOnly: true,
+        sameSite: "none",
+        path: "/",
+        secure: true,
+      },
+    },
+  },
   providers: [
     Google({
       profile(profile: GoogleProfile) {
@@ -35,14 +49,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           image: profile.picture,
           role: (profile.role as UserRole) ?? UserRole.PARTICIPANT,
         };
-      },
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code",
-        },
-      },
+      }
     }),
   ],
   callbacks: {

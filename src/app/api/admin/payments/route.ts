@@ -25,6 +25,7 @@ export async function GET() {
   });
 
   // for (const prismaPayment of payments) {
+  //   console.log("ID: ", prismaPayment.razorpayPaymentId);
   //   const payment = await razorpay.payments.fetch(prismaPayment.razorpayPaymentId);
   //   await prisma.payment.update({
   //     where: {
@@ -34,6 +35,7 @@ export async function GET() {
   //       amount: parseFloat(payment.amount.toString()),
   //     }
   //   })
+  //   console.log("ID: Done", prismaPayment.razorpayPaymentId);
   // }
 
   return NextResponse.json(payments);

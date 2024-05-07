@@ -12,10 +12,7 @@ import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
-  title: {
-    default: "Tiara 2024",
-    template: `%s - `,
-  },
+  title: "Tiara 2024",
   description:
     "Tiara is a National-level Techno-Cultural fest, conducted for young minds aspiring to be extraordinary, that is open to all students of undergraduate level and above to come and showcase their talents and represent their respective institutions on the grand stage of Tiara.",
   icons: {
