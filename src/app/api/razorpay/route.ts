@@ -22,9 +22,14 @@ export async function GET() {
   }
 
   try {
-    const paymentData = await razorpay.payments.all({
+    const paymentDatas = await razorpay.payments.all({
       count: 100
     });
+    const paymentData = {
+      entity: paymentDatas.entity,
+      count: paymentDatas.count,
+      items: paymentDatas.items.filter((paymentItem) => paymentItem.status === "captured"),
+    }
     return NextResponse.json(paymentData, { status: 200 });
   } catch (error) {
     console.error("Error fetching payment data:", error);
