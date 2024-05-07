@@ -973,7 +973,7 @@ const categoriesList = {
                     ],
                     costs: 1000,
                     thumbnail: `${tiaraAssetsPrefix}/nontechnical/gully_googly.avif`,
-                    startTime: "2024-05-12 10:00",
+                    startTime: "2024-05-07 10:00",
                     // endTime: "2024-05-12 18:00",
                     facultyCoordinators: [
                         {
