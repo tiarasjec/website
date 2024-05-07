@@ -1155,11 +1155,11 @@ const categoriesList = {
                     prerequisites: [],
                     rules: [
                         "Team size and composition:",
-                        "Maximum no. of members (including accompanists) - 12",
+                        "Maximum no. of members (including accompanists) - 10",
                         "Minimum vocalists - 4",
                         "Maximum vocalists - 7",
                         "Maximum no. of instruments per team: 3",
-                        "Time limit: 2 minutes of setup time + 5 minutes of performance time (8 minutes in total).",
+                        "Time limit: 2 minutes of setup time + 6 minutes of performance time (8 minutes in total).",
                         "No pre-recorded instrumentals or vocals will be allowed.",
                         "One individual is allowed to be a part of only one group. (Being part of more than one group will result in immediate disqualification).",
                         "Any regional languages, as well as English songs, will be permitted.",
