@@ -27,7 +27,7 @@ export default function AdminPage() {
           {data.map((event, i) => (
             <Link
               key={i}
-              href={`/coordinators/events/${event}`}
+              href={`/coordinators/${event}`}
               legacyBehavior
             >
               <TableRow>
