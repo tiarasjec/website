@@ -30,6 +30,10 @@ const navItems: NavItem[] = [
     label: "about",
     href: "/about",
   },
+  {
+    label: "Schedule",
+    href: "https://assets.tiarasjec.in/schedule.pdf",
+  }
 ];
 
 export function Header() {
