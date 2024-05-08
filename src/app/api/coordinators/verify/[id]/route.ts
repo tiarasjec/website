@@ -15,7 +15,7 @@ export async function GET(
     );
   }
 
-  if (session.user.role !== UserRole.ADMIN) {
+  if (session.user.role !== UserRole.COORDINATOR) {
     return NextResponse.json(
       { message: "Forbidden", isOk: false },
       { status: 403 }
