@@ -32,10 +32,10 @@ export function DataTableExport<T>({
   return (
     <Button
       onClick={onPress}
-      aria-label="Toggle columns"
-      variant="ghost"
-      size="sm"
-      className="ml-auto hidden h-8 lg:flex"
+        aria-label="Toggle columns"
+        variant="ghost"
+        size="sm"
+        className="ml-auto h-8 lg:flex"
     >
       <DownloadIcon className="mr-2 size-4" />
       Export

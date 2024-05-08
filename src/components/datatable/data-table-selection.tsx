@@ -19,7 +19,7 @@ export function DataTableSelections<T>({ table }: { table: Table<T> }) {
       aria-label="Toggle selection"
       variant="ghost"
       size="sm"
-      className="ml-auto hidden h-8 lg:flex"
+      className="ml-auto h-8 lg:flex"
     >
       {isSelecting ? (
         <ListXIcon className="mr-2 size-4" />

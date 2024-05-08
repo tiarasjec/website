@@ -20,19 +20,18 @@ export function exportExcelData<T>(
   rows.forEach((item) => {
     const obj = item as { [K: string]: any };
     const tempObj: { [k: string]: any } = {};
-    Object.keys(obj).forEach((key) => {
-      if (typeof obj[key] === "object") {
-        Object.keys(obj[key]).forEach((nestedKey) => {
-          if (naming[nestedKey]) {
-            tempObj[naming[nestedKey]] = obj[key][nestedKey];
+    for (const objKey in obj) {
+      if (typeof obj[objKey] === "object") {
+        for (const nestedObjKey in obj[objKey]) {
+          if (Object.hasOwn(naming, nestedObjKey)) {
+            tempObj[naming[nestedObjKey]] = obj[objKey][nestedObjKey];
           }
-        });
-      } else {
-        if (naming[key]) {
-          tempObj[naming[key]] = obj[key];
         }
       }
-    });
+      if (Object.hasOwn(naming, objKey)) {
+        tempObj[naming[objKey]] = obj[objKey];
+      }
+    }
     data.push(tempObj as T);
   });
   return data;

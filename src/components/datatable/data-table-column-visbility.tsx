@@ -25,7 +25,7 @@ export function DataTableColumnVisibility<TData>({
           aria-label="Toggle columns"
           variant="ghost"
           size="sm"
-          className="ml-auto hidden h-8 lg:flex"
+          className="ml-auto h-8 lg:flex"
         >
           <MixerHorizontalIcon className="mr-2 size-4" />
           View

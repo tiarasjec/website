@@ -187,6 +187,7 @@ export function AdvancedDataTable<T>(props: IAdvancedDataTable<T>) {
             )}
             <SlashIcon className={"w-4 h-4"} />
             <DataTableSelections table={table} />
+            <SlashIcon className={"w-4 h-4"} />
             <DataTableColumnVisibility table={table} />
           </div>
         </div>
