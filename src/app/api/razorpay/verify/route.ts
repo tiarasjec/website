@@ -4,7 +4,6 @@ import { prisma } from "@/lib/prisma";
 import { PaymentStatus } from "@prisma/client";
 import { auth } from "@/auth";
 import { sendEmail } from "@/helper/mailer";
-import { SentMessageInfo } from "nodemailer/lib/smtp-transport";
 import { razorpay } from "@/lib/razorpay";
 
 const generatedSignature = (

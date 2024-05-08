@@ -2,7 +2,7 @@ import { renderAsync } from "@react-email/render";
 import UserRegistrationEmail from "./UserRegistrationEmail";
 import React from "react";
 import RegistrationEmail from "./RegistrationEmail";
-import { userQueue } from "@/lib/queue";
+import { addToQueue } from "@/lib/bullmq";
 
 export interface EmailOptions {
   from: string;
@@ -92,8 +92,8 @@ export async function sendEmail({
       text: text2,
     };
 
-    userQueue.add("userQueue", mailOptions);
-    userQueue.add("userQueue", mailOptions2);
+    addToQueue(mailOptions);
+    addToQueue(mailOptions2);
   } catch (error: unknown) {
     throw error;
   }
