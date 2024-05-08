@@ -16,4 +16,3 @@ const createQueue = (name: string) => {
 }
 
 export const userQueue = createQueue("userQueue");
-export const selfQueue = createQueue("selfQueue");

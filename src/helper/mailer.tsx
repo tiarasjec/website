@@ -1,9 +1,8 @@
-import nodemailer from "nodemailer";
 import { renderAsync } from "@react-email/render";
 import UserRegistrationEmail from "./UserRegistrationEmail";
 import React from "react";
 import RegistrationEmail from "./RegistrationEmail";
-import { userQueue, selfQueue } from "@/lib/queue";
+import { userQueue } from "@/lib/queue";
 
 export interface EmailOptions {
   from: string;
@@ -77,14 +76,6 @@ export async function sendEmail({
       ),
     ]);
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS,
-      },
-    });
-
     const mailOptions: EmailOptions = {
       from: `"Tiara 2024" <${process.env.GMAIL_USER}>`,
       to: email,
@@ -102,7 +93,7 @@ export async function sendEmail({
     };
 
     userQueue.add("userQueue", mailOptions);
-    selfQueue.add("selfQueue", mailOptions2);
+    userQueue.add("userQueue", mailOptions2);
   } catch (error: unknown) {
     throw error;
   }

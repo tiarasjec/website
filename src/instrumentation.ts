@@ -13,6 +13,7 @@ export async function register() {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_PASS,
       },
+      socketTimeout: 30000,
     });
 
     const userWorker = new Worker(
@@ -33,22 +34,12 @@ export async function register() {
       console.log("User Worker is ready");
     });
 
-    const selfWorker = new Worker(
-      "selfQueue",
-      async (job: Job<EmailOptions>) => {
-        await transporter.sendMail(job.data);
-        console.log(`Self Email sent to ${job.data.to}`);
-      },
-      {
-        connection,
-        concurrency: 5,
-        removeOnComplete: { count: 1000 },
-        removeOnFail: { count: 5000 },
-      }
-    );
-
-    selfWorker.once("ready", () => {
-      console.log("Self Worker is ready");
+    userWorker.on("error", (error: Error) => {
+      console.error(`User Worker error: ${error.message}`);
+    });
+    
+    userWorker.on("completed", (job: Job<EmailOptions>) => {
+      console.log(`User Worker completed job ${job.id}`);
     });
   }
 }
