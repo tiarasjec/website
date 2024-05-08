@@ -37,7 +37,7 @@ export async function register() {
     userWorker.on("error", (error: Error) => {
       console.error(`User Worker error: ${error.message}`);
     });
-    
+
     userWorker.on("completed", (job: Job<EmailOptions>) => {
       console.log(`User Worker completed job ${job.id}`);
     });
