@@ -60,8 +60,6 @@ export async function POST(request: NextRequest) {
   );
 
   if (signature === data.razorpaySignature) {
-    let email: SentMessageInfo | boolean = false;
-
     const user = await prisma.user.findUnique({
       where: {
         email: session.user?.email!,
@@ -69,7 +67,7 @@ export async function POST(request: NextRequest) {
     });
 
     try {
-      email = await sendEmail({
+      await sendEmail({
         amount,
         email: session.user?.email!,
         teamNames: data.teams.map((team) => team.name),
@@ -113,7 +111,7 @@ export async function POST(request: NextRequest) {
           email: session.user?.email!,
         },
         data: {
-          registrationEmailSent: !!email,
+          registrationEmailSent: true,
           contact: data.phone,
           college: data.college,
           events: mergedEvents,

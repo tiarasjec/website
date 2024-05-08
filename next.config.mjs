@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  experimental: {
+    instrumentationHook: true,
+  },
   async redirects() {
     return [
       {

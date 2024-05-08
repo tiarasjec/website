@@ -2,7 +2,9 @@ import "@/app/globals.css";
 import PrelineScript from "@/components/shared/preline";
 import { TailwindIndicator } from "@/components/shared/tailwind";
 import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { DataTableStoreProvider } from "@/stores/dataTableStoreProvider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -31,7 +33,13 @@ export default function RootLayout({
         <body
           className={cn("bg-background font-sans antialiased", inter.variable)}
         >
-          <SessionProvider>{children}</SessionProvider>
+          <SessionProvider>
+            <TooltipProvider>
+              <DataTableStoreProvider isSelecting={false}>
+                {children}
+              </DataTableStoreProvider>
+            </TooltipProvider>
+          </SessionProvider>
           <PrelineScript />
           <Toaster />
           <TailwindIndicator />
