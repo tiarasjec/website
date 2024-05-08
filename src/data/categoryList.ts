@@ -1456,7 +1456,7 @@ const categoriesList = {
                     name: "Sky Surge (RC Plane Extreme)",
                     description: "Taking imagination on flight with cutting-edge innovation",
                     prerequisites: [
-                        "Propellor Palooza is an open-to-all event.",
+                        "Sky Surge (RC Plane Extreme) is an open-to-all event.",
                         "Teams can have a maximum of 4 members.",
                         "Teams must register through the official Tiara'24 website. Spot entries are not allowed.",
                         "Team members must possess a Tiara ID to participate.",
