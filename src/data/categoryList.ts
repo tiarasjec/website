@@ -1276,48 +1276,48 @@ const categoriesList = {
                         },
                     ],
                 },
-                "2": {
-                    name: "Groove (Dance Battle)",
-                    description: " Step up, shake it off, and own the floor",
-                    prerequisites: [
-                        "Individual participation.",
-                        "Participants must present a physical college ID card and PID to participate in the event.",
-                    ],
-                    rules: [
-                        "All the rounds will be battle and there will be elimination.",
-                        "Random songs will be played on the spot.",
-                        "Two participants will be called on the stage simultaneously. The first participant dances to a song played on the spot while the other stays still.",
-                        "At the signal of the judges, the first participant will stop and the second participant will immediately begin dancing to the continuation of the same song.",
-                        "The process will be repeated every time the song is changed. The starting sequence for each song will be performed by participants 1 and 2 alternately.",
-                        "Judgement will be based on Creativity, Musicality, Confidence, Entertainment factor, Execution and Expression will be considered.",
-                        "Judges and organizer's decisions are final and binding.",
-                        "Judges and coordinator may tweak the rules based on the number of participants.",
-                    ],
-                    costs: 300,
-                    thumbnail: `${tiaraAssetsPrefix}/mega/groove.avif`,
-                    startTime: "2024-05-09 10:00",
-                    // endTime: "2024-05-12 12:00",
-                    facultyCoordinators: [
-                        {
-                            name: "Michael Johnson",
-                            phone: "+1122334455",
-                        },
-                    ],
-                    studentCoordinators: [
-                        {
-                            name: "Dhanush",
-                            phone: "7019811724",
-                        },
-                        {
-                            name: "Rishika",
-                            phone: "8624901265",
-                        },
-                        {
-                            name: "Sourabh",
-                            phone: "9113962008",
-                        },
-                    ],
-                },
+                // "2": {
+                //     name: "Groove (Dance Battle)",
+                //     description: " Step up, shake it off, and own the floor",
+                //     prerequisites: [
+                //         "Individual participation.",
+                //         "Participants must present a physical college ID card and PID to participate in the event.",
+                //     ],
+                //     rules: [
+                //         "All the rounds will be battle and there will be elimination.",
+                //         "Random songs will be played on the spot.",
+                //         "Two participants will be called on the stage simultaneously. The first participant dances to a song played on the spot while the other stays still.",
+                //         "At the signal of the judges, the first participant will stop and the second participant will immediately begin dancing to the continuation of the same song.",
+                //         "The process will be repeated every time the song is changed. The starting sequence for each song will be performed by participants 1 and 2 alternately.",
+                //         "Judgement will be based on Creativity, Musicality, Confidence, Entertainment factor, Execution and Expression will be considered.",
+                //         "Judges and organizer's decisions are final and binding.",
+                //         "Judges and coordinator may tweak the rules based on the number of participants.",
+                //     ],
+                //     costs: 300,
+                //     thumbnail: `${tiaraAssetsPrefix}/mega/groove.avif`,
+                //     startTime: "2024-05-09 10:00",
+                //     // endTime: "2024-05-12 12:00",
+                //     facultyCoordinators: [
+                //         {
+                //             name: "Michael Johnson",
+                //             phone: "+1122334455",
+                //         },
+                //     ],
+                //     studentCoordinators: [
+                //         {
+                //             name: "Dhanush",
+                //             phone: "7019811724",
+                //         },
+                //         {
+                //             name: "Rishika",
+                //             phone: "8624901265",
+                //         },
+                //         {
+                //             name: "Sourabh",
+                //             phone: "9113962008",
+                //         },
+                //     ],
+                // },
                 "3": {
                     name: "Heritage Haute (Fashion Show)",
                     description: "Strut with style, own the runway",
