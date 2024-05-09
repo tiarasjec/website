@@ -36,8 +36,6 @@ export async function POST(
     },
   });
 
-  console.log(user)
-
   const prismaPayment = await prisma.payment.findUnique({
     where: {
       razorpayPaymentId: payment.id,
