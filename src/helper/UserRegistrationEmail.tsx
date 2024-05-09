@@ -49,7 +49,7 @@ export const UserRegistrationEmail = async ({
               </strong>
             </Heading>
             <Text className="text-black text-[14px] leading-[24px]">
-              Hello {session?.user?.name ?? "User"},
+              Hello {name ?? "User"},
             </Text>
             <Text className="text-black text-[14px] leading-[24px]">
               Congratulations! You have successfully completed registration for

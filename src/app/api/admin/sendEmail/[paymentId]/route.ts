@@ -36,6 +36,8 @@ export async function POST(
     },
   });
 
+  console.log(user)
+
   const prismaPayment = await prisma.payment.findUnique({
     where: {
       razorpayPaymentId: payment.id,
@@ -48,7 +50,7 @@ export async function POST(
       email: payment.email,
       teamNames: [],
       contactNumber: payment.contact.toString(),
-      name: payment.notes.customerName,
+      name: user?.name!,
       events: payment.notes.events.split(","),
       registrationLink: `https://tiarasjec.in/api/verify/${user?.id}`,
     });
