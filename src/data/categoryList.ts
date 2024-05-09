@@ -492,43 +492,43 @@ const categoriesList = {
         thumbnail: `${tiaraAssetsPrefix}/nontechnical/nontechnical_thumbnail.avif`,
         events: [
             {
-                "0": {
-                    team: false,
-                    name: "Capture Clash (Photography)",
-                    description: "World with pixels in a vibrant mosaic of visual eloquence",
-                    rules: [
-                        "The photograph must be in JPEG or JPG format.",
-                        "Basic editing, including color enhancement and cropping of the photo, is acceptable, provided any such editing does not affect the authenticity and/or genuineness of the photo.",
-                        "The submission of the photograph should be done within due time. Failure to do this would lead to disqualification.",
-                        "The competition will be judged based on the quality, creativity, and content that the photograph portrays.",
-                        "The judges' and organizers' decisions will be final.",
-                    ],
-                    prerequisites: [
-                        "This will be an individual event.",
-                        "Contestants should bring their own photography kits.",
-                        "Themes will be given on-the-spot.",
-                    ],
-                    costs: 250,
-                    thumbnail: `${tiaraAssetsPrefix}/nontechnical/capture_clash1.avif`,
-                    startTime: "2024-05-09 09:00",
-                    endTime: "2024-05-11 17:00",
-                    facultyCoordinators: [
-                        {
-                            name: "John Doe",
-                            phone: "+1234567890",
-                        },
-                    ],
-                    studentCoordinators: [
-                        {
-                            name: "Muhammad Mukthaar",
-                            phone: "8157866491",
-                        },
-                        {
-                            name: "Uthpal",
-                            phone: "8147063820",
-                        },
-                    ],
-                },
+                // "0": {
+                //     team: false,
+                //     name: "Capture Clash (Photography)",
+                //     description: "World with pixels in a vibrant mosaic of visual eloquence",
+                //     rules: [
+                //         "The photograph must be in JPEG or JPG format.",
+                //         "Basic editing, including color enhancement and cropping of the photo, is acceptable, provided any such editing does not affect the authenticity and/or genuineness of the photo.",
+                //         "The submission of the photograph should be done within due time. Failure to do this would lead to disqualification.",
+                //         "The competition will be judged based on the quality, creativity, and content that the photograph portrays.",
+                //         "The judges' and organizers' decisions will be final.",
+                //     ],
+                //     prerequisites: [
+                //         "This will be an individual event.",
+                //         "Contestants should bring their own photography kits.",
+                //         "Themes will be given on-the-spot.",
+                //     ],
+                //     costs: 250,
+                //     thumbnail: `${tiaraAssetsPrefix}/nontechnical/capture_clash1.avif`,
+                //     startTime: "2024-05-09 09:00",
+                //     endTime: "2024-05-11 17:00",
+                //     facultyCoordinators: [
+                //         {
+                //             name: "John Doe",
+                //             phone: "+1234567890",
+                //         },
+                //     ],
+                //     studentCoordinators: [
+                //         {
+                //             name: "Muhammad Mukthaar",
+                //             phone: "8157866491",
+                //         },
+                //         {
+                //             name: "Uthpal",
+                //             phone: "8147063820",
+                //         },
+                //     ],
+                // },
                 "1": {
                     team: false,
                     name: "Reeload (Reel Making)",
