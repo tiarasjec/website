@@ -247,41 +247,41 @@ const categoriesList = {
                         },
                     ],
                 },
-                "6": {
-                    team: false,
-                    name: "Typing Titans (Typing Challenge)",
-                    description: "Race to master the keys in the ultimate typing showdown.",
-                    rules: [
-                        "Open to all college students.",
-                        "Individual registration.",
-                        "No typing aids or software.",
-                        "No cheating or plagiarism.",
-                        "Judges' decisions final.",
-                        "Respectful behavior required.",
-                    ],
-                    prerequisites: ["Typing skills."],
-                    general_rules: ["Sportsmanship and adherence to event guidelines."],
-                    thumbnail: `${tiaraAssetsPrefix}/technical/typing_titans.avif`,
-                    startTime: "2024-05-09 10:00:00",
-                    // endTime: "2024-05-09 12:00:00",
-                    costs: 250,
-                    facultyCoordinators: [
-                        {
-                            name: "Michael Johnson",
-                            phone: "+1122334455",
-                        },
-                    ],
-                    studentCoordinators: [
-                        {
-                            name: "Omkar",
-                            phone: "6363302952",
-                        },
-                        {
-                            name: "Sahana",
-                            phone: "9845962616",
-                        },
-                    ],
-                },
+                // "6": {
+                //     team: false,
+                //     name: "Typing Titans (Typing Challenge)",
+                //     description: "Race to master the keys in the ultimate typing showdown.",
+                //     rules: [
+                //         "Open to all college students.",
+                //         "Individual registration.",
+                //         "No typing aids or software.",
+                //         "No cheating or plagiarism.",
+                //         "Judges' decisions final.",
+                //         "Respectful behavior required.",
+                //     ],
+                //     prerequisites: ["Typing skills."],
+                //     general_rules: ["Sportsmanship and adherence to event guidelines."],
+                //     thumbnail: `${tiaraAssetsPrefix}/technical/typing_titans.avif`,
+                //     startTime: "2024-05-09 10:00:00",
+                //     // endTime: "2024-05-09 12:00:00",
+                //     costs: 250,
+                //     facultyCoordinators: [
+                //         {
+                //             name: "Michael Johnson",
+                //             phone: "+1122334455",
+                //         },
+                //     ],
+                //     studentCoordinators: [
+                //         {
+                //             name: "Omkar",
+                //             phone: "6363302952",
+                //         },
+                //         {
+                //             name: "Sahana",
+                //             phone: "9845962616",
+                //         },
+                //     ],
+                // },
                 "7": {
                     team: false,
                     name: "HydroBlast (Water Rocketry)",
