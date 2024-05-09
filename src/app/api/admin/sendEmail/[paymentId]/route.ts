@@ -45,7 +45,7 @@ export async function POST(
   try {
     await sendEmail({
       amount: parseFloat(payment.amount.toString()),
-      email: session.user?.email!,
+      email: payment.email,
       teamNames: [],
       contactNumber: payment.contact.toString(),
       name: payment.notes.customerName,
