@@ -52,44 +52,44 @@ const categoriesList = {
                         },
                     ],
                 },
-                "1": {
-                    team: false,
-                    name: "DirtDash RC (RC Extreme)",
-                    description:
-                        "Unleash the thrill at off-road adventure as miniature marvels tear through rugged lanscapes.",
-                    rules: [
-                        "All team members must be full-time students.",
-                        "Registered ID card required.",
-                        "No restrictions on team number per institute.",
-                        "Team size: 2-4 members.",
-                        "2 rounds.",
-                        "Self-made RC vehicles only.",
-                        "One run per team.",
-                        "Judges' decision final.",
-                    ],
-                    prerequisites: ["RC car building and driving skills."],
-                    general_rules: ["Sportsmanship and adherence to event guidelines."],
-                    thumbnail: `${tiaraAssetsPrefix}/technical/dirtdash_rc.avif`,
-                    startTime: "2024-05-09 10:00:00",
-                    // endTime: "2024-05-09 12:00:00",
-                    costs: 250,
-                    facultyCoordinators: [
-                        {
-                            name: "Dr. RC Expert",
-                            phone: "555-123-4567",
-                        },
-                    ],
-                    studentCoordinators: [
-                        {
-                            name: "Mevil Dsa",
-                            phone: "9482905974",
-                        },
-                        {
-                            name: "Melrick",
-                            phone: "9686381387",
-                        },
-                    ],
-                },
+                // "1": {
+                //     team: false,
+                //     name: "DirtDash RC (RC Extreme)",
+                //     description:
+                //         "Unleash the thrill at off-road adventure as miniature marvels tear through rugged lanscapes.",
+                //     rules: [
+                //         "All team members must be full-time students.",
+                //         "Registered ID card required.",
+                //         "No restrictions on team number per institute.",
+                //         "Team size: 2-4 members.",
+                //         "2 rounds.",
+                //         "Self-made RC vehicles only.",
+                //         "One run per team.",
+                //         "Judges' decision final.",
+                //     ],
+                //     prerequisites: ["RC car building and driving skills."],
+                //     general_rules: ["Sportsmanship and adherence to event guidelines."],
+                //     thumbnail: `${tiaraAssetsPrefix}/technical/dirtdash_rc.avif`,
+                //     startTime: "2024-05-09 10:00:00",
+                //     // endTime: "2024-05-09 12:00:00",
+                //     costs: 250,
+                //     facultyCoordinators: [
+                //         {
+                //             name: "Dr. RC Expert",
+                //             phone: "555-123-4567",
+                //         },
+                //     ],
+                //     studentCoordinators: [
+                //         {
+                //             name: "Mevil Dsa",
+                //             phone: "9482905974",
+                //         },
+                //         {
+                //             name: "Melrick",
+                //             phone: "9686381387",
+                //         },
+                //     ],
+                // },
                 // "2": {
                 //     team: false,
                 //     name: "BlitzBot Soccer (Bot Soccer)",
@@ -1198,84 +1198,84 @@ const categoriesList = {
         thumbnail: `${tiaraAssetsPrefix}/mega/mega_thumbnail.avif`,
         events: [
             {
-                "0": {
-                    name: "Tune Tussel (Battle of Bands)",
-                    description: "Rocking the stage, one riff at a time!",
-                    prerequisites: [],
-                    rules: [
-                        "Team size: 3-7 members",
-                        "Minimum number of members per band - 3 (minimum use of 3 instruments is a must).",
-                        "Maximum number of members per band - 7 (Members performing for more than one band will lead to disqualification of all the involved bands)",
-                        "Time limit 5+15 (exceeding the time limit will lead to loss of points).",
-                        "There is no specific genre for the battle however the overall atmosphere of the music has to be western.",
-                        "Slot Picking, ID and age verification wilt be done one day prior to the battle i.e. on the 5th of March 2023. (All the band members need not be present; However, the Band representatives need to have the necessary documents for verification for all the members).",
-                        "Audition links to be submitted by May 1st 2024 with all the necessary details of the bands (including brief introduction of the bands with social media links, links to the released music or YouTube covers and the details of band members. Bands failing to do so will not be considered into the battle). The selected Bands will be contacted back. Submission: tiara@sjec.ac.in.",
-                        "All the Rules and regulations will be briefed to the band representatives on the day prior to the battle.",
-                        "Participants must convey their message concisely and effectively, avoiding unnecessary details and jargon.",
-                    ],
-                    costs: 300,
-                    thumbnail: `${tiaraAssetsPrefix}/mega/tune_tussel.avif`,
-                    startTime: "2024-05-09 15:00",
-                    // endTime: "2024-05-10 16:00",
-                    facultyCoordinators: [
-                        {
-                            name: "John Doe",
-                            phone: "+1234567890",
-                        },
-                    ],
-                    studentCoordinators: [
-                        {
-                            name: "Sasha",
-                            phone: "9480161867",
-                        },
-                        {
-                            name: "Ajith Rodrigues",
-                            phone: "6362070751",
-                        },
-                        {
-                            name: "Sean R Monis",
-                            phone: "9448106775",
-                        },
-                    ],
-                },
-                "1": {
-                    name: "Spin the Disc (Battle of DJs)",
-                    description: "Mixing beats, igniting souls",
-                    prerequisites: ["All contestants must register themselves on the website."],
-                    rules: [
-                        "The SPIN WIZARD is an individual event.",
-                        "Time limit: 5 minutes of setup time + 10 minutes of performance time (15 minutes in total).",
-                        "The use of any kind of abusive / offensive / pornographic / illegal content is strictly prohibited. Such contest entries will be disqualified immediately.",
-                        "Contestants are requested to bring their own headphones and pen drives.",
-                        "Use of Controllers is permitted.",
-                        "Judge's decision in all matters is final and cannot be appealed or contested.",
-                        "Results will be announced right after the competition.",
-                    ],
-                    costs: 300,
-                    thumbnail: `${tiaraAssetsPrefix}/mega/spin_the_disc.avif`,
-                    startTime: "2024-05-09 17:00",
-                    // endTime: "2024-05-09 18:00",
-                    facultyCoordinators: [
-                        {
-                            name: "Michael Johnson",
-                            phone: "+1122334455",
-                        },
-                    ],
-                    studentCoordinators: [
-                        {
-                            name: "Melon",
-                            phone: "7760316201",
-                        },
-                        {
-                            name: "Havan Kotian",
-                            phone: "8951726188",
-                        },
-                        {
-                            name: "Renvil Castelino",
-                            phone: "8139979122",
-                        },
-                    ],
-                },
+                // "0": {
+                //     name: "Tune Tussel (Battle of Bands)",
+                //     description: "Rocking the stage, one riff at a time!",
+                //     prerequisites: [],
+                //     rules: [
+                //         "Team size: 3-7 members",
+                //         "Minimum number of members per band - 3 (minimum use of 3 instruments is a must).",
+                //         "Maximum number of members per band - 7 (Members performing for more than one band will lead to disqualification of all the involved bands)",
+                //         "Time limit 5+15 (exceeding the time limit will lead to loss of points).",
+                //         "There is no specific genre for the battle however the overall atmosphere of the music has to be western.",
+                //         "Slot Picking, ID and age verification wilt be done one day prior to the battle i.e. on the 5th of March 2023. (All the band members need not be present; However, the Band representatives need to have the necessary documents for verification for all the members).",
+                //         "Audition links to be submitted by May 1st 2024 with all the necessary details of the bands (including brief introduction of the bands with social media links, links to the released music or YouTube covers and the details of band members. Bands failing to do so will not be considered into the battle). The selected Bands will be contacted back. Submission: tiara@sjec.ac.in.",
+                //         "All the Rules and regulations will be briefed to the band representatives on the day prior to the battle.",
+                //         "Participants must convey their message concisely and effectively, avoiding unnecessary details and jargon.",
+                //     ],
+                //     costs: 300,
+                //     thumbnail: `${tiaraAssetsPrefix}/mega/tune_tussel.avif`,
+                //     startTime: "2024-05-09 15:00",
+                //     // endTime: "2024-05-10 16:00",
+                //     facultyCoordinators: [
+                //         {
+                //             name: "John Doe",
+                //             phone: "+1234567890",
+                //         },
+                //     ],
+                //     studentCoordinators: [
+                //         {
+                //             name: "Sasha",
+                //             phone: "9480161867",
+                //         },
+                //         {
+                //             name: "Ajith Rodrigues",
+                //             phone: "6362070751",
+                //         },
+                //         {
+                //             name: "Sean R Monis",
+                //             phone: "9448106775",
+                //         },
+                //     ],
+                // },
+                // "1": {
+                //     name: "Spin the Disc (Battle of DJs)",
+                //     description: "Mixing beats, igniting souls",
+                //     prerequisites: ["All contestants must register themselves on the website."],
+                //     rules: [
+                //         "The SPIN WIZARD is an individual event.",
+                //         "Time limit: 5 minutes of setup time + 10 minutes of performance time (15 minutes in total).",
+                //         "The use of any kind of abusive / offensive / pornographic / illegal content is strictly prohibited. Such contest entries will be disqualified immediately.",
+                //         "Contestants are requested to bring their own headphones and pen drives.",
+                //         "Use of Controllers is permitted.",
+                //         "Judge's decision in all matters is final and cannot be appealed or contested.",
+                //         "Results will be announced right after the competition.",
+                //     ],
+                //     costs: 300,
+                //     thumbnail: `${tiaraAssetsPrefix}/mega/spin_the_disc.avif`,
+                //     startTime: "2024-05-09 17:00",
+                //     // endTime: "2024-05-09 18:00",
+                //     facultyCoordinators: [
+                //         {
+                //             name: "Michael Johnson",
+                //             phone: "+1122334455",
+                //         },
+                //     ],
+                //     studentCoordinators: [
+                //         {
+                //             name: "Melon",
+                //             phone: "7760316201",
+                //         },
+                //         {
+                //             name: "Havan Kotian",
+                //             phone: "8951726188",
+                //         },
+                //         {
+                //             name: "Renvil Castelino",
+                //             phone: "8139979122",
+                //         },
+                //     ],
+                // },
                 // "2": {
                 //     name: "Groove (Dance Battle)",
                 //     description: " Step up, shake it off, and own the floor",
