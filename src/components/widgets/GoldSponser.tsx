@@ -5,9 +5,9 @@ import { tiaraFont } from "@/lib/fonts";
 import { cn, tiaraAssetsPrefix } from "@/lib/utils";
 
 const sponsers = [
+  `${tiaraAssetsPrefix}/sponsers/marian.jpeg`,
   `${tiaraAssetsPrefix}/sponsers/ather.jpeg`,
   `${tiaraAssetsPrefix}/sponsers/kasharp.jpeg`,
-  `${tiaraAssetsPrefix}/sponsers/marian.jpeg`,
   `${tiaraAssetsPrefix}/sponsers/nidhi_land.jpeg`,
   `${tiaraAssetsPrefix}/sponsers/pakruti.jpeg`,
   
