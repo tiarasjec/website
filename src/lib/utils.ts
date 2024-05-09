@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { toast } from "@/components/ui/use-toast";
+import crypto from "crypto";
 import { Teams } from "./interfaces";
 import { FilterFn, SortingFn, sortingFns } from "@tanstack/table-core";
 import { compareItems, rankItem } from "@tanstack/match-sorter-utils";
@@ -35,6 +36,23 @@ export const fuzzySort: SortingFn<any> = (rowA, rowB, columnId) => {
 
   // Provide an alphanumeric fallback for when the item ranks are equal
   return dir === 0 ? sortingFns.alphanumeric(rowA, rowB, columnId) : dir;
+};
+
+export const generatedSignature = (
+  razorpayOrderId: string,
+  razorpayPaymentId: string
+) => {
+  const keySecret = process.env.RAZORPAY_SECRET;
+  if (!keySecret) {
+    throw new Error(
+      "Razorpay key secret is not defined in environment variables."
+    );
+  }
+  const sig = crypto
+    .createHmac("sha256", keySecret)
+    .update(razorpayOrderId + "|" + razorpayPaymentId)
+    .digest("hex");
+  return sig;
 };
 
 export const baseURL = process.env.NEXT_PUBLIC_URL
