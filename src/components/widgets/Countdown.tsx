@@ -50,7 +50,7 @@ const ShiftingCountdown = ({ targetDate }: ShiftingCountdownProps) => {
 
   return (
     <div className="p-4">
-      <div className="w-full max-w-5xl mx-auto flex items-center">
+      {/* <div className="w-full max-w-5xl mx-auto flex items-center">
         <CountdownItem num={remaining.days} text="days" />
         <CountdownItem num={remaining.hours} text="hours" />
         <CountdownItem num={remaining.minutes} text="minutes" />
@@ -59,7 +59,7 @@ const ShiftingCountdown = ({ targetDate }: ShiftingCountdownProps) => {
           text="seconds"
           className="text-red-500"
         />
-      </div>
+      </div> */}
     </div>
   );
 };
