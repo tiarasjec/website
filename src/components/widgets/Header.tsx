@@ -31,7 +31,7 @@ const navItems: NavItem[] = [
     href: "/about",
   },
   {
-    label: "Schedule",
+    label: "schedule",
     href: "https://assets.tiarasjec.in/schedule.pdf",
   }
 ];
