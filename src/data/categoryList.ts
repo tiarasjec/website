@@ -210,43 +210,43 @@ const categoriesList = {
                         },
                     ],
                 },
-                "5": {
-                    team: false,
-                    name: "ZenFlow (Ease of Flow)",
-                    description: "Navigate obstacles with fluid precision.",
-                    rules: [
-                        "Team size: 3 members.",
-                        "1 round (6 minutes).",
-                        "Judges and organizers' decisions final.",
-                        "Use provided PVC pipes and joints.",
-                        "Pipes must pass along two sides of at least two cubes.",
-                        "No external materials allowed.",
-                        "Maximum time of 6 minutes.",
-                        "Screening round if needed.",
-                    ],
-                    prerequisites: ["Problem-solving and spatial reasoning skills."],
-                    general_rules: ["Sportsmanship and adherence to event guidelines."],
-                    thumbnail: `${tiaraAssetsPrefix}/technical/zen_flow.avif`,
-                    startTime: "2024-05-09 10:00:00",
-                    // endTime: "2024-05-09 12:00:00",
-                    costs: 250,
-                    facultyCoordinators: [
-                        {
-                            name: "Michael Johnson",
-                            phone: "+1122334455",
-                        },
-                    ],
-                    studentCoordinators: [
-                        {
-                            name: "Thashreef",
-                            phone: "9108452361",
-                        },
-                        {
-                            name: "Shafi",
-                            phone: "7619654359",
-                        },
-                    ],
-                },
+                // "5": {
+                //     team: false,
+                //     name: "ZenFlow (Ease of Flow)",
+                //     description: "Navigate obstacles with fluid precision.",
+                //     rules: [
+                //         "Team size: 3 members.",
+                //         "1 round (6 minutes).",
+                //         "Judges and organizers' decisions final.",
+                //         "Use provided PVC pipes and joints.",
+                //         "Pipes must pass along two sides of at least two cubes.",
+                //         "No external materials allowed.",
+                //         "Maximum time of 6 minutes.",
+                //         "Screening round if needed.",
+                //     ],
+                //     prerequisites: ["Problem-solving and spatial reasoning skills."],
+                //     general_rules: ["Sportsmanship and adherence to event guidelines."],
+                //     thumbnail: `${tiaraAssetsPrefix}/technical/zen_flow.avif`,
+                //     startTime: "2024-05-09 10:00:00",
+                //     // endTime: "2024-05-09 12:00:00",
+                //     costs: 250,
+                //     facultyCoordinators: [
+                //         {
+                //             name: "Michael Johnson",
+                //             phone: "+1122334455",
+                //         },
+                //     ],
+                //     studentCoordinators: [
+                //         {
+                //             name: "Thashreef",
+                //             phone: "9108452361",
+                //         },
+                //         {
+                //             name: "Shafi",
+                //             phone: "7619654359",
+                //         },
+                //     ],
+                // },
                 // "6": {
                 //     team: false,
                 //     name: "Typing Titans (Typing Challenge)",
