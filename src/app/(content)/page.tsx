@@ -5,6 +5,7 @@ import { HeroParallax } from "@/components/widgets/Hero";
 import { tiaraAssetsPrefix } from "@/lib/utils";
 import RegisterNow from "../../components/ui/registernow";
 import EventsPage from "./events/page";
+import {Sponsers} from "@components/widgets/GoldSponser"
 
 const images = [
   { alt: "Image 0", src: `${tiaraAssetsPrefix}/hero/3(1).avif` },
@@ -30,6 +31,7 @@ export default function Home() {
     <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 py-0 md:gap-8 md:py-0">
       <Lenis>
         <HeroParallax images={images} />
+        <Sponsers/>
         <LabIntro />
         <EventsPage />
         <RegisterNow />
