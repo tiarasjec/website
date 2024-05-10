@@ -26,7 +26,7 @@ export  function Sponsers() {
           )}
         >
           <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-            Sponsers
+            Sponsors
           </h1>
         </div>
       </div>
