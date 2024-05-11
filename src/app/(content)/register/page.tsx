@@ -14,6 +14,7 @@ import { categoriesList } from "@/data/categoryList";
 import { tiaraFont } from "@/lib/fonts";
 import { CheckedItem, Event, Events } from "@/lib/interfaces";
 import { cn } from "@/lib/utils";
+import { UserRole } from "@prisma/client";
 import { signIn, useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 
@@ -212,6 +213,10 @@ const Register: React.FC = () => {
     }
     return totalSum;
   };
+
+  if (session.data?.user.role !== UserRole.ADMIN) {
+    return <div>Forbidden</div>;
+  }
 
   return (
     <div className="w-full gap-4 p-2 pt-36 md:px-20 lg:px-28 xl:px-40 mx-auto duration-500">
