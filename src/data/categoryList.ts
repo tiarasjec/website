@@ -817,54 +817,54 @@ const categoriesList = {
                         },
                     ],
                 },
-                "9": {
-                    team: false,
-                    name: "BGMI (Battle Ground Mobile India)",
-                    description:
-                        "Dive into the heart-pounding battlegrounds of BGMI, where every move carves in the adrenaline-fueled arena of mobile gaming.",
-                    prerequisites: ["A valid college ID is required for participation."],
-                    rules: [
-                        "Wi-Fi connectivity will be available, but any issues related to Wi-Fi are not the responsibility of the management team. Participants should be prepared to use their own mobile data in such cases.",
-                        "Teams with unregistered players may face disqualification.",
-                        "During the online event, team members must refrain from using language that is offensive, insulting, or otherwise inappropriate.",
-                        "Participants must play all games to be eligible for prize winnings.",
-                        "The Tournament Administration reserves the right to change match start times at their discretion, with notification provided to all affected players.",
-                        "Strict adherence to schedule timing is required.",
-                        "Any act of violence will result in immediate disqualification.",
-                        "Team members can only compete for the team they have enrolled with and cannot participate in multiple teams simultaneously.",
-                        "The use of triggers is strictly prohibited.",
-                        "Teams must capture screenshots of all results.",
-                        "Allegations against teams must be supported by proper evidence, such as death replays or screen recordings.",
-                        "Teaming up with other teams is strictly prohibited and will result in disqualification for all involved teams.",
-                        "Third-party apps, mods, and exploiting bugs are strictly prohibited, with disqualification as the consequence for such offenses.",
-                        "Game rooms will not be restarted for any reason, including ping issues, glitches, or late player or team arrivals.",
-                        "The judges' and organizers' decisions will be final.",
-                    ],
-                    costs: 250,
-                    thumbnail: `${tiaraAssetsPrefix}/nontechnical/bgmi.avif`,
-                    startTime: "2024-05-11 11:00",
-                    // endTime: "2024-05-11 16:00",
-                    facultyCoordinators: [
-                        {
-                            name: "Michael Johnson",
-                            phone: "+1122334455",
-                        },
-                    ],
-                    studentCoordinators: [
-                        {
-                            name: "Preetham",
-                            phone: "8618524411",
-                        },
-                        {
-                            name: "Nishanth",
-                            phone: "7676729896",
-                        },
-                        {
-                            name: "Abhinav Sudesh",
-                            phone: "9108668456",
-                        },
-                    ],
-                },
+                // "9": {
+                //     team: false,
+                //     name: "BGMI (Battle Ground Mobile India)",
+                //     description:
+                //         "Dive into the heart-pounding battlegrounds of BGMI, where every move carves in the adrenaline-fueled arena of mobile gaming.",
+                //     prerequisites: ["A valid college ID is required for participation."],
+                //     rules: [
+                //         "Wi-Fi connectivity will be available, but any issues related to Wi-Fi are not the responsibility of the management team. Participants should be prepared to use their own mobile data in such cases.",
+                //         "Teams with unregistered players may face disqualification.",
+                //         "During the online event, team members must refrain from using language that is offensive, insulting, or otherwise inappropriate.",
+                //         "Participants must play all games to be eligible for prize winnings.",
+                //         "The Tournament Administration reserves the right to change match start times at their discretion, with notification provided to all affected players.",
+                //         "Strict adherence to schedule timing is required.",
+                //         "Any act of violence will result in immediate disqualification.",
+                //         "Team members can only compete for the team they have enrolled with and cannot participate in multiple teams simultaneously.",
+                //         "The use of triggers is strictly prohibited.",
+                //         "Teams must capture screenshots of all results.",
+                //         "Allegations against teams must be supported by proper evidence, such as death replays or screen recordings.",
+                //         "Teaming up with other teams is strictly prohibited and will result in disqualification for all involved teams.",
+                //         "Third-party apps, mods, and exploiting bugs are strictly prohibited, with disqualification as the consequence for such offenses.",
+                //         "Game rooms will not be restarted for any reason, including ping issues, glitches, or late player or team arrivals.",
+                //         "The judges' and organizers' decisions will be final.",
+                //     ],
+                //     costs: 250,
+                //     thumbnail: `${tiaraAssetsPrefix}/nontechnical/bgmi.avif`,
+                //     startTime: "2024-05-11 11:00",
+                //     // endTime: "2024-05-11 16:00",
+                //     facultyCoordinators: [
+                //         {
+                //             name: "Michael Johnson",
+                //             phone: "+1122334455",
+                //         },
+                //     ],
+                //     studentCoordinators: [
+                //         {
+                //             name: "Preetham",
+                //             phone: "8618524411",
+                //         },
+                //         {
+                //             name: "Nishanth",
+                //             phone: "7676729896",
+                //         },
+                //         {
+                //             name: "Abhinav Sudesh",
+                //             phone: "9108668456",
+                //         },
+                //     ],
+                // },
                 "10": {
                     team: false,
                     name: "Valorant",
