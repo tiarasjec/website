@@ -15,13 +15,6 @@ export async function GET(
     );
   }
 
-  if (session.user.role !== UserRole.COORDINATOR) {
-    return NextResponse.json(
-      { message: "Forbidden", isOk: false },
-      { status: 403 }
-    );
-  }
-
   const { id } = context.params;
 
   const user = await prisma.user.findUnique({
