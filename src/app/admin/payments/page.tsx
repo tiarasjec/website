@@ -58,6 +58,11 @@ export default function AdminPaymentsTablePage() {
       },
     },
     {
+      accessorKey: "razorpayPaymentId",
+      id: "razorpayPaymentId",
+      header: "Razorpay Payment ID",
+    },
+    {
       accessorKey: "user.events",
       id: "events",
       header: "Events",

@@ -168,7 +168,7 @@ export function AdvancedDataTable<T>(props: IAdvancedDataTable<T>) {
       onDragEnd={onDragEnd}
       sensors={sensors}
     >
-      <div className="p-2 rounded mb-12">
+      <div className="p-2 rounded mb-12 -m-3">
         <div className={"flex flex-row items-center justify-between"}>
           <div className={"flex flex-row items-center"}>
             <DataTableInput
